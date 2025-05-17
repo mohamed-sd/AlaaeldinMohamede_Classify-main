@@ -32,11 +32,12 @@ class CategoryModel {
 
   factory CategoryModel.fromJson(Map<String, dynamic> json) {
     try {
+      int subCatCount = 0;
       List<dynamic> childData = json['subcategories'] ?? [];
       List<CategoryModel> children =
           childData.map((child) => CategoryModel.fromJson(child)).toList();
 
-      int subCatCount = 0;
+
       if (json['subcategories_count'].runtimeType == String) {
         subCatCount = int.parse(json['subcategories_count']);
       } else {
@@ -51,6 +52,7 @@ class CategoryModel {
           children: children,
           description: json['description'] ?? "");
     } catch (e) {
+
       rethrow;
     }
   }

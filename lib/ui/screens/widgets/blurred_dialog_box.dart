@@ -41,7 +41,7 @@ class ContactUsState extends State<ContactUs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: context.color.mainColor,
+      backgroundColor: context.color.mainGold,
       appBar: UiUtils.buildAppBar(context,
           title: "contactUs".translate(context), showBackButton: true , backgroundColor: context.color.mainBrown),
       body: BlocBuilder<CompanyCubit, CompanyState>(builder: (context, state) {
