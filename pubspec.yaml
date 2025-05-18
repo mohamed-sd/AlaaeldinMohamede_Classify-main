@@ -96,6 +96,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/welcome/
     - assets/login.jpg
     - assets/home.jpg
     - assets/svg/
@@ -108,8 +109,17 @@ flutter:
     - assets/svg/payment/
     - assets/
 
-
   fonts:
+    - family: IBMPlexArabic
+      fonts:
+        - asset: assets/fonts/IBMPlexSansArabic-Regular.ttf
+    - family: Rubik
+      fonts:
+        - asset: assets/fonts/Rubik-Regular.ttf
+        - asset: assets/fonts/Rubik-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Rubik-Italic.ttf
+          style: italic
     - family: Manrope
       fonts:
         - asset: assets/fonts/Manrope-Regular.ttf

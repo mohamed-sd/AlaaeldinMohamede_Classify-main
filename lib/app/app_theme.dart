@@ -9,7 +9,7 @@ final appThemeData = {
   AppTheme.light: ThemeData(
     brightness: Brightness.light,
     useMaterial3: false,
-    fontFamily: "Manrope",
+    fontFamily: "IBMPlexArabic",
     textSelectionTheme: const TextSelectionThemeData(
       selectionColor: territoryColor_,
       cursorColor: territoryColor_,

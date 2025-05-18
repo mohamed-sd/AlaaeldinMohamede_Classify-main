@@ -55,7 +55,7 @@ class HomeScreenState extends State<HomeScreen>
   //
   late final ScrollController _scrollController = ScrollController();
   final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
-      GlobalKey<RefreshIndicatorState>();
+  GlobalKey<RefreshIndicatorState>();
 
   Color mainColor = Color(0xff271301);
   Color marqueeBgColor = Color(0xff150900);
@@ -96,10 +96,128 @@ class HomeScreenState extends State<HomeScreen>
     }); */
   }
 
+  void _openCustomSideSheet(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierColor: Colors.transparent, // خلفية شفافة
+      builder: (context) {
+        return
+
+          Align(
+            alignment: Alignment.centerRight,
+            child: ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(50),
+                bottomLeft: Radius.circular(50),
+              ),
+              child: Container(
+                padding: EdgeInsets.all(20),
+                height: double.infinity,
+                width: MediaQuery.of(context).size.width * 0.70,
+                color: Color.fromARGB(255, 66, 37, 26),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: context.color.mainGold,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(50)
+                      ),
+                      child: Icon(Icons.close , color: context.color.mainGold,),
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          width: 80,
+                          height: 80,
+                          padding: EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                                color: context.color.mainGold,width: 1
+                            ),
+                            borderRadius: BorderRadius.circular(18),
+                          ),
+                          child: UiUtils.getSvg(AppIcons.appbarLogo, fit: BoxFit.cover ),
+                        ),
+
+                      ],
+                    ),
+                    SizedBox(height: 10,),
+                    Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.white,width: 1
+                        ),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Text("Equipation@info.com",style: TextStyle(
+                          color: Colors.white , fontSize: 14 , fontWeight: FontWeight.w600,
+                        ),textAlign: TextAlign.right,),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          );
+
+
+        //   Align(
+        //   alignment: Alignment.centerLeft,
+        //   child: ClipRRect(
+        //     borderRadius: BorderRadius.only(
+        //       topRight: Radius.circular(30),
+        //       bottomRight: Radius.circular(30),
+        //     ),
+        //     child: Container(
+        //       width: MediaQuery.of(context).size.width * 0.75, // نفس عرض Drawer تقريبًا
+        //       height: double.infinity,
+        //       color: Colors.white.withOpacity(0.95),
+        //       child: Column(
+        //         children: [
+        //
+        //           SizedBox(height: 40),
+        //           ListTile(
+        //             leading: Icon(Icons.home),
+        //             title: Text('الصفحة الرئيسية'),
+        //             onTap: () {},
+        //           ),
+        //           // ListTile(
+        //           //   leading: Icon(Icons.settings),
+        //           //   title: Text('الإعدادات'),
+        //           //   onTap: () {},
+        //           // ),
+        //           // ListTile(
+        //           //   leading: Icon(Icons.logout),
+        //           //   title: Text('تسجيل الخروج'),
+        //           //   onTap: () {},
+        //           // ),
+        //         ],
+        //       ),
+        //     ),
+        //   ),
+        // );
+
+      },
+    );
+  }
+
+
   void loadItemData() {
     context.read<SliderCubit>().fetchSlider(
-          context,
-        );
+      context,
+    );
     context.read<FetchCategoryCubit>().fetchCategories();
     /*  context.read<FetchHomeScreenCubit>().fetch(
           city: HiveUtils.getCityName(),
@@ -147,9 +265,23 @@ class HomeScreenState extends State<HomeScreen>
           elevation: 0,
           //leadingWidth: double.maxFinite,
           titleSpacing: 0,
-          title: Padding(
-              padding: EdgeInsetsDirectional.only(end: sidePadding),
-              child: appbarTitleWidget()),
+          title:
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: InkWell(
+                    onTap: (){
+                      _openCustomSideSheet(context);
+                    },
+                    child: Icon(Icons.menu)),
+              ),
+              Padding(
+                  padding: EdgeInsetsDirectional.only(end: sidePadding),
+                  child: appbarTitleWidget()),
+            ],
+          ),
+
           backgroundColor: mainColor,
           foregroundColor: Colors.white,
           // backgroundColor: const Color.fromARGB(0, 0, 0, 0),
@@ -157,9 +289,53 @@ class HomeScreenState extends State<HomeScreen>
         ),
         backgroundColor: mainColor,
         //backgroundColor: context.color.primaryColor,
-        drawer: Drawer(),
+        // drawer:
+        // Drawer(
+        //   child: ClipRRect(
+        //     borderRadius: BorderRadius.only(
+        //       topRight: Radius.circular(40),
+        //       bottomRight: Radius.circular(40),
+        //     ),
+        //     child: Container(
+        //       color: Colors.white,
+        //       child: ListView(
+        //         padding: EdgeInsets.zero,
+        //         children: [
+        //           DrawerHeader(
+        //             decoration: BoxDecoration(
+        //               color: Colors.blue,
+        //             ),
+        //             child: Text(
+        //               'مرحباً بك',
+        //               style: TextStyle(
+        //                 color: Colors.white,
+        //                 fontSize: 24,
+        //               ),
+        //             ),
+        //           ),
+        //           ListTile(
+        //             leading: Icon(Icons.home),
+        //             title: Text('الصفحة الرئيسية'),
+        //             onTap: () {},
+        //           ),
+        //           ListTile(
+        //             leading: Icon(Icons.settings),
+        //             title: Text('الإعدادات'),
+        //             onTap: () {},
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //   ),
+        // ),
         body: Column(
           children: [
+            // InkWell(
+            //   onTap: (){
+            //     Navigator.pushNamed(context, Routes.welcome);
+            //   },
+            //   child: Icon(Icons.ac_unit),
+            // ),
             blogMarqueeWidget(),
             Container(
                 color: mainColor,
@@ -190,6 +366,54 @@ class HomeScreenState extends State<HomeScreen>
                     shrinkWrap: true,
                     controller: _scrollController,
                     children: [
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(30, 0, 20, 0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(0, 15, 0, 5),
+                              child: Text(
+                                'أهلاً بك في إعلانات بريق!',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'IBMPlexArabic'
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 3, 0),
+                              child: Text(
+                                'حيث نفتح لك ولإعلاناتك وصولًا سريعًا إلى عالم التعدين،',
+                                textAlign: TextAlign.justify,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'IBMPlexArabic'
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 3, 0),
+                              child: Text(
+                                'لتصل رسائلك إلى المهتمين وتخلق فرصًا مشرقة.',
+                                textAlign: TextAlign.justify,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'IBMPlexArabic'
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 10,),
                       const SliderWidget(),
                       const CategoryWidgetHome(),
                     ],
@@ -208,14 +432,15 @@ class HomeScreenState extends State<HomeScreen>
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-      CustomText(
-        Constant.appName,
-        fontSize: context.font.large,
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
-      ),
-      UiUtils.getSvg(AppIcons.appbarLogo, height: 40, width: 40 ,fit: BoxFit.cover ),
-    ]);
+
+          CustomText(
+            Constant.appName,
+            fontSize: context.font.large,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+          //UiUtils.getSvg(AppIcons.appbarLogo, height: 40, width: 40 ,fit: BoxFit.cover ),
+        ]);
   }
 
   Widget appbarIconWidget(IconData icon, Function callback) {
@@ -255,32 +480,32 @@ class HomeScreenState extends State<HomeScreen>
   Widget blogMarqueeWidget() {
     return BlocBuilder<FetchBlogsCubit, FetchBlogsState>(
         builder: (context, state) {
-      if (state is FetchBlogsSuccess) {
-        String mergedTitle = state.blogModel.map((e) => e.title).join('\t\t\t');
-        return GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(
-              context,
-              Routes.blogsScreenRoute,
+          if (state is FetchBlogsSuccess) {
+            String mergedTitle = state.blogModel.map((e) => e.title).join('\t\t\t');
+            return GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  Routes.blogsScreenRoute,
+                );
+              },
+              child: Container(
+                color: marqueeBgColor,
+                padding: EdgeInsetsDirectional.symmetric(vertical: 5),
+                child: MarqueeText(
+                  text: mergedTitle,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(color: Colors.white),
+                  velocity: 50,
+                ),
+              ),
             );
-          },
-          child: Container(
-            color: marqueeBgColor,
-            padding: EdgeInsetsDirectional.symmetric(vertical: 5),
-            child: MarqueeText(
-              text: mergedTitle,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium!
-                  .copyWith(color: Colors.white),
-              velocity: 50,
-            ),
-          ),
-        );
-      } else {
-        return SizedBox.shrink();
-      }
-    });
+          } else {
+            return SizedBox.shrink();
+          }
+        });
   }
 }
 

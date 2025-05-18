@@ -45,6 +45,7 @@ import 'package:eClassify/ui/screens/settings/notifications.dart';
 import 'package:eClassify/ui/screens/settings/profile_setting.dart';
 import 'package:eClassify/ui/screens/sold_out_bought_screen.dart';
 import 'package:eClassify/ui/screens/splash_screen.dart';
+import 'package:eClassify/ui/screens/welcome_screen.dart';
 import 'package:eClassify/ui/screens/sub_category/sub_category_screen.dart';
 import 'package:eClassify/ui/screens/subscription/packages_list.dart';
 import 'package:eClassify/ui/screens/subscription/transaction_history_screen.dart';
@@ -58,6 +59,7 @@ import 'package:flutter/material.dart';
 
 class Routes {
   static const splash = 'splash';
+  static const welcome = 'welcome';
   static const onboarding = 'onboarding';
   static const login = 'login';
   static const forgotPassword = 'forgotPassword';
@@ -89,7 +91,6 @@ class Routes {
   static const mostViewedItemsScreen = '/mostViewedItemsScreen';
   static const blogDetailsScreenRoute = '/blogDetailsScreenRoute';
   static const myReviewsScreen = '/myReviewsScreenRoute';
-
   static const languageListScreenRoute = '/languageListScreenRoute';
   static const searchScreenRoute = '/searchScreenRoute';
   static const itemMapScreen = '/ItemMap';
@@ -101,7 +102,6 @@ class Routes {
   static const locationPermissionScreen = '/locationPermissionScreen';
   static const sellerProfileScreen = '/sellerProfileScreen';
   static const nearbyLocationScreen = '/nearbyLocationScreen';
-
   static const myAdvertisment = '/myAdvertisment';
   static const transactionHistory = '/transactionHistory';
   static const personalizedItemScreen = '/personalizedItemScreen';
@@ -182,6 +182,8 @@ class Routes {
     }
 
     switch (routeSettings.name) {
+      case welcome :
+        return MaterialPageRoute(builder: ((context) => const WelcomeScreen()));
       case splash:
         return MaterialPageRoute(builder: ((context) => const SplashScreen()));
       case onboarding:

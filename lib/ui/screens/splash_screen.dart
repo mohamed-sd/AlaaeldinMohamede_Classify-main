@@ -105,13 +105,16 @@ class SplashScreenState extends State<SplashScreen>
           Navigator.of(context).pushReplacementNamed(Routes.maintenanceMode);
         }
       });
-    } else if (HiveUtils.isUserFirstTime() == true) {
+    }
+    else if (HiveUtils.isUserFirstTime() == true)
+    {
       Future.delayed(const Duration(seconds: 1), () {
         if (mounted) {
-          Navigator.of(context).pushReplacementNamed(Routes.onboarding);
+          Navigator.of(context).pushReplacementNamed(Routes.welcome);
         }
       });
-    } else if (HiveUtils.isUserAuthenticated()) {
+    } else if (HiveUtils.isUserAuthenticated())
+    {
       ///User should not navigate automatically to complete profile page after closing the app and re-opening without completing profile
       ///In that case, user should only be set as authenticated when the user has completed his profile
       ///and if not, he should be redirected to login page again
@@ -144,7 +147,8 @@ class SplashScreenState extends State<SplashScreen>
         }
       });
       //}
-    } else {
+    } else
+    {
       Future.delayed(const Duration(seconds: 1), () {
         if (mounted) {
           if (HiveUtils.isUserSkip() == true) {
