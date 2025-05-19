@@ -66,7 +66,7 @@ class WelcomeScreen extends StatelessWidget {
             const SizedBox(height: 10),
             OutlinedButton(
               onPressed: () {
-                Navigator.of(context).pushReplacementNamed(Routes.signupMainScreen);
+                // Navigator.of(context).pushReplacementNamed(Routes.signupMainScreen);
               },
               style: OutlinedButton.styleFrom(
                 minimumSize: const Size(305, 50.38),

@@ -111,32 +111,15 @@ class CustomDrawerWidget extends StatelessWidget {
                             child: Container(
                               width: 70,
                               height: 70,
-                              child:
-                              HiveUtils.isUserAuthenticated() ?
-                              Container(
-                                width: 85,
-                                height: 85,
                                 clipBehavior: Clip.antiAlias,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadiusDirectional.circular(18)
+                              ),
+                                child: CircleAvatar(
+                                  radius: 18,
+                                child: Image.asset('assets/profile.jpg')
                                 ),
-                              child: CircleAvatar(
-                                backgroundColor: context.color.backgroundColor,
-                                radius: 50,
-                              child: UiUtils.getImage(
-                                height: 160,
-                                width: 160,
-                                HiveUtils.getUserDetails().profile!,
-                                fit: BoxFit.cover,
-                              ))
                               )
-                              : UiUtils.getSvg(
-                                AppIcons.defaultPersonLogo,
-                                color: context.color.mainGold,
-                                fit: BoxFit.none,
-                              )
-                              ,
-                            ),
                           ),
                         ),
                         Expanded(

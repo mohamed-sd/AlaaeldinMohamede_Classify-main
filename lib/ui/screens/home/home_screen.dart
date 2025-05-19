@@ -103,7 +103,6 @@ class HomeScreenState extends State<HomeScreen>
       barrierColor: Colors.transparent, // خلفية شفافة
       builder: (context) {
         return
-
           Align(
             alignment: Alignment.centerRight,
             child: ClipRRect(
@@ -297,46 +296,6 @@ class HomeScreenState extends State<HomeScreen>
           actions: appbarActionsWidget(),
         ),
         backgroundColor: mainColor,
-        //backgroundColor: context.color.primaryColor,
-        // drawer:
-        // Drawer(
-        //   child: ClipRRect(
-        //     borderRadius: BorderRadius.only(
-        //       topRight: Radius.circular(40),
-        //       bottomRight: Radius.circular(40),
-        //     ),
-        //     child: Container(
-        //       color: Colors.white,
-        //       child: ListView(
-        //         padding: EdgeInsets.zero,
-        //         children: [
-        //           DrawerHeader(
-        //             decoration: BoxDecoration(
-        //               color: Colors.blue,
-        //             ),
-        //             child: Text(
-        //               'مرحباً بك',
-        //               style: TextStyle(
-        //                 color: Colors.white,
-        //                 fontSize: 24,
-        //               ),
-        //             ),
-        //           ),
-        //           ListTile(
-        //             leading: Icon(Icons.home),
-        //             title: Text('الصفحة الرئيسية'),
-        //             onTap: () {},
-        //           ),
-        //           ListTile(
-        //             leading: Icon(Icons.settings),
-        //             title: Text('الإعدادات'),
-        //             onTap: () {},
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //   ),
-        // ),
         body: Column(
           children: [
             // InkWell(
@@ -349,13 +308,13 @@ class HomeScreenState extends State<HomeScreen>
             Container(
                 color: mainColor,
                 padding: const EdgeInsetsDirectional.only(
-                    start: sidePadding, end: sidePadding, bottom: 10, top: 8),
+                    start: sidePadding, end: sidePadding, bottom: 10, top: 0),
                 alignment: AlignmentDirectional.centerStart,
                 child: LocationWidget()),
             Expanded(
               child: Container(
                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                padding: EdgeInsetsDirectional.only(top: 30, bottom: 80),
+                padding: EdgeInsetsDirectional.only(top: 10, bottom: 80),
                 decoration: BoxDecoration(
                     color: context.color.primaryColor,
                     borderRadius: BorderRadius.only(

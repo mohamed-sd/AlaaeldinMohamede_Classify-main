@@ -452,7 +452,7 @@ class LoginScreenState extends State<LoginScreen> {
                     child: Container(
                       // color: Colors.red,
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 8.0, vertical: 8),
+                          horizontal: 5.0, vertical: 5),
                       child: Center(
                           child: CustomText(
                             "+$countryCode",
@@ -579,7 +579,7 @@ class LoginScreenState extends State<LoginScreen> {
           child: SizedBox(
             height: context.screenHeight - 50,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18.0),
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -606,7 +606,7 @@ class LoginScreenState extends State<LoginScreen> {
                           height: 28,
                           minWidth: 64,
                           child: Padding(
-                            padding: EdgeInsets.all(10),
+                            padding: EdgeInsets.all(8),
                             child: Icon(
                               Icons.arrow_forward_outlined,
                               color: Colors.black,
@@ -619,7 +619,7 @@ class LoginScreenState extends State<LoginScreen> {
                   ),
 
                   Container(
-                    padding: EdgeInsets.all(25),
+                    padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
@@ -660,8 +660,8 @@ class LoginScreenState extends State<LoginScreen> {
                                   ),
                                   GestureDetector(
                                       onTap: () {
-                                        Navigator.pushReplacementNamed(
-                                            context, Routes.mobileSignUp);
+                                     //   Navigator.pushReplacementNamed(
+                                       //     context, Routes.mobileSignUp);
                                       },
                                       child: CustomText(
                                         "signUp".translate(context),
@@ -738,7 +738,7 @@ class LoginScreenState extends State<LoginScreen> {
         if (Constant.googleAuthentication == "1") ...[
           UiUtils.buildButton(context,
               prefixWidget: Padding(
-                padding: EdgeInsetsDirectional.only(end: 10.0),
+                padding: EdgeInsetsDirectional.only(end: 8.0),
                 child:
                 UiUtils.getSvg(AppIcons.googleIcon, width: 22, height: 22),
               ),
@@ -765,7 +765,7 @@ class LoginScreenState extends State<LoginScreen> {
         if (Constant.appleAuthentication == "1" && Platform.isIOS) ...[
           UiUtils.buildButton(context,
               prefixWidget: Padding(
-                padding: EdgeInsetsDirectional.only(end: 10.0),
+                padding: EdgeInsetsDirectional.only(end: 8.0),
                 child:
                 UiUtils.getSvg(AppIcons.appleIcon, width: 22, height: 22),
               ),
@@ -798,7 +798,7 @@ class LoginScreenState extends State<LoginScreen> {
                   isLoginWithMobile.value = !isLoginWithMobile.value;
                 },
                     prefixWidget: Padding(
-                        padding: EdgeInsetsDirectional.only(end: 10.0),
+                        padding: EdgeInsetsDirectional.only(end: 8.0),
                         child: Icon(
                           isMobileField ? Icons.email : Icons.phone,
                           color: textDarkColor,
@@ -825,7 +825,7 @@ class LoginScreenState extends State<LoginScreen> {
 
   Widget termAndPolicyTxt() {
     return Padding(
-      padding: EdgeInsetsDirectional.only(bottom: 15.0, start: 25.0, end: 25.0),
+      padding: EdgeInsetsDirectional.only(bottom: 10.0, start: 20.0, end: 20.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         mainAxisSize: MainAxisSize.min,
@@ -927,13 +927,13 @@ class LoginScreenState extends State<LoginScreen> {
 
   Widget verifyOTPWidget() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 18.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 25.0),
+            padding: const EdgeInsets.only(top: 20.0),
             child: Align(
               alignment: AlignmentDirectional.bottomEnd,
               child: FittedBox(

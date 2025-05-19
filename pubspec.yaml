@@ -96,6 +96,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/profile.jpg
     - assets/welcome/
     - assets/login.jpg
     - assets/home.jpg
