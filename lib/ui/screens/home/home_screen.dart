@@ -14,6 +14,7 @@ import 'package:eClassify/data/model/system_settings_model.dart';
 import 'package:eClassify/ui/screens/home/slider_widget.dart';
 import 'package:eClassify/ui/screens/home/widgets/category_widget_home.dart';
 import 'package:eClassify/ui/screens/home/widgets/location_widget.dart';
+import 'package:eClassify/ui/screens/widgets/CustomDrawerWidget.dart';
 import 'package:eClassify/ui/screens/widgets/marqeeWidget.dart';
 import 'package:eClassify/ui/theme/theme.dart';
 //import 'package:uni_links/uni_links.dart';
@@ -272,7 +273,15 @@ class HomeScreenState extends State<HomeScreen>
                 padding: const EdgeInsets.all(10.0),
                 child: InkWell(
                     onTap: (){
-                      _openCustomSideSheet(context);
+                      showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          backgroundColor: Colors.transparent,
+                          shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+                      ),
+                      builder: (context) => const CustomDrawerWidget());
+                      // _openCustomSideSheet(context);
                     },
                     child: Icon(Icons.menu)),
               ),
