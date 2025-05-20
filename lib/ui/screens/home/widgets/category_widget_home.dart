@@ -47,21 +47,21 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
 
                 // The link for the Page
                 InkWell(
-                  onTap: (){
-                    if(isFixExpanded)
+                  onTap: () {
+                    if (isFixExpanded)
                       setState(() {
-                        isFixExpanded = false ;
+                        isFixExpanded = false;
                       });
-                      else
+                    else
                       setState(() {
-                        isFixExpanded = true ;
+                        isFixExpanded = true;
                       });
                   },
                   child: Container(
                     margin: EdgeInsets.symmetric(horizontal: 13),
                     width: double.infinity,
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 14),
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(AppIcons.categoryBg),
@@ -96,574 +96,132 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
                   ),
                 ),
                 if (isFixExpanded)
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
-                  child: Column(
-                    children: [
-                      GridView.count(
-                        shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
-                        crossAxisCount: 3,
-                        mainAxisSpacing: 8,
-                        crossAxisSpacing: 8,
-                        children: [
-                          // The Card
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, Routes.guide);
-                            },
-                            child: Container(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                clipBehavior: Clip.hardEdge,
-                                child: Stack(
-                                  children: [
-                                    Positioned.fill(
-                                      child: UiUtils.imageType(
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/23dwc45aegqv/8_copy.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        color:
-                                            Colors.black.withValues(alpha: 0.5),
-                                        padding: EdgeInsets.symmetric(
-                                            vertical: 6, horizontal: 8),
-                                        child: Text(
-                                          'المسجل التجاري',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: context.font.small,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    child: Column(
+                      children: [
+                        GridView.count(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          crossAxisCount: 3,
+                          mainAxisSpacing: 8,
+                          crossAxisSpacing: 8,
+                          children: [
+                            // The Card
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, Routes.guide);
+                              },
+                              child: custom_card_Item(context, 'المسجل التجاري',
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/23dwc45aegqv/8_copy.jpg'),
                             ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, Routes.guide);
-                            },
-                            child: Container(
-                              // onTap: () {},
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                clipBehavior: Clip.hardEdge,
-                                child: Stack(
-                                  children: [
-                                    Positioned.fill(
-                                      child: UiUtils.imageType(
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/8iy777zlezzx/9_copy.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        color:
-                                            Colors.black.withValues(alpha: 0.5),
-                                        padding: EdgeInsets.symmetric(
-                                            vertical: 6, horizontal: 8),
-                                        child: Text(
-                                          ' وزارة الإستثمار ',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: context.font.small,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, Routes.guide);
+                              },
+                              child: custom_card_Item(
+                                  context,
+                                  ' وزارة الإستثمار ',
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/8iy777zlezzx/9_copy.jpg'),
                             ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, Routes.guide);
-                            },
-                            child: Container(
-                              // onTap: () {},
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                clipBehavior: Clip.hardEdge,
-                                child: Stack(
-                                  children: [
-                                    Positioned.fill(
-                                      child: UiUtils.imageType(
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/kqgp4p9tgsdw/10_copy.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        color:
-                                            Colors.black.withValues(alpha: 0.5),
-                                        padding: EdgeInsets.symmetric(
-                                            vertical: 6, horizontal: 8),
-                                        child: Text(
-                                          '  وزارة المعادن ',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: context.font.small,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, Routes.guide);
+                              },
+                              child: custom_card_Item(
+                                  context,
+                                  '   وزارة المعادن ',
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/kqgp4p9tgsdw/10_copy.jpg'),
                             ),
-                          ),
 
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, Routes.guide);
-                            },
-                            child: Container(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                clipBehavior: Clip.hardEdge,
-                                child: Stack(
-                                  children: [
-                                    Positioned.fill(
-                                      child: UiUtils.imageType(
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/fu508h0w64cp/11_copy.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        color:
-                                        Colors.black.withValues(alpha: 0.5),
-                                        padding: EdgeInsets.symmetric(
-                                            vertical: 6, horizontal: 8),
-                                        child: Text(
-                                          'الابحاث الجيلوجية',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: context.font.small,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, Routes.guide);
+                              },
+                              child: custom_card_Item(
+                                  context,
+                                  ' الابحاث الجيلوجية ',
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/fu508h0w64cp/11_copy.jpg'),
                             ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, Routes.guide);
-                            },
-                            child: Container(
-                              // onTap: () {},
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                clipBehavior: Clip.hardEdge,
-                                child: Stack(
-                                  children: [
-                                    Positioned.fill(
-                                      child: UiUtils.imageType(
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/irp2v834y4x6/12_copy.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        color:
-                                        Colors.black.withValues(alpha: 0.5),
-                                        padding: EdgeInsets.symmetric(
-                                            vertical: 6, horizontal: 8),
-                                        child: Text(
-                                          ' الولايات والمحاليات ',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: context.font.small,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, Routes.guide);
+                              },
+                              child: custom_card_Item(
+                                  context,
+                                  ' الولايات والمحاليات  ',
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/irp2v834y4x6/12_copy.jpg'),
                             ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, Routes.guide);
-                            },
-                            child: Container(
-                              // onTap: () {},
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                clipBehavior: Clip.hardEdge,
-                                child: Stack(
-                                  children: [
-                                    Positioned.fill(
-                                      child: UiUtils.imageType(
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/mina24dtpbp3/13_copy.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        color:
-                                        Colors.black.withValues(alpha: 0.5),
-                                        padding: EdgeInsets.symmetric(
-                                            vertical: 6, horizontal: 8),
-                                        child: Text(
-                                          ' المالية والتخطيط الأقتصادي ',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: context.font.small,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, Routes.guide);
+                              },
+                              child: custom_card_Item(
+                                  context,
+                                  ' المالية والتخطيط الأقتصادي  ',
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/mina24dtpbp3/13_copy.jpg'),
                             ),
-                          ),
 
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, Routes.guide);
-                            },
-                            child: Container(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                clipBehavior: Clip.hardEdge,
-                                child: Stack(
-                                  children: [
-                                    Positioned.fill(
-                                      child: UiUtils.imageType(
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/pxyx3p1md655/14_copy.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        color:
-                                        Colors.black.withValues(alpha: 0.5),
-                                        padding: EdgeInsets.symmetric(
-                                            vertical: 6, horizontal: 8),
-                                        child: Text(
-                                          'هيئة الجمارك',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: context.font.small,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, Routes.guide);
+                              },
+                              child: custom_card_Item(
+                                  context,
+                                  ' هيئة الجمارك ',
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/pxyx3p1md655/14_copy.jpg'),
                             ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, Routes.guide);
-                            },
-                            child: Container(
-                              // onTap: () {},
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                clipBehavior: Clip.hardEdge,
-                                child: Stack(
-                                  children: [
-                                    Positioned.fill(
-                                      child: UiUtils.imageType(
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/vq8ys7favedu/15_copy.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        color:
-                                        Colors.black.withValues(alpha: 0.5),
-                                        padding: EdgeInsets.symmetric(
-                                            vertical: 6, horizontal: 8),
-                                        child: Text(
-                                          ' وزارة التجارة ',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: context.font.small,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, Routes.guide);
+                              },
+                              child: custom_card_Item(
+                                  context,
+                                  ' وزارة التجارة ',
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/vq8ys7favedu/15_copy.jpg'),
                             ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, Routes.guide);
-                            },
-                            child: Container(
-                              // onTap: () {},
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                clipBehavior: Clip.hardEdge,
-                                child: Stack(
-                                  children: [
-                                    Positioned.fill(
-                                      child: UiUtils.imageType(
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/a5ozl80fvqk4/16_copy.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        color:
-                                        Colors.black.withValues(alpha: 0.5),
-                                        padding: EdgeInsets.symmetric(
-                                            vertical: 6, horizontal: 8),
-                                        child: Text(
-                                          ' مكتب العمل ',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: context.font.small,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, Routes.guide);
+                              },
+                              child: custom_card_Item(
+                                  context,
+                                  ' مكتب العمل ',
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/a5ozl80fvqk4/16_copy.jpg'),
                             ),
-                          ),
 
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, Routes.guide);
-                            },
-                            child: Container(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                clipBehavior: Clip.hardEdge,
-                                child: Stack(
-                                  children: [
-                                    Positioned.fill(
-                                      child: UiUtils.imageType(
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/aqm2fk2oi1cm/17_copy.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        color:
-                                        Colors.black.withValues(alpha: 0.5),
-                                        padding: EdgeInsets.symmetric(
-                                            vertical: 6, horizontal: 8),
-                                        child: Text(
-                                          'وزارة العدل',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: context.font.small,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, Routes.guide);
+                              },
+                              child: custom_card_Item(
+                                  context,
+                                  'وزارة العدل ',
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/aqm2fk2oi1cm/17_copy.jpg'),
                             ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, Routes.guide);
-                            },
-                            child: Container(
-                              // onTap: () {},
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                clipBehavior: Clip.hardEdge,
-                                child: Stack(
-                                  children: [
-                                    Positioned.fill(
-                                      child: UiUtils.imageType(
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/6iqubtvxmlic/18_copy.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        color:
-                                        Colors.black.withValues(alpha: 0.5),
-                                        padding: EdgeInsets.symmetric(
-                                            vertical: 6, horizontal: 8),
-                                        child: Text(
-                                          ' التأمينات الإجتماعية ',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: context.font.small,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, Routes.guide);
+                              },
+                              child: custom_card_Item(
+                                  context,
+                                  ' التأمينات الإجتماعية ',
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/6iqubtvxmlic/18_copy.jpg'),
                             ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, Routes.guide);
-                            },
-                            child: Container(
-                              // onTap: () {},
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                clipBehavior: Clip.hardEdge,
-                                child: Stack(
-                                  children: [
-                                    Positioned.fill(
-                                      child: UiUtils.imageType(
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/80k6u2xj7rn9/19_copy.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        color:
-                                        Colors.black.withValues(alpha: 0.5),
-                                        padding: EdgeInsets.symmetric(
-                                            vertical: 6, horizontal: 8),
-                                        child: Text(
-                                          ' شركات التأمين ',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: context.font.small,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, Routes.guide);
+                              },
+                              child: custom_card_Item(
+                                  context,
+                                  ' شركات التأمين ',
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/80k6u2xj7rn9/19_copy.jpg'),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ),
                 categoryWidget(state.categories),
               ],
             );
@@ -747,6 +305,47 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
         }
         return Container();
       },
+    );
+  }
+
+  Container custom_card_Item(BuildContext context, String title, String url) {
+    return Container(
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+        ),
+        clipBehavior: Clip.hardEdge,
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: UiUtils.imageType(
+                url,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Container(
+                color: Colors.black.withValues(alpha: 0.5),
+                padding: EdgeInsets.symmetric(vertical: 6, horizontal: 8),
+                child: Text(
+                  title,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: context.font.small,
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
