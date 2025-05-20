@@ -11,6 +11,7 @@ import 'package:eClassify/ui/screens/chat/blocked_user_list_screen.dart';
 import 'package:eClassify/ui/screens/faqs_screen.dart';
 import 'package:eClassify/ui/screens/favorite_screen.dart';
 import 'package:eClassify/ui/screens/filter_screen.dart';
+import 'package:eClassify/ui/screens/guide/mining_minestry.dart';
 import 'package:eClassify/ui/screens/home/category_list.dart';
 import 'package:eClassify/ui/screens/home/change_language_screen.dart';
 import 'package:eClassify/ui/screens/home/search_screen.dart';
@@ -60,6 +61,7 @@ import 'package:flutter/material.dart';
 class Routes {
   static const splash = 'splash';
   static const welcome = 'welcome';
+  static const guide = 'guide';
   static const onboarding = 'onboarding';
   static const login = 'login';
   static const forgotPassword = 'forgotPassword';
@@ -182,6 +184,8 @@ class Routes {
     }
 
     switch (routeSettings.name) {
+      case guide :
+        return MaterialPageRoute(builder: ((context) => const Mining_minestry()));
       case welcome :
         return MaterialPageRoute(builder: ((context) => const WelcomeScreen()));
       case splash:
