@@ -1,0 +1,124 @@
+import 'dart:math';
+import 'package:flutter/material.dart';
+import 'package:eClassify/utils/ui_utils.dart';
+
+class GoldShimmerCard extends StatefulWidget {
+  final String title;
+  final String url;
+
+  const GoldShimmerCard({
+    Key? key,
+    required this.title,
+    required this.url,
+  }) : super(key: key);
+
+  @override
+  _GoldShimmerCardState createState() => _GoldShimmerCardState();
+}
+
+class _GoldShimmerCardState extends State<GoldShimmerCard>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  bool animationEnded = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 500), // أطول شويه ليظهر اللمعان بوضوح
+      vsync: this,
+    );
+
+    _animation = Tween<double>(begin: -1.0, end: 2.0).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+    );
+
+    _controller.forward();
+
+    _controller.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        setState(() {
+          animationEnded = true;
+        });
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final shimmerColor = const Color(0xFFF6E27F); // لون ذهبي فاتح ولمّاع
+
+    return AnimatedBuilder(
+      animation: _animation,
+      builder: (context, child) {
+        final image = UiUtils.imageType(widget.url, fit: BoxFit.cover);
+
+        if (animationEnded) {
+          return _buildCard(image); // بعد انتهاء اللمعة، فقط الصورة
+        }
+
+        return _buildCard(
+          ShaderMask(
+            shaderCallback: (bounds) {
+              return LinearGradient(
+                begin: Alignment(_animation.value - 0.5, -1),
+                end: Alignment(_animation.value + 0.5, 1),
+                colors: [
+                  Colors.transparent,
+                  shimmerColor.withOpacity(0.7),
+                  Colors.transparent,
+                ],
+                stops: const [0.0, 0.5, 1.0],
+              ).createShader(bounds);
+            },
+            blendMode: BlendMode.srcATop,
+            child: image,
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildCard(Widget image) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+      ),
+      clipBehavior: Clip.hardEdge,
+      child: Stack(
+        children: [
+          Positioned.fill(child: image),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              color: Colors.black.withOpacity(0.5),
+              padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
+              child: Text(
+                widget.title,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 14,
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

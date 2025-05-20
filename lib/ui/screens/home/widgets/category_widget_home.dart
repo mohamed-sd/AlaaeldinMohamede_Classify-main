@@ -1,6 +1,7 @@
 import 'package:eClassify/app/routes.dart';
 import 'package:eClassify/data/cubits/category/fetch_category_cubit.dart';
 import 'package:eClassify/data/model/category_model.dart';
+import 'package:eClassify/ui/screens/home/GoldShimmerCard.dart';
 import 'package:eClassify/ui/screens/home/home_screen.dart';
 import 'package:eClassify/ui/screens/home/widgets/category_home_card.dart';
 import 'package:eClassify/ui/screens/main_activity.dart';
@@ -112,26 +113,24 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
                               onTap: () {
                                 Navigator.pushNamed(context, Routes.guide);
                               },
-                              child: custom_card_Item(context, 'المسجل التجاري',
-                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/23dwc45aegqv/8_copy.jpg'),
+                              child: GoldShimmerCard( title : 'المسجل التجاري',
+                                 url:'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/23dwc45aegqv/8_copy.jpg'),
                             ),
                             InkWell(
                               onTap: () {
                                 Navigator.pushNamed(context, Routes.guide);
                               },
-                              child: custom_card_Item(
-                                  context,
-                                  ' وزارة الإستثمار ',
-                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/8iy777zlezzx/9_copy.jpg'),
+                              child: GoldShimmerCard(
+                                  title : ' وزارة الإستثمار ',
+                                  url : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/8iy777zlezzx/9_copy.jpg'),
                             ),
                             InkWell(
                               onTap: () {
                                 Navigator.pushNamed(context, Routes.guide);
                               },
-                              child: custom_card_Item(
-                                  context,
-                                  '   وزارة المعادن ',
-                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/kqgp4p9tgsdw/10_copy.jpg'),
+                              child: GoldShimmerCard(
+                                  title: '   وزارة المعادن ',
+                                  url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/kqgp4p9tgsdw/10_copy.jpg'),
                             ),
 
                             InkWell(
@@ -309,7 +308,8 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
   }
 
   Container custom_card_Item(BuildContext context, String title, String url) {
-    return Container(
+    return
+      Container(
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
@@ -348,6 +348,7 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
       ),
     );
   }
+
 
   Widget moreCategory(BuildContext context) {
     return SizedBox(
