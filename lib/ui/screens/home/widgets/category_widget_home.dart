@@ -502,7 +502,7 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
   Widget subCategoryWidget(
       List<CategoryModel> subcategories, int categoryId, String categoryName) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: EdgeInsets.only(top: 10),
       child: Column(
         children: [
           if (subcategories.length > 6) ...[
