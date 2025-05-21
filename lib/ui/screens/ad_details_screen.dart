@@ -34,7 +34,7 @@ import 'package:eClassify/data/model/subscription_package_model.dart';
 import 'package:eClassify/ui/screens/ad_banner_screen.dart';
 import 'package:eClassify/ui/screens/chat/chat_screen.dart';
 import 'package:eClassify/ui/screens/google_map_screen.dart';
-import 'package:eClassify/ui/screens/home/home_screen.dart';
+import 'package:eClassify/ui/screens/navigations/home_screen.dart';
 import 'package:eClassify/ui/screens/home/widgets/grid_list_adapter.dart';
 import 'package:eClassify/ui/screens/home/widgets/home_sections_adapter.dart';
 import 'package:eClassify/ui/screens/subscription/widget/featured_ads_subscription_plan_item.dart';

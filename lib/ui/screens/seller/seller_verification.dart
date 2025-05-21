@@ -4,7 +4,7 @@ import 'package:eClassify/data/cubits/seller/fetch_verification_request_cubit.da
 import 'package:eClassify/data/cubits/seller/send_verification_field_cubit.dart';
 import 'package:eClassify/data/helper/widgets.dart';
 import 'package:eClassify/data/model/verification_request_model.dart';
-import 'package:eClassify/ui/screens/home/home_screen.dart';
+import 'package:eClassify/ui/screens/navigations/home_screen.dart';
 import 'package:eClassify/ui/screens/item/add_item_screen/custom_filed_structure/custom_field.dart';
 
 import 'package:eClassify/ui/screens/widgets/custom_text_form_field.dart';

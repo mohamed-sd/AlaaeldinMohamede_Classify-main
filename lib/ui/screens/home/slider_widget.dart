@@ -7,7 +7,7 @@ import 'package:eClassify/data/model/category_model.dart';
 import 'package:eClassify/data/model/data_output.dart';
 import 'package:eClassify/data/model/item/item_model.dart';
 import 'package:eClassify/data/repositories/item/item_repository.dart';
-import 'package:eClassify/ui/screens/home/home_screen.dart';
+import 'package:eClassify/ui/screens/navigations/home_screen.dart';
 import 'package:eClassify/ui/theme/theme.dart';
 import 'package:eClassify/utils/extensions/extensions.dart';
 import 'package:eClassify/utils/helper_utils.dart';

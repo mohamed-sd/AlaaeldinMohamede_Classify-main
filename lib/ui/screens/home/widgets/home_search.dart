@@ -1,5 +1,5 @@
 import 'package:eClassify/app/routes.dart';
-import 'package:eClassify/ui/screens/home/home_screen.dart';
+import 'package:eClassify/ui/screens/navigations/home_screen.dart';
 import 'package:eClassify/ui/theme/theme.dart';
 import 'package:eClassify/utils/app_icon.dart';
 import 'package:eClassify/utils/extensions/extensions.dart';

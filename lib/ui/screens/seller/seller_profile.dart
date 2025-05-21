@@ -6,7 +6,7 @@ import 'package:eClassify/data/cubits/seller/fetch_seller_item_cubit.dart';
 import 'package:eClassify/data/cubits/seller/fetch_seller_ratings_cubit.dart';
 import 'package:eClassify/data/model/item/item_model.dart';
 import 'package:eClassify/data/model/seller_ratings_model.dart';
-import 'package:eClassify/ui/screens/home/home_screen.dart';
+import 'package:eClassify/ui/screens/navigations/home_screen.dart';
 import 'package:eClassify/ui/screens/home/widgets/home_sections_adapter.dart';
 
 import 'package:eClassify/ui/screens/widgets/errors/no_data_found.dart';

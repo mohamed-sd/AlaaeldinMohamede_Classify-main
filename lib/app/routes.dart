@@ -8,6 +8,7 @@ import 'package:eClassify/ui/screens/auth/sign_up/signup_screen.dart';
 import 'package:eClassify/ui/screens/blogs/blog_details.dart';
 import 'package:eClassify/ui/screens/blogs/blogs_screen.dart';
 import 'package:eClassify/ui/screens/chat/blocked_user_list_screen.dart';
+import 'package:eClassify/ui/screens/chat/chat_list_screen.dart';
 import 'package:eClassify/ui/screens/faqs_screen.dart';
 import 'package:eClassify/ui/screens/favorite_screen.dart';
 import 'package:eClassify/ui/screens/filter_screen.dart';
@@ -59,6 +60,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
+  static const chatlist = 'chatlist';
+  static const homeItemsScreen = 'homeItemsScreen';
   static const splash = 'splash';
   static const welcome = 'welcome';
   static const guide = 'guide';
@@ -71,6 +74,8 @@ class Routes {
   static const completeProfile = 'complete_profile';
   static const main = 'main';
   static const home = 'Home';
+  static const home_guide = 'home_guide';
+  static const home_news = 'home_news';
   static const addItem = 'addItem';
   static const waitingScreen = 'waitingScreen';
   static const categories = 'Categories';
@@ -184,6 +189,10 @@ class Routes {
     }
 
     switch (routeSettings.name) {
+      case homeItemsScreen :
+        return MaterialPageRoute(builder: ((context) => const ItemsScreen()));
+      case chatlist :
+        return MaterialPageRoute(builder: ((context) => const ChatListScreen()));
       case guide :
         return MaterialPageRoute(builder: ((context) => const Mining_minestry()));
       case welcome :

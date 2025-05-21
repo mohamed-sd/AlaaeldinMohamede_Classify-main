@@ -10,7 +10,7 @@ import 'package:eClassify/data/helper/designs.dart';
 import 'package:eClassify/data/model/category_model.dart';
 import 'package:eClassify/data/model/item/item_model.dart';
 import 'package:eClassify/data/model/item_filter_model.dart';
-import 'package:eClassify/ui/screens/home/home_screen.dart';
+import 'package:eClassify/ui/screens/navigations/home_screen.dart';
 import 'package:eClassify/ui/screens/home/widgets/item_horizontal_card.dart';
 
 import 'package:eClassify/ui/screens/widgets/errors/no_data_found.dart';

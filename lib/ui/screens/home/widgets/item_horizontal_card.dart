@@ -115,201 +115,408 @@ class ItemHorizontalCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.5),
-      child: Column(
-          children:[ Container(
-            height: addBottom == null ? 124 : (124 + (additionalHeight ?? 0)),
+        padding: EdgeInsets.all(5),
+        child: Material(
+          color: Colors.transparent,
+          elevation: 5,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 0 , vertical: 5),
+            width: double.infinity,
             decoration: BoxDecoration(
-                border: Border.all(color: context.color.borderColor),
-                color: Colors.white,
-                borderRadius: BorderRadius.only(topRight: Radius.circular(18) ,
-                  topLeft: Radius.circular(18),),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.grey,
-                      blurRadius: 5,
-                      spreadRadius: 1,
-                      offset: Offset(0, 2),
-                      blurStyle: BlurStyle.normal
-                  )
-                ]
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
             ),
-            child: Stack(
-              fit: StackFit.expand,
-              children: [
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Expanded(
-                      child: Row(
-                        children: [
-                          Column(
-                            children: [
-                              Stack(
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.only( topRight:  Radius.circular(15) ,
-                                    ),
-                                    child: UiUtils.getImage(
-                                      item.image ?? "",
-                                      height: addBottom == null
-                                          ? 122
-                                          : (122 +
-                                          (additionalHeight ??
-                                              0)) /*statusButton != null ? 90 : 120*/,
-                                      width: 100 + (additionalImageWidth ?? 0),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  // CustomText(item.promoted.toString()),
-                                  if (item.isFeature ?? false)
-                                    const PositionedDirectional(
-                                        start: 5,
-                                        top: 5,
-                                        child: PromotedCard(
-                                            type: PromoteCardType.icon)),
-                                ],
-                              ),
-                              if (statusButton != null)
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 3.0, horizontal: 3.0),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        color: statusButton!.color,
-                                        borderRadius: BorderRadius.circular(4)),
-                                    width: 80,
-                                    height: 120 - 90 - 8,
-                                    child: Center(
-                                        child: CustomText(statusButton!.lable,
-                                            fontSize: context.font.small,
-                                            fontWeight: FontWeight.bold,
-                                            color: statusButton?.textColor ??
-                                                Colors.black)),
-                                  ),
-                                )
-                            ],
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Row(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Stack(children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: UiUtils.getImage(
+                              item.image ?? "",
+                              width: MediaQuery.sizeOf(context).width * 0.35,
+                              height: 155,
+                              fit: BoxFit.fill,
+                            ),
                           ),
+                          Align(
+                            alignment: AlignmentDirectional(-0.36, -0.61),
+                            child: Padding(
+                                padding: EdgeInsets.all(5),
+                                child: favButton(context)),
+                          ),
+                        ]),
+                        Expanded(
+                          child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+
+                                Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Align(
+                                        alignment: AlignmentDirectional(-1, 0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  3, 0, 3, 6),
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              color: context.color.mainGold,
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(10, 0, 10, 0),
+                                              child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  children: [
+                                                    Icon(
+                                                      Icons.location_on,
+                                                      color: Colors.black,
+                                                      size: 20,
+                                                    ),
+                                                    Text(
+                                                      item.country.toString(),
+                                                      style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontSize: 12,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
+                                                    ),
+                                                  ]),
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    ]),
+
+                                // The Name
+                                Container(
+                                  margin: EdgeInsets.only(right: 5),
+                                  padding: EdgeInsets.symmetric(vertical: 3 , horizontal: 5),
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadiusDirectional.circular(15),
+                                      border: Border.all(
+                                          color: Colors.grey,
+                                          width: 1
+                                      )
+                                  ),
+                                  child: Text(item.name.toString(), style: TextStyle(
+                                      fontWeight: FontWeight.w800
+                                  ),),
+                                ),
+                                SizedBox(height: 6,),
+                                Container(
+                                  margin: EdgeInsets.only(right: 5),
+                                  padding: EdgeInsets.symmetric(vertical: 3 , horizontal: 5),
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadiusDirectional.circular(15),
+                                      border: Border.all(
+                                          color: Colors.grey,
+                                          width: 1
+                                      )
+                                  ),
+                                  child: Text(item.price.toString(), style: TextStyle(
+                                      fontWeight: FontWeight.w900,
+                                      fontSize: 16,
+                                      fontFamily: 'Manrope'
+                                  ),),
+                                ),
+                                SizedBox(height: 6,),
+                                Container(
+                                  margin: EdgeInsets.only(right: 5),
+                                  padding: EdgeInsets.symmetric(vertical: 3 , horizontal: 5),
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadiusDirectional.circular(15),
+                                      border: Border.all(
+                                          color: Colors.grey,
+                                          width: 1
+                                      )
+                                  ),
+                                  child: Text(item.description.toString(), style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 12
+                                  ),maxLines: 1,),
+                                ),
+                                SizedBox(height: 6,),
+                                Container(
+                                  margin: EdgeInsets.only(right: 5),
+                                  padding: EdgeInsets.symmetric(vertical: 3 , horizontal: 5),
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadiusDirectional.circular(15),
+                                      border: Border.all(
+                                          color: Colors.grey,
+                                          width: 1
+                                      )
+                                  ),
+                                  child: Text(item.address.toString(), style: TextStyle(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 12,
+                                      fontFamily: 'Manrope'
+                                  ),
+                                  maxLines: 1,),
+                                ),
+                              ]),
+                        ),
+                      ]),
+
+                  Container(
+                    margin: EdgeInsets.only(top: 5),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: context.color.mainGold,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.only(
-                                top: 0,
-                                start: 12,
-                                bottom: 5,
-                                end: 12,
+                              padding: EdgeInsets.all(5),
+                              child: Text(
+                                'تفاصــــــــــــيل اكــــــــــــــثر ',
+                                textAlign: TextAlign.center,
+                                style:
+                                TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 12,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w600,
+                                )
+                                ),
                               ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                          child: Container(
-                                            width: double.infinity,
-                                            padding: EdgeInsets.symmetric(horizontal: 5 , vertical: 5),
-                                            decoration: BoxDecoration(
-                                                border: Border.all(color: Colors.grey ,
-                                                    width: 1),
-                                                borderRadius: BorderRadius.circular(18)
-                                            ),
-                                            child: CustomText(
-                                              item.name!.firstUpperCase(),
-                                              fontSize: context.font.large,
-                                              color: context.color.mainBrown,
-                                              fontWeight: FontWeight.w800,
-                                            ),
-                                          )),
-                                      if (showLikeButton ?? true) favButton(context)
-                                    ],
-                                  ),
-                                  Container(
-                                    width: double.infinity,
-                                    padding: EdgeInsets.symmetric(horizontal: 5 , vertical: 5),
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.grey ,
-                                            width: 1),
-                                        borderRadius: BorderRadius.circular(18)
-                                    ),
-                                    child: CustomText(
-                                      fontWeight: FontWeight.w800,
-                                      (item.price ?? 0.0).currencyFormat,
-                                      fontSize: context.font.normal,
-                                      color: context.color.textDefaultColor,
-                                      maxLines: 2,
-                                    ),
-                                  ),
-                                  //SizedBox(height: 5),
-                                  if (item.address != "")
-                                    Container(
-                                      width: double.infinity,
-                                      padding: EdgeInsets.symmetric(horizontal: 5 , vertical: 5),
-                                      decoration: BoxDecoration(
-                                          color: context.color.mainGold,
-                                          borderRadius: BorderRadius.circular(18)
-                                      ),
-                                      child: Row(
-                                        children: [
-                                          Icon(
-                                            Icons.location_on_outlined,
-                                            size: 15,
-                                            color: context.color.textDefaultColor
-                                                .withValues(alpha: 0.5),
-                                          ),
-                                          Expanded(
-                                              child: CustomText(
-                                                item.address?.trim() ?? "",
-                                                fontSize: context.font.smaller,
-                                                color: Colors.black
-                                                    .withValues(alpha: 0.5),
-                                                maxLines: 1,
-                                                fontWeight: FontWeight.bold,
-                                              ))
-                                        ],
-                                      ),
-                                    )
-                                ],
-                              ),
-                            ),
                           ),
                         ],
                       ),
                     ),
-                    if (useRow == false || useRow == null) ...addBottom ?? [],
-                    if (useRow == true) ...{Row(children: addBottom ?? [])}
-                    // ...addBottom ?? []
-                  ],
-                ),
-              ],
+                  )
+
+                ],
+              ),
             ),
           ),
-            Container(
-              padding: EdgeInsets.all(5),
-              margin: EdgeInsets.only(bottom:5),
-              width: double.infinity,
-              height: 30,
-              decoration: BoxDecoration(
-                  color: context.color.mainGold,
-                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(18) ,
-                      bottomLeft: Radius.circular(18)),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey,
-                        blurRadius: 5,
-                        spreadRadius: 1,
-                        offset: Offset(0, 2),
-                        blurStyle: BlurStyle.normal
-                    )
-                  ]
-              ),
-              child: Center(child: Text("تفاصــــيل اكــــثر"  , style: TextStyle(color: Colors.black , fontWeight: FontWeight.w800),),),
-            )
-          ]
-      ),
+        )
     );
-  }
 
+    //   Padding(
+    //   padding: const EdgeInsets.symmetric(vertical: 4.5),
+    //   child: Column(
+    //       children:[ Container(
+    //         height: addBottom == null ? 124 : (124 + (additionalHeight ?? 0)),
+    //         decoration: BoxDecoration(
+    //             border: Border.all(color: context.color.borderColor),
+    //             color: Colors.red,
+    //             borderRadius: BorderRadius.only(topRight: Radius.circular(18) ,
+    //               topLeft: Radius.circular(18),),
+    //             boxShadow: [
+    //               BoxShadow(
+    //                   color: Colors.grey,
+    //                   blurRadius: 5,
+    //                   spreadRadius: 1,
+    //                   offset: Offset(0, 2),
+    //                   blurStyle: BlurStyle.normal
+    //               )
+    //             ]
+    //         ),
+    //         child: Stack(
+    //           fit: StackFit.expand,
+    //           children: [
+    //             Column(
+    //               mainAxisSize: MainAxisSize.min,
+    //               children: [
+    //                 Expanded(
+    //                   child: Row(
+    //                     children: [
+    //                       Column(
+    //                         children: [
+    //                           Stack(
+    //                             children: [
+    //                               ClipRRect(
+    //                                 borderRadius: BorderRadius.only( topRight:  Radius.circular(15) ,
+    //                                 ),
+    //                                 child: UiUtils.getImage(
+    //                                   item.image ?? "",
+    //                                   height: addBottom == null
+    //                                       ? 122
+    //                                       : (122 +
+    //                                       (additionalHeight ??
+    //                                           0)) /*statusButton != null ? 90 : 120*/,
+    //                                   width: 100 + (additionalImageWidth ?? 0),
+    //                                   fit: BoxFit.cover,
+    //                                 ),
+    //                               ),
+    //                               // CustomText(item.promoted.toString()),
+    //                               if (item.isFeature ?? false)
+    //                                 const PositionedDirectional(
+    //                                     start: 5,
+    //                                     top: 5,
+    //                                     child: PromotedCard(
+    //                                         type: PromoteCardType.icon)),
+    //                             ],
+    //                           ),
+    //                           if (statusButton != null)
+    //                             Padding(
+    //                               padding: const EdgeInsets.symmetric(
+    //                                   vertical: 3.0, horizontal: 3.0),
+    //                               child: Container(
+    //                                 decoration: BoxDecoration(
+    //                                     color: statusButton!.color,
+    //                                     borderRadius: BorderRadius.circular(4)),
+    //                                 width: 80,
+    //                                 height: 120 - 90 - 8,
+    //                                 child: Center(
+    //                                     child: CustomText(statusButton!.lable,
+    //                                         fontSize: context.font.small,
+    //                                         fontWeight: FontWeight.bold,
+    //                                         color: statusButton?.textColor ??
+    //                                             Colors.black)),
+    //                               ),
+    //                             )
+    //                         ],
+    //                       ),
+    //                       Expanded(
+    //                         child: Padding(
+    //                           padding: EdgeInsetsDirectional.only(
+    //                             top: 0,
+    //                             start: 12,
+    //                             bottom: 5,
+    //                             end: 12,
+    //                           ),
+    //                           child: Column(
+    //                             crossAxisAlignment: CrossAxisAlignment.start,
+    //                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    //                             children: [
+    //                               Row(
+    //                                 children: [
+    //                                   Expanded(
+    //                                       child: Container(
+    //                                         width: double.infinity,
+    //                                         padding: EdgeInsets.symmetric(horizontal: 5 , vertical: 5),
+    //                                         decoration: BoxDecoration(
+    //                                             border: Border.all(color: Colors.grey ,
+    //                                                 width: 1),
+    //                                             borderRadius: BorderRadius.circular(18)
+    //                                         ),
+    //                                         child: CustomText(
+    //                                           item.name!.firstUpperCase(),
+    //                                           fontSize: context.font.large,
+    //                                           color: context.color.mainBrown,
+    //                                           fontWeight: FontWeight.w800,
+    //                                         ),
+    //                                       )),
+    //                                   if (showLikeButton ?? true) favButton(context)
+    //                                 ],
+    //                               ),
+    //                               Container(
+    //                                 width: double.infinity,
+    //                                 padding: EdgeInsets.symmetric(horizontal: 5 , vertical: 5),
+    //                                 decoration: BoxDecoration(
+    //                                     border: Border.all(color: Colors.grey ,
+    //                                         width: 1),
+    //                                     borderRadius: BorderRadius.circular(18)
+    //                                 ),
+    //                                 child: CustomText(
+    //                                   fontWeight: FontWeight.w800,
+    //                                   (item.price ?? 0.0).currencyFormat,
+    //                                   fontSize: context.font.normal,
+    //                                   color: context.color.textDefaultColor,
+    //                                   maxLines: 2,
+    //                                 ),
+    //                               ),
+    //                               //SizedBox(height: 5),
+    //                               if (item.address != "")
+    //                                 Container(
+    //                                   width: double.infinity,
+    //                                   padding: EdgeInsets.symmetric(horizontal: 5 , vertical: 5),
+    //                                   decoration: BoxDecoration(
+    //                                       color: context.color.mainGold,
+    //                                       borderRadius: BorderRadius.circular(18)
+    //                                   ),
+    //                                   child: Row(
+    //                                     children: [
+    //                                       Icon(
+    //                                         Icons.location_on_outlined,
+    //                                         size: 15,
+    //                                         color: context.color.textDefaultColor
+    //                                             .withValues(alpha: 0.5),
+    //                                       ),
+    //                                       Expanded(
+    //                                           child: CustomText(
+    //                                             item.address?.trim() ?? "",
+    //                                             fontSize: context.font.smaller,
+    //                                             color: Colors.black
+    //                                                 .withValues(alpha: 0.5),
+    //                                             maxLines: 1,
+    //                                             fontWeight: FontWeight.bold,
+    //                                           ))
+    //                                     ],
+    //                                   ),
+    //                                 )
+    //                             ],
+    //                           ),
+    //                         ),
+    //                       ),
+    //                     ],
+    //                   ),
+    //                 ),
+    //                 if (useRow == false || useRow == null) ...addBottom ?? [],
+    //                 if (useRow == true) ...{Row(children: addBottom ?? [])}
+    //                 // ...addBottom ?? []
+    //               ],
+    //             ),
+    //           ],
+    //         ),
+    //       ),
+    //         Container(
+    //           padding: EdgeInsets.all(5),
+    //           margin: EdgeInsets.only(bottom:5),
+    //           width: double.infinity,
+    //           height: 30,
+    //           decoration: BoxDecoration(
+    //               color: context.color.mainGold,
+    //               borderRadius: BorderRadius.only(bottomRight: Radius.circular(18) ,
+    //                   bottomLeft: Radius.circular(18)),
+    //               boxShadow: [
+    //                 BoxShadow(
+    //                     color: Colors.grey,
+    //                     blurRadius: 5,
+    //                     spreadRadius: 1,
+    //                     offset: Offset(0, 2),
+    //                     blurStyle: BlurStyle.normal
+    //                 )
+    //               ]
+    //           ),
+    //           child: Center(child: Text("تفاصــــيل اكــــثر"  , style: TextStyle(color: Colors.black , fontWeight: FontWeight.w800),),),
+    //         )
+    //       ]
+    //   ),
+    // );
+  }
 }
 
 class StatusButton {

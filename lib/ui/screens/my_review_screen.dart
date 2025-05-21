@@ -5,7 +5,7 @@ import 'package:eClassify/data/cubits/fetch_my_reviews_cubit.dart';
 import 'package:eClassify/data/cubits/my_item_review_report_cubit.dart';
 import 'package:eClassify/data/helper/widgets.dart';
 import 'package:eClassify/data/model/my_review_model.dart';
-import 'package:eClassify/ui/screens/home/home_screen.dart';
+import 'package:eClassify/ui/screens/navigations/home_screen.dart';
 
 import 'package:eClassify/ui/screens/widgets/errors/no_data_found.dart';
 import 'package:eClassify/ui/screens/widgets/shimmerLoadingContainer.dart';

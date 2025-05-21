@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:eClassify/app/routes.dart';
 import 'package:eClassify/data/cubits/home/fetch_home_all_items_cubit.dart';
 import 'package:eClassify/data/cubits/home/fetch_home_screen_cubit.dart';
-import 'package:eClassify/ui/screens/home/home_screen.dart';
+import 'package:eClassify/ui/screens/navigations/home_screen.dart';
 import 'package:eClassify/ui/screens/item/add_item_screen/confirm_location_screen.dart';
 
 import 'package:eClassify/ui/theme/theme.dart';

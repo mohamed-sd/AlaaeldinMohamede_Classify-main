@@ -8,7 +8,7 @@ import 'package:eClassify/data/cubits/home/fetch_home_screen_cubit.dart';
 import 'package:eClassify/data/cubits/location/fetch_countries_cubit.dart';
 import 'package:eClassify/data/cubits/system/app_theme_cubit.dart';
 import 'package:eClassify/data/model/location/countries_model.dart';
-import 'package:eClassify/ui/screens/home/home_screen.dart';
+import 'package:eClassify/ui/screens/navigations/home_screen.dart';
 
 import 'package:eClassify/ui/screens/widgets/errors/no_data_found.dart';
 import 'package:eClassify/ui/screens/widgets/errors/no_internet.dart';

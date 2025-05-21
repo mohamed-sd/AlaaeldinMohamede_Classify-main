@@ -6,7 +6,7 @@ import 'package:eClassify/data/cubits/system/app_theme_cubit.dart';
 import 'package:eClassify/data/model/home/home_screen_section.dart';
 import 'package:eClassify/data/model/item/item_model.dart';
 import 'package:eClassify/data/repositories/favourites_repository.dart';
-import 'package:eClassify/ui/screens/home/home_screen.dart';
+import 'package:eClassify/ui/screens/navigations/home_screen.dart';
 import 'package:eClassify/ui/screens/home/widgets/grid_list_adapter.dart';
 import 'package:eClassify/ui/screens/widgets/promoted_widget.dart';
 import 'package:eClassify/ui/theme/theme.dart';

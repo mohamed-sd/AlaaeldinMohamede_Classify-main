@@ -14,6 +14,7 @@ import 'package:eClassify/data/cubits/system/app_theme_cubit.dart';
 import 'package:eClassify/data/cubits/system/fetch_system_settings_cubit.dart';
 import 'package:eClassify/data/cubits/system/user_details.dart';
 import 'package:eClassify/data/model/system_settings_model.dart';
+import 'package:eClassify/ui/screens/chat/chat_list_screen.dart';
 import 'package:eClassify/ui/screens/main_activity.dart';
 import 'package:eClassify/ui/screens/widgets/blurred_dialog_box.dart';
 import 'package:eClassify/ui/screens/widgets/blurred_dialoge_box.dart';
@@ -48,7 +49,6 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen>
     with AutomaticKeepAliveClientMixin<ProfileScreen> {
-
   ValueNotifier isDarkTheme = ValueNotifier(false);
   final InAppReview _inAppReview = InAppReview.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -107,8 +107,7 @@ class _ProfileScreenState extends State<ProfileScreen>
             height: 24,
             width: 24,
             colorFilter: color == null
-                ? ColorFilter.mode(
-                context.color.mainGold, BlendMode.srcIn)
+                ? ColorFilter.mode(context.color.mainGold, BlendMode.srcIn)
                 : ColorFilter.mode(color, BlendMode.srcIn),
           )),
     );
@@ -174,31 +173,31 @@ class _ProfileScreenState extends State<ProfileScreen>
                           height: 85,
                           clipBehavior: Clip.antiAlias,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              // shape: BoxShape.rectangle,
-                              ),
+                            borderRadius: BorderRadius.circular(15),
+                            // shape: BoxShape.rectangle,
+                          ),
                           child: CircleAvatar(
                               backgroundColor: context.color.backgroundColor,
                               radius: 50,
                               child: HiveUtils.isUserAuthenticated()
                                   ? (HiveUtils.getUserDetails().profile ?? "")
-                                  .isEmpty
-                                  ? UiUtils.getSvg(
-                                AppIcons.defaultPersonLogo,
-                                color: context.color.mainGold,
-                                fit: BoxFit.none,
-                              )
-                                  : UiUtils.getImage(
-                                height: 150,
-                                width: 150,
-                                HiveUtils.getUserDetails().profile!,
-                                fit: BoxFit.cover,
-                              )
+                                          .isEmpty
+                                      ? UiUtils.getSvg(
+                                          AppIcons.defaultPersonLogo,
+                                          color: context.color.mainGold,
+                                          fit: BoxFit.none,
+                                        )
+                                      : UiUtils.getImage(
+                                          height: 150,
+                                          width: 150,
+                                          HiveUtils.getUserDetails().profile!,
+                                          fit: BoxFit.cover,
+                                        )
                                   : UiUtils.getSvg(
-                                AppIcons.defaultPersonLogo,
-                                color: context.color.mainGold,
-                                fit: BoxFit.none,
-                              ))),
+                                      AppIcons.defaultPersonLogo,
+                                      color: context.color.mainGold,
+                                      fit: BoxFit.none,
+                                    ))),
                       if (HiveUtils.isUserAuthenticated())
                         Positioned(
                           right: 0,
@@ -214,8 +213,8 @@ class _ProfileScreenState extends State<ProfileScreen>
                               decoration: BoxDecoration(
                                   color: context.color.mainGold,
                                   shape: BoxShape.circle,
-                                  border: Border.all(
-                                      color: Colors.transparent)),
+                                  border:
+                                      Border.all(color: Colors.transparent)),
                               //alignment: Alignment.center,
                               child: UiUtils.getSvg(AppIcons.editProfileIcon,
                                   width: 18, height: 18, fit: BoxFit.fill),
@@ -233,39 +232,39 @@ class _ProfileScreenState extends State<ProfileScreen>
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         (state is FetchVerificationRequestInProgress ||
-                            state is FetchVerificationRequestInitial ||
-                            state is FetchVerificationRequestFail)
+                                state is FetchVerificationRequestInitial ||
+                                state is FetchVerificationRequestFail)
                             ? SizedBox()
                             : (HiveUtils.isUserAuthenticated() &&
-                            ((HiveUtils.getUserDetails().isVerified ==
-                                1) ||
-                                (state as FetchVerificationRequestSuccess)
-                                    .data
-                                    .status ==
-                                    "approved"))
-                            ? Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: context.color.forthColor,
-                          ),
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 5, vertical: 1),
-                          child: Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              UiUtils.getSvg(AppIcons.verifiedIcon,
-                                  width: 14, height: 14),
-                              SizedBox(width: 4),
-                              CustomText(
-                                  "verifiedLbl".translate(context),
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500),
-                            ],
-                          ),
-                        )
-                            : SizedBox(),
+                                    ((HiveUtils.getUserDetails().isVerified ==
+                                            1) ||
+                                        (state as FetchVerificationRequestSuccess)
+                                                .data
+                                                .status ==
+                                            "approved"))
+                                ? Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      color: context.color.forthColor,
+                                    ),
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 5, vertical: 1),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        UiUtils.getSvg(AppIcons.verifiedIcon,
+                                            width: 14, height: 14),
+                                        SizedBox(width: 4),
+                                        CustomText(
+                                            "verifiedLbl".translate(context),
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500),
+                                      ],
+                                    ),
+                                  )
+                                : SizedBox(),
                         // If none of the conditions are met, return an empty widget
 
                         SizedBox(
@@ -331,269 +330,268 @@ class _ProfileScreenState extends State<ProfileScreen>
                         ],
 
                         (state is FetchVerificationRequestInProgress ||
-                            state is FetchVerificationRequestInitial ||
-                            state is FetchVerificationRequestFail)
+                                state is FetchVerificationRequestInitial ||
+                                state is FetchVerificationRequestFail)
                             ? SizedBox()
                             : (HiveUtils.isUserAuthenticated() &&
-                            (((state as FetchVerificationRequestSuccess)
-                                .data
-                                .status) ==
-                                "rejected"))
-                            ? Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SizedBox(
-                                height: 7,
-                              ),
-                              SizedBox(
-                                width: context.screenWidth * 0.63,
-                                child: LayoutBuilder(
-                                  builder: (context, constraints) {
-                                    // Measure the rendered text
-                                    final span = TextSpan(
-                                      text:
-                                      "${state.data.rejectionReason!}\t",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: context.font.small,
-                                        color: Colors.red,
-                                      ),
-                                    );
-                                    final tp = TextPainter(
-                                      text: span,
-                                      maxLines: 2,
-                                      // Maximum number of lines before overflow
-                                      textDirection:
-                                      TextDirection.ltr,
-                                    );
-                                    tp.layout(
-                                        maxWidth:
-                                        constraints.maxWidth);
-
-                                    final isOverflowing =
-                                        tp.didExceedMaxLines;
-
-                                    return Row(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.end,
-                                      children: [
-                                        Expanded(
-                                          child: CustomText(
-                                            "${state.data.rejectionReason!}\t",
-                                            maxLines:
-                                            isExpanded ? null : 2,
-                                            softWrap: true,
-                                            overflow: isExpanded
-                                                ? TextOverflow.visible
-                                                : TextOverflow
-                                                .ellipsis,
-                                            color: Colors.red,
-                                            fontWeight:
-                                            FontWeight.w400,
-                                            fontSize:
-                                            context.font.small,
-                                          ),
+                                    (((state as FetchVerificationRequestSuccess)
+                                            .data
+                                            .status) ==
+                                        "rejected"))
+                                ? Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                        SizedBox(
+                                          height: 7,
                                         ),
-                                        if (isOverflowing) // Conditionally show the button
-                                          Padding(
-                                            padding:
-                                            EdgeInsetsDirectional
-                                                .only(start: 3),
-                                            child: GestureDetector(
+                                        SizedBox(
+                                          width: context.screenWidth * 0.63,
+                                          child: LayoutBuilder(
+                                            builder: (context, constraints) {
+                                              // Measure the rendered text
+                                              final span = TextSpan(
+                                                text:
+                                                    "${state.data.rejectionReason!}\t",
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: context.font.small,
+                                                  color: Colors.red,
+                                                ),
+                                              );
+                                              final tp = TextPainter(
+                                                text: span,
+                                                maxLines: 2,
+                                                // Maximum number of lines before overflow
+                                                textDirection:
+                                                    TextDirection.ltr,
+                                              );
+                                              tp.layout(
+                                                  maxWidth:
+                                                      constraints.maxWidth);
+
+                                              final isOverflowing =
+                                                  tp.didExceedMaxLines;
+
+                                              return Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
+                                                children: [
+                                                  Expanded(
+                                                    child: CustomText(
+                                                      "${state.data.rejectionReason!}\t",
+                                                      maxLines:
+                                                          isExpanded ? null : 2,
+                                                      softWrap: true,
+                                                      overflow: isExpanded
+                                                          ? TextOverflow.visible
+                                                          : TextOverflow
+                                                              .ellipsis,
+                                                      color: Colors.red,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      fontSize:
+                                                          context.font.small,
+                                                    ),
+                                                  ),
+                                                  if (isOverflowing) // Conditionally show the button
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .only(start: 3),
+                                                      child: GestureDetector(
+                                                        onTap: () {
+                                                          setState(() {
+                                                            isExpanded =
+                                                                !isExpanded; // Toggle the expanded state
+                                                          });
+                                                        },
+                                                        child: CustomText(
+                                                          isExpanded
+                                                              ? "readLessLbl"
+                                                                  .translate(
+                                                                      context)
+                                                              : "readMoreLbl"
+                                                                  .translate(
+                                                                      context),
+                                                          color: Colors.white,
+                                                          fontWeight:
+                                                              FontWeight.w400,
+                                                          fontSize: context
+                                                              .font.small,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                ],
+                                              );
+                                            },
+                                          ),
+                                        )
+                                      ])
+                                : SizedBox.shrink(),
+
+                        (state is FetchVerificationRequestInProgress ||
+                                state is FetchVerificationRequestInitial ||
+                                state is FetchVerificationRequestFail)
+                            ? SizedBox()
+                            : (HiveUtils.isUserAuthenticated() &&
+                                    (((state as FetchVerificationRequestSuccess)
+                                            .data
+                                            .status) !=
+                                        "approved"))
+                                ? Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(
+                                        height: 12,
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          SizedBox(
+                                              child: Container(
+                                                  padding: EdgeInsets.symmetric(
+                                                      horizontal: 12,
+                                                      vertical: 4),
+                                                  decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5),
+                                                    color:
+                                                        ((state).data.status ==
+                                                                'rejected')
+                                                            ? Colors.red
+                                                            : context
+                                                                .color.mainGold,
+                                                  ),
+                                                  child: CustomText(
+                                                    sellerStatus(
+                                                        (state).data.status!),
+                                                    color: Colors.white,
+                                                    fontSize:
+                                                        context.font.small,
+                                                    fontWeight: FontWeight.w500,
+                                                  ))),
+                                          if ((state).data.status ==
+                                              'rejected') ...[
+                                            SizedBox(
+                                              width: 12,
+                                            ),
+                                            InkWell(
+                                              child: SizedBox(
+                                                  child: Container(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 12,
+                                                    vertical: 4),
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(5),
+                                                  color: context.color.mainGold,
+                                                ),
+                                                child: CustomText(
+                                                  "resubmit".translate(context),
+                                                  color: Colors.white,
+                                                  fontSize: context.font.small,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              )),
                                               onTap: () {
-                                                setState(() {
-                                                  isExpanded =
-                                                  !isExpanded; // Toggle the expanded state
+                                                Navigator.pushNamed(
+                                                    context,
+                                                    Routes
+                                                        .sellerIntroVerificationScreen,
+                                                    arguments: {
+                                                      "isResubmitted": true
+                                                    }).then((value) {
+                                                  if (value == 'refresh') {
+                                                    context
+                                                        .read<
+                                                            FetchVerificationRequestsCubit>()
+                                                        .fetchVerificationRequests();
+                                                  }
                                                 });
                                               },
-                                              child: CustomText(
-                                                isExpanded
-                                                    ? "readLessLbl"
-                                                    .translate(
-                                                    context)
-                                                    : "readMoreLbl"
-                                                    .translate(
-                                                    context),
-                                                color: Colors.white,
-                                                fontWeight:
-                                                FontWeight.w400,
-                                                fontSize: context
-                                                    .font.small,
-                                              ),
-                                            ),
-                                          ),
-                                      ],
-                                    );
-                                  },
-                                ),
-                              )
-                            ])
-                            : SizedBox.shrink(),
-
-                        (state is FetchVerificationRequestInProgress ||
-                            state is FetchVerificationRequestInitial ||
-                            state is FetchVerificationRequestFail)
-                            ? SizedBox()
-                            : (HiveUtils.isUserAuthenticated() &&
-                            (((state as FetchVerificationRequestSuccess)
-                                .data
-                                .status) !=
-                                "approved"))
-                            ? Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            SizedBox(
-                              height: 12,
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment:
-                              MainAxisAlignment.spaceEvenly,
-                              children: [
-                                SizedBox(
-                                    child: Container(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 12,
-                                            vertical: 4),
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                          BorderRadius.circular(
-                                              5),
-                                          color:
-                                          ((state).data.status ==
-                                              'rejected')
-                                              ? Colors.red
-                                              : context.color
-                                              .mainGold,
-                                        ),
-                                        child: CustomText(
-                                          sellerStatus(
-                                              (state).data.status!),
-                                          color: Colors.white,
-                                          fontSize:
-                                          context.font.small,
-                                          fontWeight: FontWeight.w500,
-                                        ))),
-                                if ((state).data.status ==
-                                    'rejected') ...[
-                                  SizedBox(
-                                    width: 12,
-                                  ),
-                                  InkWell(
-                                    child: SizedBox(
-                                        child: Container(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 12,
-                                              vertical: 4),
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                            BorderRadius.circular(5),
-                                            color: context
-                                                .color.mainGold,
-                                          ),
-                                          child: CustomText(
-                                            "resubmit".translate(context),
-                                            color: Colors.white,
-                                            fontSize: context.font.small,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        )),
-                                    onTap: () {
-                                      Navigator.pushNamed(
-                                          context,
-                                          Routes
-                                              .sellerIntroVerificationScreen,
-                                          arguments: {
-                                            "isResubmitted": true
-                                          }).then((value) {
-                                        if (value == 'refresh') {
-                                          context
-                                              .read<
-                                              FetchVerificationRequestsCubit>()
-                                              .fetchVerificationRequests();
-                                        }
-                                      });
-                                    },
-                                  )
-                                ],
-                              ],
-                            ),
-                          ],
-                        )
-                            : SizedBox.shrink(),
-
-                        (state is FetchVerificationRequestInProgress ||
-                            state is FetchVerificationRequestInitial ||
-                            state is FetchVerificationRequestSuccess)
-                            ? SizedBox()
-                            : (HiveUtils.isUserAuthenticated() &&
-                            ((HiveUtils.getUserDetails().isVerified ==
-                                0) ||
-                                (state is FetchVerificationRequestFail))
-                            ? Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            SizedBox(
-                              height: 7,
-                            ),
-                            InkWell(
-                              child: SizedBox(
-                                  child: Container(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 12,
-                                          vertical: 4),
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                        BorderRadius.circular(5),
-                                        color: context
-                                            .color.mainBrown,
+                                            )
+                                          ],
+                                        ],
                                       ),
-                                      child: CustomText(
-                                        "getVerificationBadge"
-                                            .translate(context),
-                                        color: context
-                                            .color.secondaryColor,
-                                        fontSize: context.font.small,
-                                        fontWeight: FontWeight.w500,
-                                      ))),
-                              onTap: () {
-                                if ((HiveUtils.getUserDetails()
-                                    .email ==
-                                    null ||
-                                    HiveUtils.getUserDetails()
-                                        .email!
-                                        .isEmpty) ||
-                                    (HiveUtils.getUserDetails()
-                                        .mobile ==
-                                        null ||
-                                        HiveUtils.getUserDetails()
-                                            .mobile!
-                                            .isEmpty)) {
-                                  HelperUtils.showSnackBarMessage(
-                                      context,
-                                      "pleaseFirstFillYourDetailsInProfile"
-                                          .translate(context));
-                                } else {
-                                  Navigator.pushNamed(
-                                      context,
-                                      Routes
-                                          .sellerIntroVerificationScreen,
-                                      arguments: {
-                                        "isResubmitted": false
-                                      }).then((value) {
-                                    if (value == 'refresh') {
-                                      context
-                                          .read<
-                                          FetchVerificationRequestsCubit>()
-                                          .fetchVerificationRequests();
-                                    }
-                                  });
-                                }
-                              },
-                            ),
-                          ],
-                        )
-                            : SizedBox.shrink()),
+                                    ],
+                                  )
+                                : SizedBox.shrink(),
+
+                        (state is FetchVerificationRequestInProgress ||
+                                state is FetchVerificationRequestInitial ||
+                                state is FetchVerificationRequestSuccess)
+                            ? SizedBox()
+                            : (HiveUtils.isUserAuthenticated() &&
+                                    ((HiveUtils.getUserDetails().isVerified ==
+                                            0) ||
+                                        (state is FetchVerificationRequestFail))
+                                ? Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(
+                                        height: 7,
+                                      ),
+                                      InkWell(
+                                        child: SizedBox(
+                                            child: Container(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 12,
+                                                    vertical: 4),
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(5),
+                                                  color:
+                                                      context.color.mainBrown,
+                                                ),
+                                                child: CustomText(
+                                                  "getVerificationBadge"
+                                                      .translate(context),
+                                                  color: context
+                                                      .color.secondaryColor,
+                                                  fontSize: context.font.small,
+                                                  fontWeight: FontWeight.w500,
+                                                ))),
+                                        onTap: () {
+                                          if ((HiveUtils.getUserDetails()
+                                                          .email ==
+                                                      null ||
+                                                  HiveUtils.getUserDetails()
+                                                      .email!
+                                                      .isEmpty) ||
+                                              (HiveUtils.getUserDetails()
+                                                          .mobile ==
+                                                      null ||
+                                                  HiveUtils.getUserDetails()
+                                                      .mobile!
+                                                      .isEmpty)) {
+                                            HelperUtils.showSnackBarMessage(
+                                                context,
+                                                "pleaseFirstFillYourDetailsInProfile"
+                                                    .translate(context));
+                                          } else {
+                                            Navigator.pushNamed(
+                                                context,
+                                                Routes
+                                                    .sellerIntroVerificationScreen,
+                                                arguments: {
+                                                  "isResubmitted": false
+                                                }).then((value) {
+                                              if (value == 'refresh') {
+                                                context
+                                                    .read<
+                                                        FetchVerificationRequestsCubit>()
+                                                    .fetchVerificationRequests();
+                                              }
+                                            });
+                                          }
+                                        },
+                                      ),
+                                    ],
+                                  )
+                                : SizedBox.shrink()),
                       ],
                     ),
                   ),
@@ -604,8 +602,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                       child: MaterialButton(
                         shape: RoundedRectangleBorder(
                           side: BorderSide(
-                            color: Colors.white
-                                .withValues(alpha: 0.3),
+                            color: Colors.white.withValues(alpha: 0.3),
                             width: 1.5,
                           ),
                           borderRadius: BorderRadius.circular(10),
@@ -614,7 +611,10 @@ class _ProfileScreenState extends State<ProfileScreen>
                           Navigator.of(context).pushNamedAndRemoveUntil(
                               Routes.login, (route) => false);
                         },
-                        child: CustomText("loginLbl".translate(context),color: Colors.white,),
+                        child: CustomText(
+                          "loginLbl".translate(context),
+                          color: Colors.white,
+                        ),
                       ),
                     )
                 ],
@@ -628,387 +628,409 @@ class _ProfileScreenState extends State<ProfileScreen>
   Widget build(BuildContext context) {
     super.build(context);
 
-    return
-      Scaffold(
-        body:
-        SafeArea(
-          child: Container(
-            color: context.color.mainColor,
-            child: ListView(
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          color: context.color.mainColor,
+          child: ListView(children: [
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/welcome/profile.jpg"),
+                  fit: BoxFit.fitWidth, // لجعل الصورة تغطي المساحة بالكامل
+                ),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                            "assets/welcome/profile.jpg"),
-                        fit: BoxFit
-                            .fitWidth, // لجعل الصورة تغطي المساحة بالكامل
-                      ),
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 80,
-                        ),
-                        profileHeader(),
-                        // الصورة والمعلومات
-                        // Padding(
-                        //   padding: const EdgeInsets.symmetric(horizontal: 20),
-                        //   child: Row(
-                        //     crossAxisAlignment: CrossAxisAlignment.end,
-                        //     children: [
-                        //
-                        //       Container(
-                        //         width: 90,
-                        //         height: 90,
-                        //         decoration: BoxDecoration(
-                        //           borderRadius: BorderRadius.circular(20),
-                        //           border: Border.all(width: 2 , color: context.color.mainBrown),
-                        //         ),
-                        //         child: ClipRRect(
-                        //           borderRadius: BorderRadius.circular(20),
-                        //           child: Image.asset(
-                        //             'assets/map.png',
-                        //             width: 103,
-                        //             height: 120,
-                        //             fit: BoxFit.cover,
-                        //           ),
-                        //         ),
-                        //       ),
-                        //       const SizedBox(width: 10),
-                        //       Padding(
-                        //         padding: const EdgeInsets.only(bottom: 5),
-                        //         child: Column(
-                        //           crossAxisAlignment: CrossAxisAlignment.start,
-                        //           children: [
-                        //
-                        //             Text(
-                        //               ' المستر ',
-                        //               style: const TextStyle(
-                        //                 fontFamily: 'Rubik',
-                        //                 fontSize: 18,
-                        //                 fontWeight: FontWeight.w800,
-                        //                 color: Colors.white,
-                        //               ),
-                        //             ),
-                        //             Text(
-                        //               'user@example.com',
-                        //               style: const TextStyle(
-                        //                 fontFamily: 'Rubik',
-                        //                 fontSize: 13,
-                        //                 fontWeight: FontWeight.w800,
-                        //                 color: Colors.white,
-                        //               ),
-                        //             ),
-                        //
-                        //           ],
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-                        SizedBox(height: 30,)
-                      ],
-                    ),
+                  SizedBox(
+                    height: 80,
                   ),
-
-                  SingleChildScrollView(
-                    controller: profileScreenController,
-                    physics: const BouncingScrollPhysics(),
-                    child: Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: Column(children: <Widget>[
-                        // profileHeader(),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            customTile(
-                              context,
-                              title: "myFeaturedAds".translate(context),
-                              svgImagePath: AppIcons.promoted,
-                              onTap: () async {
-                                APICallTrigger.trigger();
-                                UiUtils.checkUser(
-                                    onNotGuest: () {
-                                      Navigator.pushNamed(context, Routes.myAdvertisment,
-                                          arguments: {});
-                                    },
-                                    context: context);
-                              },
-                            ),
-                            customTile(
-                              context,
-                              title: "subscription".translate(context),
-                              svgImagePath: AppIcons.subscription,
-                              onTap: () async {
-                                //TODO: change it once @End
-
-                                UiUtils.checkUser(
-                                    onNotGuest: () {
-                                      Navigator.pushNamed(
-                                          context, Routes.subscriptionPackageListRoute);
-                                    },
-                                    context: context);
-                              },
-                            ),
-                            customTile(
-                              context,
-                              title: "transactionHistory".translate(context),
-                              svgImagePath: AppIcons.transaction,
-                              onTap: () {
-                                UiUtils.checkUser(
-                                    onNotGuest: () {
-                                      Navigator.pushNamed(
-                                          context, Routes.transactionHistory);
-                                    },
-                                    context: context);
-                              },
-                            ),
-                            customTile(
-                              context,
-                              title: "myReview".translate(context),
-                              svgImagePath: AppIcons.myReviewIcon,
-                              onTap: () {
-                                UiUtils.checkUser(
-                                    onNotGuest: () {
-                                      Navigator.pushNamed(
-                                          context, Routes.myReviewsScreen);
-                                    },
-                                    context: context);
-                              },
-                            ),
-                            customTile(
-                              context,
-                              title: "language".translate(context),
-                              svgImagePath: AppIcons.language,
-                              onTap: () {
-                                Navigator.pushNamed(
-                                    context, Routes.languageListScreenRoute);
-                              },
-                            ),
-                            // The Dark Mode Code ************************************
-                            // ValueListenableBuilder(
-                            //     valueListenable: isDarkTheme,
-                            //     builder: (context, v, c) {
-                            //       return customTile(
-                            //         context,
-                            //         title: "darkTheme".translate(context),
-                            //         svgImagePath: AppIcons.darkTheme,
-                            //         isSwitchBox: true,
-                            //         onTapSwitch: (value) {
-                            //           context.read<AppThemeCubit>().changeTheme(
-                            //               value == true ? AppTheme.dark : AppTheme.light);
-                            //           setState(() {
-                            //             isDarkTheme.value = value;
-                            //           });
-                            //         },
-                            //         switchValue: v,
-                            //         onTap: () {},
-                            //       );
-                            //     }),
-                            customTile(
-                              context,
-                              title: "notifications".translate(context),
-                              svgImagePath: AppIcons.notification,
-                              onTap: () {
-                                UiUtils.checkUser(
-                                    onNotGuest: () {
-                                      Navigator.pushNamed(
-                                          context, Routes.notificationPage);
-                                    },
-                                    context: context);
-                              },
-                            ),
-                            customTile(
-                              context,
-                              title: "blogs".translate(context),
-                              svgImagePath: AppIcons.articles,
-                              onTap: () {
-                                UiUtils.checkUser(
-                                    onNotGuest: () {
-                                      Navigator.pushNamed(
-                                        context,
-                                        Routes.blogsScreenRoute,
-                                      );
-                                    },
-                                    context: context);
-                              },
-                            ),
-                            customTile(
-                              context,
-                              title: "favorites".translate(context),
-                              svgImagePath: AppIcons.favorites,
-                              onTap: () {
-                                UiUtils.checkUser(
-                                    onNotGuest: () {
-                                      Navigator.pushNamed(
-                                          context, Routes.favoritesScreen);
-                                    },
-                                    context: context);
-                              },
-                            ),
-                            customTile(
-                              context,
-                              title: "faqsLbl".translate(context),
-                              svgImagePath: AppIcons.faqsIcon,
-                              onTap: () {
-                                UiUtils.checkUser(
-                                    onNotGuest: () {
-                                      Navigator.pushNamed(
-                                        context,
-                                        Routes.faqsScreen,
-                                      );
-                                    },
-                                    context: context);
-                              },
-                            ),
-                            customTile(
-                              context,
-                              title: "shareApp".translate(context),
-                              svgImagePath: AppIcons.shareApp,
-                              onTap: shareApp,
-                            ),
-                            customTile(
-                              context,
-                              title: "rateUs".translate(context),
-                              svgImagePath: AppIcons.rateUs,
-                              onTap: rateUs,
-                            ),
-                            customTile(
-                              context,
-                              title: "contactUs".translate(context),
-                              svgImagePath: AppIcons.contactUs,
-                              onTap: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  Routes.contactUs,
-                                );
-                                // Navigator.pushNamed(context, Routes.ab);
-                              },
-                            ),
-                            customTile(
-                              context,
-                              title: "aboutUs".translate(context),
-                              svgImagePath: AppIcons.aboutUs,
-                              onTap: () {
-                                Navigator.pushNamed(context, Routes.profileSettings,
-                                    arguments: {
-                                      'title': "aboutUs".translate(context),
-                                      'param': Api.aboutUs
-                                    });
-                                // Navigator.pushNamed(context, Routes.ab);
-                              },
-                            ),
-                            customTile(
-                              context,
-                              title: "termsConditions".translate(context),
-                              svgImagePath: AppIcons.terms,
-                              onTap: () {
-                                Navigator.pushNamed(context, Routes.profileSettings,
-                                    arguments: {
-                                      'title': "termsConditions".translate(context),
-                                      'param': Api.termsAndConditions
-                                    });
-                              },
-                            ),
-                            customTile(
-                              context,
-                              title: "privacyPolicy".translate(context),
-                              svgImagePath: AppIcons.privacy,
-                              onTap: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  Routes.profileSettings,
-                                  arguments: {
-                                    'title': "privacyPolicy".translate(context),
-                                    'param': Api.privacyPolicy
-                                  },
-                                );
-                              },
-                            ),
-                            if (Constant.isUpdateAvailable == true) ...[
-                              updateTile(
-                                context,
-                                isUpdateAvailable: Constant.isUpdateAvailable,
-                                title: "update".translate(context),
-                                newVersion: Constant.newVersionNumber,
-                                svgImagePath: AppIcons.update,
-                                onTap: () async {
-                                  if (Platform.isIOS) {
-                                    await launchUrl(Uri.parse(Constant.appstoreURLios));
-                                  } else if (Platform.isAndroid) {
-                                    await launchUrl(
-                                        Uri.parse(Constant.playstoreURLAndroid));
-                                  }
-                                },
-                              ),
-                            ],
-                            if (HiveUtils.isUserAuthenticated()) ...[
-                              customTile(
-                                context,
-                                title: "deleteAccount".translate(context),
-                                svgImagePath: AppIcons.delete,
-                                onTap: () {
-                                  if (Constant.isDemoModeOn) {
-                                    if (HiveUtils.getUserDetails().mobile !=
-                                        null) if (Constant
-                                        .demoMobileNumber ==
-                                        (HiveUtils.getUserDetails().mobile!.replaceFirst(
-                                            "+${HiveUtils.getCountryCode()}", ""))) {
-                                      HelperUtils.showSnackBarMessage(context,
-                                          "thisActionNotValidDemo".translate(context));
-                                      return;
-                                    }
-                                  }
-                                  deleteConfirmWidget();
-                                },
-                              ),
-                            ],
-                            if (HiveUtils.isUserAuthenticated()) ...[
-                              customTile(
-                                context,
-                                title: "تسجيل خروج".translate(context),
-                                svgImagePath: AppIcons.logout,
-                                onTap: () {
-                                  logOutConfirmWidget();
-                                },
-                              ),
-                            ],
-                            const SizedBox(
-                              height: 100,
-                            )
-                          ],
-                        ),
-
-                        // profileInfo(),
-                        // Expanded(
-                        //   child: profileMenus(),
-                        // )
-                      ]),
-                    ),
-                  ),
-                ]
+                  profileHeader(),
+                  // الصورة والمعلومات
+                  // Padding(
+                  //   padding: const EdgeInsets.symmetric(horizontal: 20),
+                  //   child: Row(
+                  //     crossAxisAlignment: CrossAxisAlignment.end,
+                  //     children: [
+                  //
+                  //       Container(
+                  //         width: 90,
+                  //         height: 90,
+                  //         decoration: BoxDecoration(
+                  //           borderRadius: BorderRadius.circular(20),
+                  //           border: Border.all(width: 2 , color: context.color.mainBrown),
+                  //         ),
+                  //         child: ClipRRect(
+                  //           borderRadius: BorderRadius.circular(20),
+                  //           child: Image.asset(
+                  //             'assets/map.png',
+                  //             width: 103,
+                  //             height: 120,
+                  //             fit: BoxFit.cover,
+                  //           ),
+                  //         ),
+                  //       ),
+                  //       const SizedBox(width: 10),
+                  //       Padding(
+                  //         padding: const EdgeInsets.only(bottom: 5),
+                  //         child: Column(
+                  //           crossAxisAlignment: CrossAxisAlignment.start,
+                  //           children: [
+                  //
+                  //             Text(
+                  //               ' المستر ',
+                  //               style: const TextStyle(
+                  //                 fontFamily: 'Rubik',
+                  //                 fontSize: 18,
+                  //                 fontWeight: FontWeight.w800,
+                  //                 color: Colors.white,
+                  //               ),
+                  //             ),
+                  //             Text(
+                  //               'user@example.com',
+                  //               style: const TextStyle(
+                  //                 fontFamily: 'Rubik',
+                  //                 fontSize: 13,
+                  //                 fontWeight: FontWeight.w800,
+                  //                 color: Colors.white,
+                  //               ),
+                  //             ),
+                  //
+                  //           ],
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                  SizedBox(
+                    height: 30,
+                  )
+                ],
+              ),
             ),
-          ),
+            SingleChildScrollView(
+              controller: profileScreenController,
+              physics: const BouncingScrollPhysics(),
+              child: Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Column(children: <Widget>[
+                  // profileHeader(),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      if (HiveUtils.isUserAuthenticated()) ...[
+                        customTile(
+                          context,
+                          title: " اعلاناتي ".translate(context),
+                          svgImagePath: AppIcons.myAdsNav,
+                          onTap: () {
+                            Navigator.pushNamed(context, Routes.homeItemsScreen);
+                          },
+                        ),
+                      ],
+                      if (HiveUtils.isUserAuthenticated()) ...[
+                        customTile(
+                          context,
+                          title: " الدردشة ".translate(context),
+                          svgImagePath: AppIcons.message,
+                          onTap: () {
+                            Navigator.pushNamed(context, Routes.chatlist);
+                          },
+                        ),
+                      ],
+                      customTile(
+                        context,
+                        title: "myFeaturedAds".translate(context),
+                        svgImagePath: AppIcons.promoted,
+                        onTap: () async {
+                          APICallTrigger.trigger();
+                          UiUtils.checkUser(
+                              onNotGuest: () {
+                                Navigator.pushNamed(
+                                    context, Routes.myAdvertisment,
+                                    arguments: {});
+                              },
+                              context: context);
+                        },
+                      ),
+                      customTile(
+                        context,
+                        title: "subscription".translate(context),
+                        svgImagePath: AppIcons.subscription,
+                        onTap: () async {
+                          //TODO: change it once @End
+
+                          UiUtils.checkUser(
+                              onNotGuest: () {
+                                Navigator.pushNamed(context,
+                                    Routes.subscriptionPackageListRoute);
+                              },
+                              context: context);
+                        },
+                      ),
+                      customTile(
+                        context,
+                        title: "transactionHistory".translate(context),
+                        svgImagePath: AppIcons.transaction,
+                        onTap: () {
+                          UiUtils.checkUser(
+                              onNotGuest: () {
+                                Navigator.pushNamed(
+                                    context, Routes.transactionHistory);
+                              },
+                              context: context);
+                        },
+                      ),
+                      customTile(
+                        context,
+                        title: "myReview".translate(context),
+                        svgImagePath: AppIcons.myReviewIcon,
+                        onTap: () {
+                          UiUtils.checkUser(
+                              onNotGuest: () {
+                                Navigator.pushNamed(
+                                    context, Routes.myReviewsScreen);
+                              },
+                              context: context);
+                        },
+                      ),
+                      customTile(
+                        context,
+                        title: "language".translate(context),
+                        svgImagePath: AppIcons.language,
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, Routes.languageListScreenRoute);
+                        },
+                      ),
+                      // The Dark Mode Code ************************************
+                      // ValueListenableBuilder(
+                      //     valueListenable: isDarkTheme,
+                      //     builder: (context, v, c) {
+                      //       return customTile(
+                      //         context,
+                      //         title: "darkTheme".translate(context),
+                      //         svgImagePath: AppIcons.darkTheme,
+                      //         isSwitchBox: true,
+                      //         onTapSwitch: (value) {
+                      //           context.read<AppThemeCubit>().changeTheme(
+                      //               value == true ? AppTheme.dark : AppTheme.light);
+                      //           setState(() {
+                      //             isDarkTheme.value = value;
+                      //           });
+                      //         },
+                      //         switchValue: v,
+                      //         onTap: () {},
+                      //       );
+                      //     }),
+                      customTile(
+                        context,
+                        title: "notifications".translate(context),
+                        svgImagePath: AppIcons.notification,
+                        onTap: () {
+                          UiUtils.checkUser(
+                              onNotGuest: () {
+                                Navigator.pushNamed(
+                                    context, Routes.notificationPage);
+                              },
+                              context: context);
+                        },
+                      ),
+                      customTile(
+                        context,
+                        title: "blogs".translate(context),
+                        svgImagePath: AppIcons.articles,
+                        onTap: () {
+                          UiUtils.checkUser(
+                              onNotGuest: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  Routes.blogsScreenRoute,
+                                );
+                              },
+                              context: context);
+                        },
+                      ),
+                      customTile(
+                        context,
+                        title: "favorites".translate(context),
+                        svgImagePath: AppIcons.favorites,
+                        onTap: () {
+                          UiUtils.checkUser(
+                              onNotGuest: () {
+                                Navigator.pushNamed(
+                                    context, Routes.favoritesScreen);
+                              },
+                              context: context);
+                        },
+                      ),
+                      customTile(
+                        context,
+                        title: "faqsLbl".translate(context),
+                        svgImagePath: AppIcons.faqsIcon,
+                        onTap: () {
+                          UiUtils.checkUser(
+                              onNotGuest: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  Routes.faqsScreen,
+                                );
+                              },
+                              context: context);
+                        },
+                      ),
+                      customTile(
+                        context,
+                        title: "shareApp".translate(context),
+                        svgImagePath: AppIcons.shareApp,
+                        onTap: shareApp,
+                      ),
+                      customTile(
+                        context,
+                        title: "rateUs".translate(context),
+                        svgImagePath: AppIcons.rateUs,
+                        onTap: rateUs,
+                      ),
+                      customTile(
+                        context,
+                        title: "contactUs".translate(context),
+                        svgImagePath: AppIcons.contactUs,
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            Routes.contactUs,
+                          );
+                          // Navigator.pushNamed(context, Routes.ab);
+                        },
+                      ),
+                      customTile(
+                        context,
+                        title: "aboutUs".translate(context),
+                        svgImagePath: AppIcons.aboutUs,
+                        onTap: () {
+                          Navigator.pushNamed(context, Routes.profileSettings,
+                              arguments: {
+                                'title': "aboutUs".translate(context),
+                                'param': Api.aboutUs
+                              });
+                          // Navigator.pushNamed(context, Routes.ab);
+                        },
+                      ),
+                      customTile(
+                        context,
+                        title: "termsConditions".translate(context),
+                        svgImagePath: AppIcons.terms,
+                        onTap: () {
+                          Navigator.pushNamed(context, Routes.profileSettings,
+                              arguments: {
+                                'title': "termsConditions".translate(context),
+                                'param': Api.termsAndConditions
+                              });
+                        },
+                      ),
+                      customTile(
+                        context,
+                        title: "privacyPolicy".translate(context),
+                        svgImagePath: AppIcons.privacy,
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            Routes.profileSettings,
+                            arguments: {
+                              'title': "privacyPolicy".translate(context),
+                              'param': Api.privacyPolicy
+                            },
+                          );
+                        },
+                      ),
+                      if (Constant.isUpdateAvailable == true) ...[
+                        updateTile(
+                          context,
+                          isUpdateAvailable: Constant.isUpdateAvailable,
+                          title: "update".translate(context),
+                          newVersion: Constant.newVersionNumber,
+                          svgImagePath: AppIcons.update,
+                          onTap: () async {
+                            if (Platform.isIOS) {
+                              await launchUrl(
+                                  Uri.parse(Constant.appstoreURLios));
+                            } else if (Platform.isAndroid) {
+                              await launchUrl(
+                                  Uri.parse(Constant.playstoreURLAndroid));
+                            }
+                          },
+                        ),
+                      ],
+                      if (HiveUtils.isUserAuthenticated()) ...[
+                        customTile(
+                          context,
+                          title: "deleteAccount".translate(context),
+                          svgImagePath: AppIcons.delete,
+                          onTap: () {
+                            if (Constant.isDemoModeOn) {
+                              if (HiveUtils.getUserDetails().mobile !=
+                                  null) if (Constant
+                                      .demoMobileNumber ==
+                                  (HiveUtils.getUserDetails()
+                                      .mobile!
+                                      .replaceFirst(
+                                          "+${HiveUtils.getCountryCode()}",
+                                          ""))) {
+                                HelperUtils.showSnackBarMessage(
+                                    context,
+                                    "thisActionNotValidDemo"
+                                        .translate(context));
+                                return;
+                              }
+                            }
+                            deleteConfirmWidget();
+                          },
+                        ),
+                      ],
+                      if (HiveUtils.isUserAuthenticated()) ...[
+                        customTile(
+                          context,
+                          title: "تسجيل خروج".translate(context),
+                          svgImagePath: AppIcons.logout,
+                          onTap: () {
+                            logOutConfirmWidget();
+                          },
+                        ),
+                      ],
+                      const SizedBox(
+                        height: 100,
+                      )
+                    ],
+                  ),
+
+                  // profileInfo(),
+                  // Expanded(
+                  //   child: profileMenus(),
+                  // )
+                ]),
+              ),
+            ),
+          ]),
         ),
-      );
+      ),
+    );
   }
 
   Widget updateTile(BuildContext context,
       {required String title,
-        required String newVersion,
-        required bool isUpdateAvailable,
-        required String svgImagePath,
-        Function(dynamic value)? onTapSwitch,
-        dynamic switchValue,
-        required VoidCallback onTap}) {
+      required String newVersion,
+      required bool isUpdateAvailable,
+      required String svgImagePath,
+      Function(dynamic value)? onTapSwitch,
+      dynamic switchValue,
+      required VoidCallback onTap}) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: GestureDetector(
@@ -1032,7 +1054,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                   child: isUpdateAvailable == false
                       ? const Icon(Icons.done)
                       : UiUtils.getSvg(svgImagePath,
-                      color: context.color.mainBrown)),
+                          color: context.color.mainBrown)),
             ),
             SizedBox(
               width: 25,
@@ -1064,7 +1086,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                 height: 32,
                 decoration: BoxDecoration(
                   border:
-                  Border.all(color: context.color.borderColor, width: 1.5),
+                      Border.all(color: context.color.borderColor, width: 1.5),
                   color: context.color.secondaryColor
                       .withValues(alpha: 0.10000000149011612),
                   borderRadius: BorderRadius.circular(10),
@@ -1091,16 +1113,16 @@ class _ProfileScreenState extends State<ProfileScreen>
 //eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rlc3Ricm9rZXJodWIud3J0ZWFtLmluL2FwaS91c2VyX3NpZ251cCIsImlhdCI6MTY5Njg1MDQyNCwibmJmIjoxNjk2ODUwNDI0LCJqdGkiOiJxVTNpY1FsRFN3MVJ1T3M5Iiwic3ViIjoiMzg4IiwicHJ2IjoiMWQwYTAyMGFjZjVjNGI2YzQ5Nzk4OWRmMWFiZjBmYmQ0ZThjOGQ2MyIsImN1c3RvbWVyX2lkIjozODh9.Y8sQhZtz6xGROEMvrTwA6gSSfPK-YwuhwDDc7Yahfg4
   Widget customTile(BuildContext context,
       {required String title,
-        required String svgImagePath,
-        bool? isSwitchBox,
-        Function(dynamic value)? onTapSwitch,
-        dynamic switchValue,
-        required VoidCallback onTap}) {
+      required String svgImagePath,
+      bool? isSwitchBox,
+      Function(dynamic value)? onTapSwitch,
+      dynamic switchValue,
+      required VoidCallback onTap}) {
     return Container(
       height: 60,
       margin: const EdgeInsets.only(top: 5, bottom: 5),
       decoration: BoxDecoration(
-        /*border: Border.all(
+          /*border: Border.all(
           width: 1.5,
           color: context.color.borderColor,
         ),*/
@@ -1112,10 +1134,8 @@ class _ProfileScreenState extends State<ProfileScreen>
                 blurRadius: 5,
                 spreadRadius: 1,
                 offset: Offset(0, 2),
-                blurStyle: BlurStyle.normal
-            )
-          ]
-      ),
+                blurStyle: BlurStyle.normal)
+          ]),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15.0),
         child: GestureDetector(
@@ -1124,7 +1144,6 @@ class _ProfileScreenState extends State<ProfileScreen>
             absorbing: !(isSwitchBox ?? false),
             child: Row(
               children: [
-
                 if (isSwitchBox != true)
                   Container(
                     decoration: BoxDecoration(
@@ -1140,18 +1159,20 @@ class _ProfileScreenState extends State<ProfileScreen>
                           textDirection: Directionality.of(context),
                           child: RotatedBox(
                               quarterTurns: Directionality.of(context) ==
-                                  ui.TextDirection.rtl
+                                      ui.TextDirection.rtl
                                   ? 2
                                   : -4,
-                              child:
-                              Icon(Icons.double_arrow , color: context.color.mainGold,size: 20,)
-                          ),
+                              child: Icon(
+                                Icons.double_arrow,
+                                color: context.color.mainGold,
+                                size: 20,
+                              )),
                         ),
                       ),
                     ),
                   ),
                 if (isSwitchBox ?? false)
-                // CupertinoSwitch(value: value, onChanged: onChanged)
+                  // CupertinoSwitch(value: value, onChanged: onChanged)
                   SizedBox(
                     height: 40,
                     width: 30,
@@ -1172,18 +1193,18 @@ class _ProfileScreenState extends State<ProfileScreen>
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children:[ CustomText(
-                        title,
-                        fontWeight: FontWeight.w800,
-                        color: context.color.textColorDark,
-                      ),
+                      children: [
+                        CustomText(
+                          title,
+                          fontWeight: FontWeight.w800,
+                          color: context.color.textColorDark,
+                        ),
                         Container(
                           width: double.infinity,
                           height: 1,
                           color: Colors.grey,
                         )
-                      ]
-                  ),
+                      ]),
                 ),
                 // const Spacer(),
                 SizedBox(
@@ -1199,9 +1220,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                   child: FittedBox(
                       fit: BoxFit.none,
                       child: UiUtils.getSvg(svgImagePath,
-                          height: 24,
-                          width: 24,
-                          color: Colors.white)),
+                          height: 24, width: 24, color: Colors.white)),
                 ),
               ],
             ),
@@ -1210,7 +1229,6 @@ class _ProfileScreenState extends State<ProfileScreen>
       ),
     );
   }
-
 
   Widget bulletPoint(String text) {
     return Row(
@@ -1237,17 +1255,17 @@ class _ProfileScreenState extends State<ProfileScreen>
             : "deleteAlertTitle".translate(context),
         content: _auth.currentUser != null
             ? Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            bulletPoint("yourAdsAndTransactionDelete".translate(context)),
-            bulletPoint("accDetailsCanNotRecovered".translate(context)),
-            bulletPoint("subscriptionsCancelled".translate(context)),
-            bulletPoint(
-                "savedPreferencesAndMessagesLost".translate(context)),
-          ],
-        )
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  bulletPoint("yourAdsAndTransactionDelete".translate(context)),
+                  bulletPoint("accDetailsCanNotRecovered".translate(context)),
+                  bulletPoint("subscriptionsCancelled".translate(context)),
+                  bulletPoint(
+                      "savedPreferencesAndMessagesLost".translate(context)),
+                ],
+              )
             : CustomText("deleteRelogin".translate(context),
-            textAlign: TextAlign.center),
+                textAlign: TextAlign.center),
         cancelButtonName: (_auth.currentUser != null)
             ? 'no'.translate(context)
             : 'cancelLbl'.translate(context),
@@ -1364,24 +1382,24 @@ class _ProfileScreenState extends State<ProfileScreen>
         }
       },
       child: (context.watch<UserDetailsCubit>().state.user?.profile ?? "")
-          .trim()
-          .isEmpty
+              .trim()
+              .isEmpty
           ? buildDefaultPersonSVG(context)
           : Image.network(
-        context.watch<UserDetailsCubit>().state.user?.profile ?? "",
-        fit: BoxFit.cover,
-        width: 49,
-        height: 49,
-        errorBuilder: (BuildContext context, Object exception,
-            StackTrace? stackTrace) {
-          return buildDefaultPersonSVG(context);
-        },
-        loadingBuilder: (BuildContext context, Widget? child,
-            ImageChunkEvent? loadingProgress) {
-          if (loadingProgress == null) return child!;
-          return buildDefaultPersonSVG(context);
-        },
-      ),
+              context.watch<UserDetailsCubit>().state.user?.profile ?? "",
+              fit: BoxFit.cover,
+              width: 49,
+              height: 49,
+              errorBuilder: (BuildContext context, Object exception,
+                  StackTrace? stackTrace) {
+                return buildDefaultPersonSVG(context);
+              },
+              loadingBuilder: (BuildContext context, Widget? child,
+                  ImageChunkEvent? loadingProgress) {
+                if (loadingProgress == null) return child!;
+                return buildDefaultPersonSVG(context);
+              },
+            ),
     );
   }
 
@@ -1429,7 +1447,7 @@ class _ProfileScreenState extends State<ProfileScreen>
             onAccept: () async {
               Future.delayed(
                 Duration.zero,
-                    () {
+                () {
                   HiveUtils.clear();
                   Constant.favoriteItemList.clear();
                   context.read<UserDetailsCubit>().clear();

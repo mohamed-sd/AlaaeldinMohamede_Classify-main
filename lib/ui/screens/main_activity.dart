@@ -11,7 +11,9 @@ import 'package:eClassify/data/cubits/system/fetch_system_settings_cubit.dart';
 import 'package:eClassify/data/model/item/item_model.dart';
 import 'package:eClassify/data/model/system_settings_model.dart';
 import 'package:eClassify/ui/screens/chat/chat_list_screen.dart';
-import 'package:eClassify/ui/screens/home/home_screen.dart';
+import 'package:eClassify/ui/screens/navigations/home_guide.dart';
+import 'package:eClassify/ui/screens/navigations/home_news.dart';
+import 'package:eClassify/ui/screens/navigations/home_screen.dart';
 import 'package:eClassify/ui/screens/home/search_screen.dart';
 import 'package:eClassify/ui/screens/item/my_items_screen.dart';
 import 'package:eClassify/ui/screens/user_profile/profile_screen.dart';
@@ -279,8 +281,10 @@ class MainActivityState extends State<MainActivity>
 
   late List<Widget> pages = [
     HomeScreen(from: widget.from),
-    ChatListScreen(),
-    ItemsScreen(),
+    HomeGuide(),
+    HomeNews(),
+    // ChatListScreen(),
+    // ItemsScreen(),
     const ProfileScreen(),
   ];
 
@@ -331,9 +335,6 @@ class MainActivityState extends State<MainActivity>
         },
         child: Scaffold(
           backgroundColor: mainColor,
-          /*backgroundColor: context.color.primaryColor,
-              bottomNavigationBar:
-              Constant.maintenanceMode == "1" ? null : bottomBar(), */
           body: Stack(
             children: <Widget>[
               PageView(
@@ -413,10 +414,13 @@ class MainActivityState extends State<MainActivity>
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                buildBottomNavigationbarItem(0, AppIcons.homeNav,
+                buildBottomNavigationbarItem(0, AppIcons.home,
                     AppIcons.homeNavActive, "homeTab".translate(context)),
-                buildBottomNavigationbarItem(1, AppIcons.chatNav,
-                    AppIcons.chatNavActive, "chat".translate(context)),
+
+
+                buildBottomNavigationbarItem(1, AppIcons.listViewIcon,
+                    AppIcons.listViewIcon, "الدليل الاجرائي"),
+
                 BlocListener<FetchUserPackageLimitCubit,
                         FetchUserPackageLimitState>(
                     listener: (context, state) {
@@ -456,8 +460,12 @@ class MainActivityState extends State<MainActivity>
                         ),
                       ),
                     )),
-                buildBottomNavigationbarItem(2, AppIcons.myAdsNav,
-                    AppIcons.myAdsNavActive, "myAdsTab".translate(context)),
+                // buildBottomNavigationbarItem(2, AppIcons.myAdsNav,
+                //     AppIcons.myAdsNavActive, "myAdsTab".translate(context)),
+
+                buildBottomNavigationbarItem(2, AppIcons.articles,
+                    AppIcons.articles, " الاخبار "),
+
                 buildBottomNavigationbarItem(3, AppIcons.profileNav,
                     AppIcons.profileNavActive, "profileTab".translate(context))
               ]),
