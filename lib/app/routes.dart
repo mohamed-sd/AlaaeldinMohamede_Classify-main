@@ -9,6 +9,8 @@ import 'package:eClassify/ui/screens/blogs/blog_details.dart';
 import 'package:eClassify/ui/screens/blogs/blogs_screen.dart';
 import 'package:eClassify/ui/screens/chat/blocked_user_list_screen.dart';
 import 'package:eClassify/ui/screens/chat/chat_list_screen.dart';
+import 'package:eClassify/ui/screens/exchange/mining_exchange.dart';
+import 'package:eClassify/ui/screens/exchange/money_exchange.dart';
 import 'package:eClassify/ui/screens/faqs_screen.dart';
 import 'package:eClassify/ui/screens/favorite_screen.dart';
 import 'package:eClassify/ui/screens/filter_screen.dart';
@@ -60,6 +62,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
+  static const mining_exchange = 'mining_exchange';
+  static const mony_exchange = 'mony_exchange';
   static const chatlist = 'chatlist';
   static const homeItemsScreen = 'homeItemsScreen';
   static const splash = 'splash';
@@ -189,6 +193,10 @@ class Routes {
     }
 
     switch (routeSettings.name) {
+      case mony_exchange :
+        return MaterialPageRoute(builder: ((context) => const MoneyExchange()));
+      case mining_exchange :
+        return MaterialPageRoute(builder: ((context) => const MiningExchange()));
       case homeItemsScreen :
         return MaterialPageRoute(builder: ((context) => const ItemsScreen()));
       case chatlist :

@@ -1,4 +1,5 @@
 // custom_drawer_widget.dart
+import 'package:eClassify/app/routes.dart';
 import 'package:eClassify/ui/theme/theme.dart';
 import 'package:eClassify/utils/app_icon.dart';
 import 'package:eClassify/utils/custom_text.dart';
@@ -223,8 +224,16 @@ class CustomDrawerWidget extends StatelessWidget {
                     children: [
                       // Links :
                       DrawerLinkOne(context , 'الرئيســــــــــية'),
-                      DrawerLinkOne(context , 'بورصة المعادن'),
-                      DrawerLinkOne(context , 'بورصة العملات'),
+                      InkWell(
+                        onTap: (){
+                          Navigator.pushNamed(context, Routes.mining_exchange);
+                        }
+                      , child: DrawerLinkOne(context , 'بورصة المعادن')),
+                      InkWell(
+                            onTap: (){
+                              Navigator.pushNamed(context, Routes.mony_exchange);
+                            },
+                          child: DrawerLinkOne(context , 'بورصة العملات')),
                       DrawerLinkOne(context , 'اخبـــار التعدين'),
                       DrawerLinkOne(context , 'إعلانات الجهات والشركات'),
                     ],

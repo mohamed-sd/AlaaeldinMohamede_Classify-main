@@ -582,14 +582,14 @@ class HomeScreenState extends State<HomeNews>
                                   // The Card
                                   InkWell(
                                     onTap: () {
-                                      // Navigator.pushNamed(context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.mony_exchange);
                                     },
                                     child: GoldShimmerCard( title : ' بورصة العملات ',
                                         url:'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2Fplog.jpg?alt=media&token=816f2303-e00e-43fc-a6b8-fcc84924f931'),
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      // Navigator.pushNamed(context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.mining_exchange);
                                     },
                                     child: GoldShimmerCard(
                                         title : ' بورصة المعادن ',
