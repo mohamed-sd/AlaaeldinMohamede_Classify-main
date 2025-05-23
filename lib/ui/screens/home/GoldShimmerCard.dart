@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:eClassify/utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:eClassify/utils/ui_utils.dart';
 
@@ -105,14 +106,14 @@ class _GoldShimmerCardState extends State<GoldShimmerCard>
               color: Colors.black.withOpacity(0.5),
               padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
               child: Text(
-                widget.title,
-                style: const TextStyle(
+                 widget.title,
+                style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
-                  fontSize: 14,
+                  fontSize: context.font.small,
                 ),
                 textAlign: TextAlign.center,
-                maxLines: 1,
+                maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
             ),

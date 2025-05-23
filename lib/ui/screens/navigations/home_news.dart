@@ -55,7 +55,7 @@ class HomeScreenState extends State<HomeNews>
   //
   late final ScrollController _scrollController = ScrollController();
   final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
-  GlobalKey<RefreshIndicatorState>();
+      GlobalKey<RefreshIndicatorState>();
 
   Color mainColor = Color(0xff271301);
   Color marqueeBgColor = Color(0xff150900);
@@ -85,84 +85,89 @@ class HomeScreenState extends State<HomeNews>
       context: context,
       barrierColor: Colors.transparent, // خلفية شفافة
       builder: (context) {
-        return
-          Align(
-            alignment: Alignment.centerRight,
-            child: ClipRRect(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(50),
-                bottomLeft: Radius.circular(50),
-              ),
-              child: Container(
-                padding: EdgeInsets.all(20),
-                height: double.infinity,
-                width: MediaQuery.of(context).size.width * 0.70,
-                color: Color.fromARGB(255, 66, 37, 26),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: context.color.mainGold,
-                            width: 2,
-                          ),
-                          borderRadius: BorderRadius.circular(50)
-                      ),
-                      child: Icon(Icons.close , color: context.color.mainGold,),
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          width: 80,
-                          height: 80,
-                          padding: EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                                color: context.color.mainGold,width: 1
-                            ),
-                            borderRadius: BorderRadius.circular(18),
-                          ),
-                          child: UiUtils.getSvg(AppIcons.appbarLogo, fit: BoxFit.cover ),
-                        ),
-
-                      ],
-                    ),
-                    SizedBox(height: 10,),
-                    Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
+        return Align(
+          alignment: Alignment.centerRight,
+          child: ClipRRect(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(50),
+              bottomLeft: Radius.circular(50),
+            ),
+            child: Container(
+              padding: EdgeInsets.all(20),
+              height: double.infinity,
+              width: MediaQuery.of(context).size.width * 0.70,
+              color: Color.fromARGB(255, 66, 37, 26),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
                         border: Border.all(
-                            color: Colors.white,width: 1
+                          color: context.color.mainGold,
+                          width: 2,
                         ),
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(50)),
+                    child: Icon(
+                      Icons.close,
+                      color: context.color.mainGold,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width: 80,
+                        height: 80,
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              color: context.color.mainGold, width: 1),
+                          borderRadius: BorderRadius.circular(18),
+                        ),
+                        child: UiUtils.getSvg(AppIcons.appbarLogo,
+                            fit: BoxFit.cover),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text("Equipation@info.com",style: TextStyle(
-                          color: Colors.white , fontSize: 14 , fontWeight: FontWeight.w600,
-                        ),textAlign: TextAlign.right,),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white, width: 1),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        "Equipation@info.com",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: TextAlign.right,
                       ),
-                    )
-                  ],
-                ),
+                    ),
+                  )
+                ],
               ),
             ),
-          );
+          ),
+        );
       },
     );
   }
 
-
   void loadItemData() {
     context.read<SliderCubit>().fetchSlider(
-      context,
-    );
+          context,
+        );
     context.read<FetchCategoryCubit>().fetchCategories();
     /*  context.read<FetchHomeScreenCubit>().fetch(
           city: HiveUtils.getCityName(),
@@ -199,30 +204,36 @@ class HomeScreenState extends State<HomeNews>
     //homeScreenController.addListener(pageScrollListener);
   }
 
+  bool section1 = false;
+  bool section2 = false;
+  bool section3 = false;
+  bool section4 = false;
+  bool section5 = false;
+  bool section6 = false;
+
   @override
   Widget build(BuildContext context) {
     super.build(context);
 
     return SafeArea(
       child: Scaffold(
-
         appBar: AppBar(
           elevation: 0,
           //leadingWidth: double.maxFinite,
           titleSpacing: 0,
-          title:
-          Row(
+          title: Row(
             children: [
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: InkWell(
-                    onTap: (){
+                    onTap: () {
                       showModalBottomSheet(
                           context: context,
                           isScrollControlled: true,
                           backgroundColor: Colors.transparent,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+                            borderRadius:
+                                BorderRadius.vertical(top: Radius.circular(25)),
                           ),
                           builder: (context) => const CustomDrawerWidget());
                       // _openCustomSideSheet(context);
@@ -280,25 +291,27 @@ class HomeScreenState extends State<HomeNews>
                     controller: _scrollController,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(30, 0, 20, 0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(30, 0, 20, 0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(0, 15, 0, 5),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0, 15, 0, 5),
                               child: Text(
                                 'أهلاً بك في اخبار بريق!',
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 20,
                                     fontWeight: FontWeight.w600,
-                                    fontFamily: 'IBMPlexArabic'
-                                ),
+                                    fontFamily: 'IBMPlexArabic'),
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 3, 0),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0, 5, 3, 0),
                               child: Text(
                                 'حيث نضع كلما تبحث عنه امام عينيك ،',
                                 textAlign: TextAlign.justify,
@@ -306,12 +319,12 @@ class HomeScreenState extends State<HomeNews>
                                     color: Colors.black,
                                     fontSize: 13,
                                     fontWeight: FontWeight.w600,
-                                    fontFamily: 'IBMPlexArabic'
-                                ),
+                                    fontFamily: 'IBMPlexArabic'),
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 3, 0),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0, 5, 3, 0),
                               child: Text(
                                 'لتكون علي خطوة واحدة عن عالم التعدين.',
                                 textAlign: TextAlign.justify,
@@ -319,16 +332,19 @@ class HomeScreenState extends State<HomeNews>
                                     color: Colors.black,
                                     fontSize: 13,
                                     fontWeight: FontWeight.w600,
-                                    fontFamily: 'IBMPlexArabic'
-                                ),
+                                    fontFamily: 'IBMPlexArabic'),
                               ),
                             ),
                           ],
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(
+                        height: 10,
+                      ),
                       const SliderWidget(),
-                      SizedBox(height: 10,),
+                      SizedBox(
+                        height: 10,
+                      ),
                       CustomText(
                         'دليل الاخبار بين يديك',
                         textAlign: TextAlign.center,
@@ -338,58 +354,24 @@ class HomeScreenState extends State<HomeNews>
                             .bodyLarge!
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(
+                        height: 10,
+                      ),
+
                       InkWell(
                         onTap: () {
-                          if (isFixExpanded)
-                            setState(() {
-                              isFixExpanded = false;
-                            });
-                          else
-                            setState(() {
-                              isFixExpanded = true;
-                            });
+                          setState(() {
+                            if(section1)
+                            section1 = false;
+                            else section1 = true;
+                          });
                         },
-                        child: Container(
-                          margin: EdgeInsets.symmetric(horizontal: 13),
-                          width: double.infinity,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16, vertical: 14),
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(AppIcons.categoryBg),
-                              fit: BoxFit.fill,
-                            ),
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Row(
-                            children: [
-                              Icon(
-                                isFixExpanded
-                                    ? Icons.keyboard_arrow_up
-                                    : Icons.keyboard_arrow_down,
-                                color: Colors.black,
-                              ),
-                              Expanded(
-                                child: CustomText(
-                                  ' الاخبار ',
-                                  // item.name ?? "",
-                                  textAlign: TextAlign.center,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Icon(
-                                isFixExpanded
-                                    ? Icons.keyboard_arrow_up
-                                    : Icons.keyboard_arrow_down,
-                                color: Colors.black,
-                              ),
-                            ],
-                          ),
-                        ),
+                        child: title_card('اخبار التعدين والشركات' , section1),
                       ),
-                      SizedBox(height: 10),
-                      if (isFixExpanded)
+                      SizedBox(
+                        height: 5,
+                      ),
+                      if (section1)
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 15),
                           child: Column(
@@ -404,37 +386,334 @@ class HomeScreenState extends State<HomeNews>
                                   // The Card
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.blogsScreenRoute);
+                                      Navigator.pushNamed(
+                                          context, Routes.blogsScreenRoute);
                                     },
-                                    child: GoldShimmerCard( title : ' اخبار عالمية ',
-                                        url:'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2F4-%20%D8%A7%D9%84%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%D8%A9.jpg?alt=media&token=a718d3dc-a85e-46f1-9c24-aef3f06ab8dc'),
+                                    child: GoldShimmerCard(
+                                        title: 'أخبار التعدين',
+                                        url:
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/pn7ueo7p1ys1/4-_%D9%85%D8%AF%D9%88%D9%86%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.blogsScreenRoute);
+                                      Navigator.pushNamed(
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
-                                        title : '  اخبار محلية ',
-                                        url : 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2F4-%20%D8%A7%D9%84%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%D8%A9.jpg?alt=media&token=a718d3dc-a85e-46f1-9c24-aef3f06ab8dc'),
+                                        title: ' أخبار الشركات ',
+                                        url:
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/cchsh9teg1dp/3-_%D9%85%D9%8A%D9%83%D8%B1%D9%88%D9%81%D9%88%D9%86_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
                                   ),
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: GoldShimmerCard(
-                                  //       title: '   وزارة المعادن ',
-                                  //       url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/kqgp4p9tgsdw/10_copy.jpg'),
-                                  // ),
-                                  //
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       ' الابحاث الجيلوجية ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/fu508h0w64cp/11_copy.jpg'),
-                                  // ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                          context, Routes.soon);
+                                    },
+                                    child: GoldShimmerCard(
+                                        title: ' تحديثات الجهات الرسمية والوزارات ',
+                                        url:
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/mina24dtpbp3/13_copy.jpg'),
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(context, Routes.soon);
+                                    },
+                                    child: custom_card_Item(
+                                        context,
+                                        ' لمستجدات التشريعية والتنظيمية ',
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/jao8sn6i4a6t/62_copy.jpg'),
+                                  ),
+
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      SizedBox(
+                        height: 5,
+                      ),
+
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            if(section2)
+                              section2 = false;
+                            else section2 = true;
+                          });
+                        },
+                        child: title_card('لأسواق والأسعار' , section2),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      if (section2)
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 15),
+                          child: Column(
+                            children: [
+                              GridView.count(
+                                shrinkWrap: true,
+                                physics: NeverScrollableScrollPhysics(),
+                                crossAxisCount: 3,
+                                mainAxisSpacing: 8,
+                                crossAxisSpacing: 8,
+                                children: [
+                                  // The Card
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                          context, Routes.mining_exchange);
+                                    },
+                                    child: GoldShimmerCard(
+                                        title: ' بورصة المعادن ',
+                                        url:
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2F4-%20%D8%A7%D9%84%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%D8%A9.jpg?alt=media&token=a718d3dc-a85e-46f1-9c24-aef3f06ab8dc'),
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                          context, Routes.mony_exchange);
+                                    },
+                                    child: GoldShimmerCard(
+                                        title: ' أسعار العملات ',
+                                        url:
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2F4-%20%D8%A7%D9%84%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%D8%A9.jpg?alt=media&token=a718d3dc-a85e-46f1-9c24-aef3f06ab8dc'),
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(context, Routes.soon);
+                                    },
+                                    child: GoldShimmerCard(
+                                        title: ' تقارير سوقية وتحليلات اقتصادية ',
+                                        url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/wzgkssd9rseh/71_copy.jpg'),
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(context, Routes.soon);
+                                    },
+                                    child: custom_card_Item(
+                                        context,
+                                        ' رسوم بيانية ومؤشرات فنية ',
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/wzgkssd9rseh/71_copy.jpg'),
+                                  ),
+
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      SizedBox(
+                        height: 5,
+                      ),
+
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            if(section3)
+                              section3 = false;
+                            else section3 = true;
+                          });
+                        },
+                        child: title_card('المعرفة والبحوث' , section3),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      if (section3)
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 15),
+                          child: Column(
+                            children: [
+                              GridView.count(
+                                shrinkWrap: true,
+                                physics: NeverScrollableScrollPhysics(),
+                                crossAxisCount: 3,
+                                mainAxisSpacing: 8,
+                                crossAxisSpacing: 8,
+                                children: [
+                                  // The Card
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                          context, Routes.blogsScreenRoute);
+                                    },
+                                    child: GoldShimmerCard(
+                                        title: ' المقالات العلمية والتحليلية ',
+                                        url:
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/68p8l6cu6qxc/2-_%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                          context, Routes.blogsScreenRoute);
+                                    },
+                                    child: GoldShimmerCard(
+                                        title: ' البحوث والأوراق الأكاديمية ',
+                                        url:
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/68p8l6cu6qxc/2-_%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(context, Routes.guide);
+                                    },
+                                    child: GoldShimmerCard(
+                                        title: ' المواد الدراسية والكتب ',
+                                        url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/68p8l6cu6qxc/2-_%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(context, Routes.guide);
+                                    },
+                                    child: custom_card_Item(
+                                        context,
+                                        ' المشاريع البحثية المدعومة ',
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/68p8l6cu6qxc/2-_%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      SizedBox(
+                        height: 5,
+                      ),
+
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            if(section4)
+                              section4 = false;
+                            else section4 = true;
+                          });
+                        },
+                        child: title_card('الدورات والتأهيل' , section4),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      if (section4)
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 15),
+                          child: Column(
+                            children: [
+                              GridView.count(
+                                shrinkWrap: true,
+                                physics: NeverScrollableScrollPhysics(),
+                                crossAxisCount: 3,
+                                mainAxisSpacing: 8,
+                                crossAxisSpacing: 8,
+                                children: [
+                                  // The Card
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                          context, Routes.blogsScreenRoute);
+                                    },
+                                    child: GoldShimmerCard(
+                                        title: 'الدورات التدريبية ',
+                                        url:
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/lml0fa6t0p56/73_copy.jpg'),
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                          context, Routes.blogsScreenRoute);
+                                    },
+                                    child: GoldShimmerCard(
+                                        title: ' الندوات وورش العمل ',
+                                        url:
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/lml0fa6t0p56/73_copy.jpg'),
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(context, Routes.guide);
+                                    },
+                                    child: GoldShimmerCard(
+                                        title: ' برامج تطوير المهارات ',
+                                        url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/lml0fa6t0p56/73_copy.jpg'),
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(context, Routes.guide);
+                                    },
+                                    child: custom_card_Item(
+                                        context,
+                                        ' الشهادات المتخصصة في التعدين ',
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/lml0fa6t0p56/73_copy.jpg'),
+                                  ),
+
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      SizedBox(
+                        height: 5,
+                      ),
+
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            if(section5)
+                              section5 = false;
+                            else section5 = true;
+                          });
+                        },
+                        child: title_card('الميديا والبودكاست' , section5),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      if (section5)
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 15),
+                          child: Column(
+                            children: [
+                              GridView.count(
+                                shrinkWrap: true,
+                                physics: NeverScrollableScrollPhysics(),
+                                crossAxisCount: 3,
+                                mainAxisSpacing: 8,
+                                crossAxisSpacing: 8,
+                                children: [
+                                  // The Card
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                          context, Routes.blogsScreenRoute);
+                                    },
+                                    child: GoldShimmerCard(
+                                        title: ' بودكاست التعدين ',
+                                        url:
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/cchsh9teg1dp/3-_%D9%85%D9%8A%D9%83%D8%B1%D9%88%D9%81%D9%88%D9%86_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                          context, Routes.blogsScreenRoute);
+                                    },
+                                    child: GoldShimmerCard(
+                                        title: ' فيديوهات توعوية وتدريبية ',
+                                        url:
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/r878vk5z12ae/1-_%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86_(1).jpg'),
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(context, Routes.guide);
+                                    },
+                                    child: GoldShimmerCard(
+                                        title: ' جلسات حوارية ومسجلة ',
+                                        url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/wfn2teddfaml/70_copy.jpg'),
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(context, Routes.guide);
+                                    },
+                                    child: custom_card_Item(
+                                        context,
+                                        ' عروض تقديمية مرئية ',
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/r878vk5z12ae/1-_%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86_(1).jpg'),
+                                  ),
                                   // InkWell(
                                   //   onTap: () {
                                   //     Navigator.pushNamed(context, Routes.guide);
@@ -514,60 +793,24 @@ class HomeScreenState extends State<HomeNews>
                             ],
                           ),
                         ),
+                      SizedBox(
+                        height: 5,
+                      ),
 
-                      SizedBox(height: 10,),
                       InkWell(
                         onTap: () {
-                          if (isFixExpanded2)
-                            setState(() {
-                              isFixExpanded2 = false;
-                            });
-                          else
-                            setState(() {
-                              isFixExpanded2 = true;
-                              isFixExpanded = false;
-                            });
+                          setState(() {
+                            if(section6)
+                              section6 = false;
+                            else section6 = true;
+                          });
                         },
-                        child: Container(
-                          margin: EdgeInsets.symmetric(horizontal: 13),
-                          width: double.infinity,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16, vertical: 14),
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(AppIcons.categoryBg),
-                              fit: BoxFit.fill,
-                            ),
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Row(
-                            children: [
-                              Icon(
-                                isFixExpanded2
-                                    ? Icons.keyboard_arrow_up
-                                    : Icons.keyboard_arrow_down,
-                                color: Colors.black,
-                              ),
-                              Expanded(
-                                child: CustomText(
-                                  ' البـــورصة ',
-                                  // item.name ?? "",
-                                  textAlign: TextAlign.center,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Icon(
-                                isFixExpanded2
-                                    ? Icons.keyboard_arrow_up
-                                    : Icons.keyboard_arrow_down,
-                                color: Colors.black,
-                              ),
-                            ],
-                          ),
-                        ),
+                        child: title_card('المجتمع والمبادرات' , section6),
                       ),
-                      SizedBox(height: 10),
-                      if (isFixExpanded2)
+                      SizedBox(
+                        height: 5,
+                      ),
+                      if (section6)
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 15),
                           child: Column(
@@ -582,116 +825,50 @@ class HomeScreenState extends State<HomeNews>
                                   // The Card
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mony_exchange);
+                                      Navigator.pushNamed(
+                                          context, Routes.blogsScreenRoute);
                                     },
-                                    child: GoldShimmerCard( title : ' بورصة العملات ',
-                                        url:'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2Fplog.jpg?alt=media&token=816f2303-e00e-43fc-a6b8-fcc84924f931'),
+                                    child: GoldShimmerCard(
+                                        title: 'المبادرات المجتمعية',
+                                        url:
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/x33ybf804qm1/74.jpg'),
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mining_exchange);
+                                      Navigator.pushNamed(
+                                          context, Routes.blogsScreenRoute);
                                     },
                                     child: GoldShimmerCard(
-                                        title : ' بورصة المعادن ',
-                                        url : 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2Fplog.jpg?alt=media&token=816f2303-e00e-43fc-a6b8-fcc84924f931'),
+                                        title: 'المسؤولية الاجتماعية',
+                                        url:
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/x33ybf804qm1/74.jpg'),
                                   ),
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: GoldShimmerCard(
-                                  //       title: '   وزارة المعادن ',
-                                  //       url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/kqgp4p9tgsdw/10_copy.jpg'),
-                                  // ),
-                                  //
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       ' الابحاث الجيلوجية ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/fu508h0w64cp/11_copy.jpg'),
-                                  // ),
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       ' الولايات والمحاليات  ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/irp2v834y4x6/12_copy.jpg'),
-                                  // ),
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       ' المالية والتخطيط الأقتصادي  ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/mina24dtpbp3/13_copy.jpg'),
-                                  // ),
-                                  //
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       ' هيئة الجمارك ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/pxyx3p1md655/14_copy.jpg'),
-                                  // ),
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       ' وزارة التجارة ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/vq8ys7favedu/15_copy.jpg'),
-                                  // ),
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       ' مكتب العمل ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/a5ozl80fvqk4/16_copy.jpg'),
-                                  // ),
-                                  //
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       'وزارة العدل ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/aqm2fk2oi1cm/17_copy.jpg'),
-                                  // ),
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       ' التأمينات الإجتماعية ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/6iqubtvxmlic/18_copy.jpg'),
-                                  // ),
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       ' شركات التأمين ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/80k6u2xj7rn9/19_copy.jpg'),
-                                  // ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(context, Routes.soon);
+                                    },
+                                    child: GoldShimmerCard(
+                                        title: ' المنتديات والنقاشات ',
+                                        url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/r878vk5z12ae/1-_%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86_(1).jpg'),
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(context, Routes.soon);
+                                    },
+                                    child: custom_card_Item(
+                                        context,
+                                        ' مدونة بريق ',
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/pn7ueo7p1ys1/4-_%D9%85%D8%AF%D9%88%D9%86%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
+                                  ),
                                 ],
                               ),
                             ],
                           ),
                         ),
+                      SizedBox(
+                        height: 5,
+                      ),
+
                     ],
                   ),
                 ),
@@ -708,7 +885,6 @@ class HomeScreenState extends State<HomeNews>
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-
           CustomText(
             Constant.appName,
             fontSize: context.font.large,
@@ -756,75 +932,110 @@ class HomeScreenState extends State<HomeNews>
   Widget blogMarqueeWidget() {
     return BlocBuilder<FetchBlogsCubit, FetchBlogsState>(
         builder: (context, state) {
-          if (state is FetchBlogsSuccess) {
-            String mergedTitle = state.blogModel.map((e) => e.title).join('\t\t\t');
-            return GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(
-                  context,
-                  Routes.blogsScreenRoute,
-                );
-              },
-              child: Container(
-                color: marqueeBgColor,
-                padding: EdgeInsetsDirectional.symmetric(vertical: 5),
-                child: MarqueeText(
-                  text: mergedTitle,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyMedium!
-                      .copyWith(color: Colors.white),
-                  velocity: 50,
-                ),
-              ),
+      if (state is FetchBlogsSuccess) {
+        String mergedTitle = state.blogModel.map((e) => e.title).join('\t\t\t');
+        return GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(
+              context,
+              Routes.blogsScreenRoute,
             );
-          } else {
-            return SizedBox.shrink();
-          }
-        });
+          },
+          child: Container(
+            color: marqueeBgColor,
+            padding: EdgeInsetsDirectional.symmetric(vertical: 5),
+            child: MarqueeText(
+              text: mergedTitle,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(color: Colors.white),
+              velocity: 50,
+            ),
+          ),
+        );
+      } else {
+        return SizedBox.shrink();
+      }
+    });
   }
 
   Container custom_card_Item(BuildContext context, String title, String url) {
-    return
-      Container(
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-          ),
-          clipBehavior: Clip.hardEdge,
-          child: Stack(
-            children: [
-              Positioned.fill(
-                child: UiUtils.imageType(
-                  url,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: Container(
-                  color: Colors.black.withValues(alpha: 0.5),
-                  padding: EdgeInsets.symmetric(vertical: 6, horizontal: 8),
-                  child: Text(
-                    title,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                      fontSize: context.font.small,
-                    ),
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-              ),
-            ],
-          ),
+    return Container(
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
         ),
-      );
+        clipBehavior: Clip.hardEdge,
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: UiUtils.imageType(
+                url,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Container(
+                color: Colors.black.withValues(alpha: 0.5),
+                padding: EdgeInsets.symmetric(vertical: 6, horizontal: 8),
+                child: Text(
+                  title,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: context.font.small,
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
+
+  Container title_card(String title , bool section) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 13),
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(AppIcons.categoryBg),
+          fit: BoxFit.fill,
+        ),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Row(
+        children: [
+          Icon(
+            section ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
+            color: Colors.black,
+          ),
+          Expanded(
+            child: CustomText(
+              title,
+              // item.name ?? "",
+              textAlign: TextAlign.center,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          Icon(
+            section ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
+            color: Colors.black,
+          ),
+        ],
+      ),
+    );
+  }
+
 }
 
 Future<void> notificationPermissionChecker() async {

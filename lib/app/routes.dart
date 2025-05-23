@@ -1,3 +1,4 @@
+import 'package:eClassify/ui/screens/ComingSoonWidget.dart';
 import 'package:eClassify/ui/screens/ad_details_screen.dart';
 import 'package:eClassify/ui/screens/advertisement/my_advertisment_screen.dart';
 import 'package:eClassify/ui/screens/auth/login/forgot_password.dart';
@@ -62,6 +63,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
+  static const soon = 'soon';
   static const mining_exchange = 'mining_exchange';
   static const mony_exchange = 'mony_exchange';
   static const chatlist = 'chatlist';
@@ -193,6 +195,8 @@ class Routes {
     }
 
     switch (routeSettings.name) {
+      case soon:
+        return MaterialPageRoute(builder: ((context) => const ComingSoonPage()));
       case mony_exchange :
         return MaterialPageRoute(builder: ((context) => const MoneyExchange()));
       case mining_exchange :
