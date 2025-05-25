@@ -15,6 +15,7 @@ import 'package:eClassify/ui/screens/exchange/money_exchange.dart';
 import 'package:eClassify/ui/screens/faqs_screen.dart';
 import 'package:eClassify/ui/screens/favorite_screen.dart';
 import 'package:eClassify/ui/screens/filter_screen.dart';
+import 'package:eClassify/ui/screens/guide/detailes.dart';
 import 'package:eClassify/ui/screens/guide/mining_minestry.dart';
 import 'package:eClassify/ui/screens/home/category_list.dart';
 import 'package:eClassify/ui/screens/home/change_language_screen.dart';
@@ -63,6 +64,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
+  static const detailes = 'details';
   static const soon = 'soon';
   static const mining_exchange = 'mining_exchange';
   static const mony_exchange = 'mony_exchange';
@@ -195,6 +197,8 @@ class Routes {
     }
 
     switch (routeSettings.name) {
+      case detailes :
+        return MaterialPageRoute(builder: ((context) => const Detailes()));
       case soon:
         return MaterialPageRoute(builder: ((context) => const ComingSoonPage()));
       case mony_exchange :
