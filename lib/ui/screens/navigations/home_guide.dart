@@ -448,7 +448,7 @@ class HomeScreenState extends State<HomeGuide>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.guide);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' ولاية نهر النيل ',
@@ -458,7 +458,7 @@ class HomeScreenState extends State<HomeGuide>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.guide);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' ولاية البحر الأحمر',
@@ -475,7 +475,7 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: custom_card_Item(
                                         context,
@@ -484,7 +484,7 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: custom_card_Item(
                                         context,
@@ -493,7 +493,7 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: custom_card_Item(
                                         context,
@@ -548,7 +548,7 @@ class HomeScreenState extends State<HomeGuide>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.guide);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' هيئة المواني البحرية ',
@@ -557,7 +557,7 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' شرطة المرور العامة ',
@@ -601,7 +601,7 @@ class HomeScreenState extends State<HomeGuide>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.guide);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' مكتب العمل المركزي ',
@@ -611,7 +611,7 @@ class HomeScreenState extends State<HomeGuide>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.guide);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' مكاتب العمل بالولايات ',
@@ -620,7 +620,7 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' الهيئة القومية للتأمينات الاجتماعية ',
@@ -664,7 +664,7 @@ class HomeScreenState extends State<HomeGuide>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.guide);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' بنك السودان المركزي ',
@@ -674,7 +674,7 @@ class HomeScreenState extends State<HomeGuide>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.guide);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' بنك الخرطوم ',
@@ -684,7 +684,7 @@ class HomeScreenState extends State<HomeGuide>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.guide);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' بنك النيلين ',
@@ -693,7 +693,7 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: custom_card_Item(
                                           context,
@@ -702,7 +702,7 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: custom_card_Item(
                                         context,
@@ -747,7 +747,7 @@ class HomeScreenState extends State<HomeGuide>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.guide);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: 'شركة شيكان للتأمين',
@@ -757,7 +757,7 @@ class HomeScreenState extends State<HomeGuide>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.guide);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: 'الشركة التعاونية للتأمين',
@@ -774,7 +774,7 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: custom_card_Item(
                                         context,

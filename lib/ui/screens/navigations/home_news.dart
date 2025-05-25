@@ -535,7 +535,7 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.blogsScreenRoute);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' المقالات العلمية والتحليلية ',
@@ -545,7 +545,7 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.blogsScreenRoute);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' البحوث والأوراق الأكاديمية ',
@@ -554,7 +554,7 @@ class HomeScreenState extends State<HomeNews>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' المواد الدراسية والكتب ',
@@ -562,7 +562,7 @@ class HomeScreenState extends State<HomeNews>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: custom_card_Item(
                                         context,
@@ -607,7 +607,7 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.blogsScreenRoute);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: 'الدورات التدريبية ',
@@ -617,7 +617,7 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.blogsScreenRoute);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' الندوات وورش العمل ',
@@ -626,7 +626,7 @@ class HomeScreenState extends State<HomeNews>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' برامج تطوير المهارات ',
@@ -634,7 +634,7 @@ class HomeScreenState extends State<HomeNews>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: custom_card_Item(
                                         context,
@@ -680,7 +680,7 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.blogsScreenRoute);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' بودكاست التعدين ',
@@ -690,7 +690,7 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.blogsScreenRoute);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' فيديوهات توعوية وتدريبية ',
@@ -707,7 +707,7 @@ class HomeScreenState extends State<HomeNews>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: custom_card_Item(
                                         context,
@@ -826,7 +826,7 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.blogsScreenRoute);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: 'المبادرات المجتمعية',
@@ -836,7 +836,7 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.blogsScreenRoute);
+                                          context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
                                         title: 'المسؤولية الاجتماعية',
