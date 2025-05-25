@@ -414,15 +414,6 @@ class HomeScreenState extends State<HomeNews>
                                         url:
                                         'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/mina24dtpbp3/13_copy.jpg'),
                                   ),
-                                  InkWell(
-                                    onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
-                                    },
-                                    child: custom_card_Item(
-                                        context,
-                                        ' لمستجدات التشريعية والتنظيمية ',
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/jao8sn6i4a6t/62_copy.jpg'),
-                                  ),
 
                                 ],
                               ),
@@ -486,15 +477,6 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: ' تقارير سوقية وتحليلات اقتصادية ',
                                         url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/wzgkssd9rseh/71_copy.jpg'),
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
-                                    },
-                                    child: custom_card_Item(
-                                        context,
-                                        ' رسوم بيانية ومؤشرات فنية ',
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/wzgkssd9rseh/71_copy.jpg'),
                                   ),
 
                                 ],
@@ -560,15 +542,7 @@ class HomeScreenState extends State<HomeNews>
                                         title: ' المواد الدراسية والكتب ',
                                         url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/68p8l6cu6qxc/2-_%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
                                   ),
-                                  InkWell(
-                                    onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
-                                    },
-                                    child: custom_card_Item(
-                                        context,
-                                        ' المشاريع البحثية المدعومة ',
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/68p8l6cu6qxc/2-_%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
-                                  ),
+
                                 ],
                               ),
                             ],
@@ -631,15 +605,6 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: ' برامج تطوير المهارات ',
                                         url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/lml0fa6t0p56/73_copy.jpg'),
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
-                                    },
-                                    child: custom_card_Item(
-                                        context,
-                                        ' الشهادات المتخصصة في التعدين ',
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/lml0fa6t0p56/73_copy.jpg'),
                                   ),
 
                                 ],
@@ -705,89 +670,7 @@ class HomeScreenState extends State<HomeNews>
                                         title: ' جلسات حوارية ومسجلة ',
                                         url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/wfn2teddfaml/70_copy.jpg'),
                                   ),
-                                  InkWell(
-                                    onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
-                                    },
-                                    child: custom_card_Item(
-                                        context,
-                                        ' عروض تقديمية مرئية ',
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/r878vk5z12ae/1-_%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86_(1).jpg'),
-                                  ),
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       ' الولايات والمحاليات  ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/irp2v834y4x6/12_copy.jpg'),
-                                  // ),
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       ' المالية والتخطيط الأقتصادي  ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/mina24dtpbp3/13_copy.jpg'),
-                                  // ),
-                                  //
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       ' هيئة الجمارك ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/pxyx3p1md655/14_copy.jpg'),
-                                  // ),
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       ' وزارة التجارة ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/vq8ys7favedu/15_copy.jpg'),
-                                  // ),
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       ' مكتب العمل ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/a5ozl80fvqk4/16_copy.jpg'),
-                                  // ),
 
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       'وزارة العدل ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/aqm2fk2oi1cm/17_copy.jpg'),
-                                  // ),
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       ' التأمينات الإجتماعية ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/6iqubtvxmlic/18_copy.jpg'),
-                                  // ),
-                                  // InkWell(
-                                  //   onTap: () {
-                                  //     Navigator.pushNamed(context, Routes.guide);
-                                  //   },
-                                  //   child: custom_card_Item(
-                                  //       context,
-                                  //       ' شركات التأمين ',
-                                  //       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/80k6u2xj7rn9/19_copy.jpg'),
-                                  // ),
                                 ],
                               ),
                             ],
@@ -851,15 +734,7 @@ class HomeScreenState extends State<HomeNews>
                                         title: ' المنتديات والنقاشات ',
                                         url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/r878vk5z12ae/1-_%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86_(1).jpg'),
                                   ),
-                                  InkWell(
-                                    onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
-                                    },
-                                    child: custom_card_Item(
-                                        context,
-                                        ' مدونة بريق ',
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/pn7ueo7p1ys1/4-_%D9%85%D8%AF%D9%88%D9%86%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
-                                  ),
+
                                 ],
                               ),
                             ],

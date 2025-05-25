@@ -464,7 +464,7 @@ class MainActivityState extends State<MainActivity>
                 //     AppIcons.myAdsNavActive, "myAdsTab".translate(context)),
 
                 buildBottomNavigationbarItem(2, AppIcons.articles,
-                    AppIcons.articles, " الاخبار "),
+                    AppIcons.articles, " نادي التعدين "),
 
                 buildBottomNavigationbarItem(3, AppIcons.profileNav,
                     AppIcons.profileNavActive, "profileTab".translate(context))
