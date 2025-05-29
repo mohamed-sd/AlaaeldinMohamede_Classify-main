@@ -2754,7 +2754,8 @@ class AdDetailsScreenState extends CloudState<AdDetailsScreen> {
             ),]
       ),
       child: InkWell(
-        child: Padding(
+        child:
+        Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: Row(children: [
             SizedBox(
@@ -2890,16 +2891,17 @@ class AdDetailsScreenState extends CloudState<AdDetailsScreen> {
           ]),
         ),
         onTap: () {
-          Navigator.pushNamed(context, Routes.sellerProfileScreen, arguments: {
-            "model": model.user!,
-            "total":
-            context.read<FetchSellerRatingsCubit>().totalSellerRatings() ?? 0,
-            "rating": context
-                .read<FetchSellerRatingsCubit>()
-                .sellerData()!
-                .averageRating ??
-                null
-          });
+          Navigator.pushNamed(context, Routes.sellerProfileScreen,
+            arguments:  {"sellerId": model.user?.id}
+
+          //   "model": model.user!,
+          //   "total":
+          //   context.read<FetchSellerRatingsCubit>().totalSellerRatings() ?? 0,
+          //   "rating": context
+          //       .read<FetchSellerRatingsCubit>()
+          //       .sellerData()!
+          //       .averageRating ?? null
+           );
         },
       ),
     );

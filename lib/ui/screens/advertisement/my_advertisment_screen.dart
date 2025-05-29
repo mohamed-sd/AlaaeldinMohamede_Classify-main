@@ -93,7 +93,7 @@ class _MyAdvertisementScreenState extends State<MyAdvertisementScreen> {
   Widget build(BuildContext context) {
     AdHelper.showInterstitialAd();
     return Scaffold(
-      backgroundColor: Colors.red,
+      backgroundColor: context.color.mainColor,
       appBar: UiUtils.buildAppBar(context,
           showBackButton: true, title: "myFeaturedAds".translate(context)),
       body: RefreshIndicator(
