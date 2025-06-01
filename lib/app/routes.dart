@@ -32,6 +32,7 @@ import 'package:eClassify/ui/screens/item/add_item_screen/widgets/success_item_s
 import 'package:eClassify/ui/screens/item/items_list.dart';
 import 'package:eClassify/ui/screens/item/my_items_screen.dart';
 import 'package:eClassify/ui/screens/item/view_all_screen.dart';
+import 'package:eClassify/ui/screens/jobs/JobsWedgit.dart';
 import 'package:eClassify/ui/screens/location/areas_screen.dart';
 import 'package:eClassify/ui/screens/location/cities_screen.dart';
 import 'package:eClassify/ui/screens/location/countries_screen.dart';
@@ -66,6 +67,7 @@ import 'package:flutter/material.dart';
 class Routes {
   static const detailes = 'details';
   static const soon = 'soon';
+  static const jobs = 'jobs';
   static const mining_exchange = 'mining_exchange';
   static const mony_exchange = 'mony_exchange';
   static const chatlist = 'chatlist';
@@ -197,6 +199,8 @@ class Routes {
     }
 
     switch (routeSettings.name) {
+      case jobs :
+        return MaterialPageRoute(builder: ((context) => const Jobswedgit()));
       case detailes :
         return MaterialPageRoute(builder: ((context) => const Detailes()));
       case soon:

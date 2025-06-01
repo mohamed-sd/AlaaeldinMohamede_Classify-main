@@ -77,7 +77,8 @@ class _MoneyExchangeState extends State<MoneyExchange> {
                     ])),
           ],
         ),
-        body: ScrollConfiguration(
+        body:
+        ScrollConfiguration(
           behavior: RemoveGlow(),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -573,7 +574,8 @@ class _MoneyExchangeState extends State<MoneyExchange> {
               ],
             ),
           ),
-        ));
+        )
+    );
   }
 
   Padding material_row(BuildContext context, String name, String time,

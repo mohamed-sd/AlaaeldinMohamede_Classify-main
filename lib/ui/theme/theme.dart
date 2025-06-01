@@ -136,7 +136,7 @@ class Font {
   double get normal => 14;
 
   ///16
-  double get large => 16;
+  double get large => 15;
 
   ///18
   double get larger => 18;

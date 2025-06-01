@@ -20,6 +20,8 @@ String categoryTitleHeader = 'إعلانات التعدين بين يديك';
 bool isFixExpanded = false;
 bool isFixExpanded2 = false;
 
+bool sectionjob = false ;
+
 class CategoryWidgetHome extends StatefulWidget {
   const CategoryWidgetHome({super.key});
 
@@ -46,9 +48,74 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
                       .bodyLarge!
                       .copyWith(fontWeight: FontWeight.bold),
                 ),
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      if(sectionjob)
+                        sectionjob = false;
+                      else sectionjob = true;
+                    });
+                  },
+                  child: title_card(' التوظيف ' , sectionjob),
+                ),
+                if (sectionjob)
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    child: Column(
+                      children: [
+                        GridView.count(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          crossAxisCount: 3,
+                          mainAxisSpacing: 8,
+                          crossAxisSpacing: 8,
+                          children: [
+                            // The Card
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, Routes.jobs ,arguments: {
+                                      'jobName' , 'الوظائف الإدارية'
+                                });
+                              },
+                              child: GoldShimmerCard(
+                                  title: ' الوظائف الإدارية ',
+                                  url:
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/mj151l05zw5v/52_copy.jpg'),
+                            ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, Routes.jobs ,arguments: {
+                                  'jobName' , 'الوظائف الهندسية'
+                                });
+                              },
+                              child: GoldShimmerCard(
+                                  title: ' الوظائف الهندسية ',
+                                  url:
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/2myfkkbqgcxc/53_copy.jpg'),
+                            ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, Routes.jobs ,arguments: {
+                                  'jobName' , 'الوظائف الفنية'
+                                });
+                              },
+                              child: GoldShimmerCard(
+                                  title: ' الوظائف الفنية ',
+                                  url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/zfbdaukt6q2f/55_copy.jpg'),
+                            ),
+
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 categoryWidget(state.categories),
               ],
             );
+
 
             /*  return Padding(
               padding: const EdgeInsets.only(top: 12),
@@ -390,6 +457,41 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
               },
             ),
           )
+        ],
+      ),
+    );
+  }
+
+  Container title_card(String title , bool section) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 13),
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(AppIcons.categoryBg),
+          fit: BoxFit.fill,
+        ),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Row(
+        children: [
+          Icon(
+            section ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
+            color: Colors.black,
+          ),
+          Expanded(
+            child: CustomText(
+              title,
+              // item.name ?? "",
+              textAlign: TextAlign.center,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          Icon(
+            section ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
+            color: Colors.black,
+          ),
         ],
       ),
     );
