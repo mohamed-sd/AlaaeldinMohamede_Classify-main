@@ -48,70 +48,70 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
                       .bodyLarge!
                       .copyWith(fontWeight: FontWeight.bold),
                 ),
-                InkWell(
-                  onTap: () {
-                    setState(() {
-                      if(sectionjob)
-                        sectionjob = false;
-                      else sectionjob = true;
-                    });
-                  },
-                  child: title_card(' التوظيف ' , sectionjob),
-                ),
-                if (sectionjob)
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
-                    child: Column(
-                      children: [
-                        GridView.count(
-                          shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
-                          crossAxisCount: 3,
-                          mainAxisSpacing: 8,
-                          crossAxisSpacing: 8,
-                          children: [
-                            // The Card
-                            InkWell(
-                              onTap: () {
-                                Navigator.pushNamed(
-                                    context, Routes.jobs ,arguments: {
-                                      'jobName' , 'الوظائف الإدارية'
-                                });
-                              },
-                              child: GoldShimmerCard(
-                                  title: ' الوظائف الإدارية ',
-                                  url:
-                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/mj151l05zw5v/52_copy.jpg'),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                Navigator.pushNamed(
-                                    context, Routes.jobs ,arguments: {
-                                  'jobName' , 'الوظائف الهندسية'
-                                });
-                              },
-                              child: GoldShimmerCard(
-                                  title: ' الوظائف الهندسية ',
-                                  url:
-                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/2myfkkbqgcxc/53_copy.jpg'),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                Navigator.pushNamed(
-                                    context, Routes.jobs ,arguments: {
-                                  'jobName' , 'الوظائف الفنية'
-                                });
-                              },
-                              child: GoldShimmerCard(
-                                  title: ' الوظائف الفنية ',
-                                  url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/zfbdaukt6q2f/55_copy.jpg'),
-                            ),
-
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+                // InkWell(
+                //   onTap: () {
+                //     setState(() {
+                //       if(sectionjob)
+                //         sectionjob = false;
+                //       else sectionjob = true;
+                //     });
+                //   },
+                //   child: title_card(' التوظيف ' , sectionjob),
+                // ),
+                // if (sectionjob)
+                //   Padding(
+                //     padding: EdgeInsets.symmetric(horizontal: 15),
+                //     child: Column(
+                //       children: [
+                //         GridView.count(
+                //           shrinkWrap: true,
+                //           physics: NeverScrollableScrollPhysics(),
+                //           crossAxisCount: 3,
+                //           mainAxisSpacing: 8,
+                //           crossAxisSpacing: 8,
+                //           children: [
+                //             // The Card
+                //             InkWell(
+                //               onTap: () {
+                //                 Navigator.pushNamed(
+                //                     context, Routes.jobs ,arguments: {
+                //                       'jobName' , 'الوظائف الإدارية'
+                //                 });
+                //               },
+                //               child: GoldShimmerCard(
+                //                   title: ' الوظائف الإدارية ',
+                //                   url:
+                //                   'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/mj151l05zw5v/52_copy.jpg'),
+                //             ),
+                //             InkWell(
+                //               onTap: () {
+                //                 Navigator.pushNamed(
+                //                     context, Routes.jobs ,arguments: {
+                //                   'jobName' , 'الوظائف الهندسية'
+                //                 });
+                //               },
+                //               child: GoldShimmerCard(
+                //                   title: ' الوظائف الهندسية ',
+                //                   url:
+                //                   'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/2myfkkbqgcxc/53_copy.jpg'),
+                //             ),
+                //             InkWell(
+                //               onTap: () {
+                //                 Navigator.pushNamed(
+                //                     context, Routes.jobs ,arguments: {
+                //                   'jobName' , 'الوظائف الفنية'
+                //                 });
+                //               },
+                //               child: GoldShimmerCard(
+                //                   title: ' الوظائف الفنية ',
+                //                   url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/zfbdaukt6q2f/55_copy.jpg'),
+                //             ),
+                //
+                //           ],
+                //         ),
+                //       ],
+                //     ),
+                //   ),
                 categoryWidget(state.categories),
               ],
             );
