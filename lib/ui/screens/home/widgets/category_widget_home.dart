@@ -343,8 +343,8 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
                   ],
                 ),
               ),
-              if (isExpanded)
-                subCategoryWidget(item.children!, item.id ?? 0, item.name ?? "")
+             if (isExpanded)
+              subCategoryWidget(item.children!, item.id ?? 0, item.name ?? "")
             ],
           ),
         );
@@ -358,28 +358,6 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
       padding: EdgeInsets.only(top: 10),
       child: Column(
         children: [
-          if (subcategories.length > 6) ...[
-            Align(
-              alignment: Alignment.centerRight,
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, Routes.subCategoryScreen,
-                      arguments: {
-                        "categoryList": subcategories,
-                        "catName": categoryName,
-                        "catId": categoryId,
-                        "categoryIds": [categoryId.toString()]
-                      });
-                },
-                child: CustomText(
-                  "seeAll".translate(context),
-                  showUnderline: true,
-                  fontSize: context.font.smaller + 3,
-                ),
-              ),
-            ),
-            const SizedBox(height: 5)
-          ],
           GridView.count(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
@@ -434,9 +412,19 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
                           left: 0,
                           right: 0,
                           child: Container(
-                            color: Colors.black.withValues(alpha: 0.5),
+                            // color: Colors.black.withValues(alpha: 0.5),
                             padding: EdgeInsets.symmetric(
                                 vertical: 6, horizontal: 8),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  Colors.black.withValues(alpha: 0.0),
+                                  Colors.black.withValues(alpha: 0.9), // أسود شبه شفاف في الأسفل
+                                ],
+                              ),
+                            ),
                             child: Text(
                               subcategory.name ?? '',
                               style: TextStyle(
@@ -456,7 +444,33 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
                 );
               },
             ),
-          )
+          ),
+          if (subcategories.length > 6) ...[
+            SizedBox(height: 10,),
+            Align(
+              alignment: Alignment.centerRight,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.subCategoryScreen,
+                      arguments: {
+                        "categoryList": subcategories,
+                        "catName": categoryName,
+                        "catId": categoryId,
+                        "categoryIds": [categoryId.toString()]
+                      });
+                },
+                child: Center(
+                  child: CustomText(
+                    "seeAll".translate(context),
+                    showUnderline: true,
+                    fontSize: context.font.smaller + 3,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 5)
+          ],
         ],
       ),
     );
