@@ -616,7 +616,7 @@ class HomeScreenState extends State<HomeGuide>
                                     child: GoldShimmerCard(
                                         title: ' مكاتب العمل بالولايات ',
                                         url:
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/jao8sn6i4a6t/62_copy.jpg'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F33-%20%D9%85%D9%83%D8%AA%D8%A8%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%20%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A.jpg?alt=media&token=90a1ad67-e167-4698-96b1-7c050eb826d6'),
                                   ),
                                   InkWell(
                                     onTap: () {
