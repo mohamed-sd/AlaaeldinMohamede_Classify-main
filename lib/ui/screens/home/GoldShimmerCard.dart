@@ -103,7 +103,16 @@ class _GoldShimmerCardState extends State<GoldShimmerCard>
             left: 0,
             right: 0,
             child: Container(
-              color: Colors.black.withOpacity(0.5),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.black.withValues(alpha: 0.0),
+                    Colors.black.withValues(alpha:1), // أسود شبه شفاف في الأسفل
+                  ],
+                ),
+              ),
               padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
               child: Text(
                  widget.title,
@@ -113,7 +122,7 @@ class _GoldShimmerCardState extends State<GoldShimmerCard>
                   fontSize: context.font.small,
                 ),
                 textAlign: TextAlign.center,
-                maxLines: 2,
+                maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
             ),

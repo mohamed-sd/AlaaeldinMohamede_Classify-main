@@ -421,7 +421,7 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
                                 end: Alignment.bottomCenter,
                                 colors: [
                                   Colors.black.withValues(alpha: 0.0),
-                                  Colors.black.withValues(alpha: 0.9), // أسود شبه شفاف في الأسفل
+                                  Colors.black.withValues(alpha: 1), // أسود شبه شفاف في الأسفل
                                 ],
                               ),
                             ),
