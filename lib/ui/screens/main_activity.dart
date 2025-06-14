@@ -419,7 +419,7 @@ class MainActivityState extends State<MainActivity>
 
 
                 buildBottomNavigationbarItem(1, AppIcons.listViewIcon,
-                    AppIcons.listViewIcon, "الدليل الاجرائي"),
+                    AppIcons.listViewIcon, "ProceduralGuide".translate(context)),
 
                 BlocListener<FetchUserPackageLimitCubit,
                         FetchUserPackageLimitState>(
@@ -464,7 +464,7 @@ class MainActivityState extends State<MainActivity>
                 //     AppIcons.myAdsNavActive, "myAdsTab".translate(context)),
 
                 buildBottomNavigationbarItem(2, AppIcons.articles,
-                    AppIcons.articles, " نادي التعدين "),
+                    AppIcons.articles, "MiningClub".translate(context)),
 
                 buildBottomNavigationbarItem(3, AppIcons.profileNav,
                     AppIcons.profileNavActive, "profileTab".translate(context))
