@@ -392,7 +392,7 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: 'أخبار التعدين',
                                         url:
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/pn7ueo7p1ys1/4-_%D9%85%D8%AF%D9%88%D9%86%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F44-%20%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpeg.jpg?alt=media&token=602fdc8e-de80-42f7-934f-b41ab9ddfcaa'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -402,7 +402,7 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: ' أخبار الشركات ',
                                         url:
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/cchsh9teg1dp/3-_%D9%85%D9%8A%D9%83%D8%B1%D9%88%D9%81%D9%88%D9%86_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F44-%20%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpeg.jpg?alt=media&token=602fdc8e-de80-42f7-934f-b41ab9ddfcaa'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -412,7 +412,7 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: ' تحديثات الجهات الرسمية والوزارات ',
                                         url:
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/mina24dtpbp3/13_copy.jpg'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F45-%20%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AC%D9%87%D8%A7%D8%AA.jpeg.jpg?alt=media&token=3181874b-3bcf-4f46-8195-8cb905b9bcc8'),
                                   ),
 
                                 ],
@@ -432,7 +432,7 @@ class HomeScreenState extends State<HomeNews>
                             else section2 = true;
                           });
                         },
-                        child: title_card('لأسواق والأسعار' , section2),
+                        child: title_card('الأسواق والأسعار' , section2),
                       ),
                       SizedBox(
                         height: 5,
@@ -458,7 +458,7 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: ' بورصة المعادن ',
                                         url:
-                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2F4-%20%D8%A7%D9%84%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%D8%A9.jpg?alt=media&token=a718d3dc-a85e-46f1-9c24-aef3f06ab8dc'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F46-%20%D8%A8%D9%88%D8%B1%D8%B5%D8%A9%20%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%86.jpg?alt=media&token=bfcf5a8f-ee16-4da7-8ce4-aca6e530a9f0'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -468,7 +468,7 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: ' أسعار العملات ',
                                         url:
-                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2F4-%20%D8%A7%D9%84%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%D8%A9.jpg?alt=media&token=a718d3dc-a85e-46f1-9c24-aef3f06ab8dc'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F47-%20%D8%A7%D8%B3%D8%B9%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA.jpg?alt=media&token=e99250f6-6ec0-4ea4-aaa0-e8192c7e5622'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -476,7 +476,7 @@ class HomeScreenState extends State<HomeNews>
                                     },
                                     child: GoldShimmerCard(
                                         title: ' تقارير سوقية وتحليلات اقتصادية ',
-                                        url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/wzgkssd9rseh/71_copy.jpg'),
+                                        url: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F48-%20%D8%AA%D9%82%D8%A7%D8%B1%D9%8A%D8%B1%20%D8%B3%D9%88%D9%82.jpg?alt=media&token=a4090223-34c3-4650-b8e0-ddecef16c131'),
                                   ),
 
                                 ],
@@ -522,7 +522,7 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: ' المقالات العلمية والتحليلية ',
                                         url:
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/68p8l6cu6qxc/2-_%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F49-%20%D8%A7%D9%84%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%D8%A9.jpg?alt=media&token=b61674c1-3a73-400c-9115-c271ef6abefb'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -532,7 +532,7 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: ' البحوث والأوراق الأكاديمية ',
                                         url:
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/68p8l6cu6qxc/2-_%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F50-%20%D8%A7%D9%84%D8%A8%D8%AD%D9%88%D8%AB%20%D9%88%D8%A7%D9%84%D8%A7%D9%88%D8%B1%D8%A7%D9%82%20%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A%D8%A9.jpg?alt=media&token=01a9018a-4301-4340-a120-87a4abd26a08'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -540,7 +540,7 @@ class HomeScreenState extends State<HomeNews>
                                     },
                                     child: GoldShimmerCard(
                                         title: ' المواد الدراسية والكتب ',
-                                        url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/68p8l6cu6qxc/2-_%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
+                                        url: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F51-%20%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%AF%20%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D9%8A%D8%A9.jpg?alt=media&token=5bb3b27e-8990-4465-bb2f-a0eea1f9948d'),
                                   ),
 
                                 ],
@@ -586,7 +586,7 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: 'الدورات التدريبية ',
                                         url:
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/lml0fa6t0p56/73_copy.jpg'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F53-%20%D8%A7%D9%84%D9%86%D8%AF%D9%88%D8%A7%D8%AA%20%D9%88%D9%88%D8%B1%D8%B4%20%D8%A7%D9%84%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8.jpeg.jpg?alt=media&token=f1a77b7d-d664-4de4-82f5-88d0257e1835'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -596,7 +596,7 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: ' الندوات وورش العمل ',
                                         url:
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/lml0fa6t0p56/73_copy.jpg'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F53-%20%D8%A7%D9%84%D9%86%D8%AF%D9%88%D8%A7%D8%AA%20%D9%88%D9%88%D8%B1%D8%B4%20%D8%A7%D9%84%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8.jpeg.jpg?alt=media&token=f1a77b7d-d664-4de4-82f5-88d0257e1835'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -604,7 +604,7 @@ class HomeScreenState extends State<HomeNews>
                                     },
                                     child: GoldShimmerCard(
                                         title: ' برامج تطوير المهارات ',
-                                        url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/lml0fa6t0p56/73_copy.jpg'),
+                                        url: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F54-%20%D8%A8%D8%B1%D8%A7%D9%85%D8%AC%20%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D9%85%D9%87%D8%A7%D8%B1%D8%A7%D8%AA.jpg?alt=media&token=5aa798d3-130d-400f-ac50-fea7b719b22a'),
                                   ),
 
                                 ],
@@ -650,7 +650,7 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: ' بودكاست التعدين ',
                                         url:
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/cchsh9teg1dp/3-_%D9%85%D9%8A%D9%83%D8%B1%D9%88%D9%81%D9%88%D9%86_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F55-%20%D8%A8%D9%88%D8%AF%D9%83%D8%A7%D8%B3%D8%AA%20%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg?alt=media&token=1ac4ecef-b0c4-44b2-9999-bc03a78184df'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -660,7 +660,7 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: ' فيديوهات توعوية وتدريبية ',
                                         url:
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/r878vk5z12ae/1-_%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86_(1).jpg'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F56-%20%D9%81%D9%8A%D8%AF%D9%8A%D9%88%D9%87%D8%A7%D8%AA%20%D8%AA%D9%88%D8%B9%D9%88%D9%8A%D8%A9.jpg?alt=media&token=5b853c97-11b6-4f23-b0ad-7a5e14eaad30'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -668,7 +668,7 @@ class HomeScreenState extends State<HomeNews>
                                     },
                                     child: GoldShimmerCard(
                                         title: ' جلسات حوارية ومسجلة ',
-                                        url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/wfn2teddfaml/70_copy.jpg'),
+                                        url: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F57-%20%D8%AC%D9%84%D8%B3%D8%A7%D8%AA%20%D8%AD%D9%88%D8%A7%D8%B1%D9%8A%D8%A9.jpeg.jpg?alt=media&token=bc908f40-0b99-4f29-8c57-2f7e9cccac68'),
                                   ),
 
                                 ],
@@ -714,7 +714,7 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: 'المبادرات المجتمعية',
                                         url:
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/x33ybf804qm1/74.jpg'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F60-%20%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%AF%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D8%AC%D8%AA%D9%85%D8%B9%D9%8A%D8%A9.jpg?alt=media&token=25610521-187a-46d0-bcbc-2ed0c437d7c3'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -724,7 +724,7 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: 'المسؤولية الاجتماعية',
                                         url:
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/x33ybf804qm1/74.jpg'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F59-%20%D8%A7%D9%84%D9%85%D8%B3%D8%A4%D9%88%D9%84%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%AC%D8%AA%D9%85%D8%B9%D9%8A%D8%A9.jpg?alt=media&token=cdbe9c70-eb12-4fb9-941f-a8391ec72251'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -732,7 +732,7 @@ class HomeScreenState extends State<HomeNews>
                                     },
                                     child: GoldShimmerCard(
                                         title: ' المنتديات والنقاشات ',
-                                        url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/r878vk5z12ae/1-_%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86_(1).jpg'),
+                                        url: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F58-%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AF%D9%8A%D8%A7%D8%AA%20%D9%88%D8%A7%D9%84%D9%86%D9%82%D8%A7%D8%B4%D8%A7%D8%AA.jpg?alt=media&token=e5c7a67e-d4c0-4acc-b9d4-58e4b78c8279'),
                                   ),
 
                                 ],
