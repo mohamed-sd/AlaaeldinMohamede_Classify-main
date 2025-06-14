@@ -281,11 +281,12 @@ class MainActivityState extends State<MainActivity>
 
   late List<Widget> pages = [
     HomeScreen(from: widget.from),
+    HomeScreen(from: widget.from),
     HomeGuide(),
     HomeNews(),
     // ChatListScreen(),
     // ItemsScreen(),
-    const ProfileScreen(),
+    // const ProfileScreen(),
   ];
 
   @override
@@ -417,9 +418,8 @@ class MainActivityState extends State<MainActivity>
                 buildBottomNavigationbarItem(0, AppIcons.home,
                     AppIcons.homeNavActive, "homeTab".translate(context)),
 
-
-                buildBottomNavigationbarItem(1, AppIcons.listViewIcon,
-                    AppIcons.listViewIcon, "ProceduralGuide".translate(context)),
+                buildBottomNavigationbarItem(1, AppIcons.terms,
+                    AppIcons.terms, "المتاجر"),
 
                 BlocListener<FetchUserPackageLimitCubit,
                         FetchUserPackageLimitState>(
@@ -463,11 +463,14 @@ class MainActivityState extends State<MainActivity>
                 // buildBottomNavigationbarItem(2, AppIcons.myAdsNav,
                 //     AppIcons.myAdsNavActive, "myAdsTab".translate(context)),
 
-                buildBottomNavigationbarItem(2, AppIcons.articles,
+                buildBottomNavigationbarItem(2, AppIcons.listViewIcon,
+                    AppIcons.listViewIcon, "ProceduralGuide".translate(context)),
+
+                buildBottomNavigationbarItem(3, AppIcons.articles,
                     AppIcons.articles, "MiningClub".translate(context)),
 
-                buildBottomNavigationbarItem(3, AppIcons.profileNav,
-                    AppIcons.profileNavActive, "profileTab".translate(context))
+                // buildBottomNavigationbarItem(3, AppIcons.profileNav,
+                //     AppIcons.profileNavActive, "profileTab".translate(context))
               ]),
         ),
       ),

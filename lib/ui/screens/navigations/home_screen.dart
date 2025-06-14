@@ -268,22 +268,42 @@ class HomeScreenState extends State<HomeScreen>
           title:
           Row(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: InkWell(
-                    onTap: (){
-                      showModalBottomSheet(
-                          context: context,
-                          isScrollControlled: true,
-                          backgroundColor: Colors.transparent,
-                          shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
-                      ),
-                      builder: (context) => const CustomDrawerWidget());
-                      // _openCustomSideSheet(context);
-                    },
-                    child: Icon(Icons.menu)),
-              ),
+              Padding(padding: EdgeInsets.all(10),
+              child:
+                InkWell(
+                onTap: (){
+                  Navigator.pushNamed(context, Routes.profileScreen );
+                },  
+                  child:Container(
+                    padding: EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        width: 1,
+                        color: context.color.mainGold
+                      )
+                    )
+                    , child: Icon(Icons.person , color: context.color.mainGold),
+                  ),
+                ),
+                ),
+
+              // Padding(
+              //   padding: const EdgeInsets.all(10.0),
+              //   child: InkWell(
+              //       onTap: (){
+              //         showModalBottomSheet(
+              //             context: context,
+              //             isScrollControlled: true,
+              //             backgroundColor: Colors.transparent,
+              //             shape: RoundedRectangleBorder(
+              //             borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+              //         ),
+              //         builder: (context) => const CustomDrawerWidget());
+              //         // _openCustomSideSheet(context);
+              //       },
+              //       child: Icon(Icons.menu)),
+              // ),
               Padding(
                   padding: EdgeInsetsDirectional.only(end: sidePadding),
                   child: appbarTitleWidget()),
