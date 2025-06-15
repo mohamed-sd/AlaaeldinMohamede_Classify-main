@@ -29,7 +29,7 @@ class Widgets {
                 },
                 child: Center(
                   child: UiUtils.progress(
-                    normalProgressColor: context.color.territoryColor,
+                    normalProgressColor: context.color.mainBrown,
                   ),
                 ),
               ),

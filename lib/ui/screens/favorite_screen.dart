@@ -69,7 +69,7 @@ class FavoriteScreenState extends State<FavoriteScreen> {
       onRefresh: () async {
         getFavorite();
       },
-      color: context.color.territoryColor,
+      color: context.color.mainBrown,
       child: Scaffold(
         appBar: UiUtils.buildAppBar(context,
             showBackButton: true, title: "favorites".translate(context) , backgroundColor: context.color.mainBrown),
@@ -118,7 +118,7 @@ class FavoriteScreenState extends State<FavoriteScreen> {
                   ),
                   if (state.isLoadingMore)
                     UiUtils.progress(
-                      normalProgressColor: context.color.territoryColor,
+                      normalProgressColor: context.color.mainBrown,
                     )
                 ],
               );

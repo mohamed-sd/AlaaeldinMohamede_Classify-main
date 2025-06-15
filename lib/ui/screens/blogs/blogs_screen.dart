@@ -62,7 +62,7 @@ class _BlogsScreenState extends State<BlogsScreen> {
     return SafeArea(
       top: false,
       child: RefreshIndicator(
-        color: context.color.territoryColor,
+        color: context.color.mainBrown,
         onRefresh: () async {
           context.read<FetchBlogsCubit>().fetchBlogs();
         },

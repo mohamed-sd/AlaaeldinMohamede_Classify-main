@@ -111,7 +111,7 @@ class _MyAdvertisementScreenState extends State<MyAdvertisementScreen> {
             },
           );
         },
-        color: context.color.territoryColor,
+        color: context.color.mainBrown,
         child:
             BlocBuilder<FetchMyPromotedItemsCubit, FetchMyPromotedItemsState>(
           builder: (context, state) {

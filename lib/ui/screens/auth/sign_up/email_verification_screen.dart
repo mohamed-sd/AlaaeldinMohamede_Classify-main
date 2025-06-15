@@ -125,7 +125,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         color: isVerified
-                            ? context.color.territoryColor
+                            ? context.color.mainBrown
                             : context.color.textLightColor,
                         child: CustomText(
                           isVerified

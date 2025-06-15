@@ -76,6 +76,7 @@ class _AppState extends State<App> {
           value: UiUtils.getSystemUiOverlayStyle(
             context: context,
             statusBarColor: context.color.secondaryColor,
+            navigationBarColor: context.color.mainBrown
           ),
           child: MaterialApp(
             initialRoute: Routes.splash,

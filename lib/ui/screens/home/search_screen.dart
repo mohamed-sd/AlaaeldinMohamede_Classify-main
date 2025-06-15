@@ -628,7 +628,7 @@ class SearchScreenState extends State<SearchScreen>
                 if (state.isLoadingMore)
                   Center(
                     child: UiUtils.progress(
-                      normalProgressColor: context.color.territoryColor,
+                      normalProgressColor: context.color.mainBrown,
                     ),
                   )
               ],

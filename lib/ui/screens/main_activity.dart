@@ -10,6 +10,7 @@ import 'package:eClassify/data/cubits/subscription/fetch_user_package_limit_cubi
 import 'package:eClassify/data/cubits/system/fetch_system_settings_cubit.dart';
 import 'package:eClassify/data/model/item/item_model.dart';
 import 'package:eClassify/data/model/system_settings_model.dart';
+import 'package:eClassify/ui/screens/ComingSoonWidget.dart';
 import 'package:eClassify/ui/screens/chat/chat_list_screen.dart';
 import 'package:eClassify/ui/screens/navigations/home_guide.dart';
 import 'package:eClassify/ui/screens/navigations/home_news.dart';
@@ -225,7 +226,7 @@ class MainActivityState extends State<MainActivity>
                     backAllowedButton: false,
                     svgImagePath: AppIcons.update,
                     isAcceptContainerPush: true,
-                    svgImageColor: context.color.territoryColor,
+                    svgImageColor: context.color.mainBrown,
                     showCancelButton: false,
                     title: "updateAvailable".translate(context),
                     acceptTextColor: context.color.buttonColor,
@@ -247,7 +248,7 @@ class MainActivityState extends State<MainActivity>
                       mode: LaunchMode.externalApplication);
                 },
                 svgImagePath: AppIcons.update,
-                svgImageColor: context.color.territoryColor,
+                svgImageColor: context.color.mainBrown,
                 showCancelButton: true,
                 title: "updateAvailable".translate(context),
                 content: CustomText(
@@ -281,7 +282,7 @@ class MainActivityState extends State<MainActivity>
 
   late List<Widget> pages = [
     HomeScreen(from: widget.from),
-    HomeScreen(from: widget.from),
+    ComingSoonPage(),
     HomeGuide(),
     HomeNews(),
     // ChatListScreen(),
@@ -300,7 +301,8 @@ class MainActivityState extends State<MainActivity>
           context: context,
           statusBarColor: mainColor,
           brightnessIcon: Brightness.light,
-          brightness: Brightness.light),
+          brightness: Brightness.light,
+          navigationBarColor: context.color.mainBrown),
       child: PopScope(
         canPop: isBack,
         onPopInvokedWithResult: (didPop, result) {
@@ -335,7 +337,7 @@ class MainActivityState extends State<MainActivity>
           }
         },
         child: Scaffold(
-          backgroundColor: mainColor,
+          backgroundColor: context.color.mainBrown,
           body: Stack(
             children: <Widget>[
               PageView(
@@ -418,8 +420,8 @@ class MainActivityState extends State<MainActivity>
                 buildBottomNavigationbarItem(0, AppIcons.home,
                     AppIcons.homeNavActive, "homeTab".translate(context)),
 
-                buildBottomNavigationbarItem(1, AppIcons.terms,
-                    AppIcons.terms, "المتاجر"),
+                buildBottomNavigationbarItem(
+                    1, AppIcons.terms, AppIcons.terms, "المتاجر"),
 
                 BlocListener<FetchUserPackageLimitCubit,
                         FetchUserPackageLimitState>(
@@ -435,7 +437,7 @@ class MainActivityState extends State<MainActivity>
                     },
                     child: Transform(
                       transform: Matrix4.identity()
-                        ..translate(0.toDouble(), -30),
+                        ..translate(0.toDouble(), -15),
                       child: InkWell(
                         onTap: () async {
                           //TODO:TEMP
@@ -450,8 +452,8 @@ class MainActivityState extends State<MainActivity>
                               context: context);
                         },
                         child: SizedBox(
-                          width: 53,
-                          height: 58,
+                          width: 80,
+                          height: 65,
                           child: svgLoaded == false
                               ? Container()
                               : SvgPicture.string(
@@ -463,8 +465,11 @@ class MainActivityState extends State<MainActivity>
                 // buildBottomNavigationbarItem(2, AppIcons.myAdsNav,
                 //     AppIcons.myAdsNavActive, "myAdsTab".translate(context)),
 
-                buildBottomNavigationbarItem(2, AppIcons.listViewIcon,
-                    AppIcons.listViewIcon, "ProceduralGuide".translate(context)),
+                buildBottomNavigationbarItem(
+                    2,
+                    AppIcons.listViewIcon,
+                    AppIcons.listViewIcon,
+                    "ProceduralGuide".translate(context)),
 
                 buildBottomNavigationbarItem(3, AppIcons.articles,
                     AppIcons.articles, "MiningClub".translate(context)),

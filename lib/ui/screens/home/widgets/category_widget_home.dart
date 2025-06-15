@@ -187,7 +187,7 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
           }
         }
         if (state is FetchCategoryInProgress) {
-          return UiUtils.progress();
+          return UiUtils.progress(normalProgressColor: context.color.mainBrown);
         }
         if (state is FetchCategoryFailure) {
           return NoDataFound(
@@ -243,7 +243,7 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
                         child: RotatedBox(
                             quarterTurns: 1,
                             child: UiUtils.getSvg(AppIcons.more,
-                                color: context.color.territoryColor)),
+                                color: context.color.mainBrown)),
                       ),
                     ),
                   ),

@@ -210,7 +210,7 @@ class LocationPermissionScreenState extends State<LocationPermissionScreen>
                     const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12),
                 child: UiUtils.buildButton(context,
                     showElevation: false,
-                    buttonColor: context.color.territoryColor,
+                    buttonColor: context.color.mainBrown,
                     textColor: context.color.secondaryColor, onPressed: () {
                   // Check location permission when the button is pressed
                   _getCurrentLocation();

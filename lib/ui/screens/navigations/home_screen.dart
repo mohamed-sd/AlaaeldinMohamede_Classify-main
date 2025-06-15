@@ -56,7 +56,7 @@ class HomeScreenState extends State<HomeScreen>
   //
   late final ScrollController _scrollController = ScrollController();
   final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
-  GlobalKey<RefreshIndicatorState>();
+      GlobalKey<RefreshIndicatorState>();
 
   Color mainColor = Color(0xff271301);
   Color marqueeBgColor = Color(0xff150900);
@@ -79,8 +79,8 @@ class HomeScreenState extends State<HomeScreen>
       context.read<GetBuyerChatListCubit>().fetch();
       context.read<BlockedUsersListCubit>().blockedUsersList();
     }
-    /* 
-  
+    /*
+
     _scrollController.addListener(() {
       if (_scrollController.isEndReached()) {
         if (context.read<FetchHomeAllItemsCubit>().hasMoreData()) {
@@ -102,76 +102,81 @@ class HomeScreenState extends State<HomeScreen>
       context: context,
       barrierColor: Colors.transparent, // خلفية شفافة
       builder: (context) {
-        return
-          Align(
-            alignment: Alignment.centerRight,
-            child: ClipRRect(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(50),
-                bottomLeft: Radius.circular(50),
-              ),
-              child: Container(
-                padding: EdgeInsets.all(20),
-                height: double.infinity,
-                width: MediaQuery.of(context).size.width * 0.70,
-                color: Color.fromARGB(255, 66, 37, 26),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: context.color.mainGold,
-                            width: 2,
-                          ),
-                          borderRadius: BorderRadius.circular(50)
-                      ),
-                      child: Icon(Icons.close , color: context.color.mainGold,),
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          width: 80,
-                          height: 80,
-                          padding: EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                                color: context.color.mainGold,width: 1
-                            ),
-                            borderRadius: BorderRadius.circular(18),
-                          ),
-                          child: UiUtils.getSvg(AppIcons.appbarLogo, fit: BoxFit.cover ),
-                        ),
-
-                      ],
-                    ),
-                    SizedBox(height: 10,),
-                    Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
+        return Align(
+          alignment: Alignment.centerRight,
+          child: ClipRRect(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(50),
+              bottomLeft: Radius.circular(50),
+            ),
+            child: Container(
+              padding: EdgeInsets.all(20),
+              height: double.infinity,
+              width: MediaQuery.of(context).size.width * 0.70,
+              color: Color.fromARGB(255, 66, 37, 26),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
                         border: Border.all(
-                            color: Colors.white,width: 1
+                          color: context.color.mainGold,
+                          width: 2,
                         ),
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(50)),
+                    child: Icon(
+                      Icons.close,
+                      color: context.color.mainGold,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width: 80,
+                        height: 80,
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              color: context.color.mainGold, width: 1),
+                          borderRadius: BorderRadius.circular(18),
+                        ),
+                        child: UiUtils.getSvg(AppIcons.appbarLogo,
+                            fit: BoxFit.cover),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text("Equipation@info.com",style: TextStyle(
-                          color: Colors.white , fontSize: 14 , fontWeight: FontWeight.w600,
-                        ),textAlign: TextAlign.right,),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white, width: 1),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        "Equipation@info.com",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: TextAlign.right,
                       ),
-                    )
-                  ],
-                ),
+                    ),
+                  )
+                ],
               ),
             ),
-          );
-
+          ),
+        );
 
         //   Align(
         //   alignment: Alignment.centerLeft,
@@ -208,16 +213,14 @@ class HomeScreenState extends State<HomeScreen>
         //     ),
         //   ),
         // );
-
       },
     );
   }
 
-
   void loadItemData() {
     context.read<SliderCubit>().fetchSlider(
-      context,
-    );
+          context,
+        );
     context.read<FetchCategoryCubit>().fetchCategories();
     /*  context.read<FetchHomeScreenCubit>().fetch(
           city: HiveUtils.getCityName(),
@@ -260,33 +263,29 @@ class HomeScreenState extends State<HomeScreen>
 
     return SafeArea(
       child: Scaffold(
-
         appBar: AppBar(
           elevation: 0,
           //leadingWidth: double.maxFinite,
           titleSpacing: 0,
-          title:
-          Row(
+          title: Row(
             children: [
-              Padding(padding: EdgeInsets.all(10),
-              child:
-                InkWell(
-                onTap: (){
-                  Navigator.pushNamed(context, Routes.profileScreen );
-                },  
-                  child:Container(
+
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, Routes.profileScreen);
+                  },
+                  child: Container(
                     padding: EdgeInsets.all(4),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(
-                        width: 1,
-                        color: context.color.mainGold
-                      )
-                    )
-                    , child: Icon(Icons.person , color: context.color.mainGold),
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                            width: 1, color: context.color.mainGold)),
+                    child: Icon(Icons.person, color: context.color.mainGold),
                   ),
                 ),
-                ),
+              ),
 
               // Padding(
               //   padding: const EdgeInsets.all(10.0),
@@ -344,7 +343,7 @@ class HomeScreenState extends State<HomeScreen>
                 child: RefreshIndicator(
                   triggerMode: RefreshIndicatorTriggerMode.anywhere,
                   key: _refreshIndicatorKey,
-                  color: context.color.territoryColor,
+                  color: context.color.mainBrown,
                   onRefresh: () async {
                     print("refresh-------");
                     loadItemData();
@@ -355,25 +354,27 @@ class HomeScreenState extends State<HomeScreen>
                     controller: _scrollController,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(30, 0, 20, 0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(30, 0, 20, 0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(0, 15, 0, 5),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0, 15, 0, 5),
                               child: Text(
                                 'أهلاً بك في إعلانات بريق!',
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 20,
                                     fontWeight: FontWeight.w600,
-                                    fontFamily: 'IBMPlexArabic'
-                                ),
+                                    fontFamily: 'IBMPlexArabic'),
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 3, 0),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0, 5, 3, 0),
                               child: Text(
                                 'حيث نفتح لك ولإعلاناتك وصولًا سريعًا إلى عالم التعدين،',
                                 textAlign: TextAlign.justify,
@@ -381,12 +382,12 @@ class HomeScreenState extends State<HomeScreen>
                                     color: Colors.black,
                                     fontSize: 13,
                                     fontWeight: FontWeight.w600,
-                                    fontFamily: 'IBMPlexArabic'
-                                ),
+                                    fontFamily: 'IBMPlexArabic'),
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 3, 0),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0, 5, 3, 0),
                               child: Text(
                                 'لتصل رسائلك إلى المهتمين وتخلق فرصًا مشرقة.',
                                 textAlign: TextAlign.justify,
@@ -394,14 +395,15 @@ class HomeScreenState extends State<HomeScreen>
                                     color: Colors.black,
                                     fontSize: 13,
                                     fontWeight: FontWeight.w600,
-                                    fontFamily: 'IBMPlexArabic'
-                                ),
+                                    fontFamily: 'IBMPlexArabic'),
                               ),
                             ),
                           ],
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(
+                        height: 10,
+                      ),
                       const SliderWidget(),
                       const CategoryWidgetHome(),
                     ],
@@ -420,7 +422,6 @@ class HomeScreenState extends State<HomeScreen>
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-
           CustomText(
             Constant.appName,
             fontSize: context.font.large,
@@ -468,32 +469,32 @@ class HomeScreenState extends State<HomeScreen>
   Widget blogMarqueeWidget() {
     return BlocBuilder<FetchBlogsCubit, FetchBlogsState>(
         builder: (context, state) {
-          if (state is FetchBlogsSuccess) {
-            String mergedTitle = state.blogModel.map((e) => e.title).join('\t\t\t');
-            return GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(
-                  context,
-                  Routes.blogsScreenRoute,
-                );
-              },
-              child: Container(
-                color: marqueeBgColor,
-                padding: EdgeInsetsDirectional.symmetric(vertical: 5),
-                child: MarqueeText(
-                  text: mergedTitle,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyMedium!
-                      .copyWith(color: Colors.white),
-                  velocity: 50,
-                ),
-              ),
+      if (state is FetchBlogsSuccess) {
+        String mergedTitle = state.blogModel.map((e) => e.title).join('\t\t\t');
+        return GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(
+              context,
+              Routes.blogsScreenRoute,
             );
-          } else {
-            return SizedBox.shrink();
-          }
-        });
+          },
+          child: Container(
+            color: marqueeBgColor,
+            padding: EdgeInsetsDirectional.symmetric(vertical: 5),
+            child: MarqueeText(
+              text: mergedTitle,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(color: Colors.white),
+              velocity: 50,
+            ),
+          ),
+        );
+      } else {
+        return SizedBox.shrink();
+      }
+    });
   }
 }
 
