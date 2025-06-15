@@ -203,10 +203,10 @@ class Routes {
     }
 
     switch (routeSettings.name) {
-      case profileScreen :
-        return MaterialPageRoute(builder: ((context) => const ProfileScreen()));
       case jobsDetailes :
         return MaterialPageRoute(builder: ((context) => const Jobsdetailswedgit()));
+      case profileScreen :
+        return MaterialPageRoute(builder: ((context) => const ProfileScreen()));
       case jobs :
         return MaterialPageRoute(builder: ((context) => const Jobswedgit()));
       case detailes :
