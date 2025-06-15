@@ -417,8 +417,8 @@ class MainActivityState extends State<MainActivity>
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                buildBottomNavigationbarItem(0, AppIcons.home,
-                    AppIcons.homeNavActive, "homeTab".translate(context)),
+                buildBottomNavigationbarItem(0, AppIcons.homeNav,
+                    AppIcons.homeNav, "homeTab".translate(context)),
 
                 buildBottomNavigationbarItem(
                     1, AppIcons.terms, AppIcons.terms, "المتاجر"),
@@ -471,8 +471,8 @@ class MainActivityState extends State<MainActivity>
                     AppIcons.listViewIcon,
                     "ProceduralGuide".translate(context)),
 
-                buildBottomNavigationbarItem(3, AppIcons.articles,
-                    AppIcons.articles, "MiningClub".translate(context)),
+                buildBottomNavigationbarItem(3, AppIcons.chatNav,
+                    AppIcons.chatNav, "MiningClub".translate(context)),
 
                 // buildBottomNavigationbarItem(3, AppIcons.profileNav,
                 //     AppIcons.profileNavActive, "profileTab".translate(context))
@@ -573,9 +573,9 @@ class MainActivityState extends State<MainActivity>
             children: <Widget>[
               if (currentTab == index) ...{
                 UiUtils.getSvg(activeSvg,
-                    color: bottomNavigationSelectedIconColor),
+                    color: bottomNavigationSelectedIconColor , width:25 , height: 25),
               } else ...{
-                UiUtils.getSvg(svgImage, color: bottomNavigationIconColor),
+                UiUtils.getSvg(svgImage, color: bottomNavigationIconColor ,width:25 , height: 25),
                 //UiUtils.getSvg(svgImage,color: context.color.textLightColor.withValues(alpha: 0.5)),
               },
               CustomText(title,

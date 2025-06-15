@@ -108,6 +108,7 @@ class AppIcons {
 
   ///Bottom nav icons
   static String homeNav = _svgPath("bottomnav/home");
+  static String clubNav = _svgPath("bottomnav/club");
   static String homeNavActive = _svgPath("bottomnav/home_active");
   static String chatNav = _svgPath("bottomnav/chat");
   static String chatNavActive = _svgPath("bottomnav/chat_active");
