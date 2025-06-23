@@ -418,7 +418,7 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: ' أخبار الشركات ',
                                         url:
-                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F44-%20%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpeg.jpg?alt=media&token=602fdc8e-de80-42f7-934f-b41ab9ddfcaa'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F61-%20%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA.jpg?alt=media&token=c9a5210e-85ea-49c4-b146-b16936e21879'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -602,7 +602,7 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: 'الدورات التدريبية ',
                                         url:
-                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F53-%20%D8%A7%D9%84%D9%86%D8%AF%D9%88%D8%A7%D8%AA%20%D9%88%D9%88%D8%B1%D8%B4%20%D8%A7%D9%84%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8.jpeg.jpg?alt=media&token=f1a77b7d-d664-4de4-82f5-88d0257e1835'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F52-%20%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8%D9%8A%D8%A9.jpg?alt=media&token=2b1e0b66-8b1f-42f3-bfca-df78ba5416c5'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -730,7 +730,7 @@ class HomeScreenState extends State<HomeNews>
                                     child: GoldShimmerCard(
                                         title: 'المبادرات المجتمعية',
                                         url:
-                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F60-%20%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%AF%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D8%AC%D8%AA%D9%85%D8%B9%D9%8A%D8%A9.jpg?alt=media&token=25610521-187a-46d0-bcbc-2ed0c437d7c3'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F60-%20%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%AF%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D8%AC%D8%AA%D9%85%D8%B9%D9%8A%D8%A9.jpg?alt=media&token=bc386fd0-36a3-4896-89dc-74064cd0f7f0'),
                                   ),
                                   InkWell(
                                     onTap: () {
