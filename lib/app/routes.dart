@@ -1,4 +1,6 @@
 import 'package:eClassify/ui/screens/ComingSoonWidget.dart';
+import 'package:eClassify/ui/screens/MiningClub/KnowledgeAndResearch/KnowResPage.dart';
+import 'package:eClassify/ui/screens/MiningClub/KnowledgeAndResearch/PDFViewerPage.dart';
 import 'package:eClassify/ui/screens/ad_details_screen.dart';
 import 'package:eClassify/ui/screens/advertisement/my_advertisment_screen.dart';
 import 'package:eClassify/ui/screens/auth/login/forgot_password.dart';
@@ -67,6 +69,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
+  static const pDFViewerPage = 'pDFViewerPage';
+  static const knowResPage  = 'knowResPage';
   static const profileScreen = 'profileScreen';
   static const detailes = 'details';
   static const soon = 'soon';
@@ -203,6 +207,8 @@ class Routes {
     }
 
     switch (routeSettings.name) {
+      case pDFViewerPage :
+        return MaterialPageRoute(builder: ((context) => const PDFViewerPage()));
       case jobsDetailes :
         return MaterialPageRoute(builder: ((context) => const Jobsdetailswedgit()));
       case profileScreen :
@@ -232,6 +238,8 @@ class Routes {
             builder: ((context) => const OnboardingScreen()));
       case main:
         return MainActivity.route(routeSettings);
+      case knowResPage :
+        return KnowResPage.route(routeSettings);
       case login:
         return LoginScreen.route(routeSettings);
       case forgotPassword:

@@ -533,7 +533,14 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.soon);
+                                        context,
+                                        Routes.knowResPage,
+                                        arguments:
+                                        {
+                                          'title': 'المقالات العلمية والتحليلية',
+                                          'flag': '1',
+                                        }, // هذا هو الـ title
+                                      );
                                     },
                                     child: GoldShimmerCard(
                                         title: ' المقالات العلمية والتحليلية ',
@@ -542,8 +549,12 @@ class HomeScreenState extends State<HomeNews>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(
-                                          context, Routes.soon);
+                                      Navigator.pushNamed(context,
+                                      Routes.knowResPage,
+                                      arguments: {
+                                        'title' : 'البحوث والأوراق الأكاديمية',
+                                        'flag' : '2'
+                                      });
                                     },
                                     child: GoldShimmerCard(
                                         title: ' البحوث والأوراق الأكاديمية ',
@@ -552,7 +563,12 @@ class HomeScreenState extends State<HomeNews>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
+                                      Navigator.pushNamed(context,
+                                          Routes.knowResPage,
+                                          arguments: {
+                                            'title' : ' المواد الدراسية والكتب',
+                                            'flag' : '2'
+                                          });
                                     },
                                     child: GoldShimmerCard(
                                         title: ' المواد الدراسية والكتب ',
