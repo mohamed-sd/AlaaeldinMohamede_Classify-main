@@ -68,24 +68,52 @@ class VisualMaterialsPage extends StatelessWidget {
               },
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.amber[700],
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-              ),
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 12),
-                child: Text("المزيد",
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold)),
-              ),
+      Column(
+        children: [
+          Container(
+            margin: EdgeInsets.all(5),
+            padding: EdgeInsets.all(5),
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: context.color.mainGold,
+              borderRadius: BorderRadius.circular(10)
             ),
+            child: Text("المزيد", textAlign: TextAlign.center,
+                style: TextStyle( fontSize: 20,
+                    color: Colors.black, fontWeight: FontWeight.w800)),
           ),
+          SizedBox(height: 20,)
+        ],
+      ),
+
+
+          // Container(
+          //   margin: EdgeInsets.all(5),
+          //   decoration: BoxDecoration(
+          //     borderRadius: BorderRadius.circular(10)
+          //   ),
+          //   child: Padding(
+          //     padding: const EdgeInsets.symmetric(vertical: 10),
+          //     child: ElevatedButton(
+          //       onPressed: () {},
+          //       style: ElevatedButton.styleFrom(
+          //         backgroundColor: context.color.mainGold,
+          //         shape: RoundedRectangleBorder(
+          //           borderRadius: BorderRadius.circular(8),
+          //         ),
+          //       ),
+          //       child: Container(
+          //         width: double.infinity,
+          //         child: const Padding(
+          //           padding: EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+          //           child: Text("المزيد",
+          //               style: TextStyle(
+          //                   color: Colors.black, fontWeight: FontWeight.bold)),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -147,13 +175,16 @@ class VideoCard extends StatelessWidget {
                     bottom: 4,
                     left: 4,
                     child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
                       padding: const EdgeInsets.symmetric(
                           horizontal: 6, vertical: 2),
-                      color: Colors.black.withOpacity(0.7),
                       child: Text(
                         duration,
                         style:
-                            const TextStyle(color: Colors.white, fontSize: 12),
+                            const TextStyle(color: Colors.black, fontSize: 10),
                       ),
                     ),
                   ),
