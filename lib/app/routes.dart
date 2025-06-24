@@ -1,4 +1,6 @@
 import 'package:eClassify/ui/screens/ComingSoonWidget.dart';
+import 'package:eClassify/ui/screens/MiningClub/Courses/VisualDetailsPage.dart';
+import 'package:eClassify/ui/screens/MiningClub/Courses/VisualMaterialsPage.dart';
 import 'package:eClassify/ui/screens/MiningClub/KnowledgeAndResearch/KnowResPage.dart';
 import 'package:eClassify/ui/screens/MiningClub/KnowledgeAndResearch/PDFViewerPage.dart';
 import 'package:eClassify/ui/screens/ad_details_screen.dart';
@@ -69,6 +71,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
+  static const visualDetailsPage  = 'visualDetailsPage';
+  static const visualMaterialsPage = 'visualMaterialsPage';
   static const pDFViewerPage = 'pDFViewerPage';
   static const knowResPage  = 'knowResPage';
   static const profileScreen = 'profileScreen';
@@ -207,6 +211,10 @@ class Routes {
     }
 
     switch (routeSettings.name) {
+    case visualDetailsPage:
+      return MaterialPageRoute(builder: ((context) => const VisualDetailsPage()));
+    case visualMaterialsPage:
+        return MaterialPageRoute(builder: ((context) => const VisualMaterialsPage()));
       case pDFViewerPage :
         return MaterialPageRoute(builder: ((context) => const PDFViewerPage()));
       case jobsDetailes :

@@ -613,7 +613,7 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.soon);
+                                          context, Routes.visualMaterialsPage);
                                     },
                                     child: GoldShimmerCard(
                                         title: 'الدورات التدريبية ',
@@ -623,7 +623,7 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.soon);
+                                          context, Routes.visualMaterialsPage);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' الندوات وورش العمل ',
@@ -632,7 +632,7 @@ class HomeScreenState extends State<HomeNews>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
+                                      Navigator.pushNamed(context, Routes.visualMaterialsPage);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' برامج تطوير المهارات ',
