@@ -31,8 +31,11 @@ class AppSettings {
   static const String packageName = 'com.eclassify.wrteam';
   static const String shareAppText = "Share this App";
 
+  //static const String hostUrl = "https://admin.mining-market.com/";
+  // static const String demoUrl = "https://admin.mining-market.com/";
+  //static const String hostUrl = "https://admin.enjaz.com.sd";
   static const String hostUrl = "https://admin.mining-market.com/";
-  // static const String hostUrl = "https://admin.enjaz.com.sd";
+
 
   static const int apiDataLoadLimit = 20;
   static const int maxCategoryShowLengthInHomeScreen = 5;

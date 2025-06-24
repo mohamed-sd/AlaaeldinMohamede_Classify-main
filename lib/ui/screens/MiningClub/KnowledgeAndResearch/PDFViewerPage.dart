@@ -15,7 +15,7 @@ class PDFViewerPage extends StatelessWidget {
           // ✅ نغلف الـ PDF داخل Expanded لتأخذ المساحة المتاحة
           Expanded(
             child: SfPdfViewer.network(
-              'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+              'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/pdf%2F5-%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%B7%D8%A7%D9%82%D8%A9.pdf?alt=media&token=4a0c7527-8e38-4a63-92ed-005e992d555b',
             ),
           ),
 
