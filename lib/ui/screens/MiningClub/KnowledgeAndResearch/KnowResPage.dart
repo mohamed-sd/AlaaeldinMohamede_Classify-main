@@ -130,40 +130,50 @@ class KnowResPage  extends StatelessWidget {
                                   Navigator.pushNamed(context,
                                       Routes.pDFViewerPage);
                                 },
-                                child: light_row( context , 'إجراءات رخصة البحث العامة ')),
+                                child: light_row( context , 'نظرة شاملة للصناعة')),
                             InkWell(
-                                onTap: () {},
-                                child: Dark_row( context ,  ' إجراءات رخصة البحث المطلقة ')),
+                                onTap: () {
+                                  Navigator.pushNamed(context,
+                                      Routes.pDFViewerPage);
+                                },
+                                child: Dark_row( context ,  ' تأثير التعدين علي البيئة ')),
                             InkWell(
-                                onTap: () {},
-                                child: light_row( context , ' إجراءات رخصة الإمتياز  ')),
+                                onTap: () {
+                                  Navigator.pushNamed(context,
+                                      Routes.pDFViewerPage);
+                                },
+                                child: light_row( context , ' التقنيات الحديثة للتعدين  ')),
 
-                            the_title(
-                                'عقود التعدين وإستخراج الصخور والمعادن الصناعية'),
 
-                            InkWell(
-                                onTap: () {},
-                                child: Dark_row(context ,'مطلوبات عقد التعدين الكبير ')),
-
-                            InkWell(
-                                onTap: () {},
-                                child: light_row(context ,  'مطلوبات عقد التعدين الصغير ')),
 
                             InkWell(
-                                onTap: () {},
-                                child: Dark_row(context ,'مطلوبات عقد التعدين التقليدي ')),
+                                onTap: () {
+                                  Navigator.pushNamed(context,
+                                      Routes.pDFViewerPage);
+                                },
+                                child: Dark_row(context ,'التقنيات الحديثة للتعدين ')),
+
 
                             InkWell(
-                                onTap: () {},
-                                child: light_row( context , 'مطلوبات عقد المعادن والصخور')),
+                                onTap: () {
+                                  Navigator.pushNamed(context,
+                                      Routes.pDFViewerPage);
+                                },
+                                child: light_row( context , 'التقنيات الحديثة للتعدين')),
 
                             InkWell(
-                                onTap: () {},
-                                child: Dark_row(context ,'مطلوبات رخصة التعامل في الأحجار الكريمة')),
+                                onTap: () {
+                                  Navigator.pushNamed(context,
+                                      Routes.pDFViewerPage);
+                                },
+                                child: Dark_row(context ,'  الأحجار الكريمة')),
 
                             InkWell(
-                                onTap: () {},
-                                child: light_row( context , 'ضوابط العمل في التعدين النهري')),
+                                onTap: () {
+                                  Navigator.pushNamed(context,
+                                      Routes.pDFViewerPage);
+                                },
+                                child: light_row( context , 'التقنيات الحديثة للتعدين')),
 
                           ],
                         ),
