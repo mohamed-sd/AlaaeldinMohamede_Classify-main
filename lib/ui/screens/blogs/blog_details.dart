@@ -35,8 +35,9 @@ class BlogDetails extends StatelessWidget {
       top: false,
       child: Scaffold(
         backgroundColor: context.color.primaryColor,
-        appBar: UiUtils.buildAppBar(context,
-            showBackButton: true, title: "blogs".translate(context)),
+        // appBar: UiUtils.buildAppBar(context, backgroundColor: context.color.mainBrown,
+        //     showBackButton: true, title: "blogs".translate(context)),
+        appBar: AppBar(backgroundColor: context.color.mainBrown,title: Text("blogs".translate(context))),
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(

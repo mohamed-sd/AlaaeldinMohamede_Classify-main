@@ -421,7 +421,7 @@ class MainActivityState extends State<MainActivity>
                     AppIcons.homeNav, "homeTab".translate(context)),
 
                 buildBottomNavigationbarItem(
-                    1, AppIcons.terms, AppIcons.terms, "المتاجر"),
+                    1, AppIcons.myAdsNav, AppIcons.myAdsNav, "المتاجر"),
 
                 BlocListener<FetchUserPackageLimitCubit,
                         FetchUserPackageLimitState>(
@@ -452,13 +452,14 @@ class MainActivityState extends State<MainActivity>
                               context: context);
                         },
                         child: SizedBox(
-                          width: 80,
-                          height: 65,
+                          width: 100,
+                          height: 85,
                           child: svgLoaded == false
                               ? Container()
-                              : SvgPicture.string(
-                                  svgEdit.toSVGString() ?? "",
-                                ),
+                              : UiUtils.getSvg(AppIcons.plusIcon),
+                              // : SvgPicture.string(
+                              //     svgEdit.toSVGString() ?? "",
+                              //   ),
                         ),
                       ),
                     )),
@@ -467,8 +468,8 @@ class MainActivityState extends State<MainActivity>
 
                 buildBottomNavigationbarItem(
                     2,
-                    AppIcons.listViewIcon,
-                    AppIcons.listViewIcon,
+                    AppIcons.profileNav,
+                    AppIcons.profileNav,
                     "ProceduralGuide".translate(context)),
 
                 buildBottomNavigationbarItem(3, AppIcons.chatNav,

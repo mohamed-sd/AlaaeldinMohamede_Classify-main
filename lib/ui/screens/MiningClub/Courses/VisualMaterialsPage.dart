@@ -44,14 +44,8 @@ class VisualMaterialsPage extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: GridView.builder(
+            child: ListView.builder(
               padding: const EdgeInsets.all(15),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 0.70,
-                crossAxisSpacing: 15,
-                mainAxisSpacing: 5,
-              ),
               itemCount: 6, // عدد الفيديوهات
               itemBuilder: (context, index) {
                 return VideoCard(
@@ -67,11 +61,12 @@ class VisualMaterialsPage extends StatelessWidget {
                 );
               },
             ),
+
           ),
       Column(
         children: [
           Container(
-            margin: EdgeInsets.all(5),
+            margin: EdgeInsets.only(right: 10 , left: 10),
             padding: EdgeInsets.all(5),
             width: double.infinity,
             decoration: BoxDecoration(
@@ -139,13 +134,167 @@ class VideoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: (){},
+        child: Card(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          elevation: 3,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: double.infinity,
+                          margin: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
+                          decoration: BoxDecoration(
+                              color: context.color.mainGold,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(title,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 13)),
+                          ),
+                        ),
+                        Container(
+                          width: double.infinity,
+                          margin: EdgeInsets.only(top: 5, right: 5, left: 5),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: Colors.grey, width: 1)),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            child: Text(channel,
+                                style: const TextStyle(fontSize: 11, color: Colors.black)),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 5, right: 5, left: 5),
+                          child: Row(
+                            children: [
+                              Container(
+                                  padding: EdgeInsets.symmetric(horizontal: 5),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      border: Border.all(color: Colors.grey, width: 1)),
+                                  child: Text("$views مشاهدة  ",
+                                      style: const TextStyle(
+                                          fontSize: 11, color: Colors.black))),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Expanded(
+                                child: Container(
+                                    padding: EdgeInsets.symmetric(horizontal: 5),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(color: Colors.grey, width: 1)),
+                                    child: Text("$daysAgo",
+                                        style: const TextStyle(
+                                            fontSize: 11, color: Colors.black))),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 5 , right: 5 , left: 5),
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: context.color.mainGold,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsets.all(5),
+                                    child: Text(
+                                        'تفاصــــــــــــيل اكــــــــــــــثر ',
+                                        textAlign: TextAlign.center,
+                                        style:
+                                        TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 12,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                        )
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(color: context.color.mainGold , borderRadius: BorderRadius.circular(10)),
+                    child: Stack(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: Image.asset(
+                            'assets/login.jpg',
+                            height: 130,
+                            width: 130,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        const Positioned.fill(
+                          child: Center(
+                            child: CircleAvatar(
+                              radius: 20,
+                              backgroundColor: Colors.white,
+                              child: Icon(Icons.play_arrow, color: Colors.red),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 4,
+                          left: 4,
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10)
+                            ),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 6, vertical: 2),
+                            child: Text(
+                              duration,
+                              style:
+                              const TextStyle(color: Colors.black, fontSize: 10),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                ],
+              )
+            ],
+          ),
+        )
+    );
+    return InkWell(
       onTap: () {
         Navigator.pushNamed(context, Routes.visualDetailsPage);
       },
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         elevation: 3,
-        child: Column(
+        child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
@@ -158,7 +307,7 @@ class VideoCard extends StatelessWidget {
                     child: Image.asset(
                       'assets/profile.jpg',
                       height: 100,
-                      width: double.infinity,
+                      width: 100,
                       fit: BoxFit.fill,
                     ),
                   ),

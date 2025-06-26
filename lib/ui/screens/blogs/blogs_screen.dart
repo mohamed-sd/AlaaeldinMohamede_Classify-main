@@ -68,8 +68,7 @@ class _BlogsScreenState extends State<BlogsScreen> {
         },
         child: Scaffold(
           backgroundColor: context.color.mainColor,
-          appBar: UiUtils.buildAppBar(context,
-              showBackButton: true, backgroundColor: Colors.white),
+          appBar: AppBar(backgroundColor: context.color.mainBrown,title: Text('اخبار التعدين'),),
           body: BlocBuilder<FetchBlogsCubit, FetchBlogsState>(
             builder: (context, state) {
               if (state is FetchBlogsInProgress) {
@@ -100,12 +99,12 @@ class _BlogsScreenState extends State<BlogsScreen> {
                         child: Image.network(
                           'https://images.unsplash.com/photo-1580128660010-fd027e1e587a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw1fHx0cnVtcHxlbnwwfHx8fDE3MzM0MDMxNTJ8MA&ixlib=rb-4.0.3&q=80&w=1080',
                           width: double.infinity,
-                          height: 400,
+                          height: 300,
                           fit: BoxFit.fill,
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 250, 0, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 150, 0, 0),
                         child: Column(
                           children: [
                             Padding(
