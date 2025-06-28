@@ -5,7 +5,8 @@ import 'package:intl/intl.dart';
 
 class CommunitiesPage extends StatelessWidget {
   final String title;
-  const CommunitiesPage({super.key, required this.title});
+  final String flag ;
+  const CommunitiesPage({super.key, required this.title, required this.flag});
 
   static Route<dynamic> route(RouteSettings settings) {
     final args = settings.arguments as Map<String, String>;
@@ -13,6 +14,7 @@ class CommunitiesPage extends StatelessWidget {
     return MaterialPageRoute(
       builder: (_) => CommunitiesPage(
         title: args['title'] ?? '',
+        flag: args['flag'] ?? '',
       ),
       settings: settings,
     );

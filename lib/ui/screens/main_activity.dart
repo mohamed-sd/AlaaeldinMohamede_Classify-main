@@ -405,7 +405,7 @@ class MainActivityState extends State<MainActivity>
         //color: context.color.secondaryColor,
         shape: const CircularNotchedRectangle(),
         child: Container(
-          height: 84,
+          height: 110,
           // color: context.color.secondaryColor,
           decoration: BoxDecoration(
             borderRadius: borderRadius,
@@ -453,17 +453,17 @@ class MainActivityState extends State<MainActivity>
                               context: context);
                         },
                         child: SizedBox(
-                          width: 65,
-                          height: 85,
+                          width: 110,
+                          height: 110,
                           child: svgLoaded == false
                               ? Container()
                               :
                                   Container(
-                                      height: 120,
+                                      height: 85,
                                       child: Column(
                                         children: [
-                                          UiUtils.getSvg(AppIcons.plusIcon , height: 68),
-                                          Text('أضف إعلانك' , style: TextStyle(color: context.color.mainColor , fontSize: 9,fontWeight: FontWeight.w900),)
+                                          UiUtils.getSvg(AppIcons.plusIcon , height: 85),
+                                          Text('أضف إعلانك' , style: TextStyle(color: context.color.mainColor , fontSize: 12,fontWeight: FontWeight.w900),)
                                         ],
                                       )
                               )
