@@ -741,7 +741,9 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.soon);
+                                          context, Routes.communitiesPage,arguments: {
+                                        'title':'المبادرات المجتمعية'
+                                      });
                                     },
                                     child: GoldShimmerCard(
                                         title: 'المبادرات المجتمعية',
@@ -751,7 +753,9 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.soon);
+                                          context, Routes.communitiesPage,arguments: {
+                                        'title' : 'المسؤولية الاجتماعية'
+                                      });
                                     },
                                     child: GoldShimmerCard(
                                         title: 'المسؤولية الاجتماعية',
@@ -760,7 +764,9 @@ class HomeScreenState extends State<HomeNews>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
+                                      Navigator.pushNamed(context, Routes.communitiesPage,arguments: {
+                                        'title' : 'المنتديات والنقاشات'
+                                      });
                                     },
                                     child: GoldShimmerCard(
                                         title: ' المنتديات والنقاشات ',

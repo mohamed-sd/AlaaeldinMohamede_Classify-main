@@ -1,4 +1,5 @@
 import 'package:eClassify/ui/screens/ComingSoonWidget.dart';
+import 'package:eClassify/ui/screens/MiningClub/Communities/communities_page.dart';
 import 'package:eClassify/ui/screens/MiningClub/Courses/VisualDetailsPage.dart';
 import 'package:eClassify/ui/screens/MiningClub/Courses/VisualMaterialsPage.dart';
 import 'package:eClassify/ui/screens/MiningClub/KnowledgeAndResearch/KnowResPage.dart';
@@ -71,6 +72,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
+  static const communitiesPage = 'communitiesPage';
   static const visualDetailsPage  = 'visualDetailsPage';
   static const visualMaterialsPage = 'visualMaterialsPage';
   static const pDFViewerPage = 'pDFViewerPage';
@@ -246,6 +248,8 @@ class Routes {
             builder: ((context) => const OnboardingScreen()));
       case main:
         return MainActivity.route(routeSettings);
+      case communitiesPage :
+        return CommunitiesPage.route(routeSettings);
       case knowResPage :
         return KnowResPage.route(routeSettings);
       case login:
