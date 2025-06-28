@@ -134,7 +134,10 @@ class VideoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){},
+      onTap: (){
+        Navigator.pushNamed(context, Routes.visualDetailsPage);
+
+      },
         child: Card(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
           elevation: 3,

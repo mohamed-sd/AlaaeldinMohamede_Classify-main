@@ -406,7 +406,7 @@ class HomeScreenState extends State<HomeScreen>
                       ),
                       const SliderWidget(),
                       const CategoryWidgetHome(),
-                      SizedBox(height: 20,)
+                      SizedBox(height: 30,)
                     ],
                   ),
                 ),

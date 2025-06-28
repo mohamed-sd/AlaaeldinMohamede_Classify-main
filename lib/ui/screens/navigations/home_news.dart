@@ -413,7 +413,7 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.soon);
+                                          context, Routes.blogsScreenRoute);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' أخبار الشركات ',
@@ -423,7 +423,7 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.soon);
+                                          context, Routes.blogsScreenRoute);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' تحديثات الجهات الرسمية والوزارات ',
@@ -677,7 +677,7 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.soon);
+                                          context, Routes.blogsScreenRoute);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' بودكاست التعدين ',
@@ -687,7 +687,7 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.soon);
+                                          context, Routes.blogsScreenRoute);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' فيديوهات توعوية وتدريبية ',
@@ -775,7 +775,7 @@ class HomeScreenState extends State<HomeNews>
                                         title: ' المنتديات والنقاشات ',
                                         url: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F58-%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AF%D9%8A%D8%A7%D8%AA%20%D9%88%D8%A7%D9%84%D9%86%D9%82%D8%A7%D8%B4%D8%A7%D8%AA.jpg?alt=media&token=e5c7a67e-d4c0-4acc-b9d4-58e4b78c8279'),
                                   ),
-                                  SizedBox(height: 20,)
+                                  SizedBox(height: 30,)
                                 ],
                               ),
                             ],
