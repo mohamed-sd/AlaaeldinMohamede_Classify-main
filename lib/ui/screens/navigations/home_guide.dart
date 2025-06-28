@@ -1148,6 +1148,7 @@ class HomeScreenState extends State<HomeGuide>
                       ),
                     ],
                   ),
+                  SizedBox(height: 20,)
                 ],
               ),
             ),
