@@ -405,6 +405,7 @@ class MainActivityState extends State<MainActivity>
         //color: context.color.secondaryColor,
         shape: const CircularNotchedRectangle(),
         child: Container(
+          height: 84,
           // color: context.color.secondaryColor,
           decoration: BoxDecoration(
             borderRadius: borderRadius,
@@ -437,7 +438,7 @@ class MainActivityState extends State<MainActivity>
                     },
                     child: Transform(
                       transform: Matrix4.identity()
-                        ..translate(0.toDouble(), -15),
+                        ..translate(0.toDouble(), -30),
                       child: InkWell(
                         onTap: () async {
                           //TODO:TEMP
@@ -452,11 +453,20 @@ class MainActivityState extends State<MainActivity>
                               context: context);
                         },
                         child: SizedBox(
-                          width: 100,
+                          width: 65,
                           height: 85,
                           child: svgLoaded == false
                               ? Container()
-                              : UiUtils.getSvg(AppIcons.plusIcon),
+                              :
+                                  Container(
+                                      height: 120,
+                                      child: Column(
+                                        children: [
+                                          UiUtils.getSvg(AppIcons.plusIcon , height: 68),
+                                          Text('أضف إعلانك' , style: TextStyle(color: context.color.mainColor , fontSize: 9,fontWeight: FontWeight.w900),)
+                                        ],
+                                      )
+                              )
                               // : SvgPicture.string(
                               //     svgEdit.toSVGString() ?? "",
                               //   ),
