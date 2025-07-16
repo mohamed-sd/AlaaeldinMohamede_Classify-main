@@ -677,7 +677,7 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.soon);
+                                          context, Routes.bodcastPage);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' بودكاست التعدين ',
@@ -687,7 +687,7 @@ class HomeScreenState extends State<HomeNews>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.blogsScreenRoute);
+                                          context, Routes.bodcastPage);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' فيديوهات توعوية وتدريبية ',
@@ -696,7 +696,7 @@ class HomeScreenState extends State<HomeNews>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.bodcastPage);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' جلسات حوارية ومسجلة ',

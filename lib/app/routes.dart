@@ -1,6 +1,6 @@
 import 'package:eClassify/ui/screens/ComingSoonWidget.dart';
 import 'package:eClassify/ui/screens/MiningClub/Communities/communities_page.dart';
-import 'package:eClassify/ui/screens/MiningClub/Courses/bodcastPage.dart';
+import 'package:eClassify/ui/screens/MiningClub/Courses/BodcastPage.dart';
 import 'package:eClassify/ui/screens/MiningClub/Courses/VisualDetailsPage.dart';
 import 'package:eClassify/ui/screens/MiningClub/Courses/VisualMaterialsPage.dart';
 import 'package:eClassify/ui/screens/MiningClub/KnowledgeAndResearch/KnowResPage.dart';
@@ -216,7 +216,7 @@ class Routes {
 
     switch (routeSettings.name) {
       case bodcastPage:
-        return MaterialPageRoute(builder: ((context) => const bodcastPage()));
+        return MaterialPageRoute(builder: ((context) => const BodcastPage()));
     case visualDetailsPage:
       return MaterialPageRoute(builder: ((context) => const VisualDetailsPage()));
     case visualMaterialsPage:

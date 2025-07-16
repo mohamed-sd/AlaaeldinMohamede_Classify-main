@@ -3,8 +3,8 @@ import 'package:eClassify/ui/theme/theme.dart';
 import 'package:eClassify/utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 
-class bodcastPage extends StatelessWidget {
-  const bodcastPage({super.key});
+class BodcastPage extends StatelessWidget {
+  const BodcastPage({super.key});
 
   @override
   Widget build(BuildContext context) {
