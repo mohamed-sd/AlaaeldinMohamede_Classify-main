@@ -799,11 +799,13 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                 ],
                               ),
+                              SizedBox(height: 5,)
+
                             ],
                           ),
                         ),
                       SizedBox(
-                        height: 5,
+                        height: 30,
                       ),
 
 

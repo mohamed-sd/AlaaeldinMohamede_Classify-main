@@ -282,10 +282,10 @@ class MainActivityState extends State<MainActivity>
 
   late List<Widget> pages = [
     HomeScreen(from: widget.from),
-    ComingSoonPage(),
+    HomeScreen(from: widget.from),
     HomeGuide(),
     HomeNews(),
-    // ChatListScreen(),
+    //  ComingSoonPage(),
     // ItemsScreen(),
     // const ProfileScreen(),
   ];
@@ -480,10 +480,10 @@ class MainActivityState extends State<MainActivity>
                     2,
                     AppIcons.profileNav,
                     AppIcons.profileNav,
-                    "ProceduralGuide".translate(context)),
+                    "دليل إجرائي"),
 
                 buildBottomNavigationbarItem(3, AppIcons.chatNav,
-                    AppIcons.chatNav, "MiningClub".translate(context)),
+                    AppIcons.chatNav,  "نادي التعدين"),
 
                 // buildBottomNavigationbarItem(3, AppIcons.profileNav,
                 //     AppIcons.profileNavActive, "profileTab".translate(context))

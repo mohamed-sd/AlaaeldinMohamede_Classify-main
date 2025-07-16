@@ -34,7 +34,7 @@ class CommunitiesPage extends StatelessWidget {
           SizedBox(height: 10,),
           NewsCard(
             title: "افتتاح مبادرة بيئية جديدة",
-            imageUrl: "https://images.unsplash.com/photo-1580128660010-fd027e1e587a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw1fHx0cnVtcHxlbnwwfHx8fDE3MzM0MDMxNTJ8MA&ixlib=rb-4.0.3&q=80&w=1080",
+            imageUrl: "https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F60-%20%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%AF%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D8%AC%D8%AA%D9%85%D8%B9%D9%8A%D8%A9.jpg?alt=media&token=bc386fd0-36a3-4896-89dc-74064cd0f7f0",
             date: DateTime(2025, 6, 25),
             category: "بيئة",
             summary: "تم إطلاق مبادرة تهدف إلى تنظيف الأحياء وتعزيز الوعي البيئي بين المواطنين.",
@@ -44,7 +44,7 @@ class CommunitiesPage extends StatelessWidget {
           ),
           NewsCard(
             title: "فعالية تطوعية في حي النصر",
-            imageUrl: "https://images.unsplash.com/photo-1580128660010-fd027e1e587a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw1fHx0cnVtcHxlbnwwfHx8fDE3MzM0MDMxNTJ8MA&ixlib=rb-4.0.3&q=80&w=1080",
+            imageUrl: "https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F60-%20%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%AF%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D8%AC%D8%AA%D9%85%D8%B9%D9%8A%D8%A9.jpg?alt=media&token=bc386fd0-36a3-4896-89dc-74064cd0f7f0",
             date: DateTime(2025, 6, 24),
             category: "تطوع",
             summary: "شارك أكثر من 100 متطوع في فعالية تنظيف الحدائق العامة في حي النصر.",
@@ -54,7 +54,7 @@ class CommunitiesPage extends StatelessWidget {
           ),
           NewsCard(
             title: "انطلاق حملة للتبرع بالدم",
-            imageUrl: "https://images.unsplash.com/photo-1580128660010-fd027e1e587a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw1fHx0cnVtcHxlbnwwfHx8fDE3MzM0MDMxNTJ8MA&ixlib=rb-4.0.3&q=80&w=1080",
+            imageUrl: "https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F60-%20%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%AF%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D8%AC%D8%AA%D9%85%D8%B9%D9%8A%D8%A9.jpg?alt=media&token=bc386fd0-36a3-4896-89dc-74064cd0f7f0",
             date: DateTime(2025, 6, 20),
             category: "صحة",
             summary: "بدأت الحملة بالتعاون مع المستشفى الوطني وتهدف لتوفير الدم للمحتاجين.",

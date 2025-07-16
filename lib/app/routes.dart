@@ -1,5 +1,6 @@
 import 'package:eClassify/ui/screens/ComingSoonWidget.dart';
 import 'package:eClassify/ui/screens/MiningClub/Communities/communities_page.dart';
+import 'package:eClassify/ui/screens/MiningClub/Courses/bodcastPage.dart';
 import 'package:eClassify/ui/screens/MiningClub/Courses/VisualDetailsPage.dart';
 import 'package:eClassify/ui/screens/MiningClub/Courses/VisualMaterialsPage.dart';
 import 'package:eClassify/ui/screens/MiningClub/KnowledgeAndResearch/KnowResPage.dart';
@@ -64,7 +65,6 @@ import 'package:eClassify/ui/screens/sub_category/sub_category_screen.dart';
 import 'package:eClassify/ui/screens/subscription/packages_list.dart';
 import 'package:eClassify/ui/screens/subscription/transaction_history_screen.dart';
 import 'package:eClassify/ui/screens/user_profile/edit_profile.dart';
-
 import 'package:eClassify/ui/screens/widgets/maintenance_mode.dart';
 import 'package:eClassify/utils/constant.dart';
 import 'package:eClassify/utils/hive_utils.dart';
@@ -74,6 +74,8 @@ import 'package:flutter/material.dart';
 class Routes {
   static const communitiesPage = 'communitiesPage';
   static const visualDetailsPage  = 'visualDetailsPage';
+  static const bodcastPage  = 'bodcastPage';
+
   static const visualMaterialsPage = 'visualMaterialsPage';
   static const pDFViewerPage = 'pDFViewerPage';
   static const knowResPage  = 'knowResPage';
@@ -213,6 +215,8 @@ class Routes {
     }
 
     switch (routeSettings.name) {
+      case bodcastPage:
+        return MaterialPageRoute(builder: ((context) => const bodcastPage()));
     case visualDetailsPage:
       return MaterialPageRoute(builder: ((context) => const VisualDetailsPage()));
     case visualMaterialsPage:
@@ -369,3 +373,4 @@ class Routes {
     }
   }
 }
+
