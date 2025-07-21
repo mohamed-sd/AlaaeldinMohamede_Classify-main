@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:eClassify/app/routes.dart';
 import 'package:eClassify/data/cubits/item/fetch_item_from_category_cubit.dart';
+import 'package:eClassify/data/model/category_model.dart';
 import 'package:eClassify/data/model/item/item_model.dart';
 import 'package:eClassify/data/model/item_filter_model.dart';
 import 'package:eClassify/ui/screens/home/widgets/home_sections_adapter.dart';
@@ -15,6 +16,7 @@ import 'package:eClassify/ui/screens/widgets/shimmerLoadingContainer.dart';
 import 'package:eClassify/ui/theme/theme.dart';
 import 'package:eClassify/utils/api.dart';
 import 'package:eClassify/utils/app_icon.dart';
+import 'package:eClassify/utils/cloud_state/cloud_state.dart';
 import 'package:eClassify/utils/constant.dart';
 import 'package:eClassify/utils/custom_silver_grid_delegate.dart';
 import 'package:eClassify/utils/custom_text.dart';
@@ -50,7 +52,7 @@ class ItemsList extends StatefulWidget {
   }
 }
 
-class ItemsListState extends State<ItemsList> {
+class ItemsListState extends CloudState<ItemsList> {
   late ScrollController controller;
   static TextEditingController searchController = TextEditingController();
   bool isFocused = false;
@@ -295,6 +297,10 @@ class ItemsListState extends State<ItemsList> {
 
   @override
   Widget build(BuildContext context) {
+
+    List<CategoryModel>? breadCrumbList =
+    getCloudData("breadCrumb") as List<CategoryModel>?;
+
     return bodyWidget();
   }
 
@@ -357,8 +363,41 @@ class ItemsListState extends State<ItemsList> {
           VerticalDivider(
             color: context.color.textLightColor.withValues(alpha: 0.3),
           ),
+          InkWell(
+            onTap: () {
+              final List<CategoryModel> breadCrumb =
+                  getCloudData("breadCrumb") ?? [];
+
+              if (breadCrumb != null) {
+                Navigator.pushNamed(
+                  context,
+                  Routes.addItemDetails,
+                  arguments: {
+                    "breadCrumbItems": breadCrumb,
+                  },
+                );
+              } else {
+                // التعامل مع الخطأ إن لم تكن البيانات موجودة
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("لا يمكن فتح شاشة الإضافة، لا توجد بيانات تصنيف.")),
+                );
+              }
+            },
+            child: Row(
+              children: [
+                Icon(Icons.add),
+                Text('إضافة إعلان'),
+              ],
+            ),
+          ),
+          VerticalDivider(
+            color: context.color.textLightColor.withValues(alpha: 0.3),
+          ),
           // Add a vertical divider here
           sortByWidget(),
+
+
+
         ],
       ),
     );
@@ -747,5 +786,19 @@ class ItemsListState extends State<ItemsList> {
         ),
       ),
     );
+  }
+  List<CategoryModel>? getBreadCrumbList() {
+    final dynamic rawBreadCrumb = getCloudData("breadCrumb");
+
+    if (rawBreadCrumb != null && rawBreadCrumb is List) {
+      try {
+        return rawBreadCrumb
+            .map((item) => CategoryModel.fromJson(item as Map<String, dynamic>))
+            .toList();
+      } catch (e) {
+        print("خطأ في تحويل breadcrumb: $e");
+      }
+    }
+    return null;
   }
 }

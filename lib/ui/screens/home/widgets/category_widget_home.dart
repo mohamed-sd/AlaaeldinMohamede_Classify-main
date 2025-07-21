@@ -8,6 +8,7 @@ import 'package:eClassify/ui/screens/main_activity.dart';
 import 'package:eClassify/ui/screens/widgets/errors/no_data_found.dart';
 import 'package:eClassify/ui/theme/theme.dart';
 import 'package:eClassify/utils/app_icon.dart';
+import 'package:eClassify/utils/cloud_state/cloud_state.dart';
 import 'package:eClassify/utils/custom_text.dart';
 import 'package:eClassify/utils/extensions/extensions.dart';
 import 'package:eClassify/utils/hive_utils.dart';
@@ -29,7 +30,7 @@ class CategoryWidgetHome extends StatefulWidget {
   State<CategoryWidgetHome> createState() => _CategoryWidgetHomeState();
 }
 
-class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
+class _CategoryWidgetHomeState extends CloudState<CategoryWidgetHome> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FetchCategoryCubit, FetchCategoryState>(
@@ -273,6 +274,7 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
       physics: NeverScrollableScrollPhysics(),
       itemCount: categories.length,
       itemBuilder: (context, index) {
+        CategoryModel category = categories[index];
         if (categories.length > 10 && index == categories.length) {
           return moreCategory(context);
         }
@@ -288,6 +290,14 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
             children: [
               GestureDetector(
                 onTap: () {
+                  // 1. إعادة تهيئة المسار
+                  List<CategoryModel> currentBreadCrumb = [];
+
+                  // 2. إضافة القسم الحالي فقط
+                  currentBreadCrumb.add(category);
+
+                  // 3. تخزين المسار
+                  addCloudData("breadCrumb", currentBreadCrumb);
                   if (item.children!.isNotEmpty) {
                     setState(() {
                       expandedCategroryId =
@@ -299,6 +309,10 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
                       'catID': item.id.toString(),
                       'catName': item.name,
                       "categoryIds": [item.id.toString()]
+                    }).then((value) {
+                      List<CategoryModel> bcd =
+                      getCloudData("breadCrumb");
+                      addCloudData("breadCrumb", bcd);
                     });
                   }
                 },
@@ -370,6 +384,21 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
                 final subcategory = subcategories[i];
                 return GestureDetector(
                   onTap: () {
+                    // إنشاء المسار الجديد
+                    List<CategoryModel> newBreadCrumb = [];
+
+                    // 1. إضافة الفئة الأب
+                    newBreadCrumb.add(CategoryModel(
+                      id: categoryId,
+                      name: categoryName,
+                    ));
+
+                    // 2. إضافة الفئة الفرعية الحالية
+                    newBreadCrumb.add(subcategory);
+
+                    // 3. تخزين المسار الجديد
+                    addCloudData("breadCrumb", newBreadCrumb);
+
                     if (subcategory.children!.isEmpty &&
                         subcategory.subcategoriesCount == 0) {
                       Navigator.pushNamed(context, Routes.itemsList,
