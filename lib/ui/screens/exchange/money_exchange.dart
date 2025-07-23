@@ -15,6 +15,7 @@ class MoneyExchange extends StatefulWidget {
 
 class _MoneyExchangeState extends State<MoneyExchange> {
   int selectTab = 0;
+  Color bgcolor = Color(0xFFD6C29F);
   final PageController _pageController = PageController();
   late String date;
 
@@ -29,7 +30,7 @@ class _MoneyExchangeState extends State<MoneyExchange> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: context.color.mainColor,
+        backgroundColor: context.color.mainColor,
         appBar: UiUtils.buildAppBar(
           context,
           title: 'بورصة العملات',
@@ -77,8 +78,7 @@ class _MoneyExchangeState extends State<MoneyExchange> {
                     ])),
           ],
         ),
-        body:
-        ScrollConfiguration(
+        body: ScrollConfiguration(
           behavior: RemoveGlow(),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -111,7 +111,8 @@ class _MoneyExchangeState extends State<MoneyExchange> {
                                   'السوق الموازي ',
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w600, fontSize: 18),
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 18),
                                 ),
                                 SizedBox(
                                   height: 10,
@@ -135,112 +136,84 @@ class _MoneyExchangeState extends State<MoneyExchange> {
                                         borderRadius: BorderRadius.circular(10),
                                       ),
                                       child: Padding(
-                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                              15, 3, 15, 3),
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  15, 3, 15, 3),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Expanded(
-                                                child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment.start,
-                                                    children: [
-                                                      Text(
-                                                          'اسعار العملات مقابل الجنيه ',
-                                                          style: TextStyle(
-                                                            color:
-                                                                Color(0xFFFEFFFF),
-                                                            fontSize: 15,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w800,
-                                                          )),
-                                                    ]),
-                                              ),
-                                              Expanded(
-                                                child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment.end,
-                                                    children: [
-                                                      Text(' لليوم $date',
-                                                          style: TextStyle(
-                                                            color:
-                                                                Color(0xFFFEFFFF),
-                                                            fontSize: 15,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w800,
-                                                          )),
-                                                    ]),
-                                              ),
+
+                                              Expanded( flex: 2,child: Text('العملة-curruncy' , textAlign: TextAlign.center, style: TextStyle(color: Colors.white , fontWeight: FontWeight.w800),)),
+                                              Expanded( flex: 0, child: Text('')),
+                                              Expanded ( flex: 1,child: Text('سعر الشراء', textAlign: TextAlign.center,style: TextStyle(color: Colors.white, fontWeight: FontWeight.w800),)),
+                                              Expanded(flex: 1,child: Text('سعر البيع',textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w800),)),
+
+                                              // Expanded(
+                                              //   child: Column(
+                                              //       mainAxisSize:
+                                              //           MainAxisSize.max,
+                                              //       crossAxisAlignment:
+                                              //           CrossAxisAlignment
+                                              //               .start,
+                                              //       children: [
+                                              //         Text(
+                                              //             'اسعار العملات مقابل الجنيه ',
+                                              //             style: TextStyle(
+                                              //               color: Color(
+                                              //                   0xFFFEFFFF),
+                                              //               fontSize: 15,
+                                              //               letterSpacing: 0.0,
+                                              //               fontWeight:
+                                              //                   FontWeight.w800,
+                                              //             )),
+                                              //       ]),
+                                              // ),
+                                              // Expanded(
+                                              //   child: Column(
+                                              //       mainAxisSize:
+                                              //           MainAxisSize.max,
+                                              //       crossAxisAlignment:
+                                              //           CrossAxisAlignment.end,
+                                              //       children: [
+                                              //         Text(' لليوم $date',
+                                              //             style: TextStyle(
+                                              //               color: Color(
+                                              //                   0xFFFEFFFF),
+                                              //               fontSize: 15,
+                                              //               letterSpacing: 0.0,
+                                              //               fontWeight:
+                                              //                   FontWeight.w800,
+                                              //             )),
+                                              //       ]),
+                                              // ),
                                             ],
                                           )),
                                     )),
                                 // Table Body
-                                material_row(
-                                    context,
-                                    'دولار امريكي / جنيه سوداني ',
-                                    '10:40',
-                                    '51372',
-                                    '0.91%'),
-                                rounded_material_row(
-                                    context,
-                                    'جنية مصري / جنيه سوداني ',
-                                    '10:40',
-                                    '51372.4',
-                                    '0.90%'),
-                                material_row(
-                                    context,
-                                    'ريال سعودي / جنيه سوداني ',
-                                    '10:40',
-                                    '37873',
-                                    '0.90%'),
-                                rounded_material_row(
-                                    context,
-                                    'ريال قطري / جنيه سوداني',
-                                    '10:40',
-                                    '65765',
-                                    '0.90%'),
-                                material_row(context, 'ريال عماني / جنيه سوداني  ',
-                                    '10:40', '65757', '0.90%'),
-                                rounded_material_row(
-                                    context,
-                                    'جنية استرليني / جنيه سوداني  ',
-                                    '10:40',
-                                    '67575',
-                                    '0.90%'),
-                                material_row(
-                                    context,
-                                    'ليرة تركية / جنيه سوداني ',
-                                    '10:40',
-                                    '6576576',
-                                    '0.90%'),
-                                rounded_material_row(
-                                    context,
-                                    'يورو / جنيه سوداني ',
-                                    '10:40',
-                                    '68768',
-                                    '0.90%'),
-                                material_row(context, 'درهم اماراتي / جنيه سوداني ', '10:40',
-                                    '786868', '0.90%'),
-                                rounded_material_row(
-                                    context,
-                                    'دينار كويتي / جنيه سوداني ',
-                                    '10:40',
-                                    '87676',
-                                    '0.90%'),
-                                material_row(
-                                    context,
-                                    'دينار بحريني / جنيه سوداني ',
-                                    '10:40',
-                                    '75757',
-                                    '0.90%'),
+                                material_row(context, 'دولار امريكي ', '10:40',
+                                    '51372', 'SDG/USD'),
+                                rounded_material_row(context, 'جنية مصري ',
+                                    '10:40', '51372.4', 'SDG/EGP'),
+                                material_row(context, 'ريال سعودي ', '10:40',
+                                    '37873', 'SDG/SAR'),
+                                rounded_material_row(context, 'ريال قطري ',
+                                    '10:40', '65765', 'SDG/QAR'),
+                                material_row(context, 'ريال عماني ', '10:40',
+                                    '65757', 'SDG/QMR'),
+                                rounded_material_row(context, 'جنية استرليني ',
+                                    '10:40', '67575', 'SDG/GBP'),
+                                material_row(context, 'ليرة تركية ', '10:40',
+                                    '6576576', 'SDG/TUR'),
+                                rounded_material_row(context, 'يورو ', '10:40',
+                                    '68768', 'SDG/EUR'),
+                                material_row(context, 'درهم امارات  ', '10:40',
+                                    '786868', 'SDG/AED'),
+                                rounded_material_row(context, 'دينار كويتي ',
+                                    '10:40', '87676', 'SDG/KUT'),
+                                material_row(context, 'دينار بحريني ', '10:40',
+                                    '75757', 'SDG/BHD'),
                               ],
                             ),
                           ),
@@ -273,7 +246,8 @@ class _MoneyExchangeState extends State<MoneyExchange> {
                                   ' بنك الخرطوم ',
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w600, fontSize: 18),
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 18),
                                 ),
                                 SizedBox(
                                   height: 10,
@@ -297,112 +271,84 @@ class _MoneyExchangeState extends State<MoneyExchange> {
                                         borderRadius: BorderRadius.circular(10),
                                       ),
                                       child: Padding(
-                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
                                               15, 3, 15, 3),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Expanded(
-                                                child: Column(
-                                                    mainAxisSize:
-                                                    MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                    children: [
-                                                      Text(
-                                                          'اسعار العملات مقابل الجنيه ',
-                                                          style: TextStyle(
-                                                            color:
-                                                            Color(0xFFFEFFFF),
-                                                            fontSize: 15,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                            FontWeight.w800,
-                                                          )),
-                                                    ]),
-                                              ),
-                                              Expanded(
-                                                child: Column(
-                                                    mainAxisSize:
-                                                    MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                    children: [
-                                                      Text(' لليوم $date',
-                                                          style: TextStyle(
-                                                            color:
-                                                            Color(0xFFFEFFFF),
-                                                            fontSize: 15,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                            FontWeight.w800,
-                                                          )),
-                                                    ]),
-                                              ),
+
+                                              Expanded( flex: 2,child: Text('العملة-curruncy' , textAlign: TextAlign.center, style: TextStyle(color: Colors.white , fontWeight: FontWeight.w800),)),
+                                              Expanded( flex: 0, child: Text('')),
+                                              Expanded ( flex: 1,child: Text('سعر الشراء', textAlign: TextAlign.center,style: TextStyle(color: Colors.white, fontWeight: FontWeight.w800),)),
+                                              Expanded(flex: 1,child: Text('سعر البيع',textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w800),)),
+
+                                              // Expanded(
+                                              //   child: Column(
+                                              //       mainAxisSize:
+                                              //           MainAxisSize.max,
+                                              //       crossAxisAlignment:
+                                              //           CrossAxisAlignment
+                                              //               .start,
+                                              //       children: [
+                                              //         Text(
+                                              //             'اسعار العملات مقابل الجنيه ',
+                                              //             style: TextStyle(
+                                              //               color: Color(
+                                              //                   0xFFFEFFFF),
+                                              //               fontSize: 15,
+                                              //               letterSpacing: 0.0,
+                                              //               fontWeight:
+                                              //                   FontWeight.w800,
+                                              //             )),
+                                              //       ]),
+                                              // ),
+                                              // Expanded(
+                                              //   child: Column(
+                                              //       mainAxisSize:
+                                              //           MainAxisSize.max,
+                                              //       crossAxisAlignment:
+                                              //           CrossAxisAlignment.end,
+                                              //       children: [
+                                              //         Text(' لليوم $date',
+                                              //             style: TextStyle(
+                                              //               color: Color(
+                                              //                   0xFFFEFFFF),
+                                              //               fontSize: 15,
+                                              //               letterSpacing: 0.0,
+                                              //               fontWeight:
+                                              //                   FontWeight.w800,
+                                              //             )),
+                                              //       ]),
+                                              // ),
                                             ],
                                           )),
                                     )),
                                 // Table Body
-                                material_row(
-                                    context,
-                                    'دولار امريكي / جنيه سوداني',
-                                    '10:30',
-                                    '50372',
-                                    '0.90%'),
-                                rounded_material_row(
-                                    context,
-                                    'جنية مصري / جنيه سوداني',
-                                    '10:40',
-                                    '51372.4',
-                                    '0.90%'),
-                                material_row(
-                                    context,
-                                    'ريال سعودي / جنيه سوداني ',
-                                    '10:40',
-                                    '37873',
-                                    '0.90%'),
-                                rounded_material_row(
-                                    context,
-                                    'ريال قطري / جنيه سوداني',
-                                    '10:40',
-                                    '65765',
-                                    '0.90%'),
-                                material_row(context, 'ريال عماني / جنيه سوداني',
-                                    '10:40', '65757', '0.90%'),
-                                rounded_material_row(
-                                    context,
-                                    'جنية استرليني / جنيه سوداني ',
-                                    '10:40',
-                                    '67575',
-                                    '0.90%'),
-                                material_row(
-                                    context,
-                                    'ليرة تركية / جنيه سوداني ',
-                                    '10:40',
-                                    '6576576',
-                                    '0.90%'),
-                                rounded_material_row(
-                                    context,
-                                    'يورو / جنيه سوداني ',
-                                    '10:40',
-                                    '68768',
-                                    '0.90%'),
-                                material_row(context, 'درهم اماراتي / جنيه سوداني', '10:40',
-                                    '786868', '0.90%'),
-                                rounded_material_row(
-                                    context,
-                                    'دينار كويتي / جنيه سوداني ',
-                                    '10:40',
-                                    '87676',
-                                    '0.90%'),
-                                material_row(
-                                    context,
-                                    'دينار بحريني / جنيه سوداني ',
-                                    '10:40',
-                                    '75757',
-                                    '0.90%'),
+                                material_row(context, 'دولار امريكي ', '10:40',
+                                    '51372', 'SDG/USD'),
+                                rounded_material_row(context, 'جنية مصري ',
+                                    '10:40', '51372.4', 'SDG/EGP'),
+                                material_row(context, 'ريال سعودي ', '10:40',
+                                    '37873', 'SDG/SAR'),
+                                rounded_material_row(context, 'ريال قطري ',
+                                    '10:40', '65765', 'SDG/QAR'),
+                                material_row(context, 'ريال عماني ', '10:40',
+                                    '65757', 'SDG/QMR'),
+                                rounded_material_row(context, 'جنية استرليني ',
+                                    '10:40', '67575', 'SDG/GBP'),
+                                material_row(context, 'ليرة تركية ', '10:40',
+                                    '6576576', 'SDG/TUR'),
+                                rounded_material_row(context, 'يورو ', '10:40',
+                                    '68768', 'SDG/EUR'),
+                                material_row(context, 'درهم امارات  ', '10:40',
+                                    '786868', 'SDG/AED'),
+                                rounded_material_row(context, 'دينار كويتي ',
+                                    '10:40', '87676', 'SDG/KUT'),
+                                material_row(context, 'دينار بحريني ', '10:40',
+                                    '75757', 'SDG/BHD'),
                               ],
                             ),
                           ),
@@ -435,7 +381,8 @@ class _MoneyExchangeState extends State<MoneyExchange> {
                                   ' بنك الفيصل ',
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w600, fontSize: 18),
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 18),
                                 ),
                                 SizedBox(
                                   height: 10,
@@ -459,112 +406,84 @@ class _MoneyExchangeState extends State<MoneyExchange> {
                                         borderRadius: BorderRadius.circular(10),
                                       ),
                                       child: Padding(
-                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
                                               15, 3, 15, 3),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Expanded(
-                                                child: Column(
-                                                    mainAxisSize:
-                                                    MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                    children: [
-                                                      Text(
-                                                          'اسعار العملات مقابل الجنيه ',
-                                                          style: TextStyle(
-                                                            color:
-                                                            Color(0xFFFEFFFF),
-                                                            fontSize: 15,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                            FontWeight.w800,
-                                                          )),
-                                                    ]),
-                                              ),
-                                              Expanded(
-                                                child: Column(
-                                                    mainAxisSize:
-                                                    MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                    children: [
-                                                      Text(' لليوم $date',
-                                                          style: TextStyle(
-                                                            color:
-                                                            Color(0xFFFEFFFF),
-                                                            fontSize: 15,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                            FontWeight.w800,
-                                                          )),
-                                                    ]),
-                                              ),
+
+                                              Expanded( flex: 2,child: Text('العملة-curruncy' , textAlign: TextAlign.center, style: TextStyle(color: Colors.white , fontWeight: FontWeight.w800),)),
+                                              Expanded( flex: 0, child: Text('')),
+                                              Expanded ( flex: 1,child: Text('سعر الشراء', textAlign: TextAlign.center,style: TextStyle(color: Colors.white, fontWeight: FontWeight.w800),)),
+                                              Expanded(flex: 1,child: Text('سعر البيع',textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w800),)),
+
+                                              // Expanded(
+                                              //   child: Column(
+                                              //       mainAxisSize:
+                                              //           MainAxisSize.max,
+                                              //       crossAxisAlignment:
+                                              //           CrossAxisAlignment
+                                              //               .start,
+                                              //       children: [
+                                              //         Text(
+                                              //             'اسعار العملات مقابل الجنيه ',
+                                              //             style: TextStyle(
+                                              //               color: Color(
+                                              //                   0xFFFEFFFF),
+                                              //               fontSize: 15,
+                                              //               letterSpacing: 0.0,
+                                              //               fontWeight:
+                                              //                   FontWeight.w800,
+                                              //             )),
+                                              //       ]),
+                                              // ),
+                                              // Expanded(
+                                              //   child: Column(
+                                              //       mainAxisSize:
+                                              //           MainAxisSize.max,
+                                              //       crossAxisAlignment:
+                                              //           CrossAxisAlignment.end,
+                                              //       children: [
+                                              //         Text(' لليوم $date',
+                                              //             style: TextStyle(
+                                              //               color: Color(
+                                              //                   0xFFFEFFFF),
+                                              //               fontSize: 15,
+                                              //               letterSpacing: 0.0,
+                                              //               fontWeight:
+                                              //                   FontWeight.w800,
+                                              //             )),
+                                              //       ]),
+                                              // ),
                                             ],
                                           )),
                                     )),
                                 // Table Body
-                                material_row(
-                                    context,
-                                    'دولار امريكي / جنيه سوداني',
-                                    '10:30',
-                                    '53372',
-                                    '0.85%'),
-                                rounded_material_row(
-                                    context,
-                                    'جنية مصري / جنيه سوداني',
-                                    '10:40',
-                                    '51372.4',
-                                    '0.90%'),
-                                material_row(
-                                    context,
-                                    'ريال سعودي / جنيه سوداني ',
-                                    '10:40',
-                                    '37873',
-                                    '0.90%'),
-                                rounded_material_row(
-                                    context,
-                                    'ريال قطري / جنيه سوداني ',
-                                    '10:40',
-                                    '65765',
-                                    '0.90%'),
-                                material_row(context, 'ريال عماني / جنيه سوداني',
-                                    '10:40', '65757', '0.90%'),
-                                rounded_material_row(
-                                    context,
-                                    'جنية استرليني / جنيه سوداني ',
-                                    '10:40',
-                                    '67575',
-                                    '0.90%'),
-                                material_row(
-                                    context,
-                                    'ليرة تركية / جنيه سوداني ',
-                                    '10:40',
-                                    '6576576',
-                                    '0.90%'),
-                                rounded_material_row(
-                                    context,
-                                    'يورو / جنيه سوداني ',
-                                    '10:40',
-                                    '68768',
-                                    '0.90%'),
-                                material_row(context, 'درهم اماراتي / جنيه سوداني ', '10:40',
-                                    '786868', '0.90%'),
-                                rounded_material_row(
-                                    context,
-                                    'دينار كويتي / جنيه سوداني ',
-                                    '10:40',
-                                    '87676',
-                                    '0.90%'),
-                                material_row(
-                                    context,
-                                    'دينار بحريني  / جنيه سوداني ',
-                                    '10:40',
-                                    '75757',
-                                    '0.90%'),
+                                material_row(context, 'دولار امريكي ', '10:40',
+                                    '51372', 'SDG/USD'),
+                                rounded_material_row(context, 'جنية مصري ',
+                                    '10:40', '51372.4', 'SDG/EGP'),
+                                material_row(context, 'ريال سعودي ', '10:40',
+                                    '37873', 'SDG/SAR'),
+                                rounded_material_row(context, 'ريال قطري ',
+                                    '10:40', '65765', 'SDG/QAR'),
+                                material_row(context, 'ريال عماني ', '10:40',
+                                    '65757', 'SDG/QMR'),
+                                rounded_material_row(context, 'جنية استرليني ',
+                                    '10:40', '67575', 'SDG/GBP'),
+                                material_row(context, 'ليرة تركية ', '10:40',
+                                    '6576576', 'SDG/TUR'),
+                                rounded_material_row(context, 'يورو ', '10:40',
+                                    '68768', 'SDG/EUR'),
+                                material_row(context, 'درهم امارات  ', '10:40',
+                                    '786868', 'SDG/AED'),
+                                rounded_material_row(context, 'دينار كويتي ',
+                                    '10:40', '87676', 'SDG/KUT'),
+                                material_row(context, 'دينار بحريني ', '10:40',
+                                    '75757', 'SDG/BHD'),
                               ],
                             ),
                           ),
@@ -574,209 +493,296 @@ class _MoneyExchangeState extends State<MoneyExchange> {
               ],
             ),
           ),
-        )
-    );
+        ));
   }
 
   Padding material_row(BuildContext context, String name, String time,
       String Value, String persent) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+      padding: EdgeInsets.all(5),
       child: Container(
+        padding: EdgeInsets.only(right: 10, left: 10, top: 0, bottom: 0),
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(0),
+          borderRadius: BorderRadius.circular(10),
+          color: Color(0xFFD6C29F),
         ),
-        child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(15, 5, 15, 5),
-          child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          name,
-                          style: TextStyle(
-                            fontSize: 13,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                        Row(mainAxisSize: MainAxisSize.max, children: [
-                          Icon(
-                            Icons.access_time,
-                            color: Color(0xFF73B589),
-                            size: 16,
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(time,
-                              style: TextStyle(
-                                color: Color(0xFF73B589),
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.bold,
-                              )),
-                        ]),
-                      ]),
-                ),
-                Expanded(
-                  child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        RichText(
-                          textScaler: MediaQuery.of(context).textScaler,
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                  text: '',
-                                  style: TextStyle(
-                                    color: Color(0xFF73B589),
-                                    fontSize: 13,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w800,
-                                  )),
-                              TextSpan(
-                                text: Value,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 13,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w800,
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Icon(
-                                Icons.arrow_circle_up,
-                                color: Color(0xFF73B589),
-                                size: 24,
-                              ),
-                              Text(persent,
-                                  style: TextStyle(
-                                    color: Color(0xFF73B589),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  )),
-                            ]),
-                      ]),
-                ),
-              ]),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+                child: Text(
+              name,
+              textAlign: TextAlign.center,
+              style: TextStyle(fontWeight: FontWeight.w800),
+            )),
+            Expanded(
+                child: Container(
+                    padding: EdgeInsets.only(top: 5, bottom: 5),
+                    decoration: BoxDecoration(
+                      color: Color(0xFF037A50),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      persent,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white),
+                    ))),
+            Expanded(
+                child: Text(
+              Value,
+              textAlign: TextAlign.center,
+              style: TextStyle(fontWeight: FontWeight.bold),
+            )),
+            Expanded(
+                child: Text(
+              Value,
+              textAlign: TextAlign.center,
+              style: TextStyle(fontWeight: FontWeight.bold),
+            )),
+          ],
         ),
       ),
     );
+    // return Padding(
+    //   padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+    //   child: Container(
+    //     decoration: BoxDecoration(
+    //       color: Colors.white,
+    //       borderRadius: BorderRadius.circular(0),
+    //     ),
+    //     child: Padding(
+    //       padding: EdgeInsetsDirectional.fromSTEB(15, 5, 15, 5),
+    //       child: Row(
+    //           mainAxisSize: MainAxisSize.max,
+    //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //           children: [
+    //             Expanded(
+    //               child: Column(
+    //                   mainAxisSize: MainAxisSize.max,
+    //                   crossAxisAlignment: CrossAxisAlignment.start,
+    //                   children: [
+    //                     Text(
+    //                       name,
+    //                       style: TextStyle(
+    //                         fontSize: 13,
+    //                         letterSpacing: 0.0,
+    //                         fontWeight: FontWeight.w800,
+    //                       ),
+    //                     ),
+    //                     Row(mainAxisSize: MainAxisSize.max, children: [
+    //                       Icon(
+    //                         Icons.access_time,
+    //                         color: Color(0xFF73B589),
+    //                         size: 16,
+    //                       ),
+    //                       SizedBox(
+    //                         width: 5,
+    //                       ),
+    //                       Text(time,
+    //                           style: TextStyle(
+    //                             color: Color(0xFF73B589),
+    //                             letterSpacing: 0.0,
+    //                             fontWeight: FontWeight.bold,
+    //                           )),
+    //                     ]),
+    //                   ]),
+    //             ),
+    //             Expanded(
+    //               child: Column(
+    //                   mainAxisSize: MainAxisSize.max,
+    //                   crossAxisAlignment: CrossAxisAlignment.end,
+    //                   children: [
+    //                     RichText(
+    //                       textScaler: MediaQuery.of(context).textScaler,
+    //                       text: TextSpan(
+    //                         children: [
+    //                           TextSpan(
+    //                               text: '',
+    //                               style: TextStyle(
+    //                                 color: Color(0xFF73B589),
+    //                                 fontSize: 13,
+    //                                 letterSpacing: 0.0,
+    //                                 fontWeight: FontWeight.w800,
+    //                               )),
+    //                           TextSpan(
+    //                             text: Value,
+    //                             style: TextStyle(
+    //                               color: Colors.black,
+    //                               fontSize: 13,
+    //                               letterSpacing: 0.0,
+    //                               fontWeight: FontWeight.w800,
+    //                             ),
+    //                           )
+    //                         ],
+    //                       ),
+    //                     ),
+    //                     Row(
+    //                         mainAxisSize: MainAxisSize.max,
+    //                         mainAxisAlignment: MainAxisAlignment.end,
+    //                         children: [
+    //                           Icon(
+    //                             Icons.arrow_circle_up,
+    //                             color: Color(0xFF73B589),
+    //                             size: 24,
+    //                           ),
+    //                           Text(persent,
+    //                               style: TextStyle(
+    //                                 color: Color(0xFF73B589),
+    //                                 letterSpacing: 0.0,
+    //                                 fontWeight: FontWeight.w500,
+    //                               )),
+    //                         ]),
+    //                   ]),
+    //             ),
+    //           ]),
+    //     ),
+    //   ),
+    // );
   }
 
   Container rounded_material_row(BuildContext context, String name, String time,
       String Value, String persent) {
     return Container(
-      child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
-        child: Container(
-          padding: EdgeInsets.all(0),
-          decoration: BoxDecoration(
-            border: Border.all(width: 1, color: Colors.grey),
-            borderRadius: BorderRadiusDirectional.circular(10),
-          ),
-          child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(15, 5, 15, 5),
-            child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            name,
-                            style: TextStyle(
-                              fontSize: 13,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w800,
-                            ),
-                          ),
-                          Row(mainAxisSize: MainAxisSize.max, children: [
-                            Icon(
-                              Icons.access_time,
-                              color: Color(0xFFDD1F36),
-                              size: 16,
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text(time,
-                                style: TextStyle(
-                                  color: Color(0xFFDD1F36),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                )),
-                          ]),
-                        ]),
+      margin: EdgeInsets.only(right: 5, left: 5),
+      padding: EdgeInsets.only(right: 10, left: 10, top: 0, bottom: 0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Color(0xFFD6C29F),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+              child: Text(
+            name,
+            textAlign: TextAlign.center,
+            style: TextStyle(fontWeight: FontWeight.w800),
+          )),
+          Expanded(
+              child: Container(
+                  padding: EdgeInsets.only(top: 5, bottom: 5),
+                  decoration: BoxDecoration(
+                    color: Color(0xFF037A50),
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  Expanded(
-                    child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          RichText(
-                            textScaler: MediaQuery.of(context).textScaler,
-                            text: TextSpan(
-                              children: [
-                                TextSpan(
-                                    text: '',
-                                    style: TextStyle(
-                                      color: Color(0xFFDD1F36),
-                                      fontSize: 13,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w800,
-                                    )),
-                                TextSpan(
-                                  text: Value,
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 13,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w800,
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                          Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Icon(
-                                  Icons.arrow_circle_down,
-                                  color: Color(0xFFDD1F36),
-                                  size: 24,
-                                ),
-                                Text(persent,
-                                    style: TextStyle(
-                                      color: Color(0xFFDD1F36),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                    )),
-                              ]),
-                        ]),
-                  ),
-                ]),
-          ),
-        ),
+                  child: Text(
+                    persent,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white),
+                  ))),
+          Expanded(
+              child: Text(
+            Value,
+            textAlign: TextAlign.center,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          )),
+          Expanded(
+              child: Text(
+            Value,
+            textAlign: TextAlign.center,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          )),
+        ],
       ),
     );
+    // return Container(
+    //   child: Padding(
+    //     padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+    //     child: Container(
+    //       padding: EdgeInsets.all(0),
+    //       decoration: BoxDecoration(
+    //         border: Border.all(width: 1, color: Colors.grey),
+    //         borderRadius: BorderRadiusDirectional.circular(10),
+    //       ),
+    //       child: Padding(
+    //         padding: EdgeInsetsDirectional.fromSTEB(15, 5, 15, 5),
+    //         child: Row(
+    //             mainAxisSize: MainAxisSize.max,
+    //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //             children: [
+    //               Expanded(
+    //                 child: Column(
+    //                     mainAxisSize: MainAxisSize.max,
+    //                     crossAxisAlignment: CrossAxisAlignment.start,
+    //                     children: [
+    //                       Text(
+    //                         name,
+    //                         style: TextStyle(
+    //                           fontSize: 13,
+    //                           letterSpacing: 0.0,
+    //                           fontWeight: FontWeight.w800,
+    //                         ),
+    //                       ),
+    //                       Row(mainAxisSize: MainAxisSize.max, children: [
+    //                         Icon(
+    //                           Icons.access_time,
+    //                           color: Color(0xFFDD1F36),
+    //                           size: 16,
+    //                         ),
+    //                         SizedBox(
+    //                           width: 5,
+    //                         ),
+    //                         Text(time,
+    //                             style: TextStyle(
+    //                               color: Color(0xFFDD1F36),
+    //                               letterSpacing: 0.0,
+    //                               fontWeight: FontWeight.bold,
+    //                             )),
+    //                       ]),
+    //                     ]),
+    //               ),
+    //               Expanded(
+    //                 child: Column(
+    //                     mainAxisSize: MainAxisSize.max,
+    //                     crossAxisAlignment: CrossAxisAlignment.end,
+    //                     children: [
+    //                       RichText(
+    //                         textScaler: MediaQuery.of(context).textScaler,
+    //                         text: TextSpan(
+    //                           children: [
+    //                             TextSpan(
+    //                                 text: '',
+    //                                 style: TextStyle(
+    //                                   color: Color(0xFFDD1F36),
+    //                                   fontSize: 13,
+    //                                   letterSpacing: 0.0,
+    //                                   fontWeight: FontWeight.w800,
+    //                                 )),
+    //                             TextSpan(
+    //                               text: Value,
+    //                               style: TextStyle(
+    //                                 color: Colors.black,
+    //                                 fontSize: 13,
+    //                                 letterSpacing: 0.0,
+    //                                 fontWeight: FontWeight.w800,
+    //                               ),
+    //                             )
+    //                           ],
+    //                         ),
+    //                       ),
+    //                       Row(
+    //                           mainAxisSize: MainAxisSize.max,
+    //                           mainAxisAlignment: MainAxisAlignment.end,
+    //                           children: [
+    //                             Icon(
+    //                               Icons.arrow_circle_down,
+    //                               color: Color(0xFFDD1F36),
+    //                               size: 24,
+    //                             ),
+    //                             Text(persent,
+    //                                 style: TextStyle(
+    //                                   color: Color(0xFFDD1F36),
+    //                                   letterSpacing: 0.0,
+    //                                   fontWeight: FontWeight.w500,
+    //                                 )),
+    //                           ]),
+    //                     ]),
+    //               ),
+    //             ]),
+    //       ),
+    //     ),
+    //   ),
+    // );
   }
 }
 
@@ -800,10 +806,8 @@ Widget customTab(
               ? (context.color.mainGold)
               : Color.fromARGB(44, 124, 92, 92)),
           border: Border.all(
-            color: isSelected
-                ? Colors.black
-                : Colors.transparent,
-            width: isSelected  ? 1 : 1 ,
+            color: isSelected ? Colors.black : Colors.transparent,
+            width: isSelected ? 1 : 1,
           ),
           borderRadius: BorderRadius.circular(11)),
       child: Center(
@@ -811,9 +815,7 @@ Widget customTab(
           padding: const EdgeInsets.all(8.0),
           child: CustomText(
             name,
-            color: isSelected
-                ? Colors.black
-                : context.color.textColorDark,
+            color: isSelected ? Colors.black : context.color.textColorDark,
             fontSize: context.font.large,
             fontWeight: FontWeight.bold,
           ),
