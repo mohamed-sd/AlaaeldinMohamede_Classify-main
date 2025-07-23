@@ -51,10 +51,10 @@ class VisualMaterialsPage extends StatelessWidget {
                 return VideoCard(
                   title: index.isEven
                       ? "تشغيل الآليات مقارنة بين نموذج الإيجار والشراء"
-                      : "كيفية إستخلاص خام الذهب من الحجر",
+                      : "كيفية السماد    ",
                   channel: index.isEven
-                      ? "قناة أوكسيجين للمقاولات وتشغيل المعادن"
-                      : "قناة شركة رابح المحدودة لخدمات التعدين",
+                      ? "قناة نبات لخدمات الزراعة"
+                      : "قناة شركة رابح المحدودة لخدمات الزراعة",
                   duration: index.isEven ? "55:47" : "34:27",
                   views: index.isEven ? "348 ألف" : "975 ألف",
                   daysAgo: "منذ 7 أيام",
