@@ -50,11 +50,11 @@ class BodcastPage extends StatelessWidget {
               itemBuilder: (context, index) {
                 return VideoCard(
                   title: index.isEven
-                      ? "تشغيل الآليات مقارنة بين نموذج الإيجار والشراء"
-                      : "كيفية إستخلاص خام الذهب من الحجر",
+                      ? "زراعه المحاصيل في السودان"
+                      : "كيفيه الحصاد",
                   channel: index.isEven
-                      ? "قناة أوكسيجين للمقاولات وتشغيل المعادن"
-                      : "قناة شركة رابح المحدودة لخدمات التعدين",
+                      ? "قناة حصاد للزراعه  "
+                      : "قناة شركة رابح المحدودة لخدمات الزراعة",
                   duration: index.isEven ? "55:47" : "34:27",
                   views: index.isEven ? "348 ألف" : "975 ألف",
                   daysAgo: "منذ 7 أيام",
