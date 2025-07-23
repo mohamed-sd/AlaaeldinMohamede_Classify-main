@@ -298,8 +298,6 @@ class ItemsListState extends CloudState<ItemsList> {
   @override
   Widget build(BuildContext context) {
 
-    List<CategoryModel>? breadCrumbList =
-    getCloudData("breadCrumb") as List<CategoryModel>?;
 
     return bodyWidget();
   }
@@ -368,21 +366,14 @@ class ItemsListState extends CloudState<ItemsList> {
               final List<CategoryModel> breadCrumb =
                   getCloudData("breadCrumb") ?? [];
 
-              if (breadCrumb != null) {
-                Navigator.pushNamed(
-                  context,
-                  Routes.addItemDetails,
-                  arguments: {
-                    "breadCrumbItems": breadCrumb,
-                  },
-                );
-              } else {
-                // التعامل مع الخطأ إن لم تكن البيانات موجودة
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text("لا يمكن فتح شاشة الإضافة، لا توجد بيانات تصنيف.")),
-                );
-              }
-            },
+              Navigator.pushNamed(
+                context,
+                Routes.addItemDetails,
+                arguments: {
+                  "breadCrumbItems": breadCrumb,
+                },
+              );
+                        },
             child: Row(
               children: [
                 Icon(Icons.add),
