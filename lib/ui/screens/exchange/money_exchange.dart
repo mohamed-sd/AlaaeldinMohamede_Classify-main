@@ -122,7 +122,7 @@ class _MoneyExchangeState extends State<MoneyExchange> {
                                     padding: EdgeInsets.all(5),
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        color: Color(0xFF221400),
+                                        color: Color(0xFF037A50),
                                         boxShadow: [
                                           BoxShadow(
                                             blurRadius: 0,
@@ -257,7 +257,7 @@ class _MoneyExchangeState extends State<MoneyExchange> {
                                     padding: EdgeInsets.all(5),
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        color: Color(0xFF221400),
+                                        color: Color(0xFF037A50),
                                         boxShadow: [
                                           BoxShadow(
                                             blurRadius: 0,
@@ -392,7 +392,7 @@ class _MoneyExchangeState extends State<MoneyExchange> {
                                     padding: EdgeInsets.all(5),
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        color: Color(0xFF221400),
+                                        color: Color(0xFF037A50),
                                         boxShadow: [
                                           BoxShadow(
                                             blurRadius: 0,
@@ -803,8 +803,8 @@ Widget customTab(
       height: 50,
       decoration: BoxDecoration(
           color: (isSelected
-              ? (context.color.mainGold)
-              : Color.fromARGB(44, 124, 92, 92)),
+              ? (Color(0xFF037A50))
+              : Color(0xFFD6C29F)),
           border: Border.all(
             color: isSelected ? Colors.black : Colors.transparent,
             width: isSelected ? 1 : 1,
@@ -815,7 +815,7 @@ Widget customTab(
           padding: const EdgeInsets.all(8.0),
           child: CustomText(
             name,
-            color: isSelected ? Colors.black : context.color.textColorDark,
+            color: isSelected ? Colors.white : context.color.textColorDark,
             fontSize: context.font.large,
             fontWeight: FontWeight.bold,
           ),
