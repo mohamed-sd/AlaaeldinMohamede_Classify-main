@@ -17,6 +17,7 @@ import 'package:eClassify/ui/screens/navigations/home_news.dart';
 import 'package:eClassify/ui/screens/navigations/home_screen.dart';
 import 'package:eClassify/ui/screens/home/search_screen.dart';
 import 'package:eClassify/ui/screens/item/my_items_screen.dart';
+import 'package:eClassify/ui/screens/navigations/home_store.dart';
 import 'package:eClassify/ui/screens/user_profile/profile_screen.dart';
 
 import 'package:eClassify/ui/screens/widgets/blurred_dialog_box.dart';
@@ -282,7 +283,7 @@ class MainActivityState extends State<MainActivity>
 
   late List<Widget> pages = [
     HomeScreen(from: widget.from),
-    HomeScreen(from: widget.from),
+    HomeStore(),
     HomeGuide(),
     HomeNews(),
     //  ComingSoonPage(),
