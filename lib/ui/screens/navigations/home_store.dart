@@ -736,7 +736,9 @@ class HomeScreenState extends State<HomeStore>
                 focusColor: Colors.transparent,
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
-                onTap: () {},
+                onTap : () {
+                  Navigator.pushNamed(context, Routes.storedetails);
+                },
                 child: Material(
                   color: Colors.transparent,
                   elevation: 5,
@@ -1332,7 +1334,8 @@ class HomeScreenState extends State<HomeStore>
                                                   fontWeight: FontWeight.w500,
                                                 )),
                                           ),
-                                        ]))),
+                                        ])
+                                )),
                             Padding(
                                 padding:
                                 EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),

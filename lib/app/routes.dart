@@ -59,6 +59,7 @@ import 'package:eClassify/ui/screens/settings/notifications.dart';
 import 'package:eClassify/ui/screens/settings/profile_setting.dart';
 import 'package:eClassify/ui/screens/sold_out_bought_screen.dart';
 import 'package:eClassify/ui/screens/splash_screen.dart';
+import 'package:eClassify/ui/screens/store/storeDetails.dart';
 import 'package:eClassify/ui/screens/user_profile/profile_screen.dart';
 import 'package:eClassify/ui/screens/welcome_screen.dart';
 import 'package:eClassify/ui/screens/sub_category/sub_category_screen.dart';
@@ -72,6 +73,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
+  static const storedetails = 'storedetails';
   static const communitiesPage = 'communitiesPage';
   static const visualDetailsPage  = 'visualDetailsPage';
   static const bodcastPage  = 'bodcastPage';
@@ -215,6 +217,8 @@ class Routes {
     }
 
     switch (routeSettings.name) {
+      case storedetails :
+        return MaterialPageRoute(builder: ((context) => storeDetails()));
       case bodcastPage:
         return MaterialPageRoute(builder: ((context) => const BodcastPage()));
     case visualDetailsPage:
