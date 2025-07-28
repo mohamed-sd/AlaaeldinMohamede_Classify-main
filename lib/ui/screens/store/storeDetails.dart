@@ -82,8 +82,8 @@ class _storeDetailseState extends State<storeDetails> {
                           children: [
                             ClipRRect(
                               borderRadius: BorderRadius.circular(10),
-                              child: UiUtils.imageType(
-                                'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2FWhatsApp%20Image%202024-12-18%20at%209.09.45%20AM.jpeg?alt=media&token=6786fe4b-3c6d-4989-b091-c317a302bb7b',
+                              child: Image.network(
+                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/l70m33algrpo/WhatsApp_Image_2024-12-18_at_9.57.26_AM.jpeg',
                                 width: 50.0,
                                 height: 50.0,
                                 fit: BoxFit.contain,
@@ -764,28 +764,13 @@ class _storeDetailseState extends State<storeDetails> {
         ),
       ),
     );
-
-    return ElevatedButton(
-      onPressed: () {
-        setState(() {
-          selectedTab = index;
-        });
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: isSelected ? Colors.blue : Colors.grey[300],
-        foregroundColor: isSelected ? Colors.white : Colors.black,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      ),
-      child: Text(title),
-    );
   }
 
   Widget _buildTabContent() {
     switch (selectedTab) {
       case 0:
         return Container(
-            child: Column(
+            child: ListView(
           children: [
             Row(
               mainAxisSize: MainAxisSize.max,
@@ -832,7 +817,7 @@ class _storeDetailseState extends State<storeDetails> {
                                             shape: BoxShape.circle,
                                           ),
                                           child: Image.network(
-                                            'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2FWhatsApp%20Image%202024-12-18%20at%209.09.45%20AM.jpeg?alt=media&token=6786fe4b-3c6d-4989-b091-c317a302bb7b',
+                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/50n9iccrz5di/13-%D8%AD%D9%81%D8%A7%D8%B1%D8%A7%D8%AA.jpg',
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -899,7 +884,7 @@ class _storeDetailseState extends State<storeDetails> {
                                             shape: BoxShape.circle,
                                           ),
                                           child: Image.network(
-                                            'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2FWhatsApp%20Image%202024-12-18%20at%209.09.45%20AM.jpeg?alt=media&token=6786fe4b-3c6d-4989-b091-c317a302bb7b',
+                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/ov0ysis6q1ve/8-_%D9%84%D9%88%D8%AF%D8%B1%D8%A7%D8%AA.jpg',
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -919,8 +904,8 @@ class _storeDetailseState extends State<storeDetails> {
                                         alignment: AlignmentDirectional(0, 0),
                                         child: Padding(
                                           padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              5, 1, 5, 1),
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5, 1, 5, 1),
                                           child: Text(' لودرات ',
                                               style: TextStyle(
                                                 fontSize: 13,
@@ -966,7 +951,7 @@ class _storeDetailseState extends State<storeDetails> {
                                             shape: BoxShape.circle,
                                           ),
                                           child: Image.network(
-                                            'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2FWhatsApp%20Image%202024-12-18%20at%209.09.45%20AM.jpeg?alt=media&token=6786fe4b-3c6d-4989-b091-c317a302bb7b',
+                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/4kcg5mxdg9au/11-_%D8%B3%D8%B7%D8%AD%D8%A7%D8%AA.jpg',
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -986,8 +971,8 @@ class _storeDetailseState extends State<storeDetails> {
                                         alignment: AlignmentDirectional(0, 0),
                                         child: Padding(
                                           padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              5, 1, 5, 1),
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5, 1, 5, 1),
                                           child: Text(' سطحات ',
                                               style: TextStyle(
                                                 fontSize: 13,
@@ -1033,7 +1018,7 @@ class _storeDetailseState extends State<storeDetails> {
                                             shape: BoxShape.circle,
                                           ),
                                           child: Image.network(
-                                            'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2FWhatsApp%20Image%202024-12-18%20at%209.09.45%20AM.jpeg?alt=media&token=6786fe4b-3c6d-4989-b091-c317a302bb7b',
+                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/p4m3ljnx211e/10-_%D9%82%D9%84%D8%A7%D8%A8%D8%A7%D8%AA.jpg',
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -1053,8 +1038,8 @@ class _storeDetailseState extends State<storeDetails> {
                                         alignment: AlignmentDirectional(0, 0),
                                         child: Padding(
                                           padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              5, 1, 5, 1),
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5, 1, 5, 1),
                                           child: Text(' قلابات ',
                                               style: TextStyle(
                                                 fontSize: 13,
@@ -1093,17 +1078,18 @@ class _storeDetailseState extends State<storeDetails> {
                                       child: Padding(
                                         padding: EdgeInsets.all(3),
                                         child: Container(
-                                          width: 50,
-                                          height: 50,
-                                          clipBehavior: Clip.antiAlias,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                          ),
-                                          child: Image.network(
-                                            'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2FWhatsApp%20Image%202024-12-18%20at%209.09.45%20AM.jpeg?alt=media&token=6786fe4b-3c6d-4989-b091-c317a302bb7b',
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
+                                            width: 50,
+                                            height: 50,
+                                            clipBehavior: Clip.antiAlias,
+                                            decoration: BoxDecoration(
+                                              color: context.color.mainGold,
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: Icon(
+                                              Icons.add,
+                                              color: Colors.white,
+                                              size: 25,
+                                            )),
                                       ),
                                     ),
                                   ),
@@ -1120,8 +1106,8 @@ class _storeDetailseState extends State<storeDetails> {
                                         alignment: AlignmentDirectional(0, 0),
                                         child: Padding(
                                           padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              5, 1, 5, 1),
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5, 1, 5, 1),
                                           child: Text(' اخرى ',
                                               style: TextStyle(
                                                 fontSize: 13,
@@ -1142,6 +1128,1205 @@ class _storeDetailseState extends State<storeDetails> {
                   ),
                 ),
               ],
+            ),
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(
+                  color: Colors.grey,
+                ),
+              ),
+              child: Padding(
+                  padding: EdgeInsets.all(5),
+                  child: Column(mainAxisSize: MainAxisSize.max, children: [
+                    Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                        child: Row(mainAxisSize: MainAxisSize.max, children: [
+                          Expanded(
+                              child: Padding(
+                                  padding: EdgeInsets.all(3),
+                                  child: Material(
+                                      color: Colors.transparent,
+                                      elevation: 5,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                      child: Container(
+                                          width: double.infinity,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                          ),
+                                          child: Padding(
+                                              padding: EdgeInsets.all(5),
+                                              child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
+                                                      child: Image.network(
+                                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/us1sd4f65nfj/14-%D8%A8%D9%84%D8%AF%D9%88%D8%B2%D8%B1%D8%A7%D8%AA.jpg',
+                                                        width: double.infinity,
+                                                        height:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .height *
+                                                                0.15,
+                                                        fit: BoxFit.fill,
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0, 5, 0, 5),
+                                                        child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Flexible(
+                                                                  child: Container(
+                                                                      width: double.infinity,
+                                                                      decoration: BoxDecoration(
+                                                                        color: context
+                                                                            .color
+                                                                            .mainGold,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5),
+                                                                      ),
+                                                                      child: Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                                                                          child: Row(mainAxisSize: MainAxisSize.max, children: [
+                                                                            Expanded(
+                                                                              child: Align(
+                                                                                  alignment: AlignmentDirectional(0, 0),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 3),
+                                                                                    child: Text('متوفر 50 معدة',
+                                                                                        style: TextStyle(
+                                                                                          color: Colors.black,
+                                                                                          fontSize: 12,
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FontWeight.w700,
+                                                                                        )),
+                                                                                  )),
+                                                                            )
+                                                                          ])))),
+                                                            ])),
+                                                    Container(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                              horizontal: 5,
+                                                              vertical: 5),
+                                                      width: double.infinity,
+                                                      decoration: BoxDecoration(
+                                                          border: Border.all(
+                                                            color: Colors.grey,
+                                                            width: 1,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10)),
+                                                      child: Text(
+                                                        'لودر كبير \n من شركـــة كاتربي',
+                                                        style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w600),
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 4,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Expanded(
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        5,
+                                                                    vertical:
+                                                                        3),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Colors
+                                                                          .grey,
+                                                                      width: 1,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15)),
+                                                            child: Text(
+                                                              'المعدة : لودر',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 11),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 3,
+                                                        ),
+                                                        Expanded(
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        5,
+                                                                    vertical:
+                                                                        3),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Colors
+                                                                          .grey,
+                                                                      width: 1,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15)),
+                                                            child: Text(
+                                                              'منذ4ايـــام',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 11),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    SizedBox(
+                                                      height: 4,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Expanded(
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        5,
+                                                                    vertical:
+                                                                        3),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Colors
+                                                                          .grey,
+                                                                      width: 1,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15)),
+                                                            child: Text(
+                                                              'الحالة : جديدة',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 11),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 3,
+                                                        ),
+                                                        Expanded(
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        5,
+                                                                    vertical:
+                                                                        3),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Colors
+                                                                          .grey,
+                                                                      width: 1,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15)),
+                                                            child: Text(
+                                                              'العلامة : كات',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 11),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    SizedBox(
+                                                      height: 4,
+                                                    ),
+                                                    Container(
+                                                      width: double.infinity,
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                              horizontal: 5,
+                                                              vertical: 3),
+                                                      decoration: BoxDecoration(
+                                                          color: context
+                                                              .color.mainGold,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      15)),
+                                                      child: Text(
+                                                        ' تفاصـــيل اكثـــر ',
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            fontSize: 15),
+                                                      ),
+                                                    ),
+                                                  ])))))),
+                          Expanded(
+                              child: Padding(
+                                  padding: EdgeInsets.all(3),
+                                  child: Material(
+                                      color: Colors.transparent,
+                                      elevation: 5,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                      child: Container(
+                                          width: double.infinity,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                          ),
+                                          child: Padding(
+                                              padding: EdgeInsets.all(5),
+                                              child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
+                                                      child: Image.network(
+                                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/us1sd4f65nfj/14-%D8%A8%D9%84%D8%AF%D9%88%D8%B2%D8%B1%D8%A7%D8%AA.jpg',
+                                                        width: double.infinity,
+                                                        height:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .height *
+                                                                0.15,
+                                                        fit: BoxFit.fill,
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0, 5, 0, 5),
+                                                        child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Flexible(
+                                                                  child: Container(
+                                                                      width: double.infinity,
+                                                                      decoration: BoxDecoration(
+                                                                        color: context
+                                                                            .color
+                                                                            .mainGold,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5),
+                                                                      ),
+                                                                      child: Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                                                                          child: Row(mainAxisSize: MainAxisSize.max, children: [
+                                                                            Expanded(
+                                                                              child: Align(
+                                                                                  alignment: AlignmentDirectional(0, 0),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 3),
+                                                                                    child: Text('متوفر 50 معدة',
+                                                                                        style: TextStyle(
+                                                                                          color: Colors.black,
+                                                                                          fontSize: 12,
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FontWeight.w700,
+                                                                                        )),
+                                                                                  )),
+                                                                            )
+                                                                          ])))),
+                                                            ])),
+                                                    Container(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                              horizontal: 5,
+                                                              vertical: 5),
+                                                      width: double.infinity,
+                                                      decoration: BoxDecoration(
+                                                          border: Border.all(
+                                                            color: Colors.grey,
+                                                            width: 1,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10)),
+                                                      child: Text(
+                                                        'لودر كبير \n من شركـــة كاتربي',
+                                                        style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w600),
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 4,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Expanded(
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        5,
+                                                                    vertical:
+                                                                        3),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Colors
+                                                                          .grey,
+                                                                      width: 1,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15)),
+                                                            child: Text(
+                                                              'المعدة : لودر',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 11),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 3,
+                                                        ),
+                                                        Expanded(
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        5,
+                                                                    vertical:
+                                                                        3),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Colors
+                                                                          .grey,
+                                                                      width: 1,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15)),
+                                                            child: Text(
+                                                              'منذ4ايـــام',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 11),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    SizedBox(
+                                                      height: 4,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Expanded(
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        5,
+                                                                    vertical:
+                                                                        3),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Colors
+                                                                          .grey,
+                                                                      width: 1,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15)),
+                                                            child: Text(
+                                                              'الحالة : جديدة',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 11),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 3,
+                                                        ),
+                                                        Expanded(
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        5,
+                                                                    vertical:
+                                                                        3),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Colors
+                                                                          .grey,
+                                                                      width: 1,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15)),
+                                                            child: Text(
+                                                              'العلامة : كات',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 11),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    SizedBox(
+                                                      height: 4,
+                                                    ),
+                                                    Container(
+                                                      width: double.infinity,
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                              horizontal: 5,
+                                                              vertical: 3),
+                                                      decoration: BoxDecoration(
+                                                          color: context
+                                                              .color.mainGold,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      15)),
+                                                      child: Text(
+                                                        ' تفاصـــيل اكثـــر ',
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            fontSize: 15),
+                                                      ),
+                                                    ),
+                                                  ]))))))
+                        ])),
+                    Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                        child: Row(mainAxisSize: MainAxisSize.max, children: [
+                          Expanded(
+                              child: Padding(
+                                  padding: EdgeInsets.all(3),
+                                  child: Material(
+                                      color: Colors.transparent,
+                                      elevation: 5,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                      child: Container(
+                                          width: double.infinity,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                          ),
+                                          child: Padding(
+                                              padding: EdgeInsets.all(5),
+                                              child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
+                                                      child: Image.network(
+                                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/us1sd4f65nfj/14-%D8%A8%D9%84%D8%AF%D9%88%D8%B2%D8%B1%D8%A7%D8%AA.jpg',
+                                                        width: double.infinity,
+                                                        height:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .height *
+                                                                0.15,
+                                                        fit: BoxFit.fill,
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0, 5, 0, 5),
+                                                        child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Flexible(
+                                                                  child: Container(
+                                                                      width: double.infinity,
+                                                                      decoration: BoxDecoration(
+                                                                        color: context
+                                                                            .color
+                                                                            .mainGold,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5),
+                                                                      ),
+                                                                      child: Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                                                                          child: Row(mainAxisSize: MainAxisSize.max, children: [
+                                                                            Expanded(
+                                                                              child: Align(
+                                                                                  alignment: AlignmentDirectional(0, 0),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 3),
+                                                                                    child: Text('متوفر 50 معدة',
+                                                                                        style: TextStyle(
+                                                                                          color: Colors.black,
+                                                                                          fontSize: 12,
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FontWeight.w700,
+                                                                                        )),
+                                                                                  )),
+                                                                            )
+                                                                          ])))),
+                                                            ])),
+                                                    Container(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                              horizontal: 5,
+                                                              vertical: 5),
+                                                      width: double.infinity,
+                                                      decoration: BoxDecoration(
+                                                          border: Border.all(
+                                                            color: Colors.grey,
+                                                            width: 1,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10)),
+                                                      child: Text(
+                                                        'لودر كبير \n من شركـــة كاتربي',
+                                                        style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w600),
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 4,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Expanded(
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        5,
+                                                                    vertical:
+                                                                        3),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Colors
+                                                                          .grey,
+                                                                      width: 1,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15)),
+                                                            child: Text(
+                                                              'المعدة : لودر',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 11),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 3,
+                                                        ),
+                                                        Expanded(
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        5,
+                                                                    vertical:
+                                                                        3),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Colors
+                                                                          .grey,
+                                                                      width: 1,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15)),
+                                                            child: Text(
+                                                              'منذ4ايـــام',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 11),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    SizedBox(
+                                                      height: 4,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Expanded(
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        5,
+                                                                    vertical:
+                                                                        3),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Colors
+                                                                          .grey,
+                                                                      width: 1,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15)),
+                                                            child: Text(
+                                                              'الحالة : جديدة',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 11),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 3,
+                                                        ),
+                                                        Expanded(
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        5,
+                                                                    vertical:
+                                                                        3),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Colors
+                                                                          .grey,
+                                                                      width: 1,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15)),
+                                                            child: Text(
+                                                              'العلامة : كات',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 11),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    SizedBox(
+                                                      height: 4,
+                                                    ),
+                                                    Container(
+                                                      width: double.infinity,
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                              horizontal: 5,
+                                                              vertical: 3),
+                                                      decoration: BoxDecoration(
+                                                          color: context
+                                                              .color.mainGold,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      15)),
+                                                      child: Text(
+                                                        ' تفاصـــيل اكثـــر ',
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            fontSize: 15),
+                                                      ),
+                                                    ),
+                                                  ])))))),
+                          Expanded(
+                              child: Padding(
+                                  padding: EdgeInsets.all(3),
+                                  child: Material(
+                                      color: Colors.transparent,
+                                      elevation: 5,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                      child: Container(
+                                          width: double.infinity,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                          ),
+                                          child: Padding(
+                                              padding: EdgeInsets.all(5),
+                                              child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
+                                                      child: Image.network(
+                                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/us1sd4f65nfj/14-%D8%A8%D9%84%D8%AF%D9%88%D8%B2%D8%B1%D8%A7%D8%AA.jpg',
+                                                        width: double.infinity,
+                                                        height:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .height *
+                                                                0.15,
+                                                        fit: BoxFit.fill,
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0, 5, 0, 5),
+                                                        child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Flexible(
+                                                                  child: Container(
+                                                                      width: double.infinity,
+                                                                      decoration: BoxDecoration(
+                                                                        color: context
+                                                                            .color
+                                                                            .mainGold,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5),
+                                                                      ),
+                                                                      child: Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                                                                          child: Row(mainAxisSize: MainAxisSize.max, children: [
+                                                                            Expanded(
+                                                                              child: Align(
+                                                                                  alignment: AlignmentDirectional(0, 0),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 3),
+                                                                                    child: Text('متوفر 50 معدة',
+                                                                                        style: TextStyle(
+                                                                                          color: Colors.black,
+                                                                                          fontSize: 12,
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FontWeight.w700,
+                                                                                        )),
+                                                                                  )),
+                                                                            )
+                                                                          ])))),
+                                                            ])),
+                                                    Container(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                              horizontal: 5,
+                                                              vertical: 5),
+                                                      width: double.infinity,
+                                                      decoration: BoxDecoration(
+                                                          border: Border.all(
+                                                            color: Colors.grey,
+                                                            width: 1,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10)),
+                                                      child: Text(
+                                                        'لودر كبير \n من شركـــة كاتربي',
+                                                        style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w600),
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 4,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Expanded(
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        5,
+                                                                    vertical:
+                                                                        3),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Colors
+                                                                          .grey,
+                                                                      width: 1,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15)),
+                                                            child: Text(
+                                                              'المعدة : لودر',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 11),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 3,
+                                                        ),
+                                                        Expanded(
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        5,
+                                                                    vertical:
+                                                                        3),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Colors
+                                                                          .grey,
+                                                                      width: 1,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15)),
+                                                            child: Text(
+                                                              'منذ4ايـــام',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 11),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    SizedBox(
+                                                      height: 4,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Expanded(
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        5,
+                                                                    vertical:
+                                                                        3),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Colors
+                                                                          .grey,
+                                                                      width: 1,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15)),
+                                                            child: Text(
+                                                              'الحالة : جديدة',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 11),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 3,
+                                                        ),
+                                                        Expanded(
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        5,
+                                                                    vertical:
+                                                                        3),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Colors
+                                                                          .grey,
+                                                                      width: 1,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15)),
+                                                            child: Text(
+                                                              'العلامة : كات',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 11),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    SizedBox(
+                                                      height: 4,
+                                                    ),
+                                                    Container(
+                                                      width: double.infinity,
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                              horizontal: 5,
+                                                              vertical: 3),
+                                                      decoration: BoxDecoration(
+                                                          color: context
+                                                              .color.mainGold,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      15)),
+                                                      child: Text(
+                                                        ' تفاصـــيل اكثـــر ',
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            fontSize: 15),
+                                                      ),
+                                                    ),
+                                                  ]))))))
+                        ])),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 3),
+                      decoration: BoxDecoration(
+                          color: context.color.mainGold,
+                          borderRadius: BorderRadius.circular(15)),
+                      child: Text(
+                        '  متــــابعة ',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 15),
+                      ),
+                    ),
+                  ])),
             ),
           ],
         ));
@@ -1466,7 +2651,7 @@ class _storeDetailseState extends State<storeDetails> {
         ));
       case 2:
         return Container(
-            child: Column(
+            child: ListView(
           children: [
             Card(
               shape: RoundedRectangleBorder(
@@ -1788,10 +2973,150 @@ class _storeDetailseState extends State<storeDetails> {
                 ),
               ),
             ),
+            Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                elevation: 3,
+                child: Container(
+                  padding: EdgeInsets.all(5),
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 5),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            color: context.color.mainGold,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Text(
+                          " المراجعـــــات ",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.black),
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      _buildReview(
+                        name: "علاء الدين عبدالباقي",
+                        date: "2024/6/19",
+                        comment:
+                            "هذا المحتوى هو فعلاً مميز، أن تعديل في نفس الساحة قد تم توضيحه للناس بشكل رائع، حيث تمكنك أداة الرد هنا من الرد أو التعديل في النصوص الأخرى بإضافة إلى زيادة عدد الحروف إلخ. شكراً للتنظيم.",
+                      ),
+                      _buildReview(
+                        name: "علاء الدين عبدالباقي",
+                        date: "2024/6/19",
+                        comment:
+                            "هذا المحتوى هو فعلاً مميز، أن تعديل في نفس الساحة قد تم توضيحه للناس بشكل رائع، حيث تمكنك أداة الرد هنا من الرد أو التعديل في النصوص الأخرى بإضافة إلى زيادة عدد الحروف إلخ. شكراً للتنظيم.",
+                      ),
+                      _buildReview(
+                        name: "علاء الدين عبدالباقي",
+                        date: "2024/6/19",
+                        comment:
+                            "هذا المحتوى هو فعلاً مميز، أن تعديل في نفس الساحة قد تم توضيحه للناس بشكل رائع، حيث تمكنك أداة الرد هنا من الرد أو التعديل في النصوص الأخرى بإضافة إلى زيادة عدد الحروف إلخ. شكراً للتنظيم.",
+                      )
+                    ],
+                  ),
+                )),
           ],
         ));
       default:
         return Container();
     }
+  }
+
+  Widget _buildReview(
+      {required String name, required String date, required String comment}) {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.account_circle, size: 40),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(name,
+                            style:
+                                const TextStyle(fontWeight: FontWeight.bold)),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Row(
+                          children: [
+                            Icon(Icons.star, color: Colors.amber, size: 20),
+                            Icon(Icons.star, color: Colors.amber, size: 20),
+                            Icon(Icons.star, color: Colors.amber, size: 20),
+                            Icon(Icons.star, color: Colors.amber, size: 20),
+                            Icon(Icons.star_half,
+                                color: Colors.amber, size: 20),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Text(date,
+                        style:
+                            const TextStyle(fontSize: 12, color: Colors.grey)),
+                  ],
+                ),
+              ),
+              Icon(Icons.more_vert)
+            ],
+          ),
+          const SizedBox(height: 10),
+          const SizedBox(height: 8),
+          Text(comment),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                decoration: BoxDecoration(
+                    color: context.color.mainGold,
+                    borderRadius: BorderRadius.circular(10)),
+                child: Row(
+                  children: [
+                    Text('مفيد'),
+                    Icon(
+                      Icons.favorite,
+                      size: 15,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 3,
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                decoration: BoxDecoration(
+                    color: context.color.mainGold,
+                    borderRadius: BorderRadius.circular(10)),
+                child: Row(
+                  children: [
+                    Text('غير مفيد'),
+                    Icon(
+                      Icons.favorite_border,
+                      size: 15,
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+          Divider(
+            color: Colors.black,
+          ),
+        ],
+      ),
+    );
   }
 }
