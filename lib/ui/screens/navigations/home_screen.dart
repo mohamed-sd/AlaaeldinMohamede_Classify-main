@@ -364,7 +364,7 @@ class HomeScreenState extends State<HomeScreen>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0, 15, 0, 5),
                               child: Text(
-                                'أهلاً بك في إعلانات بريق!',
+                                "welcomeBareeqAds".translate(context),
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 20,
@@ -376,7 +376,7 @@ class HomeScreenState extends State<HomeScreen>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0, 5, 3, 0),
                               child: Text(
-                                'حيث نفتح لك ولإعلاناتك وصولًا سريعًا إلى عالم التعدين،',
+                                "welcomeAdsDesc".translate(context),
                                 textAlign: TextAlign.justify,
                                 style: TextStyle(
                                     color: Colors.black,
@@ -389,7 +389,7 @@ class HomeScreenState extends State<HomeScreen>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0, 5, 3, 0),
                               child: Text(
-                                'لتصل رسائلك إلى المهتمين وتخلق فرصًا مشرقة.',
+                                '',
                                 textAlign: TextAlign.justify,
                                 style: TextStyle(
                                     color: Colors.black,

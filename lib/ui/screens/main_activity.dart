@@ -423,7 +423,7 @@ class MainActivityState extends State<MainActivity>
                     AppIcons.homeNav, "homeTab".translate(context)),
 
                 buildBottomNavigationbarItem(
-                    1, AppIcons.myAdsNav, AppIcons.myAdsNav, "المتاجر"),
+                    1, AppIcons.myAdsNav, AppIcons.myAdsNav, "storesTab".translate(context)),
 
                 BlocListener<FetchUserPackageLimitCubit,
                         FetchUserPackageLimitState>(
@@ -464,7 +464,7 @@ class MainActivityState extends State<MainActivity>
                                       child: Column(
                                         children: [
                                           UiUtils.getSvg(AppIcons.plusIcon , height: 85),
-                                          Text('أضف إعلانك' , style: TextStyle(color: context.color.mainColor , fontSize: 12,fontWeight: FontWeight.w900),)
+                                          Text("postUrAdTab".translate(context) , style: TextStyle(color: context.color.mainColor , fontSize: 12,fontWeight: FontWeight.w900),)
                                         ],
                                       )
                               )
@@ -480,11 +480,10 @@ class MainActivityState extends State<MainActivity>
                 buildBottomNavigationbarItem(
                     2,
                     AppIcons.profileNav,
-                    AppIcons.profileNav,
-                    "دليل إجرائي"),
+                    AppIcons.profileNav,"proceduralGuideTab".translate(context)),
 
                 buildBottomNavigationbarItem(3, AppIcons.chatNav,
-                    AppIcons.chatNav,  "نادي التعدين"),
+                    AppIcons.chatNav,  "miningClubTab".translate(context)),
 
                 // buildBottomNavigationbarItem(3, AppIcons.profileNav,
                 //     AppIcons.profileNavActive, "profileTab".translate(context))

@@ -318,7 +318,7 @@ class HomeScreenState extends State<HomeStore>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0, 15, 0, 5),
                               child: Text(
-                                'أهلاً بك في متجر بريق!',
+                                "welcomeStore".translate(context),
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 20,
@@ -330,7 +330,7 @@ class HomeScreenState extends State<HomeStore>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0, 5, 3, 0),
                               child: Text(
-                                'استكشف مجموعة متنوعة من المتاجر والوكالات في عالم التعدين',
+                                "welcomeStoreDesc".translate(context),
                                 textAlign: TextAlign.justify,
                                 style: TextStyle(
                                     color: Colors.black,
@@ -343,7 +343,7 @@ class HomeScreenState extends State<HomeStore>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0, 5, 3, 0),
                               child: Text(
-                                'وتمتع بتجربة تسويقية ممتعة مع افضل الموردين',
+                                '',
                                 textAlign: TextAlign.justify,
                                 style: TextStyle(
                                     color: Colors.black,
@@ -363,7 +363,7 @@ class HomeScreenState extends State<HomeStore>
                         height: 10,
                       ),
                       CustomText(
-                        'كلما تحتاجه للتعدين ... اقرب مما تتخيل',
+                        "welcomeStoreSlug".translate(context),
                         textAlign: TextAlign.center,
                         height: 1,
                         customTextStyle: Theme.of(context)

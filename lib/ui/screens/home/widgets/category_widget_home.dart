@@ -42,7 +42,7 @@ class _CategoryWidgetHomeState extends CloudState<CategoryWidgetHome> {
               children: [
                 const SizedBox(height: 1),
                 CustomText(
-                  categoryTitleHeader,
+                  "welcomeAdsSlug".translate(context),
                   height: 1,
                   customTextStyle: Theme.of(context)
                       .textTheme
