@@ -112,41 +112,49 @@ class Mining_minestry extends StatelessWidget {
                             // The Light Row
                             InkWell(
                                 onTap: () {},
-                                child: light_row( context , 'إجراءات رخصة البحث العامة ')),
+                                child: light_row(
+                                    context, 'إجراءات رخصة البحث العامة ')),
                             InkWell(
                                 onTap: () {},
-                                child: Dark_row( context ,  ' إجراءات رخصة البحث المطلقة ')),
+                                child: Dark_row(
+                                    context, ' إجراءات رخصة البحث المطلقة ')),
                             InkWell(
                                 onTap: () {},
-                                child: light_row( context , ' إجراءات رخصة الإمتياز  ')),
+                                child: light_row(
+                                    context, ' إجراءات رخصة الإمتياز  ')),
 
                             the_title(
                                 'عقود التعدين وإستخراج الصخور والمعادن الصناعية'),
 
                             InkWell(
                                 onTap: () {},
-                                child: Dark_row(context ,'مطلوبات عقد التعدين الكبير ')),
+                                child: Dark_row(
+                                    context, 'مطلوبات عقد التعدين الكبير ')),
 
                             InkWell(
                                 onTap: () {},
-                                child: light_row(context ,  'مطلوبات عقد التعدين الصغير ')),
+                                child: light_row(
+                                    context, 'مطلوبات عقد التعدين الصغير ')),
 
                             InkWell(
                                 onTap: () {},
-                                child: Dark_row(context ,'مطلوبات عقد التعدين التقليدي ')),
+                                child: Dark_row(
+                                    context, 'مطلوبات عقد التعدين التقليدي ')),
 
                             InkWell(
                                 onTap: () {},
-                                child: light_row( context , 'مطلوبات عقد المعادن والصخور')),
+                                child: light_row(
+                                    context, 'مطلوبات عقد المعادن والصخور')),
 
                             InkWell(
                                 onTap: () {},
-                                child: Dark_row(context ,'مطلوبات رخصة التعامل في الأحجار الكريمة')),
+                                child: Dark_row(context,
+                                    'مطلوبات رخصة التعامل في الأحجار الكريمة')),
 
                             InkWell(
                                 onTap: () {},
-                                child: light_row( context , 'ضوابط العمل في التعدين النهري')),
-
+                                child: light_row(
+                                    context, 'ضوابط العمل في التعدين النهري')),
                           ],
                         ),
                       )),
@@ -161,19 +169,24 @@ class Mining_minestry extends StatelessWidget {
                   color: context.color.mainGold,
                   borderRadius: BorderRadiusDirectional.circular(18),
                 ),
-                child:Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.link , size: 30, ),
-                    SizedBox(width: 10,),
-                    Text('زيارة الموقع الرسمي' , style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w800
-                    ),)
+                    Icon(
+                      Icons.link,
+                      size: 30,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      'زيارة الموقع الرسمي',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+                    )
                   ],
                 ),
               )
-
             ],
           ),
         ),
@@ -199,12 +212,12 @@ class Mining_minestry extends StatelessWidget {
     );
   }
 
-  Padding light_row( BuildContext context , String title) {
+  Padding light_row(BuildContext context, String title) {
     return Padding(
       padding: EdgeInsets.all(5),
       child: InkWell(
-        onTap: (){
-            Navigator.pushNamed(context, Routes.detailes);
+        onTap: () {
+          Navigator.pushNamed(context, Routes.detailes);
         },
         child: Container(
             width: double.infinity,
@@ -259,11 +272,11 @@ class Mining_minestry extends StatelessWidget {
     );
   }
 
-  Padding Dark_row(BuildContext context , String title) {
+  Padding Dark_row(BuildContext context, String title) {
     return Padding(
       padding: EdgeInsets.all(5),
       child: InkWell(
-        onTap: (){
+        onTap: () {
           Navigator.pushNamed(context, Routes.detailes);
         },
         child: Container(

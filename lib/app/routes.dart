@@ -22,6 +22,7 @@ import 'package:eClassify/ui/screens/faqs_screen.dart';
 import 'package:eClassify/ui/screens/favorite_screen.dart';
 import 'package:eClassify/ui/screens/filter_screen.dart';
 import 'package:eClassify/ui/screens/guide/detailes.dart';
+import 'package:eClassify/ui/screens/guide/main_guide.dart';
 import 'package:eClassify/ui/screens/guide/mining_minestry.dart';
 import 'package:eClassify/ui/screens/home/category_list.dart';
 import 'package:eClassify/ui/screens/home/change_language_screen.dart';
@@ -73,14 +74,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
+  static const mainGuide = 'mainGuide';
   static const storedetails = 'storedetails';
   static const communitiesPage = 'communitiesPage';
-  static const visualDetailsPage  = 'visualDetailsPage';
-  static const bodcastPage  = 'bodcastPage';
+  static const visualDetailsPage = 'visualDetailsPage';
+  static const bodcastPage = 'bodcastPage';
 
   static const visualMaterialsPage = 'visualMaterialsPage';
   static const pDFViewerPage = 'pDFViewerPage';
-  static const knowResPage  = 'knowResPage';
+  static const knowResPage = 'knowResPage';
   static const profileScreen = 'profileScreen';
   static const detailes = 'details';
   static const soon = 'soon';
@@ -217,37 +219,46 @@ class Routes {
     }
 
     switch (routeSettings.name) {
-      case storedetails :
+      case mainGuide:
+        return MaterialPageRoute(builder: ((context) => MainGuide()));
+      case storedetails:
         return MaterialPageRoute(builder: ((context) => storeDetails()));
       case bodcastPage:
         return MaterialPageRoute(builder: ((context) => const BodcastPage()));
-    case visualDetailsPage:
-      return MaterialPageRoute(builder: ((context) => const VisualDetailsPage()));
-    case visualMaterialsPage:
-        return MaterialPageRoute(builder: ((context) => const VisualMaterialsPage()));
-      case pDFViewerPage :
+      case visualDetailsPage:
+        return MaterialPageRoute(
+            builder: ((context) => const VisualDetailsPage()));
+      case visualMaterialsPage:
+        return MaterialPageRoute(
+            builder: ((context) => const VisualMaterialsPage()));
+      case pDFViewerPage:
         return MaterialPageRoute(builder: ((context) => const PDFViewerPage()));
-      case jobsDetailes :
-        return MaterialPageRoute(builder: ((context) => const Jobsdetailswedgit()));
-      case profileScreen :
+      case jobsDetailes:
+        return MaterialPageRoute(
+            builder: ((context) => const Jobsdetailswedgit()));
+      case profileScreen:
         return MaterialPageRoute(builder: ((context) => const ProfileScreen()));
-      case jobs :
+      case jobs:
         return MaterialPageRoute(builder: ((context) => const Jobswedgit()));
-      case detailes :
+      case detailes:
         return MaterialPageRoute(builder: ((context) => const Detailes()));
       case soon:
-        return MaterialPageRoute(builder: ((context) => const ComingSoonPage()));
-      case mony_exchange :
+        return MaterialPageRoute(
+            builder: ((context) => const ComingSoonPage()));
+      case mony_exchange:
         return MaterialPageRoute(builder: ((context) => const MoneyExchange()));
-      case mining_exchange :
-        return MaterialPageRoute(builder: ((context) => const MiningExchange()));
-      case homeItemsScreen :
+      case mining_exchange:
+        return MaterialPageRoute(
+            builder: ((context) => const MiningExchange()));
+      case homeItemsScreen:
         return MaterialPageRoute(builder: ((context) => const ItemsScreen()));
-      case chatlist :
-        return MaterialPageRoute(builder: ((context) => const ChatListScreen()));
-      case guide :
-        return MaterialPageRoute(builder: ((context) => const Mining_minestry()));
-      case welcome :
+      case chatlist:
+        return MaterialPageRoute(
+            builder: ((context) => const ChatListScreen()));
+      case guide:
+        return MaterialPageRoute(
+            builder: ((context) => const Mining_minestry()));
+      case welcome:
         return MaterialPageRoute(builder: ((context) => const WelcomeScreen()));
       case splash:
         return MaterialPageRoute(builder: ((context) => const SplashScreen()));
@@ -256,9 +267,9 @@ class Routes {
             builder: ((context) => const OnboardingScreen()));
       case main:
         return MainActivity.route(routeSettings);
-      case communitiesPage :
+      case communitiesPage:
         return CommunitiesPage.route(routeSettings);
-      case knowResPage :
+      case knowResPage:
         return KnowResPage.route(routeSettings);
       case login:
         return LoginScreen.route(routeSettings);
@@ -377,4 +388,3 @@ class Routes {
     }
   }
 }
-
