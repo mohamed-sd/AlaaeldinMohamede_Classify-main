@@ -728,7 +728,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                       if (HiveUtils.isUserAuthenticated()) ...[
                         customTile(
                           context,
-                          title: " اعلاناتي ".translate(context),
+                          title: "myAdsMenu".translate(context),
                           svgImagePath: AppIcons.myAdsNav,
                           onTap: () {
                             Navigator.pushNamed(context, Routes.homeItemsScreen);
@@ -738,7 +738,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                       if (HiveUtils.isUserAuthenticated()) ...[
                         customTile(
                           context,
-                          title: " الدردشة ".translate(context),
+                          title: "myChatsMenu".translate(context),
                           svgImagePath: AppIcons.message,
                           onTap: () {
                             Navigator.pushNamed(context, Routes.chatlist);
@@ -997,7 +997,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                       if (HiveUtils.isUserAuthenticated()) ...[
                         customTile(
                           context,
-                          title: "تسجيل خروج".translate(context),
+                          title: "logoutMenu".translate(context),
                           svgImagePath: AppIcons.logout,
                           onTap: () {
                             logOutConfirmWidget();
