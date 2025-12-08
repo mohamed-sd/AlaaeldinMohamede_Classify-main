@@ -382,7 +382,7 @@ class HomeScreenState extends State<HomeNews>
                             else section1 = true;
                           });
                         },
-                        child: title_card('اخبار التعدين والشركات' , section1),
+                        child: title_card("miningCompanyNews".translate(context) , section1),
                       ),
                       SizedBox(
                         height: 5,
@@ -406,7 +406,7 @@ class HomeScreenState extends State<HomeNews>
                                           context, Routes.blogsScreenRoute);
                                     },
                                     child: GoldShimmerCard(
-                                        title: 'أخبار التعدين',
+                                        title: "miningNews".translate(context),
                                         url:
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F44-%20%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpeg.jpg?alt=media&token=602fdc8e-de80-42f7-934f-b41ab9ddfcaa'),
                                   ),
@@ -416,7 +416,7 @@ class HomeScreenState extends State<HomeNews>
                                           context, Routes.blogsScreenRoute);
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' أخبار الشركات ',
+                                        title: "companyNews".translate(context),
                                         url:
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F61-%20%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA.jpg?alt=media&token=c9a5210e-85ea-49c4-b146-b16936e21879'),
                                   ),
@@ -426,7 +426,7 @@ class HomeScreenState extends State<HomeNews>
                                           context, Routes.blogsScreenRoute);
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' تحديثات الجهات الرسمية والوزارات ',
+                                        title: "officialUpdates".translate(context),
                                         url:
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F45-%20%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AC%D9%87%D8%A7%D8%AA.jpeg.jpg?alt=media&token=3181874b-3bcf-4f46-8195-8cb905b9bcc8'),
                                   ),
@@ -448,7 +448,7 @@ class HomeScreenState extends State<HomeNews>
                             else section2 = true;
                           });
                         },
-                        child: title_card('الأسواق والأسعار' , section2),
+                        child: title_card("marketsPrices".translate(context) , section2),
                       ),
                       SizedBox(
                         height: 5,
@@ -472,7 +472,7 @@ class HomeScreenState extends State<HomeNews>
                                           context, Routes.mining_exchange);
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' بورصة المعادن ',
+                                        title: "metalsExchange".translate(context),
                                         url:
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F46-%20%D8%A8%D9%88%D8%B1%D8%B5%D8%A9%20%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%86.jpg?alt=media&token=bfcf5a8f-ee16-4da7-8ce4-aca6e530a9f0'),
                                   ),
@@ -482,7 +482,7 @@ class HomeScreenState extends State<HomeNews>
                                           context, Routes.mony_exchange);
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' أسعار العملات ',
+                                        title: "currencyPrices".translate(context),
                                         url:
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F47-%20%D8%A7%D8%B3%D8%B9%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA.jpg?alt=media&token=e99250f6-6ec0-4ea4-aaa0-e8192c7e5622'),
                                   ),
@@ -491,7 +491,7 @@ class HomeScreenState extends State<HomeNews>
                                       Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' تقارير سوقية وتحليلات اقتصادية ',
+                                        title:"marketReports".translate(context),
                                         url: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F48-%20%D8%AA%D9%82%D8%A7%D8%B1%D9%8A%D8%B1%20%D8%B3%D9%88%D9%82.jpg?alt=media&token=a4090223-34c3-4650-b8e0-ddecef16c131'),
                                   ),
 
@@ -512,7 +512,7 @@ class HomeScreenState extends State<HomeNews>
                             else section3 = true;
                           });
                         },
-                        child: title_card('المعرفة والبحوث' , section3),
+                        child: title_card("knowledgeResearch".translate(context), section3),
                       ),
                       SizedBox(
                         height: 5,
@@ -537,13 +537,13 @@ class HomeScreenState extends State<HomeNews>
                                         Routes.knowResPage,
                                         arguments:
                                         {
-                                          'title': 'المقالات العلمية والتحليلية',
+                                          'title': "analyticalArticles".translate(context),
                                           'flag': '1',
                                         }, // هذا هو الـ title
                                       );
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' المقالات العلمية والتحليلية ',
+                                        title: "academicPapers".translate(context),
                                         url:
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F49-%20%D8%A7%D9%84%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%D8%A9.jpg?alt=media&token=b61674c1-3a73-400c-9115-c271ef6abefb'),
                                   ),
@@ -552,12 +552,12 @@ class HomeScreenState extends State<HomeNews>
                                       Navigator.pushNamed(context,
                                       Routes.knowResPage,
                                       arguments: {
-                                        'title' : 'البحوث والأوراق الأكاديمية',
+                                        'title' : "studyMaterialsBooks".translate(context),
                                         'flag' : '2'
                                       });
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' البحوث والأوراق الأكاديمية ',
+                                        title: "academicPapers".translate(context),
                                         url:
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F50-%20%D8%A7%D9%84%D8%A8%D8%AD%D9%88%D8%AB%20%D9%88%D8%A7%D9%84%D8%A7%D9%88%D8%B1%D8%A7%D9%82%20%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A%D8%A9.jpg?alt=media&token=01a9018a-4301-4340-a120-87a4abd26a08'),
                                   ),
@@ -566,12 +566,12 @@ class HomeScreenState extends State<HomeNews>
                                       Navigator.pushNamed(context,
                                           Routes.knowResPage,
                                           arguments: {
-                                            'title' : ' المواد الدراسية والكتب',
+                                            'title' : "studyMaterialsBooks".translate(context),
                                             'flag' : '2'
                                           });
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' المواد الدراسية والكتب ',
+                                        title: "studyMaterialsBooks".translate(context),
                                         url: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F51-%20%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%AF%20%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D9%8A%D8%A9.jpg?alt=media&token=5bb3b27e-8990-4465-bb2f-a0eea1f9948d'),
                                   ),
 
@@ -592,7 +592,7 @@ class HomeScreenState extends State<HomeNews>
                             else section4 = true;
                           });
                         },
-                        child: title_card('الدورات والتأهيل' , section4),
+                        child: title_card("coursesTraining".translate(context) , section4),
                       ),
                       SizedBox(
                         height: 5,
@@ -616,7 +616,7 @@ class HomeScreenState extends State<HomeNews>
                                           context, Routes.visualMaterialsPage);
                                     },
                                     child: GoldShimmerCard(
-                                        title: 'الدورات التدريبية ',
+                                        title: "trainingCourses".translate(context),
                                         url:
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F52-%20%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8%D9%8A%D8%A9.jpg?alt=media&token=2b1e0b66-8b1f-42f3-bfca-df78ba5416c5'),
                                   ),
@@ -626,7 +626,7 @@ class HomeScreenState extends State<HomeNews>
                                           context, Routes.visualMaterialsPage);
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' الندوات وورش العمل ',
+                                        title: "seminarsWorkshops".translate(context),
                                         url:
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F53-%20%D8%A7%D9%84%D9%86%D8%AF%D9%88%D8%A7%D8%AA%20%D9%88%D9%88%D8%B1%D8%B4%20%D8%A7%D9%84%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8.jpeg.jpg?alt=media&token=f1a77b7d-d664-4de4-82f5-88d0257e1835'),
                                   ),
@@ -635,7 +635,7 @@ class HomeScreenState extends State<HomeNews>
                                       Navigator.pushNamed(context, Routes.visualMaterialsPage);
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' برامج تطوير المهارات ',
+                                        title: "skillsDevPrograms".translate(context),
                                         url: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F54-%20%D8%A8%D8%B1%D8%A7%D9%85%D8%AC%20%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D9%85%D9%87%D8%A7%D8%B1%D8%A7%D8%AA.jpg?alt=media&token=5aa798d3-130d-400f-ac50-fea7b719b22a'),
                                   ),
 
@@ -656,7 +656,7 @@ class HomeScreenState extends State<HomeNews>
                             else section5 = true;
                           });
                         },
-                        child: title_card('الميديا والبودكاست' , section5),
+                        child: title_card("mediaPodcasts".translate(context) , section5),
                       ),
                       SizedBox(
                         height: 5,
@@ -680,7 +680,7 @@ class HomeScreenState extends State<HomeNews>
                                           context, Routes.bodcastPage);
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' بودكاست التعدين ',
+                                        title:"miningPodcast".translate(context),
                                         url:
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F55-%20%D8%A8%D9%88%D8%AF%D9%83%D8%A7%D8%B3%D8%AA%20%D8%A7%D9%84%D8%AA%D8%B9%D8%AF%D9%8A%D9%86.jpg?alt=media&token=1ac4ecef-b0c4-44b2-9999-bc03a78184df'),
                                   ),
@@ -690,7 +690,7 @@ class HomeScreenState extends State<HomeNews>
                                           context, Routes.bodcastPage);
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' فيديوهات توعوية وتدريبية ',
+                                        title: "trainingVideos".translate(context),
                                         url:
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F56-%20%D9%81%D9%8A%D8%AF%D9%8A%D9%88%D9%87%D8%A7%D8%AA%20%D8%AA%D9%88%D8%B9%D9%88%D9%8A%D8%A9.jpg?alt=media&token=5b853c97-11b6-4f23-b0ad-7a5e14eaad30'),
                                   ),
@@ -699,7 +699,7 @@ class HomeScreenState extends State<HomeNews>
                                       Navigator.pushNamed(context, Routes.bodcastPage);
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' جلسات حوارية ومسجلة ',
+                                        title: "discussionSessions".translate(context),
                                         url: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F57-%20%D8%AC%D9%84%D8%B3%D8%A7%D8%AA%20%D8%AD%D9%88%D8%A7%D8%B1%D9%8A%D8%A9.jpeg.jpg?alt=media&token=bc908f40-0b99-4f29-8c57-2f7e9cccac68'),
                                   ),
 
@@ -720,7 +720,7 @@ class HomeScreenState extends State<HomeNews>
                             else section6 = true;
                           });
                         },
-                        child: title_card('المجتمع والمبادرات' , section6),
+                        child: title_card("communityInitiatives".translate(context) , section6),
                       ),
                       SizedBox(
                         height: 5,
@@ -742,12 +742,12 @@ class HomeScreenState extends State<HomeNews>
                                     onTap: () {
                                       Navigator.pushNamed(
                                           context, Routes.communitiesPage,arguments: {
-                                        'title':'المبادرات المجتمعية',
+                                        'title':"communityInitiativesItems".translate(context),
                                         'flag' : '1'
                                       });
                                     },
                                     child: GoldShimmerCard(
-                                        title: 'المبادرات المجتمعية',
+                                        title: "communityInitiativesItems".translate(context),
                                         url:
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F60-%20%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%AF%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D8%AC%D8%AA%D9%85%D8%B9%D9%8A%D8%A9.jpg?alt=media&token=bc386fd0-36a3-4896-89dc-74064cd0f7f0'),
                                   ),
@@ -755,24 +755,24 @@ class HomeScreenState extends State<HomeNews>
                                     onTap: () {
                                       Navigator.pushNamed(
                                           context, Routes.communitiesPage,arguments: {
-                                        'title' : 'المسؤولية الاجتماعية',
+                                        'title' : "socialResponsibility".translate(context),
                                         'flag' : '2'
                                       });
                                     },
                                     child: GoldShimmerCard(
-                                        title: 'المسؤولية الاجتماعية',
+                                        title: "socialResponsibility".translate(context),
                                         url:
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F59-%20%D8%A7%D9%84%D9%85%D8%B3%D8%A4%D9%88%D9%84%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%AC%D8%AA%D9%85%D8%B9%D9%8A%D8%A9.jpg?alt=media&token=cdbe9c70-eb12-4fb9-941f-a8391ec72251'),
                                   ),
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(context, Routes.communitiesPage,arguments: {
-                                        'title' : 'المنتديات والنقاشات',
+                                        'title' : "forumsDiscussions".translate(context),
                                         'flag' : '3'
                                       });
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' المنتديات والنقاشات ',
+                                        title: "forumsDiscussions".translate(context),
                                         url: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Miningclub%2F58-%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AF%D9%8A%D8%A7%D8%AA%20%D9%88%D8%A7%D9%84%D9%86%D9%82%D8%A7%D8%B4%D8%A7%D8%AA.jpg?alt=media&token=e5c7a67e-d4c0-4acc-b9d4-58e4b78c8279'),
                                   ),
                                   SizedBox(height: 5,)

@@ -383,7 +383,7 @@ class HomeScreenState extends State<HomeStore>
                               section1 = true;
                           });
                         },
-                        child: title_card('مواقع التعدين المنظم', section1),
+                        child: title_card("miningSites".translate(context), section1),
                       ),
                       SizedBox(
                         height: 5,
@@ -459,7 +459,7 @@ class HomeScreenState extends State<HomeStore>
                               section2 = true;
                           });
                         },
-                        child: title_card(' التعدين الاهلي ', section2),
+                        child: title_card("artisanalMining".translate(context), section2),
                       ),
                       SizedBox(
                         height: 5,
@@ -535,7 +535,7 @@ class HomeScreenState extends State<HomeStore>
                               section3 = true;
                           });
                         },
-                        child: title_card(' الخدمات التجارية ', section3),
+                        child: title_card("businessServices".translate(context), section3),
                       ),
                       SizedBox(
                         height: 5,
