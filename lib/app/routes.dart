@@ -24,7 +24,6 @@ import 'package:eClassify/ui/screens/filter_screen.dart';
 import 'package:eClassify/ui/screens/guide/detailes.dart';
 import 'package:eClassify/ui/screens/guide/main_guide.dart';
 import 'package:eClassify/ui/screens/guide/mining_minestry.dart';
-import 'package:eClassify/ui/screens/guide/reader_page.dart';
 import 'package:eClassify/ui/screens/home/category_list.dart';
 import 'package:eClassify/ui/screens/home/change_language_screen.dart';
 import 'package:eClassify/ui/screens/home/search_screen.dart';
@@ -221,8 +220,7 @@ class Routes {
     }
 
     switch (routeSettings.name) {
-      case readerPage:
-        return MaterialPageRoute(builder: ((context) => ReaderPage()));
+
       case mainGuide:
         return MaterialPageRoute(builder: ((context) => MainGuide()));
       case storedetails:

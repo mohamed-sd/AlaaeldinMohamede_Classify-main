@@ -3,8 +3,10 @@ import 'package:eClassify/ui/screens/widgets/equipation_widgets/popup_menue/menu
 import 'package:eClassify/ui/theme/theme.dart';
 import 'package:eClassify/utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:screen_brightness/screen_brightness.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:translator/translator.dart';
 
 /// TTSController wraps flutter_tts usage and voice listing.
@@ -124,7 +126,7 @@ class _DetailesState extends State<Detailes> {
   // UI and settings
   bool isDark = false;
   String selectedFont = "Cairo"; // must match configured fonts in pubspec.yaml
-  double fontSize = 20.0;
+  double fontSize = 16.0;
   Color fontColor = Colors.black;
   double brightness = 1.0;
   double scrollSpeed = 1.0;
@@ -268,7 +270,7 @@ class _DetailesState extends State<Detailes> {
         isSpeaking = false;
       });
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("تمت الترجمة إلى: $toLang")),
+        SnackBar(content: Text("تمت الترجمة ")),
       );
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -595,17 +597,24 @@ class _DetailesState extends State<Detailes> {
               fontSize: 20,
             ),
           ),
-          // actions: [
-          //   IconButton(
-          //     icon: translating
-          //         ? CircularProgressIndicator(
-          //             color: Colors.white, strokeWidth: 2)
-          //         : Icon(Icons.translate),
-          //     onPressed: translating ? null : openTranslateMenu,
-          //     tooltip: "ترجمة النص",
-          //   ),
-          //   // IconButton(icon: Icon(Icons.settings), onPressed: openSettingsPanel),
-          // ],
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.copy),
+              onPressed: () {
+                Clipboard.setData(ClipboardData(text: widget.content));
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text("تم نسخ النص")),
+                );
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.share),
+              onPressed: () {
+                Share.share(widget.content);
+              },
+            ),
+            // IconButton(icon: Icon(Icons.settings), onPressed: openSettingsPanel),
+          ],
         ),
         body: Column(
           children: [

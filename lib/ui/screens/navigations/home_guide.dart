@@ -399,7 +399,7 @@ class HomeScreenState extends State<HomeGuide>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.guide);
+                                          context, Routes.mainGuide);
                                     },
                                     child: GoldShimmerCard(
                                         title: 'وزارة المعادن',
@@ -409,7 +409,7 @@ class HomeScreenState extends State<HomeGuide>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.guide);
+                                          context, Routes.mainGuide);
                                     },
                                     child: GoldShimmerCard(
                                         title: ' الشركة السودانية للموارد المعدنية',
@@ -419,7 +419,7 @@ class HomeScreenState extends State<HomeGuide>
                                   InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, Routes.guide);
+                                          context, Routes.mainGuide);
                                     },
                                     child: GoldShimmerCard(
                                         title: '  الهيئة العامة للأبحاث الجيولوجية ',
