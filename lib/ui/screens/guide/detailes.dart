@@ -589,139 +589,159 @@ class _DetailesState extends State<Detailes> {
     final textColor = isDark ? Colors.white : fontColor;
 
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: context.color.mainBrown,
-          title: Text(
-            " إجراءات رخصة البحث العامة ",
-            style: TextStyle(
-              fontSize: 20,
+        body: SafeArea(
+      child: Column(
+        children: [
+          // The Title of the page
+          Padding(
+            padding: EdgeInsetsDirectional.all(10),
+            child: Container(
+              margin: EdgeInsets.symmetric(vertical: 5),
+              padding: EdgeInsets.symmetric(vertical: 5),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  color: context.color.mainGold,
+                  borderRadius: BorderRadiusDirectional.circular(15)),
+              child: Text(
+                'إجراءات رخصة البحث العامة',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+              ),
             ),
           ),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.copy),
-              onPressed: () {
-                Clipboard.setData(ClipboardData(text: widget.content));
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text("تم نسخ النص")),
-                );
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.share),
-              onPressed: () {
-                Share.share(widget.content);
-              },
-            ),
-            // IconButton(icon: Icon(Icons.settings), onPressed: openSettingsPanel),
-          ],
-        ),
-        body: Column(
-          children: [
-            Expanded(
-              child: Container(
-                color: isDark ? Colors.black : Colors.white,
-                child: Padding(
-                  padding: EdgeInsets.all(10),
-                  child: SingleChildScrollView(
-                    controller: scroll,
-                    child: Wrap(
-                      alignment: WrapAlignment.start,
-                      children: List.generate(words.length, (i) {
-                        final w = words[i] + " ";
-                        final isHighlighted = i == highlightedIndex;
-                        return Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                          margin: EdgeInsets.symmetric(vertical: 2),
-                          decoration: BoxDecoration(
-                            color: isHighlighted
-                                ? (isDark
-                                    ? Colors.yellow[700]
-                                    : Colors.yellowAccent)
-                                : Colors.transparent,
-                            borderRadius: BorderRadius.circular(4),
+          Expanded(
+            child: Container(
+              color: isDark ? Colors.black : Colors.white,
+              child: Padding(
+                padding: EdgeInsets.all(10),
+                child: SingleChildScrollView(
+                  controller: scroll,
+                  child: Wrap(
+                    alignment: WrapAlignment.start,
+                    children: List.generate(words.length, (i) {
+                      final w = words[i] + " ";
+                      final isHighlighted = i == highlightedIndex;
+                      return Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                        margin: EdgeInsets.symmetric(vertical: 2),
+                        decoration: BoxDecoration(
+                          color: isHighlighted
+                              ? (isDark
+                                  ? Colors.yellow[700]
+                                  : Colors.yellowAccent)
+                              : Colors.transparent,
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        child: Text(
+                          w,
+                          textDirection: TextDirection.rtl,
+                          style: TextStyle(
+                            fontSize: fontSize,
+                            color: isHighlighted ? Colors.black : textColor,
+                            fontFamily: selectedFont,
+                            height: 1.5,
                           ),
-                          child: Text(
-                            w,
-                            textDirection: TextDirection.rtl,
-                            style: TextStyle(
-                              fontSize: fontSize,
-                              color: isHighlighted ? Colors.black : textColor,
-                              fontFamily: selectedFont,
-                              height: 1.5,
-                            ),
-                          ),
-                        );
-                      }),
-                    ),
+                        ),
+                      );
+                    }),
                   ),
                 ),
               ),
             ),
-            Container(
-              padding: EdgeInsets.only(bottom: 20 , top: 5),
-              // height: 80,
-              // padding: EdgeInsets.all(16),
-              color: context.color.mainGold,
-              child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // Pause / Resume / Play
-                    FloatingActionButton(
-                      heroTag: "playpause",
-                      mini: true,
-                      backgroundColor: context.color.mainBrown,
-                      child: Icon(isSpeaking ? Icons.pause : Icons.play_arrow),
-                      onPressed: () {
-                        if (isSpeaking)
-                          pauseReading();
-                        else {
-                          if (currentWordIndex > 0 &&
-                              currentWordIndex < words.length) {
-                            // resume by reading from currentWordIndex
-                            setState(() {
-                              isSpeaking = true;
-                            });
-                            startReading();
-                          } else {
-                            startReading();
-                          }
-                        }
-                      },
-                    ),
-                    SizedBox(width: 10),
-                    // Stop
-                    FloatingActionButton(
-                      heroTag: "stop",
-                      mini: true,
-                      backgroundColor: context.color.mainBrown,
-                      child: Icon(Icons.stop),
-                      onPressed: stopReading,
-                    ),
-                    SizedBox(width: 10),
-                    // Translate (quick)
-                    FloatingActionButton(
-                      heroTag: "translate_quick",
-                      mini: true,
-                      backgroundColor: context.color.mainBrown,
-                      child: Icon(Icons.translate),
-                      onPressed: openTranslateMenu,
-                    ),
-                    SizedBox(width: 10),
-                    // Open settings
-                    FloatingActionButton(
-                      heroTag: "settings",
-                      backgroundColor: context.color.mainBrown,
-                      child: Icon(Icons.menu_book),
-                      onPressed: openSettingsPanel,
-                    ),
-                  ],
+          ),
+          Container(
+            padding: EdgeInsets.only(bottom: 10, top: 5),
+            // height: 80,
+            // padding: EdgeInsets.all(16),
+            color: context.color.mainGold,
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // * Pause / Resume / Play Audio
+                FloatingActionButton(
+                  heroTag: "playpause",
+                  mini: true,
+                  backgroundColor: context.color.mainBrown,
+                  child: Icon(isSpeaking ? Icons.pause : Icons.play_arrow),
+                  onPressed: () {
+                    if (isSpeaking)
+                      pauseReading();
+                    else {
+                      if (currentWordIndex > 0 &&
+                          currentWordIndex < words.length) {
+                        // resume by reading from currentWordIndex
+                        setState(() {
+                          isSpeaking = true;
+                        });
+                        startReading();
+                      } else {
+                        startReading();
+                      }
+                    }
+                  },
                 ),
-            )
-          ],
-        )
+                // * Small Space
+                SizedBox(width: 5),
+                // * Stop Audio
+                FloatingActionButton(
+                  heroTag: "stop",
+                  mini: true,
+                  backgroundColor: context.color.mainBrown,
+                  child: Icon(Icons.stop),
+                  onPressed: stopReading,
+                ),
+                // * Small Space
+                SizedBox(width: 5),
+                // * Share Text
+                FloatingActionButton(
+                  mini: true,
+                  onPressed: () {
+                    Share.share(widget.content);
+                  },
+                  child: const Icon(Icons.share),
+                  backgroundColor: context.color.mainBrown,
+                ),
+                // * small Space
+                SizedBox(width: 5,),
+                // * Copy Text
+                FloatingActionButton(
+                  mini: true,
+                  onPressed: () {
+                    Clipboard.setData(ClipboardData(text: widget.content));
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text("تم نسخ النص")),
+                    );
+                  },
+                  child: const Icon(Icons.copy),
+                  backgroundColor: context.color.mainBrown,
+                ),
+                // * Small Space
+                SizedBox(width: 5),
+                // * Translate (quick)
+                FloatingActionButton(
+                  heroTag: "translate_quick",
+                  mini: true,
+                  backgroundColor: context.color.mainBrown,
+                  child: Icon(Icons.translate),
+                  onPressed: openTranslateMenu,
+                ),
+                // * Large Space
+                SizedBox(width: 20,),
+                // Open settings
+                FloatingActionButton(
+                  heroTag: "settings",
+                  backgroundColor: context.color.mainBrown,
+                  child: Icon(Icons.menu_book),
+                  onPressed: openSettingsPanel,
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    )
         // Stack(
         //   children: [
         //     Container(color: bg),
