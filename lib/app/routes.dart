@@ -24,6 +24,7 @@ import 'package:eClassify/ui/screens/filter_screen.dart';
 import 'package:eClassify/ui/screens/guide/detailes.dart';
 import 'package:eClassify/ui/screens/guide/main_guide.dart';
 import 'package:eClassify/ui/screens/guide/mining_minestry.dart';
+import 'package:eClassify/ui/screens/guide/reader_page.dart';
 import 'package:eClassify/ui/screens/home/category_list.dart';
 import 'package:eClassify/ui/screens/home/change_language_screen.dart';
 import 'package:eClassify/ui/screens/home/search_screen.dart';
@@ -74,6 +75,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
+  static const readerPage = 'readerPage';
   static const mainGuide = 'mainGuide';
   static const storedetails = 'storedetails';
   static const communitiesPage = 'communitiesPage';
@@ -219,6 +221,8 @@ class Routes {
     }
 
     switch (routeSettings.name) {
+      case readerPage:
+        return MaterialPageRoute(builder: ((context) => ReaderPage()));
       case mainGuide:
         return MaterialPageRoute(builder: ((context) => MainGuide()));
       case storedetails:
@@ -241,7 +245,7 @@ class Routes {
       case jobs:
         return MaterialPageRoute(builder: ((context) => const Jobswedgit()));
       case detailes:
-        return MaterialPageRoute(builder: ((context) => const Detailes()));
+        return MaterialPageRoute(builder: ((context) => Detailes()));
       case soon:
         return MaterialPageRoute(
             builder: ((context) => const ComingSoonPage()));
