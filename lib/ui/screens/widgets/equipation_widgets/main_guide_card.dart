@@ -142,3 +142,60 @@ class MainGuideCard extends StatelessWidget {
     //         )));
   }
 }
+
+class MainListCard extends StatelessWidget {
+  String title;
+  String urlimg;
+
+  MainListCard({super.key, required this.title, required this.urlimg});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      alignment: Alignment.center,
+      child: Container(
+        // width: 170,
+        margin: EdgeInsets.only(top: 10 , right: 10 , left: 10),
+        padding: EdgeInsets.all(5),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(color: Colors.grey, blurRadius: 6, spreadRadius: 3)
+            ]),
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.network(
+                urlimg,
+                height: 130,
+                fit: BoxFit.fill,
+                width: double.infinity,
+              ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              width: double.infinity,
+              margin: EdgeInsets.only(
+                top: 5,
+              ),
+              padding: EdgeInsets.all(6),
+              decoration: BoxDecoration(
+                  color: Color(0xff844F03),
+                  borderRadius: BorderRadius.circular(10)),
+              child: Text(
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                title,
+                style:
+                TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}

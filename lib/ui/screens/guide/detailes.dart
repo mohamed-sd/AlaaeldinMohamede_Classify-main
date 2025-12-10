@@ -157,7 +157,7 @@ class _DetailesState extends State<Detailes> {
 
   List<String> _splitWords(String text) {
     final w =
-    text.split(RegExp(r'\s+')).where((s) => s.trim().isNotEmpty).toList();
+        text.split(RegExp(r'\s+')).where((s) => s.trim().isNotEmpty).toList();
     return w;
   }
 
@@ -304,7 +304,7 @@ class _DetailesState extends State<Detailes> {
               children: [
                 ListTile(
                     title:
-                    Text("اختر لغة للترجمة", textAlign: TextAlign.center)),
+                        Text("اختر لغة للترجمة", textAlign: TextAlign.center)),
                 Divider(),
                 ...langs.entries.map((e) {
                   return ListTile(
@@ -397,7 +397,7 @@ class _DetailesState extends State<Detailes> {
                   ListTile(
                     leading: Icon(Icons.font_download, color: Colors.white),
                     title:
-                    Text("نوع الخط", style: TextStyle(color: Colors.white)),
+                        Text("نوع الخط", style: TextStyle(color: Colors.white)),
                     subtitle: Text(selectedFont,
                         style: TextStyle(color: Colors.white70)),
                     onTap: () {
@@ -410,7 +410,7 @@ class _DetailesState extends State<Detailes> {
                   ListTile(
                     leading: Icon(Icons.text_fields, color: Colors.white),
                     title:
-                    Text("حجم الخط", style: TextStyle(color: Colors.white)),
+                        Text("حجم الخط", style: TextStyle(color: Colors.white)),
                     subtitle: Slider(
                       value: fontSize,
                       min: 12,
@@ -428,7 +428,7 @@ class _DetailesState extends State<Detailes> {
                   ListTile(
                     leading: Icon(Icons.color_lens, color: Colors.white),
                     title:
-                    Text("لون الخط", style: TextStyle(color: Colors.white)),
+                        Text("لون الخط", style: TextStyle(color: Colors.white)),
                     subtitle: SingleChildScrollView(
                       child: Row(
                         children: pickerColors.map((c) {
@@ -457,7 +457,7 @@ class _DetailesState extends State<Detailes> {
                   ListTile(
                     leading: Icon(Icons.light_mode, color: Colors.white),
                     title:
-                    Text("السطوع", style: TextStyle(color: Colors.white)),
+                        Text("السطوع", style: TextStyle(color: Colors.white)),
                     subtitle: Slider(
                       value: brightness,
                       min: 0.1,
@@ -518,7 +518,7 @@ class _DetailesState extends State<Detailes> {
     showDialog(
       context: context,
       builder: (_) {
-        final fonts = ["IBMPlexArabic","Cairo"];
+        final fonts = ["IBMPlexArabic", "Cairo"];
         return AlertDialog(
           title: Text("اختر نوع الخط"),
           content: Column(
@@ -545,8 +545,8 @@ class _DetailesState extends State<Detailes> {
         final list = tts.voices.isNotEmpty
             ? tts.voices
             : [
-          {"name": "default"}
-        ];
+                {"name": "default"}
+              ];
         return AlertDialog(
           title: Text("اختر الصوت"),
           content: Container(
@@ -589,12 +589,26 @@ class _DetailesState extends State<Detailes> {
     final textColor = isDark ? Colors.white : fontColor;
 
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          leading: GestureDetector(
+            onTap: (){
+              Navigator.pop(context);
+            },
+            child: Icon(
+              Icons.arrow_back,
+              color: context.color.mainBrown,
+            ),
+          ),
+          elevation: 0,
+        ),
         body: SafeArea(
           child: Column(
             children: [
               // The Title of the page
               Padding(
-                padding: EdgeInsetsDirectional.all(10),
+                padding:
+                    EdgeInsetsDirectional.only(bottom: 10, start: 10, end: 10),
                 child: Container(
                   margin: EdgeInsets.symmetric(vertical: 5),
                   padding: EdgeInsets.symmetric(vertical: 5),
@@ -602,10 +616,33 @@ class _DetailesState extends State<Detailes> {
                   decoration: BoxDecoration(
                       color: context.color.mainGold,
                       borderRadius: BorderRadiusDirectional.circular(15)),
-                  child: Text(
-                    'إجراءات رخصة البحث العامة',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+                  child: Row(
+                    children: [
+                      // Padding(
+                      //   padding: EdgeInsets.only(right: 10),
+                      //   child: GestureDetector(
+                      //     onTap: (){
+                      //       Navigator.pop(context);
+                      //     },
+                      //       child: Icon(
+                      //     Icons.arrow_back,
+                      //     color: context.color.mainBrown,
+                      //   )),
+                      // ),
+                      Expanded(
+                        child: Container(
+                          // padding: EdgeInsets.only(left: 10),
+                          child: Text(
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            'إجراءات رخصة البحث العامة',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.w900),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -622,14 +659,14 @@ class _DetailesState extends State<Detailes> {
                           final w = words[i] + " ";
                           final isHighlighted = i == highlightedIndex;
                           return Container(
-                            padding:
-                            EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 4, vertical: 2),
                             margin: EdgeInsets.symmetric(vertical: 2),
                             decoration: BoxDecoration(
                               color: isHighlighted
                                   ? (isDark
-                                  ? Colors.yellow[700]
-                                  : Colors.yellowAccent)
+                                      ? Colors.yellow[700]
+                                      : Colors.yellowAccent)
                                   : Colors.transparent,
                               borderRadius: BorderRadius.circular(4),
                             ),
@@ -704,7 +741,9 @@ class _DetailesState extends State<Detailes> {
                       backgroundColor: context.color.mainBrown,
                     ),
                     // * small Space
-                    SizedBox(width: 5,),
+                    SizedBox(
+                      width: 5,
+                    ),
                     // * Copy Text
                     FloatingActionButton(
                       mini: true,
@@ -728,7 +767,9 @@ class _DetailesState extends State<Detailes> {
                       onPressed: openTranslateMenu,
                     ),
                     // * Large Space
-                    SizedBox(width: 20,),
+                    SizedBox(
+                      width: 20,
+                    ),
                     // Open settings
                     FloatingActionButton(
                       heroTag: "settings",
@@ -742,109 +783,109 @@ class _DetailesState extends State<Detailes> {
             ],
           ),
         )
-      // Stack(
-      //   children: [
-      //     Container(color: bg),
-      //     Padding(
-      //       padding: EdgeInsets.only(top: 20 , bottom: 80 , right: 10 , left: 10),
-      //       child: SingleChildScrollView(
-      //         controller: scroll,
-      //         child: Wrap(
-      //           alignment: WrapAlignment.start,
-      //           children: List.generate(words.length, (i) {
-      //             final w = words[i] + " ";
-      //             final isHighlighted = i == highlightedIndex;
-      //             return Container(
-      //               padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-      //               margin: EdgeInsets.symmetric(vertical: 2),
-      //               decoration: BoxDecoration(
-      //                 color: isHighlighted ? (isDark ? Colors.yellow[700] : Colors.yellowAccent) : Colors.transparent,
-      //                 borderRadius: BorderRadius.circular(4),
-      //               ),
-      //               child: Text(
-      //                 w,
-      //                 textDirection: TextDirection.rtl,
-      //                 style: TextStyle(
-      //                   fontSize: fontSize,
-      //                   color: isHighlighted ? Colors.black : textColor,
-      //                   fontFamily: selectedFont,
-      //                   height: 1.5,
-      //                 ),
-      //               ),
-      //             );
-      //           }),
-      //         ),
-      //       ),
-      //     ),
-      //     Positioned(
-      //       bottom: 18,
-      //       right: 18,
-      //       child: Container(
-      //         alignment: Alignment.center,
-      //         color: context.color.mainGold,
-      //         child: Row(
-      //           mainAxisSize: MainAxisSize.max,
-      //           children: [
-      //             // Pause / Resume / Play
-      //             FloatingActionButton(
-      //               heroTag: "playpause",
-      //               mini: true,
-      //               backgroundColor: Colors.blue,
-      //               child: Icon(isSpeaking ? Icons.pause : Icons.play_arrow),
-      //               onPressed: () {
-      //                 if (isSpeaking) pauseReading();
-      //                 else {
-      //                   if (currentWordIndex > 0 && currentWordIndex < words.length) {
-      //                     // resume by reading from currentWordIndex
-      //                     setState(() {
-      //                       isSpeaking = true;
-      //                     });
-      //                     startReading();
-      //                   } else {
-      //                     startReading();
-      //                   }
-      //                 }
-      //               },
-      //             ),
-      //
-      //             SizedBox(width: 10),
-      //
-      //             // Stop
-      //             FloatingActionButton(
-      //               heroTag: "stop",
-      //               mini: true,
-      //               backgroundColor: Colors.red,
-      //               child: Icon(Icons.stop),
-      //               onPressed: stopReading,
-      //             ),
-      //
-      //             SizedBox(width: 10),
-      //
-      //             // Translate (quick)
-      //             FloatingActionButton(
-      //               heroTag: "translate_quick",
-      //               mini: true,
-      //               backgroundColor: Colors.green,
-      //               child: Icon(Icons.translate),
-      //               onPressed: openTranslateMenu,
-      //             ),
-      //
-      //             SizedBox(width: 10),
-      //
-      //             // Open settings
-      //             FloatingActionButton(
-      //               heroTag: "settings",
-      //               backgroundColor: Colors.blueAccent,
-      //               child: Icon(Icons.menu_book),
-      //               onPressed: openSettingsPanel,
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //     ),
-      //   ],
-      // ),
-    );
+        // Stack(
+        //   children: [
+        //     Container(color: bg),
+        //     Padding(
+        //       padding: EdgeInsets.only(top: 20 , bottom: 80 , right: 10 , left: 10),
+        //       child: SingleChildScrollView(
+        //         controller: scroll,
+        //         child: Wrap(
+        //           alignment: WrapAlignment.start,
+        //           children: List.generate(words.length, (i) {
+        //             final w = words[i] + " ";
+        //             final isHighlighted = i == highlightedIndex;
+        //             return Container(
+        //               padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+        //               margin: EdgeInsets.symmetric(vertical: 2),
+        //               decoration: BoxDecoration(
+        //                 color: isHighlighted ? (isDark ? Colors.yellow[700] : Colors.yellowAccent) : Colors.transparent,
+        //                 borderRadius: BorderRadius.circular(4),
+        //               ),
+        //               child: Text(
+        //                 w,
+        //                 textDirection: TextDirection.rtl,
+        //                 style: TextStyle(
+        //                   fontSize: fontSize,
+        //                   color: isHighlighted ? Colors.black : textColor,
+        //                   fontFamily: selectedFont,
+        //                   height: 1.5,
+        //                 ),
+        //               ),
+        //             );
+        //           }),
+        //         ),
+        //       ),
+        //     ),
+        //     Positioned(
+        //       bottom: 18,
+        //       right: 18,
+        //       child: Container(
+        //         alignment: Alignment.center,
+        //         color: context.color.mainGold,
+        //         child: Row(
+        //           mainAxisSize: MainAxisSize.max,
+        //           children: [
+        //             // Pause / Resume / Play
+        //             FloatingActionButton(
+        //               heroTag: "playpause",
+        //               mini: true,
+        //               backgroundColor: Colors.blue,
+        //               child: Icon(isSpeaking ? Icons.pause : Icons.play_arrow),
+        //               onPressed: () {
+        //                 if (isSpeaking) pauseReading();
+        //                 else {
+        //                   if (currentWordIndex > 0 && currentWordIndex < words.length) {
+        //                     // resume by reading from currentWordIndex
+        //                     setState(() {
+        //                       isSpeaking = true;
+        //                     });
+        //                     startReading();
+        //                   } else {
+        //                     startReading();
+        //                   }
+        //                 }
+        //               },
+        //             ),
+        //
+        //             SizedBox(width: 10),
+        //
+        //             // Stop
+        //             FloatingActionButton(
+        //               heroTag: "stop",
+        //               mini: true,
+        //               backgroundColor: Colors.red,
+        //               child: Icon(Icons.stop),
+        //               onPressed: stopReading,
+        //             ),
+        //
+        //             SizedBox(width: 10),
+        //
+        //             // Translate (quick)
+        //             FloatingActionButton(
+        //               heroTag: "translate_quick",
+        //               mini: true,
+        //               backgroundColor: Colors.green,
+        //               child: Icon(Icons.translate),
+        //               onPressed: openTranslateMenu,
+        //             ),
+        //
+        //             SizedBox(width: 10),
+        //
+        //             // Open settings
+        //             FloatingActionButton(
+        //               heroTag: "settings",
+        //               backgroundColor: Colors.blueAccent,
+        //               child: Icon(Icons.menu_book),
+        //               onPressed: openSettingsPanel,
+        //             ),
+        //           ],
+        //         ),
+        //       ),
+        //     ),
+        //   ],
+        // ),
+        );
   }
 }
 
