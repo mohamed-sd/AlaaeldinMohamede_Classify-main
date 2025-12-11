@@ -2650,7 +2650,8 @@ class _storeDetailseState extends State<storeDetails> {
           ],
         ));
       case 2:
-        return Container(
+        return
+          Container(
             child: ListView(
           children: [
             Card(

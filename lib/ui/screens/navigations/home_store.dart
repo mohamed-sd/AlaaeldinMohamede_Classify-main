@@ -737,7 +737,7 @@ class HomeScreenState extends State<HomeStore>
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap : () {
-                  Navigator.pushNamed(context, Routes.storedetails);
+                  Navigator.pushNamed(context, Routes.provideStore);
                 },
                 child: Material(
                   color: Colors.transparent,

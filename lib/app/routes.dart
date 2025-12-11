@@ -60,7 +60,10 @@ import 'package:eClassify/ui/screens/settings/notifications.dart';
 import 'package:eClassify/ui/screens/settings/profile_setting.dart';
 import 'package:eClassify/ui/screens/sold_out_bought_screen.dart';
 import 'package:eClassify/ui/screens/splash_screen.dart';
+import 'package:eClassify/ui/screens/store/provide_store.dart';
 import 'package:eClassify/ui/screens/store/storeDetails.dart';
+import 'package:eClassify/ui/screens/store/store_details.dart';
+import 'package:eClassify/ui/screens/store/store_service_details.dart';
 import 'package:eClassify/ui/screens/user_profile/profile_screen.dart';
 import 'package:eClassify/ui/screens/welcome_screen.dart';
 import 'package:eClassify/ui/screens/sub_category/sub_category_screen.dart';
@@ -74,8 +77,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
+  static const storeServiceDetails = 'storeServiceDetails';
+  static const provideStore = 'provideStore';
   static const readerPage = 'readerPage';
   static const mainGuide = 'mainGuide';
+  static const storedetailss = 'storedetailss';
   static const storedetails = 'storedetails';
   static const communitiesPage = 'communitiesPage';
   static const visualDetailsPage = 'visualDetailsPage';
@@ -220,9 +226,14 @@ class Routes {
     }
 
     switch (routeSettings.name) {
-
+      case storeServiceDetails :
+        return MaterialPageRoute(builder: ((context) => StoreServiceDetails()));
       case mainGuide:
         return MaterialPageRoute(builder: ((context) => MainGuide()));
+      case provideStore:
+        return MaterialPageRoute(builder: ((context) => ProvideStore()));
+      case storedetailss:
+        return MaterialPageRoute(builder: ((context) => StoreDetailss()));
       case storedetails:
         return MaterialPageRoute(builder: ((context) => storeDetails()));
       case bodcastPage:
