@@ -10,6 +10,7 @@ import 'package:eClassify/ui/screens/home/widgets/home_sections_adapter.dart';
 import 'package:eClassify/ui/screens/home/widgets/item_horizontal_card.dart';
 import 'package:eClassify/ui/screens/main_activity.dart';
 import 'package:eClassify/ui/screens/native_ads_screen.dart';
+import 'package:eClassify/ui/screens/widgets/equipation_widgets/add_new_adds.dart';
 
 import 'package:eClassify/ui/screens/widgets/errors/no_data_found.dart';
 import 'package:eClassify/ui/screens/widgets/shimmerLoadingContainer.dart';
@@ -174,7 +175,8 @@ class ItemsListState extends CloudState<ItemsList> {
                         decoration: BoxDecoration(
                             border: Border.all(
                                 width: 1,
-                                color: context.color.textLightColor.withValues(alpha: 0.18)),
+                                color: context.color.textLightColor
+                                    .withValues(alpha: 0.18)),
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(10)),
                             color: context.color.primaryColor),
@@ -200,7 +202,6 @@ class ItemsListState extends CloudState<ItemsList> {
                                   FocusScope.of(context).unfocus();
                                 },
                               );
-
                             },
                             onTap: () {
                               //change prefix icon color to primary
@@ -223,7 +224,8 @@ class ItemsListState extends CloudState<ItemsList> {
                         decoration: BoxDecoration(
                           border: Border.all(
                               width: 1,
-                              color: context.color.textLightColor.withValues(alpha: 0.18)),
+                              color: context.color.textLightColor
+                                  .withValues(alpha: 0.18)),
                           color: context.color.secondaryColor,
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -251,7 +253,8 @@ class ItemsListState extends CloudState<ItemsList> {
                         decoration: BoxDecoration(
                           border: Border.all(
                               width: 1,
-                              color: context.color.textLightColor.withValues(alpha: 0.18)),
+                              color: context.color.textLightColor
+                                  .withValues(alpha: 0.18)),
                           color: context.color.secondaryColor,
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -297,8 +300,6 @@ class ItemsListState extends CloudState<ItemsList> {
 
   @override
   Widget build(BuildContext context) {
-
-
     return bodyWidget();
   }
 
@@ -317,11 +318,22 @@ class ItemsListState extends CloudState<ItemsList> {
           },
           child: Scaffold(
             backgroundColor: context.color.mainColor,
-            appBar: UiUtils.buildAppBar(context,
-                showBackButton: true,
-                title: selectedCategoryName == ""
-                    ? widget.categoryName
-                    : selectedCategoryName),
+            appBar: AppBar(
+              backgroundColor: context.color.mainBrown,
+              title: Text(selectedCategoryName == ""
+                  ? widget.categoryName
+                  : selectedCategoryName),
+              actions: [
+                filterByWidget(),
+                SizedBox(
+                  width: 8,
+                ),
+                sortByWidget(),
+                SizedBox(
+                  width: 8,
+                ),
+              ],
+            ),
             bottomNavigationBar: bottomWidget(),
             body: RefreshIndicator(
               onRefresh: () async {
@@ -330,7 +342,9 @@ class ItemsListState extends CloudState<ItemsList> {
                 searchBody = {};
                 Constant.itemFilter = null;
 
-                context.read<FetchItemFromCategoryCubit>().fetchItemFromCategory(
+                context
+                    .read<FetchItemFromCategoryCubit>()
+                    .fetchItemFromCategory(
                       categoryId: int.parse(widget.categoryId),
                       search: "",
                     );
@@ -351,17 +365,7 @@ class ItemsListState extends CloudState<ItemsList> {
 
   Container bottomWidget() {
     return Container(
-      color: context.color.secondaryColor,
-      padding: EdgeInsets.only(top: 3, bottom: 3),
-      height: 45,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          filterByWidget(),
-          VerticalDivider(
-            color: context.color.textLightColor.withValues(alpha: 0.3),
-          ),
-          InkWell(
+        child: InkWell(
             onTap: () {
               final List<CategoryModel> breadCrumb =
                   getCloudData("breadCrumb") ?? [];
@@ -373,37 +377,51 @@ class ItemsListState extends CloudState<ItemsList> {
                   "breadCrumbItems": breadCrumb,
                 },
               );
-                        },
-            child: Row(
-              children: [
-                Icon(Icons.add),
-                Text('إضافة إعلان'),
-              ],
-            ),
-          ),
-          VerticalDivider(
-            color: context.color.textLightColor.withValues(alpha: 0.3),
-          ),
-          // Add a vertical divider here
-          sortByWidget(),
-
-
-
-        ],
-      ),
-    );
+            },
+            child: AddNewAdds()));
+    // return Container(
+    //   color: context.color.secondaryColor,
+    //   padding: EdgeInsets.only(top: 3, bottom: 3),
+    //   height: 45,
+    //   child: Row(
+    //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    //     children: [
+    //       VerticalDivider(
+    //         color: context.color.textLightColor.withValues(alpha: 0.3),
+    //       ),
+    //       InkWell(
+    //         onTap: () {
+    //           final List<CategoryModel> breadCrumb =
+    //               getCloudData("breadCrumb") ?? [];
+    //
+    //           Navigator.pushNamed(
+    //             context,
+    //             Routes.addItemDetails,
+    //             arguments: {
+    //               "breadCrumbItems": breadCrumb,
+    //             },
+    //           );
+    //         },
+    //       ),
+    //       VerticalDivider(
+    //         color: context.color.textLightColor.withValues(alpha: 0.3),
+    //       ),
+    //       // Add a vertical divider here
+    //
+    //     ],
+    //   ),
+    // );
   }
 
   Widget filterByWidget() {
     return InkWell(
       child: Row(
         children: [
-          UiUtils.getSvg(AppIcons.filterByIcon,
-              color: context.color.textDefaultColor),
+          UiUtils.getSvg(AppIcons.filterByIcon, width: 18, color: Colors.white),
           SizedBox(
             width: 7,
           ),
-          CustomText("filterTitle".translate(context))
+          // CustomText("filterTitle".translate(context))
         ],
       ),
       onTap: () {
@@ -437,12 +455,11 @@ class ItemsListState extends CloudState<ItemsList> {
     return InkWell(
       child: Row(
         children: [
-          UiUtils.getSvg(AppIcons.sortByIcon,
-              color: context.color.textDefaultColor),
+          UiUtils.getSvg(AppIcons.sortByIcon, width: 18, color: Colors.white),
           SizedBox(
             width: 7,
           ),
-          CustomText("sortBy".translate(context))
+          // CustomText("sortBy".translate(context))
         ],
       ),
       onTap: () {
@@ -514,7 +531,6 @@ class ItemsListState extends CloudState<ItemsList> {
 
                   setState(() {
                     sortBy = null;
-
 
                     FocusManager.instance.primaryFocus?.unfocus();
                   });
@@ -645,8 +661,7 @@ class ItemsListState extends CloudState<ItemsList> {
         }
         return Column(
           children: [
-            Expanded(child: mainChildren(state.itemModel)
-                ),
+            Expanded(child: mainChildren(state.itemModel)),
             if (state.isLoadingMore) UiUtils.progress()
           ],
         );
@@ -668,7 +683,7 @@ class ItemsListState extends CloudState<ItemsList> {
     int gridCount = Constant.nativeAdsAfterItemNumber;
     int total = items.length;
 
-    for (int i = 0; i < total; i += gridCount ) {
+    for (int i = 0; i < total; i += gridCount) {
       if (isList) {
         children.add(_buildListViewSection(
             context, i, min(gridCount, total - i), items));
@@ -778,6 +793,7 @@ class ItemsListState extends CloudState<ItemsList> {
       ),
     );
   }
+
   List<CategoryModel>? getBreadCrumbList() {
     final dynamic rawBreadCrumb = getCloudData("breadCrumb");
 
