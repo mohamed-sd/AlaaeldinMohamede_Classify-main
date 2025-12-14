@@ -1,4 +1,5 @@
 import 'package:eClassify/app/routes.dart';
+import 'package:eClassify/data/model/equipation/guide_modale.dart';
 import 'package:eClassify/ui/theme/theme.dart';
 import 'package:eClassify/utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';

@@ -228,8 +228,6 @@ class Routes {
     switch (routeSettings.name) {
       case storeServiceDetails :
         return MaterialPageRoute(builder: ((context) => StoreServiceDetails()));
-      case mainGuide:
-        return MaterialPageRoute(builder: ((context) => MainGuide()));
       case provideStore:
         return MaterialPageRoute(builder: ((context) => ProvideStore()));
       case storedetailss:
@@ -253,8 +251,6 @@ class Routes {
         return MaterialPageRoute(builder: ((context) => const ProfileScreen()));
       case jobs:
         return MaterialPageRoute(builder: ((context) => const Jobswedgit()));
-      case detailes:
-        return MaterialPageRoute(builder: ((context) => Detailes()));
       case soon:
         return MaterialPageRoute(
             builder: ((context) => const ComingSoonPage()));
@@ -278,7 +274,11 @@ class Routes {
       case onboarding:
         return CupertinoPageRoute(
             builder: ((context) => const OnboardingScreen()));
-      case main:
+      case mainGuide:
+        return MainGuide.route(routeSettings);
+      case detailes:
+        return Detailes.route(routeSettings);
+        case main:
         return MainActivity.route(routeSettings);
       case communitiesPage:
         return CommunitiesPage.route(routeSettings);
