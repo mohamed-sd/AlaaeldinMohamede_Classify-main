@@ -16,6 +16,7 @@ class StoreDetailss extends StatelessWidget {
     return DefaultTabController(
       length: 2, // عدد التابات (يمكن تغييره)
       child: Scaffold(
+        backgroundColor: context.color.mainColor,
         body: Column(
           children: [
             // الجزء العلوي
@@ -135,16 +136,43 @@ class DetailsTabWidget extends StatelessWidget {
           child: Container(
             margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
             decoration: BoxDecoration(
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(
-                  color: context.color.mainGold,
-                  width: 1,
-                )),
+                ),
             child: Row(
               children: [
+                Container(
+                  height: 150,
+                  margin: EdgeInsets.all(3),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(
+                        color: context.color.mainGold,
+                        width: 1,
+                      )),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(16),
+                          child: Image.network(
+                            "https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%86%20(1).jpg?alt=media&token=f66650db-36a5-4924-b56f-ac526402990e",
+                            width: 110,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                      // Container(
+                      //   height: 35,
+                      //   alignment: Alignment.center,
+                      //   child: Text(' يضيف '),
+                      // )
+                    ],
+                  ),
+                ),
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.only(right: 10, top: 0),
+                    padding: EdgeInsets.only(right: 10, top: 0 , left: 10),
                     height: 170,
                     alignment: Alignment.topLeft,
                     child: Column(
@@ -168,91 +196,104 @@ class DetailsTabWidget extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
-                        Text(
-                          titleList[index],
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          detailsList[index],
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.person,
-                              color: context.color.mainGold,
-                              size: 20,
-                            ),
-                            Text(
-                              ' 2 شخص ',
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.bold),
-                            ),
-                            Icon(
-                              Icons.timer_outlined,
-                              color: context.color.mainGold,
-                              size: 20,
-                            ),
-                            Text(
-                              '  5 ساعات ',
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.bold),
-                            ),
-                          ],
+                        Container(
+                          padding: EdgeInsets.only(right: 10),
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                              border: Border.all(
+                                width: 2,
+                                color: Colors.grey,
+                              )
+                          ),
+                          child: Text(
+                            titleList[index],
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
                         ),
                         SizedBox(
                           height: 5,
                         ),
-                        Text(
-                          ' 100 \$ ',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
+                        Container(
+                          padding: EdgeInsets.only(right: 10),
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(
+                                width: 2,
+                                color: Colors.grey,
+                              )
+                          ),
+                          child: Text(
+                            detailsList[index],
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(right: 10),
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(
+                                width: 2,
+                                color: Colors.grey,
+                              )
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.person,
+                                color: context.color.mainGold,
+                                size: 20,
+                              ),
+                              Text(
+                                ' 2 شخص ',
+                                style: TextStyle(
+                                    fontSize: 12, fontWeight: FontWeight.bold),
+                              ),
+                              Icon(
+                                Icons.timer_outlined,
+                                color: context.color.mainGold,
+                                size: 20,
+                              ),
+                              Text(
+                                '  5 ساعات ',
+                                style: TextStyle(
+                                    fontSize: 12, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(right: 10),
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(
+                                width: 2,
+                                color: Colors.grey,
+                              )
+                          ),
+                          child: Text(
+                            ' 100 \$ ',
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ],
                     ),
                   ),
                 ),
-                Container(
-                  height: 170,
-                  margin: EdgeInsets.all(3),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                      border: Border.all(
-                    color: context.color.mainGold,
-                    width: 1,
-                  )),
-                  child: Column(
-                    children: [
-                      Expanded(
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(16),
-                            topRight: Radius.circular(16),
-                          ),
-                          child: Image.network(
-                            "https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%86%20(1).jpg?alt=media&token=f66650db-36a5-4924-b56f-ac526402990e",
-                            width: 110,
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        height: 35,
-                        alignment: Alignment.center,
-                        child: Text(' يضيف '),
-                      )
-                    ],
-                  ),
-                )
+
               ],
             ),
           ),

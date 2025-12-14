@@ -94,6 +94,7 @@ class _ComingSoonPageState extends State<Jobsdetailswedgit> {
             body: Padding(
               padding: const EdgeInsets.all(15),
               child: ListView(
+                physics: BouncingScrollPhysics(),
                 children: [
                   Container(
                     padding: EdgeInsets.symmetric(vertical: 5),
@@ -353,6 +354,39 @@ class _ComingSoonPageState extends State<Jobsdetailswedgit> {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        color : Color(0xFF28B107),
+                        borderRadius: BorderRadius.circular(15),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromARGB(12, 0, 0, 0),
+                            offset: Offset(0, 2),
+                            blurRadius: 10,
+                            spreadRadius: 4,
+                          )
+                        ]),
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('تحميل السيرة الذاتية' , style: TextStyle(
+                              fontWeight: FontWeight.w800
+                            ),),
+                            SizedBox(width: 7,),
+                            Icon(Icons.cloud_download_sharp)
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
