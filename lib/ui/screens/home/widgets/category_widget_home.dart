@@ -82,7 +82,7 @@ class _CategoryWidgetHomeState extends CloudState<CategoryWidgetHome> {
                               child: GoldShimmerCard(
                                   title: ' الوظائف الإدارية ',
                                   url:
-                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/mj151l05zw5v/52_copy.jpg'),
+                                  'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%A7%D9%84%D9%88%D8%B8%D8%A7%D8%A6%D9%81%20%D8%A7%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A%D8%A9.jpeg.jpg?alt=media&token=d7161e85-d563-40ec-bbfb-de5a4a390426'),
                             ),
                             InkWell(
                               onTap: () {
@@ -94,7 +94,7 @@ class _CategoryWidgetHomeState extends CloudState<CategoryWidgetHome> {
                               child: GoldShimmerCard(
                                   title: ' الوظائف الهندسية ',
                                   url:
-                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/2myfkkbqgcxc/53_copy.jpg'),
+                                  'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F2-%20%D8%A7%D9%84%D9%88%D8%B8%D8%A7%D8%A6%D9%81%20%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9.jpg?alt=media&token=0fe9e8eb-6571-4045-8937-7a104821baa6'),
                             ),
                             InkWell(
                               onTap: () {
@@ -105,7 +105,7 @@ class _CategoryWidgetHomeState extends CloudState<CategoryWidgetHome> {
                               },
                               child: GoldShimmerCard(
                                   title: ' الوظائف الفنية ',
-                                  url: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mining-market-firebase-ym2dfj/assets/zfbdaukt6q2f/55_copy.jpg'),
+                                  url: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F3-%20%D8%A7%D9%84%D9%88%D8%B8%D8%A7%D8%A6%D9%81%20%D8%A7%D9%84%D9%81%D9%86%D9%8A%D8%A9.jpg?alt=media&token=e0ed8359-0cd0-4cfd-ba13-2f4e01cdc77d'),
                             ),
 
                           ],

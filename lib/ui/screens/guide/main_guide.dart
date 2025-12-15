@@ -28,19 +28,74 @@ class MainGuide extends StatefulWidget {
 class _MainGuideState extends State<MainGuide> {
   bool isGrid = false; // لتحديد نوع العرض Grid or List
 
+  // List<GuideCatModale> cats = [
+  //   GuideCatModale(
+  //       flag: "الاجراءات الحكومية",
+  //       titles: ['تسجيل الشركات', 'تسجيل اسماء الاعمال']),
+  //   GuideCatModale(flag: "وزارة الاستثمار", titles: ['طلب ترخيص جديد']),
+  //   GuideCatModale(
+  //       flag: "وزارة المعادن",
+  //       titles: ['طلب الترخيص', 'رخصة التعدين', 'تراخيص المحليات']),
+  //   GuideCatModale(
+  //       flag: "الاجراءات البنكية", titles: ['الحساب الشخصي', 'حسابات الشركات', 'تصدير الذهب']),
+  //   GuideCatModale(
+  //       flag: "شرطة المرور العامة", titles: ['ترخيص الافراد', 'ترخيص الشركات']),
+  // ];
+  //
+
+
   List<GuideCatModale> cats = [
     GuideCatModale(
-        flag: "الاجراءات الحكومية",
-        titles: ['تسجيل الشركات', 'تسجيل اسماء الاعمال']),
-    GuideCatModale(flag: "وزارة الاستثمار", titles: ['طلب ترخيص جديد']),
+      flag: "الاجراءات الحكومية",
+      titles: [
+        GuideTitleModel(text: 'تسجيل الشركات', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5.jpeg?alt=media&token=a20e8796-c5cb-486b-9337-dcac854ce666'),
+        GuideTitleModel(text: 'تسجيل اسماء الاعمال', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5.jpeg?alt=media&token=a20e8796-c5cb-486b-9337-dcac854ce666'),
+      ],
+    ),
     GuideCatModale(
-        flag: "وزارة المعادن",
-        titles: ['طلب الترخيص', 'رخصة التعدين', 'تراخيص المحليات']),
+      flag: "وزارة الاستثمار",
+      titles: [
+        GuideTitleModel(text: 'طلب ترخيص جديد', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5.jpeg?alt=media&token=a20e8796-c5cb-486b-9337-dcac854ce666'),
+      ],
+    ),
     GuideCatModale(
-        flag: "الاجراءات البنكية", titles: ['الحساب الشخصي', 'حسابات الشركات']),
+      flag: "وزارة المعادن",
+      titles: [
+        GuideTitleModel(text: 'طلب الترخيص', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5.jpeg?alt=media&token=a20e8796-c5cb-486b-9337-dcac854ce666'),
+        GuideTitleModel(text: 'رخصة التعدين', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5.jpeg?alt=media&token=a20e8796-c5cb-486b-9337-dcac854ce666'),
+        GuideTitleModel(text: 'تراخيص المحليات', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5.jpeg?alt=media&token=a20e8796-c5cb-486b-9337-dcac854ce666'),
+        GuideTitleModel(text: 'التعدين النهري', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5.jpeg?alt=media&token=a20e8796-c5cb-486b-9337-dcac854ce666'),
+        GuideTitleModel(text: 'عقود التعدين', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5.jpeg?alt=media&token=a20e8796-c5cb-486b-9337-dcac854ce666'),
+
+      ],
+    ),
+
     GuideCatModale(
-        flag: "شرطة المرور العامة", titles: ['ترخيص الافراد', 'ترخيص الشركات']),
+      flag: "الولايات والمحليات",
+      titles: [
+        GuideTitleModel(text: 'إصدار شهادات التعدين', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5.jpeg?alt=media&token=a20e8796-c5cb-486b-9337-dcac854ce666'),
+        GuideTitleModel(text: 'تصديق مربعات التعدين', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5.jpeg?alt=media&token=a20e8796-c5cb-486b-9337-dcac854ce666'),
+      ],
+    ),
+
+    GuideCatModale(
+      flag: "الاجراءات البنكية",
+      titles: [
+        GuideTitleModel(text: 'الحساب الشخصي', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5.jpeg?alt=media&token=a20e8796-c5cb-486b-9337-dcac854ce666'),
+        GuideTitleModel(text: 'حسابات الشركات', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5.jpeg?alt=media&token=a20e8796-c5cb-486b-9337-dcac854ce666'),
+        GuideTitleModel(text: 'تصدير الذهب', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5.jpeg?alt=media&token=a20e8796-c5cb-486b-9337-dcac854ce666'),
+      ],
+    ),
+    GuideCatModale(
+      flag: "شرطة المرور العامة",
+      titles: [
+        GuideTitleModel(text: 'ترخيص الافراد', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5.jpeg?alt=media&token=a20e8796-c5cb-486b-9337-dcac854ce666'),
+        GuideTitleModel(text: 'ترخيص الشركات', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5.jpeg?alt=media&token=a20e8796-c5cb-486b-9337-dcac854ce666'),
+      ],
+    ),
   ];
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -113,14 +168,14 @@ class _MainGuideState extends State<MainGuide> {
                 context,
                 Routes.detailes,
                 arguments: {
-                  'title': category.titles[index],
+                  'title': category.titles[index].text,
                 },
               );
             },
             child: MainGuideCard(
-              title: category.titles[index],
+              title: category.titles[index].text,
               urlimg:
-                  "https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%86%20(1).jpg?alt=media&token=f66650db-36a5-4924-b56f-ac526402990e",
+                  category.titles[index].imagePath,
             ),
           );
         },
@@ -143,14 +198,14 @@ class _MainGuideState extends State<MainGuide> {
                 context,
                 Routes.detailes,
                 arguments: {
-                  'title': category.titles[index],
+                  'title': category.titles[index].text,
                 },
               );
             },
             child: MainListCard(
-              title: category.titles[index],
-              urlimg:
-                  "https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%86%20(1).jpg?alt=media&token=f66650db-36a5-4924-b56f-ac526402990e",
+              title: category.titles[index].text,
+              urlimg: category.titles[index].imagePath
+                   ,
             ),
           );
         },

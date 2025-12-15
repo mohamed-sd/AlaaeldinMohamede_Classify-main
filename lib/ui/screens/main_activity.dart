@@ -419,8 +419,13 @@ class MainActivityState extends State<MainActivity>
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                buildBottomNavigationbarItem(0, AppIcons.homeNav,
-                    AppIcons.homeNav, "homeTab".translate(context)),
+                // buildBottomNavigationbarItem(0, AppIcons.homeNav,
+                //     AppIcons.homeNav, "homeTab".translate(context)),
+
+                buildBottomNavigationbarItem(
+                    2,
+                    AppIcons.profileNav,
+                    AppIcons.profileNav,"proceduralGuideTab".translate(context)),
 
                 buildBottomNavigationbarItem(
                     1, AppIcons.myAdsNav, AppIcons.myAdsNav, "storesTab".translate(context)),
@@ -476,11 +481,14 @@ class MainActivityState extends State<MainActivity>
                     )),
                 // buildBottomNavigationbarItem(2, AppIcons.myAdsNav,
                 //     AppIcons.myAdsNavActive, "myAdsTab".translate(context)),
+                //
+                // buildBottomNavigationbarItem(
+                //     2,
+                //     AppIcons.profileNav,
+                //     AppIcons.profileNav,"proceduralGuideTab".translate(context)),
 
-                buildBottomNavigationbarItem(
-                    2,
-                    AppIcons.profileNav,
-                    AppIcons.profileNav,"proceduralGuideTab".translate(context)),
+                buildBottomNavigationbarItem(0, AppIcons.homeNav,
+                    AppIcons.homeNav, "homeTab".translate(context)),
 
                 buildBottomNavigationbarItem(3, AppIcons.chatNav,
                     AppIcons.chatNav,  "miningClubTab".translate(context)),
