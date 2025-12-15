@@ -290,9 +290,9 @@ class _DetailesState extends State<Detailes> {
   }
 
   List<String> _splitWords(String text) {
-    final w =
-        text.split(RegExp(r'\n+')).where((s) => s.trim().isNotEmpty).toList();
-    return w;
+    // final w =
+    //     text.split(RegExp(r'\n+')).where((s) => s.trim().isNotEmpty).toList();
+    return [text];
   }
 
   Future _loadInitialBrightness() async {
