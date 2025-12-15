@@ -92,9 +92,7 @@ class TTSController {
 
 /// The main reader page with all settings.
 class Detailes extends StatefulWidget {
-
   final String title;
-
 
   const Detailes({
     Key? key,
@@ -117,11 +115,8 @@ class Detailes extends StatefulWidget {
 }
 
 class _DetailesState extends State<Detailes> {
-
-
   List<GuideModale> guideModale = [
-
-    GuideModale(title : "تسجيل الشركات ", content:  '''
+    GuideModale(title: "تسجيل الشركات ", content: '''
 1-	طلب تسجيل الشركة متضمننا ثلاثة أسماء مقترحة بعد موافقة الشركاء
 2-	سداد رسوم التسجيل وإرفاق إيصال  السداد
 3-	إرفاق عقد التأسيس ولائحة الشركة 
@@ -129,16 +124,14 @@ class _DetailesState extends State<Detailes> {
 5-	في حالة وجود رأس مال أجنبي ملء إستمارة الاجانب
 6-	تحديد نشاط الشركة
     '''),
-
-    GuideModale(title: "تسجيل اسماء الاعمال", content:  '''
+    GuideModale(title: "تسجيل اسماء الاعمال", content: '''
 1-	طلب تسجيل إسم العمل وعدد 2 إسم بديل 
 2-	الرخصة التجارية لإسم العمل 
 3-	سداد الرسوم
 4-	ملء إستمارة تسجيل إسم العمل
 5-	توثيق أسم العمل
     '''),
-
-    GuideModale(title: "طلب ترخيص جديد", content:  '''
+    GuideModale(title: "طلب ترخيص جديد", content: '''
 1-	دراسة الجدوى للمشروع 
 2-	صورة من عقد التأسيس
 3-	كتابة الطلب 
@@ -146,45 +139,42 @@ class _DetailesState extends State<Detailes> {
 5-	موافقة الوزارة المختصة 
 6-	التوكيل القانوني في حالة عدم وجود صاحب المشروع 
     '''),
-
-    GuideModale( title: "طلب الترخيص", content:  '''
+    GuideModale(title: "طلب الترخيص", content: '''
 1-	طلب الترخيص
 2-	إرفاق شهادة التسجيل صادرة من المسجل التجاري 
 3-	دفع الرسوم بعد الحصول على الموافقة 
 الشركة السودانية للموارد المعدنية 
     '''),
-
-    GuideModale(title: "رخصة التعدين", content:  '''
+    GuideModale(title: "رخصة التعدين", content: '''
 1-دراسة جدوي فنية وإقتصادية ومقبولة بنكياً 
 2-خطة تطوير وفقاً للمعايير الدولية والمبادئ الهندسية
 3-تكوين شركةالإنتاج تكوين مجلس الإدارة لشركة الأنتاج
 4-مخاطبة الوزير لإستخراج رخصة التعدين
     '''),
-
-    GuideModale(title: "تراخيص المحليات", content:  '''
-1-	رخصة بحث صادرة من وزارة المعادن 
-2-	شهادة تسجيل المسجل التجاري 
-3-	خطة البحث
-4-	رأس المال
-5-	دراسة الجدوى 
-    '''),
-
-    GuideModale(title: "الحساب الشخصي", content:  '''
+    GuideModale(
+      title: "تراخيص المحليات",
+      content: '''
+1- رخصة بحث صادرة من وزارة المعادن
+2- شهادة تسجيل المسجل التجاري
+3- خطة البحث
+4- رأس المال
+5- دراسة الجدوى
+''',
+    ),
+    GuideModale(title: "الحساب الشخصي", content: '''
 •	اثبات شخصية.
 •	اثبات دخل/اصحاب الاعمال الحرة/اصحاب المهن/ اخري.
 •	مبلغ للايداع.
 •	شخصان مزكيان للحساب.
     '''),
-
-    GuideModale( title: "حسابات الشركات", content:  '''
+    GuideModale(title: "حسابات الشركات", content: '''
 •	نسخة من شهادة تسجيل الشركة.
 •	 عقد ولائحة تاسيس الشركة .
 •	 شهادات الايداعات من المسجل التجاري (اورنيك28) .
 •	 خطاب من الشركة موقع من رئيس مجلس الادارة والامين العام باختيار البنك لفتح الحساب ويوضح فيه اسماء المخولين بادارة الحساب وسلطات توقيعهم (أ) و (ب).
 •	 اثبات شخصية المخولين بادارة الحساب .
     '''),
-
-    GuideModale( title:  "إجراءات الاستيراد (الجمارك السودانية )", content:  '''
+    GuideModale(title: "إجراءات الاستيراد (الجمارك السودانية )", content: '''
          –      شهادة مصرفية من أي بنك تجاري (I.M) .
          –      شهادة من الهيئة العامة للمواصفات والمقاييس .
          –      الفواتير .
@@ -195,8 +185,7 @@ class _DetailesState extends State<Detailes> {
          –     كشف التعبيئة .
          –     بوليصة تامين .
     '''),
-
-    GuideModale( title : "ترخيص الافراد" , content:  '''
+    GuideModale(title: "ترخيص الافراد", content: '''
 1-	شهادة وارد المركبة أو شهادة البحث .
 2-	إثبات شخصية المالك الجديد للمركبة .
 3-	خطاب رهن المركبة إذا كان على المركبة رهن لجهة أخرى .
@@ -207,8 +196,7 @@ class _DetailesState extends State<Detailes> {
 8-	دفع الرسوم المالية .
 9-	إصدار شهادة البحث .
     '''),
-
-    GuideModale( title: "ترخيص الشركات", content:  '''
+    GuideModale(title: "ترخيص الشركات", content: '''
 1-	شهادة وارد المركبة أو شهادة البحث .
 2-	شهادة تسجيل الشركة مع  خطاب تفويض شخص للقيام بالترخيص .
 3-	خطاب رهن المركبة إذا كان على المركبة رهن لجهة أخرى .
@@ -219,17 +207,13 @@ class _DetailesState extends State<Detailes> {
 8-	دفع الرسوم المالية .
 9-	إصدار شهادة البحث .
     '''),
-
-    GuideModale( title: "إجراءات التأمين", content:  '''
+    GuideModale(title: "إجراءات التأمين", content: '''
 1-	طلب التأمين .
 2-	الأوراق الثبوتية للعين موضع التأمين والبيانات الخاصة بها .
 3-	معاينة العين موضع التأمين .
 4-	دفع الرسوم وإصدار الوثائق التأمينية .
     ''')
-
   ];
-
-
 
   final TTSController tts = TTSController();
   final ScrollController scroll = ScrollController();
@@ -252,7 +236,7 @@ class _DetailesState extends State<Detailes> {
 
   // text management
   late String displayedText; // current text shown (may be translated)
-  late String originalText ;
+  late String originalText;
   late String selectedFlag;
 
   // translation state
@@ -263,13 +247,13 @@ class _DetailesState extends State<Detailes> {
     super.initState();
     // ابحث عن المحتوى حسب العنوان الممرر
     final matchedGuide = guideModale.firstWhere(
-          (e) => e.title.toLowerCase().contains(widget.title.toLowerCase()),
+      (e) => e.title.toLowerCase().contains(widget.title.toLowerCase()),
       orElse: () => guideModale.first,
     );
 
-    originalText = matchedGuide.content;  // نص المحتوى الأصلي
+    originalText = matchedGuide.content; // نص المحتوى الأصلي
     displayedText = matchedGuide.content; // نص المعروض
-    selectedFlag = matchedGuide.title;    // العنوان المحدد
+    selectedFlag = matchedGuide.title; // العنوان المحدد
     words = _splitWords(displayedText);
     words = _splitWords(displayedText);
     tts.init();
@@ -277,9 +261,7 @@ class _DetailesState extends State<Detailes> {
   }
 
   List<String> _splitWords(String text) {
-    final w =
-        text.split(RegExp(r'\n+')).where((s) => s.trim().isNotEmpty).toList();
-    return w;
+    return [text];
   }
 
   Future _loadInitialBrightness() async {
@@ -707,7 +689,7 @@ class _DetailesState extends State<Detailes> {
   @override
   Widget build(BuildContext context) {
     final GuideModale category = guideModale.firstWhere(
-          (e) => e.title == selectedFlag,
+      (e) => e.title == selectedFlag,
       orElse: () => guideModale.first,
     );
 
@@ -718,7 +700,7 @@ class _DetailesState extends State<Detailes> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           leading: GestureDetector(
-            onTap: (){
+            onTap: () {
               Navigator.pop(context);
             },
             child: Icon(
@@ -734,8 +716,8 @@ class _DetailesState extends State<Detailes> {
               children: [
                 // The Title of the page
                 Padding(
-                  padding:
-                      EdgeInsetsDirectional.only(bottom: 10, start: 10, end: 10),
+                  padding: EdgeInsetsDirectional.only(
+                      bottom: 10, start: 10, end: 10),
                   child: Container(
                     margin: EdgeInsets.symmetric(vertical: 5),
                     padding: EdgeInsets.symmetric(vertical: 5),
@@ -803,7 +785,8 @@ class _DetailesState extends State<Detailes> {
                                 textDirection: TextDirection.rtl,
                                 style: TextStyle(
                                   fontSize: fontSize,
-                                  color: isHighlighted ? Colors.black : textColor,
+                                  color:
+                                      isHighlighted ? Colors.black : textColor,
                                   fontFamily: selectedFont,
                                   height: 1.5,
                                 ),
@@ -829,7 +812,8 @@ class _DetailesState extends State<Detailes> {
                         heroTag: "playpause",
                         mini: true,
                         backgroundColor: context.color.mainBrown,
-                        child: Icon(isSpeaking ? Icons.pause : Icons.play_arrow),
+                        child:
+                            Icon(isSpeaking ? Icons.pause : Icons.play_arrow),
                         onPressed: () {
                           if (isSpeaking)
                             pauseReading();
@@ -911,352 +895,6 @@ class _DetailesState extends State<Detailes> {
               ],
             ),
           ),
-        )
-        // Stack(
-        //   children: [
-        //     Container(color: bg),
-        //     Padding(
-        //       padding: EdgeInsets.only(top: 20 , bottom: 80 , right: 10 , left: 10),
-        //       child: SingleChildScrollView(
-        //         controller: scroll,
-        //         child: Wrap(
-        //           alignment: WrapAlignment.start,
-        //           children: List.generate(words.length, (i) {
-        //             final w = words[i] + " ";
-        //             final isHighlighted = i == highlightedIndex;
-        //             return Container(
-        //               padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-        //               margin: EdgeInsets.symmetric(vertical: 2),
-        //               decoration: BoxDecoration(
-        //                 color: isHighlighted ? (isDark ? Colors.yellow[700] : Colors.yellowAccent) : Colors.transparent,
-        //                 borderRadius: BorderRadius.circular(4),
-        //               ),
-        //               child: Text(
-        //                 w,
-        //                 textDirection: TextDirection.rtl,
-        //                 style: TextStyle(
-        //                   fontSize: fontSize,
-        //                   color: isHighlighted ? Colors.black : textColor,
-        //                   fontFamily: selectedFont,
-        //                   height: 1.5,
-        //                 ),
-        //               ),
-        //             );
-        //           }),
-        //         ),
-        //       ),
-        //     ),
-        //     Positioned(
-        //       bottom: 18,
-        //       right: 18,
-        //       child: Container(
-        //         alignment: Alignment.center,
-        //         color: context.color.mainGold,
-        //         child: Row(
-        //           mainAxisSize: MainAxisSize.max,
-        //           children: [
-        //             // Pause / Resume / Play
-        //             FloatingActionButton(
-        //               heroTag: "playpause",
-        //               mini: true,
-        //               backgroundColor: Colors.blue,
-        //               child: Icon(isSpeaking ? Icons.pause : Icons.play_arrow),
-        //               onPressed: () {
-        //                 if (isSpeaking) pauseReading();
-        //                 else {
-        //                   if (currentWordIndex > 0 && currentWordIndex < words.length) {
-        //                     // resume by reading from currentWordIndex
-        //                     setState(() {
-        //                       isSpeaking = true;
-        //                     });
-        //                     startReading();
-        //                   } else {
-        //                     startReading();
-        //                   }
-        //                 }
-        //               },
-        //             ),
-        //
-        //             SizedBox(width: 10),
-        //
-        //             // Stop
-        //             FloatingActionButton(
-        //               heroTag: "stop",
-        //               mini: true,
-        //               backgroundColor: Colors.red,
-        //               child: Icon(Icons.stop),
-        //               onPressed: stopReading,
-        //             ),
-        //
-        //             SizedBox(width: 10),
-        //
-        //             // Translate (quick)
-        //             FloatingActionButton(
-        //               heroTag: "translate_quick",
-        //               mini: true,
-        //               backgroundColor: Colors.green,
-        //               child: Icon(Icons.translate),
-        //               onPressed: openTranslateMenu,
-        //             ),
-        //
-        //             SizedBox(width: 10),
-        //
-        //             // Open settings
-        //             FloatingActionButton(
-        //               heroTag: "settings",
-        //               backgroundColor: Colors.blueAccent,
-        //               child: Icon(Icons.menu_book),
-        //               onPressed: openSettingsPanel,
-        //             ),
-        //           ],
-        //         ),
-        //       ),
-        //     ),
-        //   ],
-        // ),
-        );
-  }
-}
-
-// class Detailes extends StatefulWidget {
-//   const Detailes({super.key});
-//   @override
-//   State<Detailes> createState() => _DetailesWidgetState();
-// }
-//
-// class _DetailesWidgetState extends State<Detailes> {
-//   @override
-//   Widget build(BuildContext context) {
-//     int font_size = 10;
-//
-//     String text = '''
-// التعريف ورخص البحث/الاستكشاف في السودان:
-// الرُخْص مُنحت لأنواع عدة: رخصة عامة للبحث، رخصة استكشاف مطلقة، عقد تعدين، تعدين صغير، استخراج معادن أو صخور صناعية وغيرها.
-// رخصة البحث العام تمنح لمن يُخوّل له الدخول إلى المنطقة المرخصة وأخذ عينات سطحية لأغراض الدراسة، مع استثناء المناطق المرخّصة مسبقاً للاستكشاف الحصري أو المرتبطة بعقد تعدين.
-// رخصة الاستكشاف المطلقة تمنح الحق في إجراء المسوحات الجيولوجية/الجيوكيميائية/الجيوفيزيائية، وأعمال الحفر التنقيبي وأخذ العينات اللازمة للتحليل والدراسات الفنية.
-//
-// الشروط والإجراءات الأساسية للتقديم:
-// - يُقدَّم الطلب إلى الجهة المختصة المعنية بالتعدين.
-// - يجب أن يتضمن الطلب تحديد المعدن أو المواد التعدينية المطلوب البحث عنها.
-// - في حالة رخصة الاستكشاف المطلقة: يُقدَّم برنامج عمل للاستكشاف يتضمّن الأعمال المقترحة، المعدات، الجدول الزمني، والتكاليف المتوقعة.
-// - يُطلب إثبات الكفاءة الفنية والقدرة المالية للمتقدم سواء كان شركة أو شخصًا.
-// - تُوقّع الرخصة أو العقد من الوزير المختص أو الجهة المخوّلة بعد موافقة اللجنة المعنية.
-//
-// الرسوم:
-// - توجد رسوم طلب ونظر ورسوم إصدار لرخصة البحث العام، وتختلف الرسوم حسب نوع الرخصة أو العقد.
-//
-// الالتزامات والقيود:
-// - حامل رخصة الاستكشاف المطلقة له الحق الحصري في إجراء أعمال الاستكشاف في المنطقة المرخّصة.
-// - إذا اكتُشف مورد معدني جدير بالاستخراج، يمكن تحويل الترخيص أو إبرام عقد تعدين أو استغلال بحسب القانون.
-// - يُمنع التعدين أو الحفر أو استخراج المعادن دون رخصة سارية أو عقد تعدين، ومخالفات ذلك تُعاقب قانونيًا.
-// ''';
-//
-//     return GestureDetector(
-//       onTap: () {
-//         FocusScope.of(context).unfocus();
-//         FocusManager.instance.primaryFocus?.unfocus();
-//       },
-//       child: Scaffold(
-//         backgroundColor: context.color.mainGold,
-//         appBar: AppBar(
-//           backgroundColor: context.color.mainGold,
-//           automaticallyImplyLeading: false,
-//           title: Row(
-//             mainAxisSize: MainAxisSize.max,
-//             mainAxisAlignment: MainAxisAlignment.end,
-//             children: [
-//               Container(
-//                 width: 60,
-//                 height: 40,
-//                 decoration: BoxDecoration(
-//                   color: context.color.mainBrown,
-//                   borderRadius: BorderRadius.circular(15),
-//                 ),
-//                 child: InkWell(
-//                   child: Icon(
-//                     Icons.arrow_back,
-//                     color: Colors.white,
-//                     size: 24,
-//                   ),
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
-//         body: SafeArea(
-//           top: true,
-//           child: Container(
-//             width: double.infinity,
-//             height: double.infinity,
-//             child: Column(
-//               mainAxisSize: MainAxisSize.min,
-//               children: [
-//                 Expanded(
-//                   child: Padding(
-//                     padding: EdgeInsetsDirectional.fromSTEB(15, 10, 10, 10),
-//                     child: Material(
-//                       color: Colors.transparent,
-//                       elevation: 5,
-//                       shape: RoundedRectangleBorder(
-//                         borderRadius: BorderRadius.circular(10),
-//                       ),
-//                       child: Container(
-//                         width: double.infinity,
-//                         decoration: BoxDecoration(
-//                           color: Colors.white,
-//                           borderRadius: BorderRadius.circular(15),
-//                         ),
-//                         child: Padding(
-//                           padding:
-//                               EdgeInsetsDirectional.fromSTEB(10, 0, 10, 20),
-//                           child: SingleChildScrollView(
-//                             child: Column(
-//                               mainAxisSize: MainAxisSize.max,
-//                               children: [
-//                                 // The title
-//                                 Container(
-//                                   width: double.infinity,
-//                                   padding: EdgeInsets.symmetric(
-//                                       horizontal: 20, vertical: 10),
-//                                   margin: EdgeInsets.only(
-//                                       top: 20, right: 10, left: 10),
-//                                   decoration: BoxDecoration(
-//                                       color: context.color.mainGold,
-//                                       borderRadius:
-//                                           BorderRadiusDirectional.circular(15)),
-//                                   child: Row(
-//                                     mainAxisSize: MainAxisSize.max,
-//                                     mainAxisAlignment:
-//                                         MainAxisAlignment.spaceBetween,
-//                                     children: [
-//                                       Text(
-//                                         'اجراءات رخصة البحث العامة',
-//                                         textAlign: TextAlign.center,
-//                                         style: TextStyle(
-//                                             fontSize: 18,
-//                                             fontWeight: FontWeight.w700),
-//                                       ),
-//                                       MenueIconButton(),
-//                                       InkWell(
-//                                           onTap: (){
-//                                             Navigator.pushNamed(context, Routes.readerPage);
-//                                           },
-//                                           child:Icon(Icons.add_box)),
-//                                     ],
-//                                   ),
-//                                 ),
-//                                 // The text
-//                                 Padding(
-//                                   padding: const EdgeInsets.symmetric(
-//                                       horizontal: 30, vertical: 20),
-//                                   child: Text(
-//                                     text,
-//                                     style: TextStyle(
-//                                         fontSize: 14,
-//                                         fontWeight: FontWeight.w700),
-//                                   ),
-//                                 ),
-//                               ],
-//                             ),
-//                           ),
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-//
-class MenueItems extends StatelessWidget {
-  const MenueItems({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    int font_size = 10;
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 0),
-      child: ListView(
-        padding: const EdgeInsets.all(0),
-        children: [
-          MenueItem(
-            color: const Color.fromARGB(255, 239, 199, 79),
-            item: "الترجمة",
-            icon: Icon(
-              Icons.translate_outlined,
-              size: 18,
-            ),
-          ),
-          Rular(),
-          MenueItem(
-            color: const Color.fromARGB(255, 240, 212, 128),
-            item: "السطوع",
-            icon: Icon(
-              Icons.brightness_medium_rounded,
-              size: 18,
-            ),
-          ),
-          Rular(),
-          MenueItem(
-            color: const Color.fromARGB(255, 239, 199, 79),
-            item: "حجم الخط",
-            icon: Icon(
-              Icons.format_size,
-              size: 18,
-            ),
-          ),
-          Rular(),
-          MenueItem(
-            color: const Color.fromARGB(255, 240, 212, 128),
-            item: "المشاركة",
-            icon: Icon(
-              Icons.share,
-              size: 18,
-            ),
-          ),
-          Rular(),
-          InkWell(
-            onTap: () {},
-            child: MenueItem(
-              color: const Color.fromARGB(255, 239, 199, 79),
-              item: " إعادة ضبط ",
-              icon: Icon(
-                Icons.refresh_outlined,
-                size: 18,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-//
-class MenueItem extends StatelessWidget {
-  String item;
-  Color color;
-  Icon icon;
-  MenueItem({required this.item, required this.color, required this.icon});
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      color: color,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          icon,
-          SizedBox(
-            width: 10,
-          ),
-          Text(item),
-        ],
-      ),
-    );
+        ));
   }
 }
