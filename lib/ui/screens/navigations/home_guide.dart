@@ -405,7 +405,7 @@ class HomeScreenState extends State<HomeGuide>
                                     child: GoldShimmerCard(
                                         title: 'وزارة المعادن',
                                         url:
-                                            'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F21-%20%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%86.jpg?alt=media&token=d3c8296d-641d-40f3-a38d-dbfbff54bc68'),
+                                            'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F10_copy.jpg?alt=media&token=8c232045-4e71-4a5a-b10a-dbde7a87f96c'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -415,7 +415,7 @@ class HomeScreenState extends State<HomeGuide>
                                     child: GoldShimmerCard(
                                         title: 'وزارة الاستثمار',
                                         url:
-                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F21-%20%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%86.jpg?alt=media&token=d3c8296d-641d-40f3-a38d-dbfbff54bc68'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F9_copy.jpg?alt=media&token=21a8ea5e-7309-41a2-bc84-02f2bc153272'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -423,9 +423,9 @@ class HomeScreenState extends State<HomeGuide>
                                           arguments: {'flag': "الاجراءات الحكومية"});
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' الاجراءات الحكومية ',
+                                        title: '  المسجل التجاري ',
                                         url:
-                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F21-%20%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%86.jpg?alt=media&token=d3c8296d-641d-40f3-a38d-dbfbff54bc68'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F8_copy.jpg?alt=media&token=e0508c61-cb91-40c4-beb5-bb86b777b6bc'),
                                   ),
                                   // InkWell(
                                   //   onTap: () {
@@ -487,8 +487,8 @@ class HomeScreenState extends State<HomeGuide>
                                   // The Card
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
-                                    },
+                                      Navigator.pushNamed(context, Routes.mainGuide,
+                                          arguments: {'flag': "الولايات والمحليات"});                                    },
                                     child: GoldShimmerCard(
                                         title: ' ولاية نهر النيل ',
                                         url:

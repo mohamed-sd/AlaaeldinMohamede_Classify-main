@@ -383,7 +383,9 @@ class HomeScreenState extends State<HomeStore>
                               section1 = true;
                           });
                         },
-                        child: title_card("miningSites".translate(context), section1),
+
+
+                        child: title_card("artisanalMining".translate(context), section1),
                       ),
                       SizedBox(
                         height: 5,
@@ -397,52 +399,52 @@ class HomeScreenState extends State<HomeStore>
                                   children: [
                                   custom_card_Item(
                                             context,
-                                            'أخبار التعدين',
+                                            ' شركة اكوبيشن',
                                             ''),
                                      custom_card_Item(
                                             context,
-                                            'أخبار التعدين',
+                                            'شركة اكوبيشن',
                                             ''),
                                    custom_card_Item(
                                             context,
-                                            'أخبار التعدين',
+                                            'شركة اكوبيشن',
                                             ''),
                                   ],
                                 ),
-                                Divider( color: Colors.black, ),
-                                Row(
-                                  children: [
-                                    silver_card_Item(
-                                        context,
-                                        'أخبار التعدين',
-                                        ''),
-                                    silver_card_Item(
-                                        context,
-                                        'أخبار التعدين',
-                                        ''),
-                                    silver_card_Item(
-                                        context,
-                                        'أخبار التعدين',
-                                        ''),
-                                  ],
-                                ),
-                                Divider( color: Colors.black, ),
-                                Row(
-                                  children: [
-                                    card_Item(
-                                        context,
-                                        'أخبار التعدين',
-                                        ''),
-                                    card_Item(
-                                        context,
-                                        'أخبار التعدين',
-                                        ''),
-                                    card_Item(
-                                        context,
-                                        'أخبار التعدين',
-                                        ''),
-                                  ],
-                                ),
+                                // Divider( color: Colors.black, ),
+                                // Row(
+                                //   children: [
+                                //     silver_card_Item(
+                                //         context,
+                                //         'أخبار التعدين',
+                                //         ''),
+                                //     silver_card_Item(
+                                //         context,
+                                //         'أخبار التعدين',
+                                //         ''),
+                                //     silver_card_Item(
+                                //         context,
+                                //         'أخبار التعدين',
+                                //         ''),
+                                //   ],
+                                // ),
+                                // Divider( color: Colors.black, ),
+                                // Row(
+                                //   children: [
+                                //     card_Item(
+                                //         context,
+                                //         'أخبار التعدين',
+                                //         ''),
+                                //     card_Item(
+                                //         context,
+                                //         'أخبار التعدين',
+                                //         ''),
+                                //     card_Item(
+                                //         context,
+                                //         'أخبار التعدين',
+                                //         ''),
+                                //   ],
+                                // ),
 
                               ],
                             )),
@@ -459,7 +461,7 @@ class HomeScreenState extends State<HomeStore>
                               section2 = true;
                           });
                         },
-                        child: title_card("artisanalMining".translate(context), section2),
+                        child: title_card("miningSites".translate(context), section2),
                       ),
                       SizedBox(
                         height: 5,
@@ -872,7 +874,7 @@ class HomeScreenState extends State<HomeStore>
                                         children: [
                                           Padding(
                                             padding: EdgeInsets.all(3),
-                                            child: Text('مجموعة شركات شموخ قطر',
+                                            child: Text('  شركه إكوبيشن ',
                                                 style: TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 7,

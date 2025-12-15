@@ -53,7 +53,7 @@ class StoreServiceDetails extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            " تاجير جرارات ",
+                            " تاجير قلابات ",
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
@@ -97,7 +97,7 @@ class StoreServiceDetails extends StatelessWidget {
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               Text(
-                  'تاجير افضل الجرارات للزراعة وتوفير افضل الموديلات مع توفير خدمات مميزة مثل خدمات الصيانة والدعم الفني وتوفير سائقين مع خبرة تفوق ال 5 سنين '),
+                  'تاجير افضل القلابات  وتوفير افضل الموديلات مع توفير خدمات مميزة مثل خدمات الصيانة والدعم الفني وتوفير سائقين مع خبرة تفوق ال 5 سنين '),
               SizedBox(
                 height: 20,
               ),

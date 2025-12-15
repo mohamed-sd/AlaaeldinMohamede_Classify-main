@@ -122,8 +122,8 @@ Widget customTab(String title) {
 
 // تفاصيل
 class DetailsTabWidget extends StatelessWidget {
-  List<String> titleList = ['تاجير جرارت' , 'تاجير حفارت'  , 'تاجير قلابات'];
-  List<String> detailsList = ['تاجير افضل الجرارات للزراعة ' , 'حفارات تعمل علي مدار ال 24 ساعة '  , 'توفير قلابات مع او بدون سائقين '];
+  List<String> titleList = [' تأجير مكنة تخريم  ' , '  تاجير دوزرات '  , 'تاجير قلابات'];
+  List<String> detailsList = ['   لاعمال النسف ' , 'دوزرات تعمل علي مدار ال 24 ساعة '  , 'توفير قلابات مع او بدون سائقين '];
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

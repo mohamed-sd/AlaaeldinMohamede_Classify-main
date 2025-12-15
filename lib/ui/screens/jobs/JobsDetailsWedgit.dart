@@ -361,7 +361,7 @@ class _ComingSoonPageState extends State<Jobsdetailswedgit> {
                     padding: EdgeInsets.symmetric(vertical: 5),
                     width: double.infinity,
                     decoration: BoxDecoration(
-                        color : Color(0xFF28B107),
+                        color : context.color.mainGold,
                         borderRadius: BorderRadius.circular(15),
                         boxShadow: [
                           BoxShadow(

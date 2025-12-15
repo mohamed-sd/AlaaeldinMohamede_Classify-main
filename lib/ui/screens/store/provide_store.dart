@@ -96,7 +96,7 @@ class storeDetailsCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "إيكوبيشن للمعدات الثقيلة",
+                      "إكوبيشن للمعدات الثقيلة",
                       style: TextStyle(
                           color: context.color.mainBrown,
                           fontWeight: FontWeight.bold),
