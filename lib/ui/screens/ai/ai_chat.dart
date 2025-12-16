@@ -443,42 +443,44 @@ class _AiChatDemoScreenState extends State<AiChatDemoScreen>
               )
             ],
           ),
-          body: Column(
-            children: [
-              Expanded(
-                child: ListView.builder(
-                  controller: _scrollController,
-                  padding: const EdgeInsets.all(16),
-                  itemCount: _messages.length + (_isTyping ? 1 : 0),
-                  itemBuilder: (context, index) {
-                    if (_isTyping && index == _messages.length) {
-                      return const _TypingIndicator();
-                    }
-
-                    return AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 300),
-                      transitionBuilder: (child, animation) => SlideTransition(
-                        position: Tween<Offset>(
-                          begin: const Offset(0, 0.2),
-                          end: Offset.zero,
-                        ).animate(animation),
-                        child: FadeTransition(opacity: animation, child: child),
-                      ),
-                      child: _ChatBubble(
-                        key: ValueKey(_messages[index].text),
-                        message: _messages[index],
-                      ),
-                    );
-                  },
+          body: SafeArea(
+            child: Column(
+              children: [
+                Expanded(
+                  child: ListView.builder(
+                    controller: _scrollController,
+                    padding: const EdgeInsets.all(16),
+                    itemCount: _messages.length + (_isTyping ? 1 : 0),
+                    itemBuilder: (context, index) {
+                      if (_isTyping && index == _messages.length) {
+                        return const _TypingIndicator();
+                      }
+            
+                      return AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 300),
+                        transitionBuilder: (child, animation) => SlideTransition(
+                          position: Tween<Offset>(
+                            begin: const Offset(0, 0.2),
+                            end: Offset.zero,
+                          ).animate(animation),
+                          child: FadeTransition(opacity: animation, child: child),
+                        ),
+                        child: _ChatBubble(
+                          key: ValueKey(_messages[index].text),
+                          message: _messages[index],
+                        ),
+                      );
+                    },
+                  ),
                 ),
-              ),
-              _InputBar(
-                controller: _controller,
-                onSend: _sendMessage,
-                onVoice: _onVoicePressed,
-                isListening: _isListening,
-              ),
-            ],
+                _InputBar(
+                  controller: _controller,
+                  onSend: _sendMessage,
+                  onVoice: _onVoicePressed,
+                  isListening: _isListening,
+                ),
+              ],
+            ),
           ),
         ),
       ),
