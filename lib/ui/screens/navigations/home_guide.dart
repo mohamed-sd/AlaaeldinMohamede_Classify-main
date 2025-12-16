@@ -379,7 +379,7 @@ class HomeScreenState extends State<HomeGuide>
                           });
                         },
                         child: title_card(
-                            'قسم الإجراءات الحكومية المعدنية', section1),
+                            "GovProcedures".translate(context), section1),
                       ),
                       SizedBox(
                         height: 5,
@@ -403,7 +403,7 @@ class HomeScreenState extends State<HomeGuide>
                                           arguments: {'flag': "وزارة المعادن"});
                                     },
                                     child: GoldShimmerCard(
-                                        title: 'وزارة المعادن',
+                                        title: "ministryMinerals".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F10_copy.jpg?alt=media&token=8c232045-4e71-4a5a-b10a-dbde7a87f96c'),
                                   ),
@@ -413,7 +413,7 @@ class HomeScreenState extends State<HomeGuide>
                                           arguments: {'flag': "وزارة الاستثمار"});
                                     },
                                     child: GoldShimmerCard(
-                                        title: 'وزارة الاستثمار',
+                                        title: "minResourcesCo".translate(context),
                                         url:
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F9_copy.jpg?alt=media&token=21a8ea5e-7309-41a2-bc84-02f2bc153272'),
                                   ),
@@ -423,7 +423,8 @@ class HomeScreenState extends State<HomeGuide>
                                           arguments: {'flag': "الاجراءات الحكومية"});
                                     },
                                     child: GoldShimmerCard(
-                                        title: '  المسجل التجاري ',
+                                        title: "genAuthGeoSurvey".translate(context)
+                                        ,
                                         url:
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F8_copy.jpg?alt=media&token=e0508c61-cb91-40c4-beb5-bb86b777b6bc'),
                                   ),
@@ -466,8 +467,8 @@ class HomeScreenState extends State<HomeGuide>
                               section2 = true;
                           });
                         },
-                        child: title_card(
-                            ' التراخيص والإجراءات الولائية', section2),
+                        child: title_card("stateProcedures".translate(context)
+                            , section2),
                       ),
                       SizedBox(
                         height: 5,
@@ -490,7 +491,8 @@ class HomeScreenState extends State<HomeGuide>
                                       Navigator.pushNamed(context, Routes.mainGuide,
                                           arguments: {'flag': "الولايات والمحليات"});                                    },
                                     child: GoldShimmerCard(
-                                        title: ' ولاية نهر النيل ',
+                                        title: "nileRiverState".translate(context)
+                                        ,
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F24-%20%D9%88%D9%84%D8%A7%D9%8A%D8%A9%20%D9%86%D9%87%D8%B1%20%D8%A7%D9%84%D9%86%D9%8A%D9%84.jpg?alt=media&token=891f465f-c402-478b-9dd4-914a0073bf1e'),
                                   ),
@@ -499,7 +501,7 @@ class HomeScreenState extends State<HomeGuide>
                                       Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' ولاية البحر الأحمر',
+                                        title: "redSeaState".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F%D9%88%D9%84%D8%A7%D9%8A%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%20%D8%A7%D9%84%D8%A3%D8%AD%D9%85%D8%B1.jpg?alt=media&token=eebaa313-ff1e-4786-95c9-0ae9d84d2ae1'),
                                   ),
@@ -509,7 +511,7 @@ class HomeScreenState extends State<HomeGuide>
                                           context, Routes.guide);
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' الولاية الشمالية ',
+                                        title: "northernState".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F25-%20%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A9%20%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A%D8%A9.jpg?alt=media&token=f37b37fb-18a3-4ce4-be0c-b6a629302fe7'),
                                   ),
@@ -519,7 +521,7 @@ class HomeScreenState extends State<HomeGuide>
                                     },
                                     child: custom_card_Item(
                                         context,
-                                        ' جنوب كردفان ',
+                                        "southKordofanStates".translate(context),
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F27-%20%D8%AC%D9%86%D9%88%D8%A8%20%D9%83%D8%B1%D8%AF%D9%81%D8%A7%D9%86.jpg?alt=media&token=594f29b1-d055-4b72-bc0b-f1261bea0d89'),
                                   ),
                                   InkWell(
@@ -528,7 +530,7 @@ class HomeScreenState extends State<HomeGuide>
                                     },
                                     child: custom_card_Item(
                                         context,
-                                        '  النيل الأزرق ',
+                                        "blueNileStates".translate(context),
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F28-%20%D9%88%D9%84%D8%A7%D9%8A%D8%A9%20%D8%A7%D9%84%D9%86%D9%8A%D9%84%20%D8%A7%D9%84%D8%A7%D8%B2%D8%B1%D9%82.jpg?alt=media&token=43f08a80-8b20-4008-8a55-ded5c09a507b'),
                                   ),
                                   InkWell(
@@ -537,7 +539,7 @@ class HomeScreenState extends State<HomeGuide>
                                     },
                                     child: custom_card_Item(
                                         context,
-                                        'ولايات دارفور ',
+                                        "darfurStates".translate(context),
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F29-%20%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA%20%D8%AF%D8%A7%D8%B1%D9%81%D9%88%D8%B1.jpg?alt=media&token=e1690cf1-9f4a-4a5b-9095-a0b15b80e121'),
                                   ),
                                 ],
@@ -557,8 +559,8 @@ class HomeScreenState extends State<HomeGuide>
                               section3 = true;
                           });
                         },
-                        child: title_card(
-                            'قسم الجمارك والتراخيص المرورية', section3),
+                        child: title_card("customsProcedures".translate(context)
+                            , section3),
                       ),
                       SizedBox(
                         height: 5,
@@ -588,7 +590,8 @@ class HomeScreenState extends State<HomeGuide>
                                       );
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' هيئة الجمارك السودانية ',
+                                        title: "customsAuth".translate(context)
+                                        ,
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F30-%20%D9%87%D9%8A%D8%A6%D8%A9%20%D8%A7%D9%84%D8%AC%D9%85%D8%A7%D8%B1%D9%83.jpg?alt=media&token=e55c4d3f-e574-4c7e-ace5-cbb74bc38ef3'),
                                   ),
@@ -597,7 +600,8 @@ class HomeScreenState extends State<HomeGuide>
                                       Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' هيئة المواني البحرية ',
+                                        title: "marineAuth".translate(context)
+                                        ,
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F31-%20%D9%87%D9%8A%D8%A6%D8%A9%20%D8%A7%D9%84%D9%85%D9%88%D8%A7%D9%86%D8%A6%20%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D8%A9.jpg?alt=media&token=7a0a6211-e999-438c-b361-8bb8fb2a1d94'),
                                   ),
@@ -607,7 +611,8 @@ class HomeScreenState extends State<HomeGuide>
                                           arguments: {'flag': "شرطة المرور العامة"});
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' شرطة المرور العامة ',
+                                        title: "trafficPolice".translate(context)
+                                        ,
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F32-%20%D8%B4%D8%B1%D8%B7%D8%A9%20%D8%A7%D9%84%D9%85%D8%B1%D9%88%D8%B1%20%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D9%87.jpg?alt=media&token=54db6205-cbb4-4727-8b44-4d404c0a4e59'),
                                   ),
@@ -629,7 +634,8 @@ class HomeScreenState extends State<HomeGuide>
                           });
                         },
                         child:
-                            title_card('العمل والتأمينات الاجتماعية', section4),
+                            title_card("socialSecurity".translate(context)
+                                , section4),
                       ),
                       SizedBox(
                         height: 5,
@@ -649,29 +655,45 @@ class HomeScreenState extends State<HomeGuide>
                                   // The Card
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
+                                      Navigator.pushNamed(
+                                        context,
+                                        Routes.detailes,
+                                        arguments: {
+                                          'title': 'مكتب العمل المركزي',
+                                        },
+                                      );
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' مكتب العمل المركزي ',
+                                        title: "centralLaborOffice".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F33-%20%D9%85%D9%83%D8%AA%D8%A8%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%20%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A.jpg?alt=media&token=90a1ad67-e167-4698-96b1-7c050eb826d6'),
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
-                                    },
+                                      Navigator.pushNamed(
+                                        context,
+                                        Routes.detailes,
+                                        arguments: {
+                                          'title': 'مكتب العمل المركزي',
+                                        },
+                                      );                                    },
                                     child: GoldShimmerCard(
-                                        title: ' مكاتب العمل بالولايات ',
+                                        title: "laborOffice".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F33-%20%D9%85%D9%83%D8%AA%D8%A8%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%20%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A.jpg?alt=media&token=90a1ad67-e167-4698-96b1-7c050eb826d6'),
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
-                                    },
+                                      Navigator.pushNamed(
+                                        context,
+                                        Routes.detailes,
+                                        arguments: {
+                                          'title': 'مكتب العمل المركزي',
+                                        },
+                                      );                                    },
                                     child: GoldShimmerCard(
-                                        title:
-                                            ' الهيئة القومية للتأمينات الاجتماعية ',
+                                        title: "socialInsurance".translate(context)
+                                        ,
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F34-%20%D8%A7%D9%84%D9%87%D9%8A%D8%A6%D8%A9%20%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A%D8%A9%20%D9%84%D9%84%D8%AA%D8%A3%D9%85%D9%8A%D9%86%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A5%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%D8%A9.jpg?alt=media&token=ab0c94ee-5cc0-4f29-aebb-a27eac4502dc'),
                                   )
@@ -692,7 +714,7 @@ class HomeScreenState extends State<HomeGuide>
                               section5 = true;
                           });
                         },
-                        child: title_card(' الإجراءات البنكية ', section5),
+                        child: title_card("bankingProcedures".translate(context) , section5),
                       ),
                       SizedBox(
                         height: 5,
@@ -716,7 +738,7 @@ class HomeScreenState extends State<HomeGuide>
                                           arguments: {'flag': "الاجراءات البنكية"});
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' بنك السودان المركزي ',
+                                        title: "centralBank".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F35-%20%D8%A8%D9%86%D9%83%20%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86%20%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A.jpg?alt=media&token=22cd3214-3292-423c-81f5-9e993b9bd5e4'),
                                   ),
@@ -726,7 +748,7 @@ class HomeScreenState extends State<HomeGuide>
                                           arguments: {'flag': "الاجراءات البنكية"});
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' بنك الخرطوم ',
+                                        title: "bankOfKhartoum".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F36-%20%D8%A8%D9%86%D9%83%20%D8%A7%D9%84%D8%AE%D8%B1%D8%B7%D9%88%D9%85.jpg?alt=media&token=671f716c-5ca0-47b4-9e7c-b2065ca92d8d'),
                                   ),
@@ -736,7 +758,7 @@ class HomeScreenState extends State<HomeGuide>
                                           arguments: {'flag': "الاجراءات البنكية"});
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' بنك النيلين ',
+                                        title: "alnileinBank".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F37-%20%D8%A8%D9%86%D9%83%20%D8%A7%D9%84%D9%86%D9%8A%D9%84%D9%8A%D9%86.jpg?alt=media&token=5c4dcb63-db13-4879-b06d-1091748baca3'),
                                   ),
@@ -747,7 +769,7 @@ class HomeScreenState extends State<HomeGuide>
                                     },
                                     child: custom_card_Item(
                                         context,
-                                        ' بنك فيصل ',
+                                        "faisalBank".translate(context),
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F38-%20%D8%A8%D9%86%D9%83%20%D9%81%D9%8A%D8%B5%D9%84.jpg?alt=media&token=0eec7be5-0030-468a-9ff1-cf3233eeda3d'),
                                   ),
                                   InkWell(
@@ -757,7 +779,7 @@ class HomeScreenState extends State<HomeGuide>
                                     },
                                     child: custom_card_Item(
                                         context,
-                                        ' بنك امدرمان ',
+                                        "omdurmanBank".translate(context),
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F39-%20%D8%A8%D9%86%D9%83%20%D8%A7%D9%85%D8%AF%D8%B1%D9%85%D8%A7%D9%86.jpg?alt=media&token=464fd11d-8de6-486c-a182-0e8416bede8a'),
                                   ),
                                 ],
@@ -777,7 +799,8 @@ class HomeScreenState extends State<HomeGuide>
                               section6 = true;
                           });
                         },
-                        child: title_card('قسم شركات التأمين', section6),
+                        child: title_card("insuranceCompanies".translate(context)
+                            , section6),
                       ),
                       SizedBox(
                         height: 5,
@@ -806,7 +829,7 @@ class HomeScreenState extends State<HomeGuide>
                                       );
                                     },
                                     child: GoldShimmerCard(
-                                        title: 'شركة شيكان للتأمين',
+                                        title: "shikanInsurance".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F40-%20%D8%B4%D8%B1%D9%83%D8%A9%20%D8%B4%D9%8A%D9%83%D8%A7%D9%86%20%D9%84%D9%84%D8%AA%D8%A3%D9%85%D9%8A%D9%86.jpg?alt=media&token=d3083e0c-32d7-4a24-a7b4-5c54c7dd03ee'),
                                   ),
@@ -821,7 +844,7 @@ class HomeScreenState extends State<HomeGuide>
                                       );
                                     },
                                     child: GoldShimmerCard(
-                                        title: 'الشركة التعاونية للتأمين',
+                                        title: "altawnyaInsurance".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F41-%20%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A9%20%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%88%D9%86%D9%8A%D8%A9%20%D9%84%D9%84%D8%AA%D8%A7%D9%85%D9%8A%D9%86.jpg?alt=media&token=74f3dddb-27e7-4900-bc58-b6aa9fb3864b'),
                                   ),
@@ -836,7 +859,7 @@ class HomeScreenState extends State<HomeGuide>
                                       );
                                     },
                                     child: GoldShimmerCard(
-                                        title: ' شركة النيلين للتأمين ',
+                                        title: "alnileenInsurance".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F42-%20%D8%A7%D9%84%D9%86%D9%8A%D9%84%D9%8A%D9%86%20%D9%84%D9%84%D8%AA%D8%A7%D9%85%D9%8A%D9%86.jpg?alt=media&token=061a77cc-eeae-4980-b568-2a0735c6b4dc'),
                                   ),
@@ -852,7 +875,7 @@ class HomeScreenState extends State<HomeGuide>
                                     },
                                     child: custom_card_Item(
                                         context,
-                                        ' شركة البركة للتأمين ',
+                                        "albarakaInsurance".translate(context),
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F43-%20%D8%A7%D9%84%D8%A8%D8%B1%D9%83%D8%A9%20%D9%84%D9%84%D8%AA%D8%A7%D9%85%D9%8A%D9%86.jpg?alt=media&token=2c69f94f-5eb2-4b8d-ba58-b22525058a50'),
                                   ),
                                 ],

@@ -427,8 +427,8 @@ class MainActivityState extends State<MainActivity>
                     AppIcons.profileNav,
                     AppIcons.profileNav,"proceduralGuideTab".translate(context)),
 
-                buildBottomNavigationbarItem(
-                    1, AppIcons.myAdsNav, AppIcons.myAdsNav, "storesTab".translate(context)),
+                buildBottomNavigationbarItem(3, AppIcons.chatNav,
+                    AppIcons.chatNav,  "miningClubTab".translate(context)),
 
                 BlocListener<FetchUserPackageLimitCubit,
                         FetchUserPackageLimitState>(
@@ -490,8 +490,11 @@ class MainActivityState extends State<MainActivity>
                 buildBottomNavigationbarItem(0, AppIcons.homeNav,
                     AppIcons.homeNav, "homeTab".translate(context)),
 
-                buildBottomNavigationbarItem(3, AppIcons.chatNav,
-                    AppIcons.chatNav,  "miningClubTab".translate(context)),
+
+
+
+                buildBottomNavigationbarItem(
+                    1, AppIcons.myAdsNav, AppIcons.myAdsNav, "storesTab".translate(context)),
 
                 // buildBottomNavigationbarItem(3, AppIcons.profileNav,
                 //     AppIcons.profileNavActive, "profileTab".translate(context))
