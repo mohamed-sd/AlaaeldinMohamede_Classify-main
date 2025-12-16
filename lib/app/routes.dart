@@ -7,6 +7,7 @@ import 'package:eClassify/ui/screens/MiningClub/KnowledgeAndResearch/KnowResPage
 import 'package:eClassify/ui/screens/MiningClub/KnowledgeAndResearch/PDFViewerPage.dart';
 import 'package:eClassify/ui/screens/ad_details_screen.dart';
 import 'package:eClassify/ui/screens/advertisement/my_advertisment_screen.dart';
+import 'package:eClassify/ui/screens/ai/ai_chat.dart';
 import 'package:eClassify/ui/screens/auth/login/forgot_password.dart';
 import 'package:eClassify/ui/screens/auth/login/login_screen.dart';
 import 'package:eClassify/ui/screens/auth/sign_up/mobile_signup_screen.dart';
@@ -49,6 +50,7 @@ import 'package:eClassify/ui/screens/location/states_screen.dart';
 import 'package:eClassify/ui/screens/location_permission_screen.dart';
 import 'package:eClassify/ui/screens/main_activity.dart';
 import 'package:eClassify/ui/screens/my_review_screen.dart';
+import 'package:eClassify/ui/screens/navigations/home_guide.dart';
 import 'package:eClassify/ui/screens/onboarding/onboarding_screen.dart';
 import 'package:eClassify/ui/screens/seller/seller_intro_verification.dart';
 import 'package:eClassify/ui/screens/seller/seller_profile.dart';
@@ -77,6 +79,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
+  static const homeGuide = 'homeGuide';
+  static const aichat = 'aichat';
   static const storeServiceDetails = 'storeServiceDetails';
   static const provideStore = 'provideStore';
   static const readerPage = 'readerPage';
@@ -226,6 +230,10 @@ class Routes {
     }
 
     switch (routeSettings.name) {
+      case homeGuide :
+        return MaterialPageRoute(builder: ((context) => HomeGuide()));
+      case aichat :
+        return MaterialPageRoute(builder: ((context) => AiChatDemoScreen()));
       case storeServiceDetails :
         return MaterialPageRoute(builder: ((context) => StoreServiceDetails()));
       case provideStore:

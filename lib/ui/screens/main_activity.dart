@@ -433,14 +433,17 @@ class MainActivityState extends State<MainActivity>
                 BlocListener<FetchUserPackageLimitCubit,
                         FetchUserPackageLimitState>(
                     listener: (context, state) {
-                      if (state is FetchUserPackageLimitFailure) {
-                        UiUtils.noPackageAvailableDialog(context);
-                      }
-                      if (state is FetchUserPackageLimitInSuccess) {
-                        Navigator.pushNamed(
-                            context, Routes.selectCategoryScreen,
-                            arguments: <String, dynamic>{});
-                      }
+                      Navigator.pushNamed(
+                        context, Routes.aichat,
+                      );
+                      // if (state is FetchUserPackageLimitFailure) {
+                      //   UiUtils.noPackageAvailableDialog(context);
+                      // }
+                      // if (state is FetchUserPackageLimitInSuccess) {
+                      //   Navigator.pushNamed(
+                      //       context, Routes.selectCategoryScreen,
+                      //       arguments: <String, dynamic>{});
+                      // }
                     },
                     child: Transform(
                       transform: Matrix4.identity()
@@ -469,7 +472,7 @@ class MainActivityState extends State<MainActivity>
                                       child: Column(
                                         children: [
                                           UiUtils.getSvg(AppIcons.plusIcon , height: 85),
-                                          Text("postUrAdTab".translate(context) , style: TextStyle(color: context.color.mainColor , fontSize: 12,fontWeight: FontWeight.w900),)
+                                          Text( "AI" , style: TextStyle(color: context.color.mainColor , fontSize: 12,fontWeight: FontWeight.w900),)
                                         ],
                                       )
                               )

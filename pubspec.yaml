@@ -80,6 +80,7 @@ dependencies:
   screen_brightness: ^2.1.7
   translator: ^1.0.4+1
   flutter_tts: ^4.2.3
+  speech_to_text: ^6.0.1
 
 
 
