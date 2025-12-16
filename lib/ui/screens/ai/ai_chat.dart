@@ -21,6 +21,14 @@ class AiChatDemoScreen extends StatefulWidget {
 
 class _AiChatDemoScreenState extends State<AiChatDemoScreen>
     with TickerProviderStateMixin {
+
+  final List<String> _categoryCommandKeywords = [
+    'افتح',
+    'أريد',
+    'انتقل',
+    'قسم',
+  ];
+
   final TextEditingController _controller = TextEditingController();
   final ScrollController _scrollController = ScrollController();
   late stt.SpeechToText _speech;
@@ -86,11 +94,6 @@ class _AiChatDemoScreenState extends State<AiChatDemoScreen>
       'answer':
           'بريق منصة ذكية تربط بين شركات التعدين، المعدات، والموردين، لتسهيل عمليات البحث والتواصل وإدارة المشاريع.'
     },
-    {
-      'keywords': ['ذكاء', 'كيف يعمل', 'مساعد ذكي'],
-      'answer':
-          'المساعد الذكي يفهم ما تريد، ويستطيع الإجابة على أسئلتك وفتح الصفحات داخل التطبيق لتوفير تجربة سهلة وسريعة.'
-    },
     // التعدين في السودان
     {
       'keywords': ['تعدين', 'سودان', 'معادن'],
@@ -144,6 +147,12 @@ class _AiChatDemoScreenState extends State<AiChatDemoScreen>
       'keywords': ['وزير', 'وزير المعادن', 'نور الدائم', 'وزارة'],
       'answer':
       ' وزير المعادن الحالي في السودان هو الأستاذ نور الدائم طه، الذي يركز في عمله على تطوير قطاع التعدين وتعزيز الشراكات الدولية، خاصة مع الصين، وتنفيذ مشاريع تنموية في مناطق التعدين من خلال المسؤولية المجتمعية.'
+    },
+
+    {
+      'keywords': ['دورك', 'تساعدني', 'كيف يمكن تساعدني', 'بماذا تساعدني','ماذا تقدم' ,'كيف تعمل'],
+      'answer':
+      'انا هنا لمساعدتك في الاجابة عن اسئلتك حول التعدين في السودان او حول منصة بريق او شركة ايكوبيشن او توجيهك للمكان المناسب داخل التطبيق عن طريق النص او الاوامر الصوتية'
     },
 
   ];
@@ -288,14 +297,28 @@ class _AiChatDemoScreenState extends State<AiChatDemoScreen>
   _ChatMessage _buildAiResponse(String userMessage) {
     final message = userMessage.toLowerCase();
 
-    // --------- قسم ---------
-    if (message.contains('قسم ')) {
-      final query = message.split('قسم ')[1].trim().toLowerCase();
+// --------- CATEGORY INTENT DETECTION ---------
+    String? extractedCategoryName;
 
-      // البحث داخل جميع الأقسام
+// محاولة استخراج اسم القسم بناءً على كلمات الأمر
+    for (final keyword in _categoryCommandKeywords) {
+      if (message.contains(keyword)) {
+        extractedCategoryName =
+            message.split(keyword).last.trim().toLowerCase();
+        break;
+      }
+    }
+
+    if (extractedCategoryName != null && extractedCategoryName.isNotEmpty) {
       CategoryModel? foundCategory;
-      for (var cat in allCategoriesFlat) {
-        if (cat.name != null && cat.name!.toLowerCase() == query) {
+
+      for (final cat in allCategoriesFlat) {
+        final catName = cat.name?.toLowerCase() ?? '';
+
+        // تطابق كامل أو جزئي
+        if (catName == extractedCategoryName ||
+            catName.contains(extractedCategoryName) ||
+            extractedCategoryName.contains(catName)) {
           foundCategory = cat;
           break;
         }
@@ -314,18 +337,18 @@ class _AiChatDemoScreenState extends State<AiChatDemoScreen>
                 'categoryIds': [foundCategory.id.toString()],
               });
             } else {
-              Navigator.pushNamed(context, Routes.subCategoryScreen,
-                  arguments: {
-                    'categoryList': foundCategory.children,
-                    'catName': foundCategory.name,
-                    'catId': foundCategory.id,
-                    'categoryIds': [foundCategory.id.toString()],
-                  });
+              Navigator.pushNamed(context, Routes.subCategoryScreen, arguments: {
+                'categoryList': foundCategory.children,
+                'catName': foundCategory.name,
+                'catId': foundCategory.id,
+                'categoryIds': [foundCategory.id.toString()],
+              });
             }
           },
         );
       }
     }
+
 
     // --------- NAVIGATION COMMANDS ---------
     for (final cmd in _navigationCommands) {
