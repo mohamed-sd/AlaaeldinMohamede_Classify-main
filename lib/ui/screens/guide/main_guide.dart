@@ -81,9 +81,9 @@ class _MainGuideState extends State<MainGuide> {
     GuideCatModale(
       flag: "الاجراءات البنكية",
       titles: [
-        GuideTitleModel(text: 'الحساب الشخصي', imagePath: '337-dcac854ce666'),
-        GuideTitleModel(text: 'حسابات الشركات', imagePath: 'b-9337-dcac854ce666'),
-        GuideTitleModel(text: 'تصدير الذهب', imagePath: 'cac854ce666'),
+        GuideTitleModel(text: 'الحساب الشخصي', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/pdf%2F1-%20%D8%A7%D9%84%D8%AD%D8%B3%D8%A7%D8%A8%20%D8%A7%D9%84%D8%B4%D8%AE%D8%B5%D9%8A.jpeg?alt=media&token=d8623b42-629b-4476-9b6a-49aaad60b573'),
+        GuideTitleModel(text: 'حسابات الشركات', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/pdf%2F2-%20%D8%AD%D8%B3%D8%A7%D8%A8%20%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA.jpeg?alt=media&token=09eb22bc-eba8-4a7c-82d0-fa082aa19618'),
+        GuideTitleModel(text: 'تصدير الذهب', imagePath: 'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/pdf%2F3-%D8%AA%D8%B5%D8%AF%D9%8A%D8%B1%20%D8%A7%D9%84%D8%B0%D9%87%D8%A8.jpeg?alt=media&token=ea3f364e-8066-4844-ba2b-d77b577dec65'),
       ],
     ),
     GuideCatModale(

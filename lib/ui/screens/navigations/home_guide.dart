@@ -405,7 +405,7 @@ class HomeScreenState extends State<HomeGuide>
                                     child: GoldShimmerCard(
                                         title: "ministryMinerals".translate(context),
                                         url:
-                                            'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F10_copy.jpg?alt=media&token=8c232045-4e71-4a5a-b10a-dbde7a87f96c'),
+                                            'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/pdf%2F3-%20%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%86.jpg?alt=media&token=0dbcd029-3ba6-4527-b80a-d96f0a7e4fca'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -415,7 +415,7 @@ class HomeScreenState extends State<HomeGuide>
                                     child: GoldShimmerCard(
                                         title: "minResourcesCo".translate(context),
                                         url:
-                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F9_copy.jpg?alt=media&token=21a8ea5e-7309-41a2-bc84-02f2bc153272'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/pdf%2F2-%20%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AB%D9%85%D8%A7%D8%B1.jpg?alt=media&token=5facbeeb-8552-4f82-8833-68e2d4ba665c'),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -426,7 +426,7 @@ class HomeScreenState extends State<HomeGuide>
                                         title: "genAuthGeoSurvey".translate(context)
                                         ,
                                         url:
-                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F8_copy.jpg?alt=media&token=e0508c61-cb91-40c4-beb5-bb86b777b6bc'),
+                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/pdf%2F1-%20%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D9%84%20%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=d9f3f21a-a9db-411d-badb-955e9a56450b'),
                                   ),
                                   // InkWell(
                                   //   onTap: () {
@@ -680,7 +680,7 @@ class HomeScreenState extends State<HomeGuide>
                                     child: GoldShimmerCard(
                                         title: "laborOffice".translate(context),
                                         url:
-                                            'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F33-%20%D9%85%D9%83%D8%AA%D8%A8%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%20%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A.jpg?alt=media&token=90a1ad67-e167-4698-96b1-7c050eb826d6'),
+                                            'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/pdf%2F14-%20%D9%85%D9%83%D8%A7%D8%AA%D8%A8%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%20%D8%A8%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA.jpg?alt=media&token=4aaa3cfb-4bf6-4969-9da3-c0fd4620a45c'),
                                   ),
                                   InkWell(
                                     onTap: () {
