@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:async';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:eClassify/app/routes.dart';
 import 'package:eClassify/data/cubits/category/fetch_category_cubit.dart';
 import 'package:eClassify/data/cubits/chat/blocked_users_list_cubit.dart';
@@ -800,8 +801,9 @@ class HomeScreenState extends State<HomeStore>
                               padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8),
-                                child: Image.network(
-                                  'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2FWhatsApp%20Image%202024-12-18%20at%209.09.45%20AM.jpeg?alt=media&token=6786fe4b-3c6d-4989-b091-c317a302bb7b',
+
+                                child: CachedNetworkImage(
+                                  imageUrl:   'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/appimg%2FWhatsApp%20Image%202024-12-18%20at%209.09.45%20AM.jpeg?alt=media&token=6786fe4b-3c6d-4989-b091-c317a302bb7b',
                                   width: double.infinity,
                                   height: 80,
                                   fit: BoxFit.cover,

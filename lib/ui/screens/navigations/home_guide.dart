@@ -498,8 +498,8 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
-                                    },
+                                      Navigator.pushNamed(context, Routes.mainGuide,
+                                          arguments: {'flag': "الولايات والمحليات"});                                                 },
                                     child: GoldShimmerCard(
                                         title: "redSeaState".translate(context),
                                         url:
@@ -507,8 +507,8 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(
-                                          context, Routes.guide);
+                                      Navigator.pushNamed(context, Routes.mainGuide,
+                                          arguments: {'flag': "الولايات والمحليات"});
                                     },
                                     child: GoldShimmerCard(
                                         title: "northernState".translate(context),
@@ -517,7 +517,8 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
+                                      Navigator.pushNamed(context, Routes.mainGuide,
+                                          arguments: {'flag': "الولايات والمحليات"});
                                     },
                                     child: custom_card_Item(
                                         context,
@@ -526,7 +527,8 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
+                                      Navigator.pushNamed(context, Routes.mainGuide,
+                                          arguments: {'flag': "الولايات والمحليات"});
                                     },
                                     child: custom_card_Item(
                                         context,
@@ -535,7 +537,8 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.soon);
+                                      Navigator.pushNamed(context, Routes.mainGuide,
+                                          arguments: {'flag': "الولايات والمحليات"});
                                     },
                                     child: custom_card_Item(
                                         context,

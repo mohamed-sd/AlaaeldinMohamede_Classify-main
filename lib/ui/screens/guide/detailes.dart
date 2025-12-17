@@ -9,6 +9,8 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:screen_brightness/screen_brightness.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:translator/translator.dart';
+import 'package:marquee/marquee.dart';
+
 
 /// TTSController wraps flutter_tts usage and voice listing.
 class TTSController {
@@ -751,10 +753,37 @@ class _DetailesState extends State<Detailes> {
           ),
           elevation: 0,
         ),
+
         body: SafeArea(
           child: Container(
             child: Column(
               children: [
+                Container(
+                  height: 35,
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  decoration: BoxDecoration(
+                    color: context.color.mainGold,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+
+
+                  child: Marquee(
+                    text: '📢 هذه الاجراءات غير معتمده ومبدئية لإطلاق التطبيق ومازالت تحت التدقيق',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                    ),
+                    scrollAxis: Axis.horizontal,
+                    velocity: 40.0,
+                    blankSpace: 50,
+                    pauseAfterRound: const Duration(seconds: 1),
+                    startPadding: 10,
+                    accelerationDuration: const Duration(seconds: 1),
+                    decelerationDuration: const Duration(milliseconds: 500),
+                  ),
+                ),
+
                 // The Title of the page
                 Padding(
                   padding:

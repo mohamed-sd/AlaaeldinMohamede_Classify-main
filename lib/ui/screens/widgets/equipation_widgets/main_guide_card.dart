@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:eClassify/app/routes.dart';
 import 'package:eClassify/data/model/equipation/guide_modale.dart';
 import 'package:eClassify/ui/theme/theme.dart';
@@ -27,8 +28,8 @@ class MainGuideCard extends StatelessWidget {
             Expanded(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.network(
-                  urlimg,
+                child:CachedNetworkImage(
+                  imageUrl: urlimg,
                   height: 100,
                   fit: BoxFit.fill,
                   width: double.infinity,
@@ -169,8 +170,9 @@ class MainListCard extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.network(
-                urlimg,
+              child: CachedNetworkImage(
+                imageUrl: urlimg,
+
                 height: 130,
                 fit: BoxFit.fill,
                 width: double.infinity,

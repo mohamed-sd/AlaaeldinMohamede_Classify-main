@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:eClassify/app/app_theme.dart';
 import 'package:eClassify/app/routes.dart';
 import 'package:eClassify/data/cubits/favorite/favorite_cubit.dart';
@@ -160,8 +161,9 @@ class _ComingSoonPageState extends State<Jobswedgit> {
                             Stack(children: [
                               ClipRRect(
                                   borderRadius: BorderRadius.circular(10),
-                                  child: Image.asset(
-                                    "assets/profile.jpg",
+
+                                  child:  CachedNetworkImage(
+                                    imageUrl:  "https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%A7%D9%84%D9%88%D8%B8%D8%A7%D8%A6%D9%81%20%D8%A7%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A%D8%A9.jpeg.jpg?alt=media&token=d7161e85-d563-40ec-bbfb-de5a4a390426",
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.35,
                                     height: 190,
