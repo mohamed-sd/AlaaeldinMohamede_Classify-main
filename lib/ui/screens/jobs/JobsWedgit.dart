@@ -164,10 +164,9 @@ class _ComingSoonPageState extends State<Jobswedgit> {
 
                                   child:  CachedNetworkImage(
                                     imageUrl:  "https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F1-%20%D8%A7%D9%84%D9%88%D8%B8%D8%A7%D8%A6%D9%81%20%D8%A7%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A%D8%A9.jpeg.jpg?alt=media&token=d7161e85-d563-40ec-bbfb-de5a4a390426",
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 0.35,
+                                    width:100,
                                     height: 190,
-                                    fit: BoxFit.fill,
+                                    fit: BoxFit.cover,
                                   )),
                               Container(
                                 child: Align(

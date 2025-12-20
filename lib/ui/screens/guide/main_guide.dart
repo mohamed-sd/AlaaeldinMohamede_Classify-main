@@ -26,7 +26,7 @@ class MainGuide extends StatefulWidget {
 }
 
 class _MainGuideState extends State<MainGuide> {
-  bool isGrid = false; // لتحديد نوع العرض Grid or List
+  bool isGrid = true; // لتحديد نوع العرض Grid or List
 
   // List<GuideCatModale> cats = [
   //   GuideCatModale(
