@@ -1,9 +1,13 @@
+import 'package:eClassify/ui/screens/MiningClub/Courses/vedio_from_file_page.dart';
 import 'package:eClassify/ui/theme/theme.dart';
 import 'package:eClassify/utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:video_player/video_player.dart';
 import 'package:chewie/chewie.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:dio/dio.dart';
+import 'package:path_provider/path_provider.dart';
 
 class VisualDetailsPage extends StatefulWidget {
   const VisualDetailsPage({super.key});
@@ -13,6 +17,14 @@ class VisualDetailsPage extends StatefulWidget {
 }
 
 class _VisualDetailsPageState extends State<VisualDetailsPage> {
+
+  bool _isDownloading = false;
+  double _downloadProgress = 0.0;
+  String? _lastDownloadedPath;
+
+  final String videoUrl =
+      'https://drive.google.com/uc?export=download&id=1HDY9Lu-nCcegQK6iUBa6wC-7OZ_6iznt';
+
   late VideoPlayerController _videoController;
   ChewieController? _chewieController;
   bool _isControllerInitialized = false;
@@ -21,7 +33,7 @@ class _VisualDetailsPageState extends State<VisualDetailsPage> {
   void initState() {
     super.initState();
     _videoController = VideoPlayerController.network(
-      'https://drive.google.com/uc?export=download&id=1HDY9Lu-nCcegQK6iUBa6wC-7OZ_6iznt',
+      videoUrl,
     );
   }
 
@@ -73,8 +85,8 @@ class _VisualDetailsPageState extends State<VisualDetailsPage> {
             _actionItem(Icons.remove_red_eye, "985k"),
             _actionItem(Icons.thumb_up, "74K"),
             _actionItem(Icons.thumb_down, "2K"),
-            _actionItem(Icons.share, "مشاركة"),
-            _actionItem(Icons.download, "تنزيل"),
+            _actionItem(Icons.share, "مشاركة" , onTap: _shareVideo),
+            _actionItem(Icons.download, "تنزيل" , onTap: () => _downloadVideo(context)),
             _actionItem(Icons.bookmark, "حفظ"),
             _actionItem(Icons.flag, "إبلاغ"),
           ],
@@ -83,34 +95,103 @@ class _VisualDetailsPageState extends State<VisualDetailsPage> {
     );
   }
 
-  Widget _actionItem(IconData icon, String label) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 4),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Color(0xFFEBBE25),
-              shape: BoxShape.circle,
+  Widget _actionItem(IconData icon, String label , {VoidCallback? onTap}) {
+    return InkWell(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 4),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Color(0xFFEBBE25),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, size: 18),
             ),
-            child: Icon(icon, size: 18),
-          ),
-          const SizedBox(height: 5),
-          Text(
-            label,
-            style: const TextStyle(fontSize: 12 , fontWeight: FontWeight.bold),
-          ),
-        ],
+            const SizedBox(height: 5),
+            Text(
+              label,
+              style: const TextStyle(fontSize: 12 , fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
       ),
     );
   }
 
 
+  Future<void> _downloadVideo(BuildContext context) async {
+    setState(() {
+      _isDownloading = true;
+      _downloadProgress = 0.0;
+    });
+
+    try {
+      final dir = await getApplicationDocumentsDirectory();
+      final savePath =
+          '${dir.path}/video_${DateTime.now().millisecondsSinceEpoch}.mp4';
+
+      await Dio().download(
+        videoUrl,
+        savePath,
+        onReceiveProgress: (received, total) {
+          if (total != -1) {
+            setState(() {
+              _downloadProgress = received / total;
+            });
+          }
+        },
+      );
+
+      setState(() {
+        _isDownloading = false;
+        _lastDownloadedPath = savePath;
+      });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: const Text('تم تحميل الفيديو بنجاح'),
+          action: SnackBarAction(
+            label: 'فتح',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) =>
+                      VideoFromFilePage(filePath: savePath),
+                ),
+              );
+            },
+          ),
+        ),
+      );
+    } catch (e) {
+      setState(() {
+        _isDownloading = false;
+      });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('فشل تحميل الفيديو')),
+      );
+    }
+  }
+
+
+
+  void _shareVideo() {
+    Share.share(
+      'شاهد هذا الفيديو:\n$videoUrl',
+      subject: 'فيديو مميز',
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
+
+
     final Color goldColor = context.color.mainGold;
     Color star = Color.fromARGB(255, 227, 223, 223);
     return Scaffold(
@@ -158,13 +239,28 @@ class _VisualDetailsPageState extends State<VisualDetailsPage> {
                       textAlign: TextAlign.start,
                     ),
                   ),
+                  if (_isDownloading)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Column(
+                        children: [
+                          const Text(
+                            'جاري تحميل الفيديو...',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 8),
+                          LinearProgressIndicator(value: _downloadProgress),
+                          const SizedBox(height: 4),
+                          Text('${(_downloadProgress * 100).toStringAsFixed(0)}%'),
+                        ],
+                      ),
+                    ),
                 ],
               ),
             ),
 
             const SizedBox(height: 8),
             _videoActionsBar(context),
-
             // صورة الفيديو
             // Card(
             //   shape: RoundedRectangleBorder(
