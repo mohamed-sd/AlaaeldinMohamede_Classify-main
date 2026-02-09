@@ -1,3 +1,4 @@
+import 'package:eClassify/app/routes.dart';
 import 'package:eClassify/data/model/blog_model.dart';
 
 import 'package:eClassify/ui/theme/theme.dart';
@@ -37,7 +38,9 @@ class BlogDetails extends StatelessWidget {
         backgroundColor: context.color.primaryColor,
         // appBar: UiUtils.buildAppBar(context, backgroundColor: context.color.mainBrown,
         //     showBackButton: true, title: "blogs".translate(context)),
-        appBar: AppBar(backgroundColor: context.color.mainBrown,title: Text("blogs".translate(context))),
+        appBar: AppBar(
+            backgroundColor: context.color.mainBrown,
+            title: Text("blogs".translate(context))),
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(
@@ -64,6 +67,8 @@ class BlogDetails extends StatelessWidget {
                 SizedBox(
                   height: 15,
                 ),
+                // انشاء كارد حساب المعلن
+                // وهو كارد يحتوي علي بيانات من عمل الاعلان
                 CustomText(
                   blog.createdAt.toString().formatDate(),
                   color: context.color.textColorDark.withValues(alpha: 0.5),
@@ -71,6 +76,54 @@ class BlogDetails extends StatelessWidget {
                 ),
                 const SizedBox(
                   height: 12,
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, Routes.blogprofile);
+                  },
+                  child: Card(
+                    elevation: 2,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 20,
+                            child: Icon(Icons.person_2),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              CustomText(
+                                "احمد عبد الوهاب",
+                                fontSize: context.font.normal,
+                                color: context.color.textColorDark,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              SizedBox(
+                                height: 4,
+                              ),
+                              CustomText(
+                                "ah.ahmedsamba@gmail.com",
+                                fontSize: context.font.small,
+                                color: context.color.textColorDark
+                                    .withValues(alpha: 0.6),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
                 ),
                 CustomText(
                   (blog.title ?? "").firstUpperCase(),

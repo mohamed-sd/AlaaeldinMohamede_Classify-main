@@ -14,6 +14,7 @@ import 'package:eClassify/ui/screens/auth/sign_up/mobile_signup_screen.dart';
 import 'package:eClassify/ui/screens/auth/sign_up/signup_main_screen.dart';
 import 'package:eClassify/ui/screens/auth/sign_up/signup_screen.dart';
 import 'package:eClassify/ui/screens/blogs/blog_details.dart';
+import 'package:eClassify/ui/screens/blogs/blog_profile.dart';
 import 'package:eClassify/ui/screens/blogs/blogs_screen.dart';
 import 'package:eClassify/ui/screens/chat/blocked_user_list_screen.dart';
 import 'package:eClassify/ui/screens/chat/chat_list_screen.dart';
@@ -79,6 +80,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
+  static const blogprofile = 'blogprofile';
   static const homeGuide = 'homeGuide';
   static const aichat = 'aichat';
   static const storeServiceDetails = 'storeServiceDetails';
@@ -230,11 +232,13 @@ class Routes {
     }
 
     switch (routeSettings.name) {
-      case homeGuide :
+      case blogprofile:
+        return MaterialPageRoute(builder: ((context) => BlogProfile()));
+      case homeGuide:
         return MaterialPageRoute(builder: ((context) => HomeGuide()));
-      case aichat :
+      case aichat:
         return MaterialPageRoute(builder: ((context) => AiChatDemoScreen()));
-      case storeServiceDetails :
+      case storeServiceDetails:
         return MaterialPageRoute(builder: ((context) => StoreServiceDetails()));
       case provideStore:
         return MaterialPageRoute(builder: ((context) => ProvideStore()));
@@ -286,7 +290,7 @@ class Routes {
         return MainGuide.route(routeSettings);
       case detailes:
         return Detailes.route(routeSettings);
-        case main:
+      case main:
         return MainActivity.route(routeSettings);
       case communitiesPage:
         return CommunitiesPage.route(routeSettings);

@@ -7,6 +7,7 @@ import 'package:eClassify/data/cubits/system/app_theme_cubit.dart';
 import 'package:eClassify/data/model/item/item_model.dart';
 import 'package:eClassify/data/repositories/favourites_repository.dart';
 import 'package:eClassify/ui/screens/exchange/money_exchange.dart';
+import 'package:eClassify/ui/screens/jobs/add_job_announcement_screen.dart';
 import 'package:eClassify/ui/screens/widgets/equipation_widgets/add_new_adds.dart';
 import 'package:eClassify/ui/theme/theme.dart';
 import 'package:eClassify/utils/app_icon.dart';
@@ -120,7 +121,17 @@ class _ComingSoonPageState extends State<Jobswedgit> {
                   ),
                 ),
               ),
-              AddNewAdds(),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AddJobAnnouncementScreen(),
+                    ),
+                  );
+                },
+                child: AddNewAdds(),
+              ),
             ],
           ),
         ),
