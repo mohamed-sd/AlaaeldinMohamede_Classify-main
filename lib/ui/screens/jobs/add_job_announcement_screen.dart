@@ -313,20 +313,28 @@ class _AddJobAnnouncementScreenState extends State<AddJobAnnouncementScreen> {
               ),
 
               const SizedBox(height: 32),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: context.color.mainColor,
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0),
+              Container(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: context.color.mainGold,
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                     shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
                   ),
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      // Process data
+                    }
+                  },
+                  child: Text('نشر الإعلان',style: TextStyle(
+                    color:Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+
+                  ),),
                 ),
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    // Process data
-                  }
-                },
-                child: Text('نشر الإعلان',),
               ),
             ],
           ),
