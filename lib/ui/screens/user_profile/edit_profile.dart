@@ -210,38 +210,47 @@ class UserProfileScreenState extends State<UserProfileScreen> {
                                 SizedBox(
                                   height: 25,
                                 ),
-                                UiUtils.buildButton(
-                                  context,
-                                  onPressed: () {
-                                    if (widget.from == 'login') {
-                                      validateData();
+                                UiUtils.buildButton(context, onPressed: () {
+                                  if (widget.from == 'login') {
+                                    validateData();
+                                  } else {
+                                    if (city != null && city != "") {
+                                      HiveUtils.setCurrentLocation(
+                                          city: city,
+                                          state: _state,
+                                          country: country,
+                                          latitude: latitude,
+                                          longitude: longitude);
+
+                                      context
+                                          .read<SliderCubit>()
+                                          .fetchSlider(context);
                                     } else {
-                                      if (city != null && city != "") {
-                                        HiveUtils.setCurrentLocation(
-                                            city: city,
-                                            state: _state,
-                                            country: country,
-                                            latitude: latitude,
-                                            longitude: longitude);
+                                      HiveUtils.clearLocation();
 
-                                        context
-                                            .read<SliderCubit>()
-                                            .fetchSlider(context);
-                                      } else {
-                                        HiveUtils.clearLocation();
-
-                                        context
-                                            .read<SliderCubit>()
-                                            .fetchSlider(context);
-                                      }
-                                      validateData();
+                                      context
+                                          .read<SliderCubit>()
+                                          .fetchSlider(context);
                                     }
-                                  },
-                                  height: 48,
-                                  buttonTitle:
-                                      "updateProfile".translate(context),
-                                  buttonColor: context.color.mainBrown
-                                )
+                                    validateData();
+                                  }
+                                },
+                                    height: 48,
+                                    buttonTitle:
+                                        "updateProfile".translate(context),
+                                    buttonColor: context.color.mainBrown),
+                                const SizedBox(height: 15),
+                                // زر إكمال الملف الشخصي الشامل
+                                UiUtils.buildButton(context, onPressed: () {
+                                  HelperUtils.goToNextPage(
+                                      Routes.comprehensiveProfile,
+                                      context,
+                                      false);
+                                },
+                                    height: 48,
+                                    textColor: context.color.textDefaultColor,
+                                    buttonTitle: "إكمال الملف الشخصي الشامل",
+                                    buttonColor: context.color.mainGold),
                               ])),
                     )),
               ),
@@ -509,8 +518,7 @@ class UserProfileScreenState extends State<UserProfileScreen> {
           alignment: AlignmentDirectional.center,
           decoration: BoxDecoration(
               shape: BoxShape.circle,
-              border:
-                  Border.all(color: context.color.mainGold, width: 2)),
+              border: Border.all(color: context.color.mainGold, width: 2)),
           child: Container(
             clipBehavior: Clip.antiAlias,
             decoration: BoxDecoration(
@@ -626,7 +634,6 @@ class UserProfileScreenState extends State<UserProfileScreen> {
     }
   }
 
-
   void showPicker() {
     showModalBottomSheet(
         context: context,
@@ -641,7 +648,6 @@ class UserProfileScreenState extends State<UserProfileScreen> {
                     leading: const Icon(Icons.photo_library),
                     title: CustomText("gallery".translate(context)),
                     onTap: () async {
-
                       await profileImagePicker.pick(
                           context: context,
                           source: ImageSource.gallery,
@@ -652,7 +658,6 @@ class UserProfileScreenState extends State<UserProfileScreen> {
                   leading: const Icon(Icons.photo_camera),
                   title: CustomText("camera".translate(context)),
                   onTap: () async {
-
                     await profileImagePicker.pick(
                         context: context,
                         source: ImageSource.camera,
@@ -676,7 +681,6 @@ class UserProfileScreenState extends State<UserProfileScreen> {
           );
         });
   }
-
 
   void showCountryCode() {
     showCountryPicker(

@@ -73,6 +73,7 @@ import 'package:eClassify/ui/screens/sub_category/sub_category_screen.dart';
 import 'package:eClassify/ui/screens/subscription/packages_list.dart';
 import 'package:eClassify/ui/screens/subscription/transaction_history_screen.dart';
 import 'package:eClassify/ui/screens/user_profile/edit_profile.dart';
+import 'package:eClassify/ui/screens/user_profile/comprehensive_profile_screen.dart';
 import 'package:eClassify/ui/screens/widgets/maintenance_mode.dart';
 import 'package:eClassify/utils/constant.dart';
 import 'package:eClassify/utils/hive_utils.dart';
@@ -115,6 +116,7 @@ class Routes {
   static const signupMainScreen = 'signUpMainScreen';
   static const mobileSignUp = 'mobileSignUp';
   static const completeProfile = 'complete_profile';
+  static const comprehensiveProfile = 'comprehensive_profile';
   static const main = 'main';
   static const home = 'Home';
   static const home_guide = 'home_guide';
@@ -308,6 +310,8 @@ class Routes {
         return MobileSignUpScreen.route(routeSettings);
       case completeProfile:
         return UserProfileScreen.route(routeSettings);
+      case comprehensiveProfile:
+        return ComprehensiveProfileScreen.route(routeSettings);
 
       case categories:
         return CategoryList.route(routeSettings);
