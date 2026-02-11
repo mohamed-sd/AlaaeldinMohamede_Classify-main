@@ -43,6 +43,7 @@ import 'package:eClassify/ui/screens/item/my_items_screen.dart';
 import 'package:eClassify/ui/screens/item/view_all_screen.dart';
 import 'package:eClassify/ui/screens/jobs/JobsDetailsWedgit.dart';
 import 'package:eClassify/ui/screens/jobs/JobsWedgit.dart';
+import 'package:eClassify/ui/screens/jobs/job_profile.dart';
 import 'package:eClassify/ui/screens/location/areas_screen.dart';
 import 'package:eClassify/ui/screens/location/cities_screen.dart';
 import 'package:eClassify/ui/screens/location/countries_screen.dart';
@@ -102,6 +103,7 @@ class Routes {
   static const soon = 'soon';
   static const jobs = 'jobs';
   static const jobsDetailes = 'jobsDetailes';
+  static const jobProfile = 'jobProfile';
   static const mining_exchange = 'mining_exchange';
   static const mony_exchange = 'mony_exchange';
   static const chatlist = 'chatlist';
@@ -261,6 +263,9 @@ class Routes {
       case jobsDetailes:
         return MaterialPageRoute(
             builder: ((context) => const Jobsdetailswedgit()));
+      case jobProfile:
+        return MaterialPageRoute(
+            builder: ((context) => const JobProfileScreen()));
       case profileScreen:
         return MaterialPageRoute(builder: ((context) => const ProfileScreen()));
       case jobs:

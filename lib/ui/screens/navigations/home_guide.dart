@@ -82,6 +82,12 @@ class HomeScreenState extends State<HomeGuide>
     }
   }
 
+  @override
+  void dispose() {
+    _scrollController.dispose(); // ضروري
+    super.dispose();
+  }
+
   void _openCustomSideSheet(BuildContext context) {
     showDialog(
       context: context,
@@ -186,11 +192,6 @@ class HomeScreenState extends State<HomeGuide>
         latitude: HiveUtils.getLatitude(),
         country: HiveUtils.getCountryName(),
         state: HiveUtils.getStateName()); */
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
   }
 
   void initializeSettings() {
@@ -399,34 +400,43 @@ class HomeScreenState extends State<HomeGuide>
                                   // The Card
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mainGuide,
+                                      Navigator.pushNamed(
+                                          context, Routes.mainGuide,
                                           arguments: {'flag': "وزارة المعادن"});
                                     },
                                     child: GoldShimmerCard(
-                                        title: "ministryMinerals".translate(context),
+                                        title: "ministryMinerals"
+                                            .translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/pdf%2F3-%20%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%86.jpg?alt=media&token=0dbcd029-3ba6-4527-b80a-d96f0a7e4fca'),
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mainGuide,
-                                          arguments: {'flag': "وزارة الاستثمار"});
+                                      Navigator.pushNamed(
+                                          context, Routes.mainGuide,
+                                          arguments: {
+                                            'flag': "وزارة الاستثمار"
+                                          });
                                     },
                                     child: GoldShimmerCard(
-                                        title: "minResourcesCo".translate(context),
+                                        title:
+                                            "minResourcesCo".translate(context),
                                         url:
-                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/pdf%2F2-%20%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AB%D9%85%D8%A7%D8%B1.jpg?alt=media&token=5facbeeb-8552-4f82-8833-68e2d4ba665c'),
+                                            'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/pdf%2F2-%20%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AB%D9%85%D8%A7%D8%B1.jpg?alt=media&token=5facbeeb-8552-4f82-8833-68e2d4ba665c'),
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mainGuide,
-                                          arguments: {'flag': "الاجراءات الحكومية"});
+                                      Navigator.pushNamed(
+                                          context, Routes.mainGuide,
+                                          arguments: {
+                                            'flag': "الاجراءات الحكومية"
+                                          });
                                     },
                                     child: GoldShimmerCard(
-                                        title: "genAuthGeoSurvey".translate(context)
-                                        ,
+                                        title: "genAuthGeoSurvey"
+                                            .translate(context),
                                         url:
-                                        'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/pdf%2F1-%20%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D9%84%20%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=d9f3f21a-a9db-411d-badb-955e9a56450b'),
+                                            'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/pdf%2F1-%20%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D9%84%20%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=d9f3f21a-a9db-411d-badb-955e9a56450b'),
                                   ),
                                   // InkWell(
                                   //   onTap: () {
@@ -467,8 +477,8 @@ class HomeScreenState extends State<HomeGuide>
                               section2 = true;
                           });
                         },
-                        child: title_card("stateProcedures".translate(context)
-                            , section2),
+                        child: title_card(
+                            "stateProcedures".translate(context), section2),
                       ),
                       SizedBox(
                         height: 5,
@@ -488,18 +498,26 @@ class HomeScreenState extends State<HomeGuide>
                                   // The Card
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mainGuide,
-                                          arguments: {'flag': "الولايات والمحليات"});                                    },
+                                      Navigator.pushNamed(
+                                          context, Routes.mainGuide,
+                                          arguments: {
+                                            'flag': "الولايات والمحليات"
+                                          });
+                                    },
                                     child: GoldShimmerCard(
-                                        title: "nileRiverState".translate(context)
-                                        ,
+                                        title:
+                                            "nileRiverState".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F24-%20%D9%88%D9%84%D8%A7%D9%8A%D8%A9%20%D9%86%D9%87%D8%B1%20%D8%A7%D9%84%D9%86%D9%8A%D9%84.jpg?alt=media&token=891f465f-c402-478b-9dd4-914a0073bf1e'),
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mainGuide,
-                                          arguments: {'flag': "الولايات والمحليات"});                                                 },
+                                      Navigator.pushNamed(
+                                          context, Routes.mainGuide,
+                                          arguments: {
+                                            'flag': "الولايات والمحليات"
+                                          });
+                                    },
                                     child: GoldShimmerCard(
                                         title: "redSeaState".translate(context),
                                         url:
@@ -507,28 +525,39 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mainGuide,
-                                          arguments: {'flag': "الولايات والمحليات"});
+                                      Navigator.pushNamed(
+                                          context, Routes.mainGuide,
+                                          arguments: {
+                                            'flag': "الولايات والمحليات"
+                                          });
                                     },
                                     child: GoldShimmerCard(
-                                        title: "northernState".translate(context),
+                                        title:
+                                            "northernState".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F25-%20%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A9%20%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A%D8%A9.jpg?alt=media&token=f37b37fb-18a3-4ce4-be0c-b6a629302fe7'),
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mainGuide,
-                                          arguments: {'flag': "الولايات والمحليات"});
+                                      Navigator.pushNamed(
+                                          context, Routes.mainGuide,
+                                          arguments: {
+                                            'flag': "الولايات والمحليات"
+                                          });
                                     },
                                     child: custom_card_Item(
                                         context,
-                                        "southKordofanStates".translate(context),
+                                        "southKordofanStates"
+                                            .translate(context),
                                         'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F27-%20%D8%AC%D9%86%D9%88%D8%A8%20%D9%83%D8%B1%D8%AF%D9%81%D8%A7%D9%86.jpg?alt=media&token=594f29b1-d055-4b72-bc0b-f1261bea0d89'),
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mainGuide,
-                                          arguments: {'flag': "الولايات والمحليات"});
+                                      Navigator.pushNamed(
+                                          context, Routes.mainGuide,
+                                          arguments: {
+                                            'flag': "الولايات والمحليات"
+                                          });
                                     },
                                     child: custom_card_Item(
                                         context,
@@ -537,8 +566,11 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mainGuide,
-                                          arguments: {'flag': "الولايات والمحليات"});
+                                      Navigator.pushNamed(
+                                          context, Routes.mainGuide,
+                                          arguments: {
+                                            'flag': "الولايات والمحليات"
+                                          });
                                     },
                                     child: custom_card_Item(
                                         context,
@@ -562,8 +594,8 @@ class HomeScreenState extends State<HomeGuide>
                               section3 = true;
                           });
                         },
-                        child: title_card("customsProcedures".translate(context)
-                            , section3),
+                        child: title_card(
+                            "customsProcedures".translate(context), section3),
                       ),
                       SizedBox(
                         height: 5,
@@ -593,8 +625,7 @@ class HomeScreenState extends State<HomeGuide>
                                       );
                                     },
                                     child: GoldShimmerCard(
-                                        title: "customsAuth".translate(context)
-                                        ,
+                                        title: "customsAuth".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F30-%20%D9%87%D9%8A%D8%A6%D8%A9%20%D8%A7%D9%84%D8%AC%D9%85%D8%A7%D8%B1%D9%83.jpg?alt=media&token=e55c4d3f-e574-4c7e-ace5-cbb74bc38ef3'),
                                   ),
@@ -603,19 +634,21 @@ class HomeScreenState extends State<HomeGuide>
                                       Navigator.pushNamed(context, Routes.soon);
                                     },
                                     child: GoldShimmerCard(
-                                        title: "marineAuth".translate(context)
-                                        ,
+                                        title: "marineAuth".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F31-%20%D9%87%D9%8A%D8%A6%D8%A9%20%D8%A7%D9%84%D9%85%D9%88%D8%A7%D9%86%D8%A6%20%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D8%A9.jpg?alt=media&token=7a0a6211-e999-438c-b361-8bb8fb2a1d94'),
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mainGuide,
-                                          arguments: {'flag': "شرطة المرور العامة"});
+                                      Navigator.pushNamed(
+                                          context, Routes.mainGuide,
+                                          arguments: {
+                                            'flag': "شرطة المرور العامة"
+                                          });
                                     },
                                     child: GoldShimmerCard(
-                                        title: "trafficPolice".translate(context)
-                                        ,
+                                        title:
+                                            "trafficPolice".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F32-%20%D8%B4%D8%B1%D8%B7%D8%A9%20%D8%A7%D9%84%D9%85%D8%B1%D9%88%D8%B1%20%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D9%87.jpg?alt=media&token=54db6205-cbb4-4727-8b44-4d404c0a4e59'),
                                   ),
@@ -636,9 +669,8 @@ class HomeScreenState extends State<HomeGuide>
                               section4 = true;
                           });
                         },
-                        child:
-                            title_card("socialSecurity".translate(context)
-                                , section4),
+                        child: title_card(
+                            "socialSecurity".translate(context), section4),
                       ),
                       SizedBox(
                         height: 5,
@@ -667,7 +699,8 @@ class HomeScreenState extends State<HomeGuide>
                                       );
                                     },
                                     child: GoldShimmerCard(
-                                        title: "centralLaborOffice".translate(context),
+                                        title: "centralLaborOffice"
+                                            .translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F33-%20%D9%85%D9%83%D8%AA%D8%A8%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%20%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A.jpg?alt=media&token=90a1ad67-e167-4698-96b1-7c050eb826d6'),
                                   ),
@@ -679,7 +712,8 @@ class HomeScreenState extends State<HomeGuide>
                                         arguments: {
                                           'title': 'مكتب العمل المركزي',
                                         },
-                                      );                                    },
+                                      );
+                                    },
                                     child: GoldShimmerCard(
                                         title: "laborOffice".translate(context),
                                         url:
@@ -693,10 +727,11 @@ class HomeScreenState extends State<HomeGuide>
                                         arguments: {
                                           'title': 'مكتب العمل المركزي',
                                         },
-                                      );                                    },
+                                      );
+                                    },
                                     child: GoldShimmerCard(
-                                        title: "socialInsurance".translate(context)
-                                        ,
+                                        title: "socialInsurance"
+                                            .translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F34-%20%D8%A7%D9%84%D9%87%D9%8A%D8%A6%D8%A9%20%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A%D8%A9%20%D9%84%D9%84%D8%AA%D8%A3%D9%85%D9%8A%D9%86%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A5%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%D8%A9.jpg?alt=media&token=ab0c94ee-5cc0-4f29-aebb-a27eac4502dc'),
                                   )
@@ -717,7 +752,8 @@ class HomeScreenState extends State<HomeGuide>
                               section5 = true;
                           });
                         },
-                        child: title_card("bankingProcedures".translate(context) , section5),
+                        child: title_card(
+                            "bankingProcedures".translate(context), section5),
                       ),
                       SizedBox(
                         height: 5,
@@ -737,8 +773,11 @@ class HomeScreenState extends State<HomeGuide>
                                   // The Card
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mainGuide,
-                                          arguments: {'flag': "الاجراءات البنكية"});
+                                      Navigator.pushNamed(
+                                          context, Routes.mainGuide,
+                                          arguments: {
+                                            'flag': "الاجراءات البنكية"
+                                          });
                                     },
                                     child: GoldShimmerCard(
                                         title: "centralBank".translate(context),
@@ -747,28 +786,39 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mainGuide,
-                                          arguments: {'flag': "الاجراءات البنكية"});
+                                      Navigator.pushNamed(
+                                          context, Routes.mainGuide,
+                                          arguments: {
+                                            'flag': "الاجراءات البنكية"
+                                          });
                                     },
                                     child: GoldShimmerCard(
-                                        title: "bankOfKhartoum".translate(context),
+                                        title:
+                                            "bankOfKhartoum".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F36-%20%D8%A8%D9%86%D9%83%20%D8%A7%D9%84%D8%AE%D8%B1%D8%B7%D9%88%D9%85.jpg?alt=media&token=671f716c-5ca0-47b4-9e7c-b2065ca92d8d'),
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mainGuide,
-                                          arguments: {'flag': "الاجراءات البنكية"});
+                                      Navigator.pushNamed(
+                                          context, Routes.mainGuide,
+                                          arguments: {
+                                            'flag': "الاجراءات البنكية"
+                                          });
                                     },
                                     child: GoldShimmerCard(
-                                        title: "alnileinBank".translate(context),
+                                        title:
+                                            "alnileinBank".translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F37-%20%D8%A8%D9%86%D9%83%20%D8%A7%D9%84%D9%86%D9%8A%D9%84%D9%8A%D9%86.jpg?alt=media&token=5c4dcb63-db13-4879-b06d-1091748baca3'),
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mainGuide,
-                                          arguments: {'flag': "الاجراءات البنكية"});
+                                      Navigator.pushNamed(
+                                          context, Routes.mainGuide,
+                                          arguments: {
+                                            'flag': "الاجراءات البنكية"
+                                          });
                                     },
                                     child: custom_card_Item(
                                         context,
@@ -777,8 +827,11 @@ class HomeScreenState extends State<HomeGuide>
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pushNamed(context, Routes.mainGuide,
-                                          arguments: {'flag': "الاجراءات البنكية"});
+                                      Navigator.pushNamed(
+                                          context, Routes.mainGuide,
+                                          arguments: {
+                                            'flag': "الاجراءات البنكية"
+                                          });
                                     },
                                     child: custom_card_Item(
                                         context,
@@ -802,8 +855,8 @@ class HomeScreenState extends State<HomeGuide>
                               section6 = true;
                           });
                         },
-                        child: title_card("insuranceCompanies".translate(context)
-                            , section6),
+                        child: title_card(
+                            "insuranceCompanies".translate(context), section6),
                       ),
                       SizedBox(
                         height: 5,
@@ -832,7 +885,8 @@ class HomeScreenState extends State<HomeGuide>
                                       );
                                     },
                                     child: GoldShimmerCard(
-                                        title: "shikanInsurance".translate(context),
+                                        title: "shikanInsurance"
+                                            .translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F40-%20%D8%B4%D8%B1%D9%83%D8%A9%20%D8%B4%D9%8A%D9%83%D8%A7%D9%86%20%D9%84%D9%84%D8%AA%D8%A3%D9%85%D9%8A%D9%86.jpg?alt=media&token=d3083e0c-32d7-4a24-a7b4-5c54c7dd03ee'),
                                   ),
@@ -847,7 +901,8 @@ class HomeScreenState extends State<HomeGuide>
                                       );
                                     },
                                     child: GoldShimmerCard(
-                                        title: "altawnyaInsurance".translate(context),
+                                        title: "altawnyaInsurance"
+                                            .translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F41-%20%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A9%20%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%88%D9%86%D9%8A%D8%A9%20%D9%84%D9%84%D8%AA%D8%A7%D9%85%D9%8A%D9%86.jpg?alt=media&token=74f3dddb-27e7-4900-bc58-b6aa9fb3864b'),
                                   ),
@@ -862,7 +917,8 @@ class HomeScreenState extends State<HomeGuide>
                                       );
                                     },
                                     child: GoldShimmerCard(
-                                        title: "alnileenInsurance".translate(context),
+                                        title: "alnileenInsurance"
+                                            .translate(context),
                                         url:
                                             'https://firebasestorage.googleapis.com/v0/b/miningmarket-firebase.appspot.com/o/Bareeq%2F42-%20%D8%A7%D9%84%D9%86%D9%8A%D9%84%D9%8A%D9%86%20%D9%84%D9%84%D8%AA%D8%A7%D9%85%D9%8A%D9%86.jpg?alt=media&token=061a77cc-eeae-4980-b568-2a0735c6b4dc'),
                                   ),
