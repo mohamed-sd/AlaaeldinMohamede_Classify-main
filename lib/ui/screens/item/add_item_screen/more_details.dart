@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
-
+import 'package:eClassify/ui/theme/theme.dart';
 import 'package:eClassify/app/routes.dart';
 import 'package:eClassify/data/cubits/custom_field/fetch_custom_fields_cubit.dart';
 import 'package:eClassify/data/model/custom_field/custom_field_model.dart';
@@ -93,6 +93,7 @@ class _AddMoreDetailsScreenState extends CloudState<AddMoreDetailsScreen> {
     return SafeArea(
       top: false,
       child: Scaffold(
+        backgroundColor: context.color.mainColor,
         appBar: UiUtils.buildAppBar(context,
             showBackButton: true, title: "AdDetails".translate(context)),
         bottomNavigationBar: Container(
@@ -170,20 +171,26 @@ class _AddMoreDetailsScreenState extends CloudState<AddMoreDetailsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomText(
-                        "giveMoreDetailsAboutYourAds".translate(context),
-                        fontSize: context.font.large,
-                        fontWeight: FontWeight.w600,
+                      _buildHeaderCard(context),
+                      const SizedBox(height: 16),
+                      _sectionCard(
+                        context,
+                        title: "giveMoreDetailsAboutYourAds".translate(context),
+                        icon: Icons.tune_outlined,
+                        child: Column(
+                          children: moreDetailDynamicFields.map(
+                            (field) {
+                              field.stateUpdater(setState);
+                              return Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 9.0),
+                                child: field.build(context),
+                              );
+                            },
+                          ).toList(),
+                        ),
                       ),
-                      ...moreDetailDynamicFields.map(
-                        (field) {
-                          field.stateUpdater(setState);
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 9.0),
-                            child: field.build(context),
-                          );
-                        },
-                      )
+                      const SizedBox(height: 18),
                     ],
                   ),
                 ),
@@ -191,6 +198,137 @@ class _AddMoreDetailsScreenState extends CloudState<AddMoreDetailsScreen> {
             );
           },
         ),
+      ),
+    );
+  }
+
+  Widget _buildHeaderCard(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: context.color.mainBrown,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.12),
+            blurRadius: 16,
+            offset: const Offset(0, 8),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          Container(
+            height: 44,
+            width: 44,
+            decoration: BoxDecoration(
+              color: context.color.mainGold.withValues(alpha: 0.18),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(
+                color: context.color.mainGold.withValues(alpha: 0.6),
+              ),
+            ),
+            child: Icon(
+              Icons.playlist_add_check_outlined,
+              color: context.color.mainGold,
+              size: 22,
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomText(
+                  "giveMoreDetailsAboutYourAds".translate(context),
+                  fontSize: context.font.large,
+                  fontWeight: FontWeight.w600,
+                  color: context.color.secondaryColor,
+                ),
+                const SizedBox(height: 6),
+                CustomText(
+                  "AdDetails".translate(context),
+                  fontSize: context.font.normal,
+                  color: context.color.secondaryColor.withValues(alpha: 0.75),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _sectionCard(
+    BuildContext context, {
+    required String title,
+    String? subtitle,
+    IconData? icon,
+    required Widget child,
+  }) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: context.color.secondaryColor,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: context.color.textLightColor.withValues(alpha: 0.15),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.04),
+            blurRadius: 12,
+            offset: const Offset(0, 6),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              if (icon != null)
+                Container(
+                  height: 36,
+                  width: 36,
+                  decoration: BoxDecoration(
+                    color: context.color.mainGold.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Icon(
+                    icon,
+                    size: 18,
+                    color: context.color.mainBrown,
+                  ),
+                ),
+              if (icon != null) const SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomText(
+                      title,
+                      fontSize: context.font.large,
+                      fontWeight: FontWeight.w600,
+                      color: context.color.textColorDark,
+                    ),
+                    if (subtitle != null) ...[
+                      const SizedBox(height: 4),
+                      CustomText(
+                        subtitle,
+                        fontSize: context.font.small,
+                        color:
+                            context.color.textLightColor.withValues(alpha: 0.7),
+                      ),
+                    ]
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          child,
+        ],
       ),
     );
   }

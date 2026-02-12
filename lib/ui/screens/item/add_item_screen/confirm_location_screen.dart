@@ -268,6 +268,7 @@ class _ConfirmLocationScreenState extends CloudState<ConfirmLocationScreen>
         },
         child: Scaffold(
             resizeToAvoidBottomInset: false,
+            backgroundColor: context.color.mainColor,
             appBar: UiUtils.buildAppBar(context, onBackPress: () {
               Future.delayed(Duration(milliseconds: 500), () {
                 Navigator.pop(context);
@@ -285,11 +286,11 @@ class _ConfirmLocationScreenState extends CloudState<ConfirmLocationScreen>
                   myAdsCubitReference[getCloudData("edit_from")]
                       ?.edit(state.model);
 
-                      Navigator.pushNamed(context, Routes.successItemScreen,
-                          arguments: {
-                            'model': state.model,
-                            'isEdit': widget.isEdit
-                          });
+                  Navigator.pushNamed(context, Routes.successItemScreen,
+                      arguments: {
+                        'model': state.model,
+                        'isEdit': widget.isEdit
+                      });
                 }
 
                 if (state is ManageItemFail) {
@@ -402,84 +403,95 @@ class _ConfirmLocationScreenState extends CloudState<ConfirmLocationScreen>
   Widget bodyData() {
     return _cameraPosition != null
         ? Padding(
-            padding: const EdgeInsets.only(top: 15.0),
+            padding: const EdgeInsets.fromLTRB(18, 12, 18, 0),
             child: Column(children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: CustomText(
-                  "locationItemSellingLbl".translate(context),
-                  fontWeight: FontWeight.bold,
-                  fontSize: context.font.larger,
-                  textAlign: TextAlign.center,
+              _buildHeaderCard(context),
+              const SizedBox(height: 12),
+              _sectionCard(
+                context,
+                title: "confirmLocation".translate(context),
+                subtitle: "locationItemSellingLbl".translate(context),
+                icon: Icons.location_on_outlined,
+                child: Column(
+                  children: [
+                    UiUtils.buildButton(context, height: 48, onPressed: () {
+                      Navigator.pushNamed(context, Routes.countriesScreen,
+                          arguments: {"from": "addItem"}).then((value) {
+                        if (value != null) {
+                          Map<String, dynamic> location =
+                              value as Map<String, dynamic>;
+
+                          if (mounted)
+                            setState(() {
+                              currentLocation = [
+                                location["area"] ?? null,
+                                location["city"] ?? null,
+                                location["state"] ?? null,
+                                location["country"] ?? null,
+                              ]
+                                  .where(
+                                      (part) => part != null && part.isNotEmpty)
+                                  .join(', ');
+
+                              formatedAddress = AddressComponent(
+                                  area: location["area"] ?? null,
+                                  areaId: location["area_id"] ?? null,
+                                  city: location["city"] ?? null,
+                                  country: location["country"] ?? null,
+                                  state: location["state"] ?? null);
+                              latitude = location["latitude"] ?? null;
+                              longitude = location["longitude"] ?? null;
+                              _cameraPosition = CameraPosition(
+                                target: LatLng(latitude!, longitude!),
+                                zoom: 14.4746,
+                                bearing: 0,
+                              );
+
+                              _mapController.animateCamera(
+                                CameraUpdate.newCameraPosition(
+                                    _cameraPosition!),
+                              );
+                              _markers.add(Marker(
+                                markerId: const MarkerId('currentLocation'),
+                                position: LatLng(latitude!, longitude!),
+                              ));
+                            });
+                        }
+                      });
+                    },
+                        fontSize: 14,
+                        buttonTitle: "somewhereElseLbl".translate(context),
+                        textColor: context.color.mainBrown,
+                        buttonColor: context.color.secondaryColor,
+                        border: BorderSide(
+                            color:
+                                context.color.mainGold.withValues(alpha: 0.6),
+                            width: 1.5),
+                        radius: 8),
+                  ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 20, right: 15, left: 15),
-                child: UiUtils.buildButton(context, height: 48, onPressed: () {
-                  Navigator.pushNamed(context, Routes.countriesScreen,
-                      arguments: {"from": "addItem"}).then((value) {
-                    if (value != null) {
-                      Map<String, dynamic> location =
-                          value as Map<String, dynamic>;
-
-                      if (mounted)
-                        setState(() {
-                          currentLocation = [
-                            location["area"] ?? null,
-                            location["city"] ?? null,
-                            location["state"] ?? null,
-                            location["country"] ?? null,
-                          ]
-                              .where((part) => part != null && part.isNotEmpty)
-                              .join(', ');
-
-                          formatedAddress = AddressComponent(
-                              area: location["area"] ?? null,
-                              areaId: location["area_id"] ?? null,
-                              city: location["city"] ?? null,
-                              country: location["country"] ?? null,
-                              state: location["state"] ?? null);
-                          latitude = location["latitude"] ?? null;
-                          longitude = location["longitude"] ?? null;
-                          _cameraPosition = CameraPosition(
-                            target: LatLng(latitude!, longitude!),
-                            zoom: 14.4746,
-                            bearing: 0,
-                          );
-
-                          _mapController.animateCamera(
-                            CameraUpdate.newCameraPosition(_cameraPosition!),
-                          );
-                          _markers.add(Marker(
-                            markerId: const MarkerId('currentLocation'),
-                            position: LatLng(latitude!, longitude!),
-                          ));
-                        });
-                    }
-                  });
-                },
-                    fontSize: 14,
-                    buttonTitle: "somewhereElseLbl".translate(context),
-                    textColor: context.color.textDefaultColor,
-                    buttonColor: context.color.secondaryColor,
-                    border: BorderSide(
-                        color: context.color.textDefaultColor
-                            .withValues(alpha: 0.3),
-                        width: 1.5),
-                    radius: 5),
-              ),
-              SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 12),
               Expanded(
                 child: Stack(
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsets.symmetric(horizontal: 15),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10)),
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(
+                          color: context.color.textLightColor
+                              .withValues(alpha: 0.2),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.05),
+                            blurRadius: 12,
+                            offset: const Offset(0, 6),
+                          ),
+                        ],
+                      ),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(16),
                         child: GoogleMap(
                             onCameraMove: (position) {
                               _cameraPosition = position;
@@ -514,12 +526,11 @@ class _ConfirmLocationScreenState extends CloudState<ConfirmLocationScreen>
                                     _cameraPosition!,
                                   ),
                                 );
-                                //preFillLocationWhileEdit();
                               });
                             },
                             onTap: (latLng) {
                               setState(() {
-                                _markers.clear(); // Clear existing markers
+                                _markers.clear();
                                 _markers.add(Marker(
                                   markerId: MarkerId('selectedLocation'),
                                   position: latLng,
@@ -528,30 +539,30 @@ class _ConfirmLocationScreenState extends CloudState<ConfirmLocationScreen>
                                 longitude = latLng.longitude;
 
                                 getLocationFromLatitudeLongitude(
-                                    latLng: latLng); // Get location details
+                                    latLng: latLng);
                               });
                             }),
                       ),
                     ),
                     PositionedDirectional(
-                      end: 30,
-                      bottom: 15,
+                      end: 16,
+                      bottom: 16,
                       child: InkWell(
                         child: Container(
                           width: 48,
                           height: 48,
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: context.color.borderColor,
+                              color: context.color.mainGold
+                                  .withValues(alpha: 0.55),
                               width: Constant.borderWidth,
                             ),
                             color: context.color.secondaryColor,
-                            // Adjust the opacity as needed
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(12),
                           ),
-                          child: const Icon(
+                          child: Icon(
                             Icons.my_location_sharp,
-                            // Change the icon color if needed
+                            color: context.color.mainBrown,
                           ),
                         ),
                         onTap: () async {
@@ -577,92 +588,205 @@ class _ConfirmLocationScreenState extends CloudState<ConfirmLocationScreen>
                   ],
                 ),
               ),
-              Container(
-                // height: 12,
-                width: context.screenWidth,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: LayoutBuilder(builder: (context, constrains) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    width: 25,
-                                    height: 25,
-                                    decoration: BoxDecoration(
-                                      color: context.color.territoryColor
-                                          .withValues(alpha: 0.1),
-                                      borderRadius: BorderRadius.circular(5),
-                                      border: Border.all(
-                                          width: Constant.borderWidth,
-                                          color: context.color.borderColor),
-                                    ),
-                                    child: SizedBox(
-                                        width: 8.11,
-                                        height: 5.67,
-                                        child: SvgPicture.asset(
-                                          AppIcons.location,
-                                          fit: BoxFit.none,
-                                          colorFilter: ColorFilter.mode(
-                                              context.color.territoryColor,
-                                              BlendMode.srcIn),
-                                        )),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      CustomText(
-                                        formatedAddress == null
-                                            ? "____" // Fallback text if formatedAddress is null
-                                            : (formatedAddress!.city == null ||
-                                                    formatedAddress!
-                                                        .city!.isEmpty)
-                                                ? (formatedAddress!.area !=
-                                                            null &&
-                                                        formatedAddress!
-                                                            .area!.isNotEmpty
-                                                    ? formatedAddress!.area!
-                                                    : "____")
-                                                : (formatedAddress!.area !=
-                                                            null &&
-                                                        formatedAddress!
-                                                            .area!.isNotEmpty
-                                                    ? "${formatedAddress!.area!}, ${formatedAddress!.city!}"
-                                                    : formatedAddress!.city!),
-                                        fontSize: context.font.large,
-                                      ),
-                                      const SizedBox(
-                                        height: 4,
-                                      ),
-                                      CustomText(
-                                          "${formatedAddress == null || (formatedAddress?.state == "" || formatedAddress?.state == null) ? "____" : formatedAddress?.state},${formatedAddress == null || formatedAddress!.country == "" ? "____" : formatedAddress!.country}")
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
-                        ],
-                      );
-                    }),
-                  ),
-                ),
+              const SizedBox(height: 12),
+              _sectionCard(
+                context,
+                title: "location".translate(context),
+                icon: Icons.pin_drop_outlined,
+                child: _buildLocationInfo(context),
               ),
+              const SizedBox(height: 12),
             ]),
           )
         : shimmerEffect();
+  }
+
+  Widget _buildHeaderCard(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: context.color.mainBrown,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.12),
+            blurRadius: 16,
+            offset: const Offset(0, 8),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          Container(
+            height: 44,
+            width: 44,
+            decoration: BoxDecoration(
+              color: context.color.mainGold.withValues(alpha: 0.18),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(
+                color: context.color.mainGold.withValues(alpha: 0.6),
+              ),
+            ),
+            child: Icon(
+              Icons.map_outlined,
+              color: context.color.mainGold,
+              size: 22,
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomText(
+                  "confirmLocation".translate(context),
+                  fontSize: context.font.large,
+                  fontWeight: FontWeight.w600,
+                  color: context.color.secondaryColor,
+                ),
+                const SizedBox(height: 6),
+                CustomText(
+                  "locationItemSellingLbl".translate(context),
+                  fontSize: context.font.normal,
+                  color: context.color.secondaryColor.withValues(alpha: 0.75),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _sectionCard(
+    BuildContext context, {
+    required String title,
+    String? subtitle,
+    IconData? icon,
+    required Widget child,
+  }) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: context.color.secondaryColor,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: context.color.textLightColor.withValues(alpha: 0.15),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.04),
+            blurRadius: 12,
+            offset: const Offset(0, 6),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              if (icon != null)
+                Container(
+                  height: 36,
+                  width: 36,
+                  decoration: BoxDecoration(
+                    color: context.color.mainGold.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Icon(
+                    icon,
+                    size: 18,
+                    color: context.color.mainBrown,
+                  ),
+                ),
+              if (icon != null) const SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomText(
+                      title,
+                      fontSize: context.font.large,
+                      fontWeight: FontWeight.w600,
+                      color: context.color.textColorDark,
+                    ),
+                    if (subtitle != null) ...[
+                      const SizedBox(height: 4),
+                      CustomText(
+                        subtitle,
+                        fontSize: context.font.small,
+                        color:
+                            context.color.textLightColor.withValues(alpha: 0.7),
+                      ),
+                    ]
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          child,
+        ],
+      ),
+    );
+  }
+
+  Widget _buildLocationInfo(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          width: 28,
+          height: 28,
+          decoration: BoxDecoration(
+            color: context.color.mainGold.withValues(alpha: 0.16),
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(
+                width: Constant.borderWidth,
+                color: context.color.mainGold.withValues(alpha: 0.6)),
+          ),
+          child: SizedBox(
+              width: 8.11,
+              height: 5.67,
+              child: SvgPicture.asset(
+                AppIcons.location,
+                fit: BoxFit.none,
+                colorFilter:
+                    ColorFilter.mode(context.color.mainBrown, BlendMode.srcIn),
+              )),
+        ),
+        const SizedBox(width: 10),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomText(
+                formatedAddress == null
+                    ? "____"
+                    : (formatedAddress!.city == null ||
+                            formatedAddress!.city!.isEmpty)
+                        ? (formatedAddress!.area != null &&
+                                formatedAddress!.area!.isNotEmpty
+                            ? formatedAddress!.area!
+                            : "____")
+                        : (formatedAddress!.area != null &&
+                                formatedAddress!.area!.isNotEmpty
+                            ? "${formatedAddress!.area!}, ${formatedAddress!.city!}"
+                            : formatedAddress!.city!),
+                fontSize: context.font.large,
+              ),
+              const SizedBox(height: 4),
+              CustomText(
+                "${formatedAddress == null || (formatedAddress?.state == "" || formatedAddress?.state == null) ? "____" : formatedAddress?.state},${formatedAddress == null || formatedAddress!.country == "" ? "____" : formatedAddress!.country}",
+                fontSize: context.font.small,
+                color: context.color.textLightColor.withValues(alpha: 0.7),
+              )
+            ],
+          ),
+        )
+      ],
+    );
   }
 
   void dialogueBottomSheet(

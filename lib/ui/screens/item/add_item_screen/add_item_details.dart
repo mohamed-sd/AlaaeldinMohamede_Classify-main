@@ -182,6 +182,7 @@ class _AddItemDetailsState extends CloudState<AddItemDetails> {
         },
         child: SafeArea(
           child: Scaffold(
+            backgroundColor: context.color.mainColor,
             appBar: UiUtils.buildAppBar(context,
                 showBackButton: true, title: "AdDetails".translate(context)),
             bottomNavigationBar: Container(
@@ -278,253 +279,181 @@ class _AddItemDetailsState extends CloudState<AddItemDetails> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomText(
-                        "youAreAlmostThere".translate(context),
-                        fontSize: context.font.large,
-                        fontWeight: FontWeight.w600,
-                        color: context.color.textColorDark,
-                      ),
-                      SizedBox(
-                        height: 16,
-                      ),
+                      _buildHeaderCard(context),
+                      const SizedBox(height: 16),
                       if (widget.breadCrumbItems != null)
-                        SizedBox(
-                          height: 20,
-                          width: context.screenWidth,
-                          child: SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: ListView.builder(
-                                shrinkWrap: true,
-                                scrollDirection: Axis.horizontal,
-                                physics: const NeverScrollableScrollPhysics(),
-                                itemBuilder: (context, index) {
-                                  bool isNotLast =
-                                      (widget.breadCrumbItems!.length - 1) !=
-                                          index;
-
-                                  return Row(
-                                    children: [
-                                      InkWell(
-                                          onTap: () {
-                                            _onBreadCrumbItemTap(index);
-                                          },
-                                          child: CustomText(
-                                            widget
-                                                .breadCrumbItems![index].name!,
-                                            color: isNotLast
-                                                ? context.color.textColorDark
-                                                : context.color.territoryColor,
-                                            firstUpperCaseWidget: true,
-                                          )),
-                                      if (index <
-                                          widget.breadCrumbItems!.length - 1)
-                                        CustomText(" > ",
-                                            color:
-                                                context.color.territoryColor),
-                                    ],
-                                  );
-                                },
-                                itemCount: widget.breadCrumbItems!.length),
-                          ),
-                        ),
-                      SizedBox(
-                        height: 18,
-                      ),
-                      CustomText("adTitle".translate(context)),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      CustomTextFormField(
-                        controller: adTitleController,
-                        // controller: _itemNameController,
-                        validator: CustomTextFieldValidator.nullCheck,
-                        action: TextInputAction.next,
-                        capitalization: TextCapitalization.sentences,
-                        hintText: "adTitleHere".translate(context),
-                        hintTextStyle: TextStyle(
-                            color: context.color.textDefaultColor
-                                .withValues(alpha: 0.5),
-                            fontSize: context.font.large),
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      CustomText(
-                          "${"adSlug".translate(context)}\t(${"englishOnlyLbl".translate(context)})"),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      CustomTextFormField(
-                        controller: adSlugController,
-                        onChange: (value) {
-                          String slug = generateSlug(value);
-                          adSlugController.value = TextEditingValue(
-                            text: slug,
-                            selection: TextSelection.fromPosition(
-                              TextPosition(offset: slug.length),
+                        _buildBreadcrumbs(context),
+                      const SizedBox(height: 16),
+                      _sectionCard(
+                        context,
+                        title: "adTitle".translate(context),
+                        subtitle: "descriptionLbl".translate(context),
+                        icon: Icons.article_outlined,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            _buildFieldLabel(
+                              context,
+                              "adTitle".translate(context),
                             ),
-                          );
-                        },
-                        // controller: _itemNameController,
-                        validator: CustomTextFieldValidator.slug,
-                        action: TextInputAction.next,
-                        hintText: "adSlugHere".translate(context),
-                        hintTextStyle: TextStyle(
-                            color: context.color.textDefaultColor
-                                .withValues(alpha: 0.5),
-                            fontSize: context.font.large),
+                            const SizedBox(height: 10),
+                            CustomTextFormField(
+                              controller: adTitleController,
+                              validator: CustomTextFieldValidator.nullCheck,
+                              action: TextInputAction.next,
+                              capitalization: TextCapitalization.sentences,
+                              hintText: "adTitleHere".translate(context),
+                              fillColor: context.color.primaryColor,
+                              borderColor:
+                                  context.color.mainGold.withValues(alpha: 0.2),
+                            ),
+                            const SizedBox(height: 14),
+                            _buildFieldLabel(
+                              context,
+                              "${"adSlug".translate(context)} (${"englishOnlyLbl".translate(context)})",
+                            ),
+                            const SizedBox(height: 10),
+                            CustomTextFormField(
+                              controller: adSlugController,
+                              onChange: (value) {
+                                String slug = generateSlug(value);
+                                adSlugController.value = TextEditingValue(
+                                  text: slug,
+                                  selection: TextSelection.fromPosition(
+                                    TextPosition(offset: slug.length),
+                                  ),
+                                );
+                              },
+                              validator: CustomTextFieldValidator.slug,
+                              action: TextInputAction.next,
+                              hintText: "adSlugHere".translate(context),
+                              fillColor: context.color.primaryColor,
+                              borderColor:
+                                  context.color.mainGold.withValues(alpha: 0.2),
+                            ),
+                            const SizedBox(height: 14),
+                            _buildFieldLabel(
+                              context,
+                              "descriptionLbl".translate(context),
+                            ),
+                            const SizedBox(height: 10),
+                            CustomTextFormField(
+                              controller: adDescriptionController,
+                              action: TextInputAction.newline,
+                              validator: CustomTextFieldValidator.nullCheck,
+                              capitalization: TextCapitalization.sentences,
+                              hintText: "writeSomething".translate(context),
+                              maxLine: 100,
+                              minLine: 6,
+                              fillColor: context.color.primaryColor,
+                              borderColor:
+                                  context.color.mainGold.withValues(alpha: 0.2),
+                            ),
+                          ],
+                        ),
                       ),
-                      SizedBox(
-                        height: 15,
+                      const SizedBox(height: 16),
+                      _sectionCard(
+                        context,
+                        title: "mainPicture".translate(context),
+                        subtitle: "recommendedSize".translate(context),
+                        icon: Icons.image_outlined,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            _buildFieldLabel(
+                              context,
+                              "mainPicture".translate(context),
+                              helper: "maxSize".translate(context),
+                            ),
+                            _buildHelperText(
+                              context,
+                              "recommendedSize".translate(context),
+                            ),
+                            const SizedBox(height: 10),
+                            titleImageListener(),
+                            const SizedBox(height: 16),
+                            _buildFieldLabel(
+                              context,
+                              "otherPictures".translate(context),
+                              helper: "max5Images".translate(context),
+                            ),
+                            _buildHelperText(
+                              context,
+                              "recommendedSize".translate(context),
+                            ),
+                            const SizedBox(height: 10),
+                            itemImagesListener(),
+                          ],
+                        ),
                       ),
-                      CustomText("descriptionLbl".translate(context)),
-                      SizedBox(
-                        height: 15,
+                      const SizedBox(height: 16),
+                      _sectionCard(
+                        context,
+                        title: "price".translate(context),
+                        subtitle: "phoneNumber".translate(context),
+                        icon: Icons.payments_outlined,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            _buildFieldLabel(
+                              context,
+                              "price".translate(context),
+                            ),
+                            const SizedBox(height: 10),
+                            CustomTextFormField(
+                              controller: adPriceController,
+                              action: TextInputAction.next,
+                              prefix: CustomText("${Constant.currencySymbol} "),
+                              formaters: [
+                                FilteringTextInputFormatter.allow(
+                                    RegExp(r'^\d+\.?\d*')),
+                              ],
+                              keyboard: TextInputType.number,
+                              validator: CustomTextFieldValidator.nullCheck,
+                              hintText: "00",
+                              fillColor: context.color.primaryColor,
+                              borderColor:
+                                  context.color.mainGold.withValues(alpha: 0.2),
+                            ),
+                            const SizedBox(height: 14),
+                            _buildFieldLabel(
+                              context,
+                              "phoneNumber".translate(context),
+                            ),
+                            const SizedBox(height: 10),
+                            CustomTextFormField(
+                              controller: adPhoneNumberController,
+                              action: TextInputAction.next,
+                              formaters: [
+                                FilteringTextInputFormatter.allow(
+                                    RegExp(r'^\d+\.?\d*')),
+                              ],
+                              keyboard: TextInputType.phone,
+                              validator: CustomTextFieldValidator.phoneNumber,
+                              hintText: "9876543210",
+                              fillColor: context.color.primaryColor,
+                              borderColor:
+                                  context.color.mainGold.withValues(alpha: 0.2),
+                            ),
+                            const SizedBox(height: 14),
+                            _buildFieldLabel(
+                              context,
+                              "videoLink".translate(context),
+                            ),
+                            const SizedBox(height: 10),
+                            CustomTextFormField(
+                              controller: adAdditionalDetailsController,
+                              validator: CustomTextFieldValidator.url,
+                              hintText: "http://example.com/video.mp4",
+                              fillColor: context.color.primaryColor,
+                              borderColor:
+                                  context.color.mainGold.withValues(alpha: 0.2),
+                            ),
+                          ],
+                        ),
                       ),
-                      CustomTextFormField(
-                        controller: adDescriptionController,
-
-                        action: TextInputAction.newline,
-                        // controller: _descriptionController,
-                        validator: CustomTextFieldValidator.nullCheck,
-                        capitalization: TextCapitalization.sentences,
-                        hintText: "writeSomething".translate(context),
-                        maxLine: 100,
-                        minLine: 6,
-
-                        hintTextStyle: TextStyle(
-                            color: context.color.textDefaultColor
-                                .withValues(alpha: 0.5),
-                            fontSize: context.font.large),
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      Row(
-                        children: [
-                          CustomText("mainPicture".translate(context)),
-                          const SizedBox(
-                            width: 3,
-                          ),
-                          CustomText(
-                            "maxSize".translate(context),
-                            fontStyle: FontStyle.italic,
-                            fontSize: context.font.small,
-                          )
-                        ],
-                      ),
-                      CustomText(
-                        "recommendedSize".translate(context),
-                        fontStyle: FontStyle.italic,
-                        fontSize: context.font.small,
-                        color: context.color.textLightColor.withValues(alpha: 0.4),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Wrap(
-                        children: [
-                          if (_pickTitleImage.pickedFile != null)
-                            ...[]
-                          else
-                            ...[],
-                          titleImageListener(),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: [
-                          CustomText("otherPictures".translate(context)),
-                          const SizedBox(
-                            width: 3,
-                          ),
-                          CustomText(
-                            "max5Images".translate(context),
-                            fontStyle: FontStyle.italic,
-                            fontSize: context.font.small,
-                          )
-                        ],
-                      ),
-                      CustomText(
-                        "recommendedSize".translate(context),
-                        fontStyle: FontStyle.italic,
-                        fontSize: context.font.small,
-                        color: context.color.textLightColor.withValues(alpha: 0.4),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      itemImagesListener(),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      CustomText("price".translate(context)),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      CustomTextFormField(
-                        controller: adPriceController,
-                        action: TextInputAction.next,
-                        prefix: CustomText("${Constant.currencySymbol} "),
-                        // controller: _priceController,
-                        formaters: [
-                          FilteringTextInputFormatter.allow(
-                              RegExp(r'^\d+\.?\d*')),
-                        ],
-                        keyboard: TextInputType.number,
-                        validator: CustomTextFieldValidator.nullCheck,
-                        hintText: "00",
-                        hintTextStyle: TextStyle(
-                            color: context.color.textDefaultColor
-                                .withValues(alpha: 0.5),
-                            fontSize: context.font.large),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      CustomText("phoneNumber".translate(context)),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      CustomTextFormField(
-                        controller: adPhoneNumberController,
-                        action: TextInputAction.next,
-                        formaters: [
-                          FilteringTextInputFormatter.allow(
-                              RegExp(r'^\d+\.?\d*')),
-                        ],
-                        keyboard: TextInputType.phone,
-                        validator: CustomTextFieldValidator.phoneNumber,
-                        hintText: "9876543210",
-                        hintTextStyle: TextStyle(
-                            color: context.color.textDefaultColor
-                                .withValues(alpha: 0.5),
-                            fontSize: context.font.large),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      CustomText("videoLink".translate(context)),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      CustomTextFormField(
-                        controller: adAdditionalDetailsController,
-                        validator: CustomTextFieldValidator.url,
-                        // prefix: CustomText("${Constant.currencySymbol} "),
-                        // controller: _videoLinkController,
-                        // isReadOnly: widget.properyDetails != null,
-                        hintText: "http://example.com/video.mp4",
-                        hintTextStyle: TextStyle(
-                            color: context.color.textDefaultColor
-                                .withValues(alpha: 0.5),
-                            fontSize: context.font.large),
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
+                      const SizedBox(height: 18),
                     ],
                   ),
                 ),
@@ -533,6 +462,214 @@ class _AddItemDetailsState extends CloudState<AddItemDetails> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildHeaderCard(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: context.color.mainBrown,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.12),
+            blurRadius: 16,
+            offset: const Offset(0, 8),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          Container(
+            height: 44,
+            width: 44,
+            decoration: BoxDecoration(
+              color: context.color.mainGold.withValues(alpha: 0.18),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(
+                color: context.color.mainGold.withValues(alpha: 0.6),
+              ),
+            ),
+            child: Icon(
+              Icons.add_business_outlined,
+              color: context.color.mainGold,
+              size: 22,
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomText(
+                  "youAreAlmostThere".translate(context),
+                  fontSize: context.font.large,
+                  fontWeight: FontWeight.w600,
+                  color: context.color.secondaryColor,
+                ),
+                const SizedBox(height: 6),
+                CustomText(
+                  "AdDetails".translate(context),
+                  fontSize: context.font.normal,
+                  color: context.color.secondaryColor.withValues(alpha: 0.75),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBreadcrumbs(BuildContext context) {
+    return _sectionCard(
+      context,
+      title: "selectTheCategory".translate(context),
+      icon: Icons.category_outlined,
+      child: Wrap(
+        spacing: 8,
+        runSpacing: 8,
+        children: List.generate(widget.breadCrumbItems!.length, (index) {
+          final item = widget.breadCrumbItems![index];
+          final bool isLast = index == widget.breadCrumbItems!.length - 1;
+
+          return InkWell(
+            borderRadius: BorderRadius.circular(12),
+            onTap: () {
+              if (!isLast) {
+                _onBreadCrumbItemTap(index);
+              }
+            },
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              decoration: BoxDecoration(
+                color: isLast
+                    ? context.color.mainGold.withValues(alpha: 0.25)
+                    : context.color.primaryColor,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: isLast
+                      ? context.color.mainGold
+                      : context.color.textLightColor.withValues(alpha: 0.2),
+                ),
+              ),
+              child: CustomText(
+                item.name ?? "",
+                color: isLast
+                    ? context.color.mainBrown
+                    : context.color.textColorDark,
+                fontSize: context.font.small,
+                firstUpperCaseWidget: true,
+              ),
+            ),
+          );
+        }),
+      ),
+    );
+  }
+
+  Widget _sectionCard(
+    BuildContext context, {
+    required String title,
+    String? subtitle,
+    IconData? icon,
+    required Widget child,
+  }) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: context.color.secondaryColor,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: context.color.textLightColor.withValues(alpha: 0.15),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.04),
+            blurRadius: 12,
+            offset: const Offset(0, 6),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              if (icon != null)
+                Container(
+                  height: 36,
+                  width: 36,
+                  decoration: BoxDecoration(
+                    color: context.color.mainGold.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Icon(
+                    icon,
+                    size: 18,
+                    color: context.color.mainBrown,
+                  ),
+                ),
+              if (icon != null) const SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomText(
+                      title,
+                      fontSize: context.font.large,
+                      fontWeight: FontWeight.w600,
+                      color: context.color.textColorDark,
+                    ),
+                    if (subtitle != null) ...[
+                      const SizedBox(height: 4),
+                      CustomText(
+                        subtitle,
+                        fontSize: context.font.small,
+                        color:
+                            context.color.textLightColor.withValues(alpha: 0.7),
+                      ),
+                    ]
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          child,
+        ],
+      ),
+    );
+  }
+
+  Widget _buildFieldLabel(BuildContext context, String text, {String? helper}) {
+    return Row(
+      children: [
+        CustomText(
+          text,
+          fontSize: context.font.normal,
+          color: context.color.textColorDark,
+        ),
+        if (helper != null) ...[
+          const SizedBox(width: 6),
+          CustomText(
+            helper,
+            fontStyle: FontStyle.italic,
+            fontSize: context.font.small,
+            color: context.color.textLightColor.withValues(alpha: 0.7),
+          ),
+        ]
+      ],
+    );
+  }
+
+  Widget _buildHelperText(BuildContext context, String text) {
+    return CustomText(
+      text,
+      fontStyle: FontStyle.italic,
+      fontSize: context.font.small,
+      color: context.color.textLightColor.withValues(alpha: 0.55),
     );
   }
 
@@ -622,7 +759,7 @@ class _AddItemDetailsState extends CloudState<AddItemDetails> {
         children: [
           if (file == null && titleImageURL.isEmpty)
             DottedBorder(
-              color: context.color.textLightColor,
+              color: context.color.mainGold.withValues(alpha: 0.6),
               borderType: BorderType.RRect,
               radius: const Radius.circular(12),
               child: GestureDetector(
@@ -641,10 +778,12 @@ class _AddItemDetailsState extends CloudState<AddItemDetails> {
                 },
                 child: Container(
                   clipBehavior: Clip.antiAlias,
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: context.color.primaryColor,
+                  ),
                   alignment: AlignmentDirectional.center,
-                  height: 48,
+                  height: 52,
                   child: CustomText(
                     "addMainPicture".translate(context),
                     color: context.color.textDefaultColor,
@@ -724,8 +863,7 @@ class _AddItemDetailsState extends CloudState<AddItemDetails> {
                         .add(item!.galleryImages![matchingIndex].id!);
 
                     setState(() {});
-                  } else {
-                  }
+                  } else {}
                 }
 
                 mixedItemImageList.removeAt(index);
@@ -741,7 +879,7 @@ class _AddItemDetailsState extends CloudState<AddItemDetails> {
         children: [
           if ((files == null || files.isEmpty) && mixedItemImageList.isEmpty)
             DottedBorder(
-              color: context.color.textLightColor,
+              color: context.color.mainGold.withValues(alpha: 0.6),
               borderType: BorderType.RRect,
               radius: const Radius.circular(12),
               child: GestureDetector(
@@ -757,10 +895,12 @@ class _AddItemDetailsState extends CloudState<AddItemDetails> {
                 },
                 child: Container(
                   clipBehavior: Clip.antiAlias,
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: context.color.primaryColor,
+                  ),
                   alignment: AlignmentDirectional.center,
-                  height: 48,
+                  height: 52,
                   child: CustomText("addOtherPicture".translate(context),
                       color: context.color.textDefaultColor,
                       fontSize: context.font.large),
@@ -823,7 +963,7 @@ class _AddItemDetailsState extends CloudState<AddItemDetails> {
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
         child: DottedBorder(
-            color: context.color.textColorDark.withValues(alpha: 0.5),
+            color: context.color.mainGold.withValues(alpha: 0.6),
             borderType: BorderType.RRect,
             radius: const Radius.circular(10),
             child: Container(

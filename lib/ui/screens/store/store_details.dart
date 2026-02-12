@@ -426,9 +426,6 @@ class storeDetailsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context, Routes.storedetailss);
-      },
       child: Container(
         margin: EdgeInsets.only(top: 5, bottom: 5, right: 10, left: 10),
         padding: EdgeInsets.all(10),
