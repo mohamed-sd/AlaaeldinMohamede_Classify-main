@@ -54,6 +54,7 @@ import 'package:eClassify/ui/screens/main_activity.dart';
 import 'package:eClassify/ui/screens/my_review_screen.dart';
 import 'package:eClassify/ui/screens/navigations/home_guide.dart';
 import 'package:eClassify/ui/screens/onboarding/onboarding_screen.dart';
+import 'package:eClassify/ui/screens/same_page.dart';
 import 'package:eClassify/ui/screens/seller/seller_intro_verification.dart';
 import 'package:eClassify/ui/screens/seller/seller_profile.dart';
 import 'package:eClassify/ui/screens/seller/seller_verification.dart';
@@ -82,6 +83,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
+  static const same = 'same';
   static const blogprofile = 'blogprofile';
   static const homeGuide = 'homeGuide';
   static const aichat = 'aichat';
@@ -236,6 +238,8 @@ class Routes {
     }
 
     switch (routeSettings.name) {
+      case same:
+        return MaterialPageRoute(builder: ((context) => const SamePage()));
       case blogprofile:
         return MaterialPageRoute(builder: ((context) => BlogProfile()));
       case homeGuide:

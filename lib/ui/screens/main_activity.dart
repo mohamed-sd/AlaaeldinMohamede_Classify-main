@@ -18,6 +18,7 @@ import 'package:eClassify/ui/screens/navigations/home_screen.dart';
 import 'package:eClassify/ui/screens/home/search_screen.dart';
 import 'package:eClassify/ui/screens/item/my_items_screen.dart';
 import 'package:eClassify/ui/screens/navigations/home_store.dart';
+import 'package:eClassify/ui/screens/same_page.dart';
 import 'package:eClassify/ui/screens/user_profile/profile_screen.dart';
 
 import 'package:eClassify/ui/screens/widgets/blurred_dialog_box.dart';
@@ -283,7 +284,7 @@ class MainActivityState extends State<MainActivity>
 
   late List<Widget> pages = [
     HomeScreen(from: widget.from),
-    HomeStore(),
+    const SamePage(),
     HomeGuide(),
     HomeNews(),
     //  ComingSoonPage(),
@@ -425,16 +426,18 @@ class MainActivityState extends State<MainActivity>
                 buildBottomNavigationbarItem(
                     2,
                     AppIcons.profileNav,
-                    AppIcons.profileNav,"proceduralGuideTab".translate(context)),
+                    AppIcons.profileNav,
+                    "proceduralGuideTab".translate(context)),
 
                 buildBottomNavigationbarItem(3, AppIcons.chatNav,
-                    AppIcons.chatNav,  "miningClubTab".translate(context)),
+                    AppIcons.chatNav, "miningClubTab".translate(context)),
 
                 BlocListener<FetchUserPackageLimitCubit,
                         FetchUserPackageLimitState>(
                     listener: (context, state) {
                       Navigator.pushNamed(
-                        context, Routes.aichat,
+                        context,
+                        Routes.aichat,
                       );
                       // if (state is FetchUserPackageLimitFailure) {
                       //   UiUtils.noPackageAvailableDialog(context);
@@ -462,24 +465,29 @@ class MainActivityState extends State<MainActivity>
                               context: context);
                         },
                         child: SizedBox(
-                          width: 110,
-                          height: 110,
-                          child: svgLoaded == false
-                              ? Container()
-                              :
-                                  Container(
-                                      height: 85,
-                                      child: Column(
-                                        children: [
-                                          UiUtils.getSvg(AppIcons.plusIcon , height: 85),
-                                          Text( "AI" , style: TextStyle(color: context.color.mainColor , fontSize: 12,fontWeight: FontWeight.w900),)
-                                        ],
-                                      )
-                              )
-                              // : SvgPicture.string(
-                              //     svgEdit.toSVGString() ?? "",
-                              //   ),
-                        ),
+                            width: 110,
+                            height: 110,
+                            child: svgLoaded == false
+                                ? Container()
+                                : Container(
+                                    height: 85,
+                                    child: Column(
+                                      children: [
+                                        UiUtils.getSvg(AppIcons.plusIcon,
+                                            height: 85),
+                                        Text(
+                                          "AI",
+                                          style: TextStyle(
+                                              color: context.color.mainColor,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w900),
+                                        )
+                                      ],
+                                    ))
+                            // : SvgPicture.string(
+                            //     svgEdit.toSVGString() ?? "",
+                            //   ),
+                            ),
                       ),
                     )),
                 // buildBottomNavigationbarItem(2, AppIcons.myAdsNav,
@@ -493,11 +501,8 @@ class MainActivityState extends State<MainActivity>
                 buildBottomNavigationbarItem(0, AppIcons.homeNav,
                     AppIcons.homeNav, "homeTab".translate(context)),
 
-
-
-
-                buildBottomNavigationbarItem(
-                    1, AppIcons.myAdsNav, AppIcons.myAdsNav, "storesTab".translate(context)),
+                buildBottomNavigationbarItem(1, AppIcons.myAdsNav,
+                    AppIcons.myAdsNav, "storesTab".translate(context)),
 
                 // buildBottomNavigationbarItem(3, AppIcons.profileNav,
                 //     AppIcons.profileNavActive, "profileTab".translate(context))
@@ -598,9 +603,12 @@ class MainActivityState extends State<MainActivity>
             children: <Widget>[
               if (currentTab == index) ...{
                 UiUtils.getSvg(activeSvg,
-                    color: bottomNavigationSelectedIconColor , width:25 , height: 25),
+                    color: bottomNavigationSelectedIconColor,
+                    width: 25,
+                    height: 25),
               } else ...{
-                UiUtils.getSvg(svgImage, color: bottomNavigationIconColor ,width:25 , height: 25),
+                UiUtils.getSvg(svgImage,
+                    color: bottomNavigationIconColor, width: 25, height: 25),
                 //UiUtils.getSvg(svgImage,color: context.color.textLightColor.withValues(alpha: 0.5)),
               },
               CustomText(title,
